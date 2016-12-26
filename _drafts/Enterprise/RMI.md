@@ -33,6 +33,8 @@ LocateRegistry.createRegistry(port#); // 绑定服务端口号，可用 rmiregis
 Naming.bind("rmi://host:port#/SomeRemoteService", someRemoteService); // 绑定服务地址。
 ```
 
+**注**：关于 `rmiregistry` 命令的更多信息，请查看 [rmiregistry - The Java Remote Object Registry](http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/rmiregistry.html)。
+
 服务端提供服务实现，并注册到 RMI registry 中，这样客户端就可以查找到该服务并调用。
 
 其它代码：
