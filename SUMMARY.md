@@ -6,7 +6,7 @@
 
  * [Java](_drafts/Languages/Java/README.md)
 
-    * [Java基础](JavaFundamental.md)
+    * [Java基础](_drafts/Languages/Java/JavaFundamental.md)
     * [对象创建](_drafts/Languages/Java/ObjectCreation.md)
     * [实例受控](_drafts/Languages/Java/InstanceControlledClass.md)
     * [不可变类](_drafts/Languages/Java/ImmutableClass.md)
