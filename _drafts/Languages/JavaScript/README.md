@@ -1,4 +1,4 @@
 # JavaScript Language
 
-* [JavaScript](JavaScript/JavaScript.md)
-* [Node.js](JavaScript/Nodejs.md)
+* [JavaScript](JavaScript.md)
+* [Node.js](Nodejs.md)

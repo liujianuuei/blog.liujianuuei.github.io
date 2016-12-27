@@ -1,5 +1,5 @@
 # JVM
 
-* [JVM](JVM/JVM.md)
-* [JMX](JVM/JMX.md)
-* [JNI](JVM/JNI.md)
+* [JVM](JVM.md)
+* [JMX](JMX.md)
+* [JNI](JNI.md)
