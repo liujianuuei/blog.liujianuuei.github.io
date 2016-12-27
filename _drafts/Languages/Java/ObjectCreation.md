@@ -130,7 +130,7 @@ Injector injector = Guice.createInjector(new BindingModule());
 
 在`BindingModule`里指定具体类的实现绑定（我们以发送twitter消息为例）：
 
-```
+```Java
 public class BindingModule extends AbstractModule {
 
     protected void configure() {

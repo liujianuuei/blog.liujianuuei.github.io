@@ -43,7 +43,7 @@ Java Enterprise 一般通过如下几种方式使用 JNDI（引用自 [JavaWorld
 
 #### Java Remote Method Invocation (RMI) Registry
 
-我们使用 [Java Remote Method Invocation (RMI) Registry](RMI.md) 作为我们的 JNDI 提供商。
+我们使用 [Java Remote Method Invocation (RMI) Registry](RMI.md) 作为我们的 JNDI 实现。
 
 服务端代码：
 
@@ -85,7 +85,7 @@ while (rs.next()) {
 
 #### File System Service Provider
 
-再来看一个例子，我们用 File System Service Provider 作为 JNDI 的实现：
+再来看一个例子，我们用 File System Service Provider 作为 JNDI 实现：
 
 ```Java
 Hashtable<String, String> env = new Hashtable<>();
@@ -114,8 +114,8 @@ Context context = new InitialContext(env);
 context.rebind("/config/App/Dispatcher/Log/Error", new Reference("enabled"));
 ```
 
-File System Service Provider 需要第三方的实现（jar 文件）支持。
+File System Service Provider 是第三方的实现（一个 jar 文件）。
 
 ## 最后
 
-JNDI 的层级模型非常类似文件系统，因此，除了 `InitialContext`，还提供了 `InitialDirContext` 便于目录操作。更多细节，请参考 [[The Java™ Tutorials: Trail: Java Naming and Directory Interface](http://docs.oracle.com/javase/tutorial/jndi/)。
+JNDI 的层级模型非常类似文件系统，因此，除了 `InitialContext`，还提供了 `InitialDirContext` 便于目录操作。更多细节，请参考 [The Java™ Tutorials: Trail: Java Naming and Directory Interface](http://docs.oracle.com/javase/tutorial/jndi/)。
