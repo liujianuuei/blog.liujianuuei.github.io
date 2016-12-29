@@ -5,6 +5,7 @@
 * [Spring](Spring.md)
 * [RMI](RMI.md)
 * [JavaIDL](JavaIDL.md)
+* [RPC](RPC.md)
 * [Servlet](Servlet.md)
 * [XML](XML.md)
 * [JMS](JMS.md)
