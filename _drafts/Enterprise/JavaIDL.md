@@ -8,12 +8,21 @@ IDL（Interface Definition Language），是接口定义语言，用来描述一
 
 IDL 并不是 CORBA 专有的技术，IDL 是一种通用技术，用来描述一种接口的通用约定。
 
-我们来看一个 IDL 实例：
+我们来看一个 IDL(someIDL.idl) 实例：
 
 ```IDL
-module HelloApp{ 
-   interface Hello{ 
-      string sayHello(); 
-   }; 
+module ModuleName{
+   interface InterfaceName{
+      string operationName();
+   };
 };
 ```
+
+### Mapping IDL to Java
+
+IDL 定义的接口，需要转换成 Java 接口，才能在 Java 环境中运行。执行如下命令：
+
+```
+idlj someIDL.idl
+```
+就会生成该 IDL 的 Java 对应物。
