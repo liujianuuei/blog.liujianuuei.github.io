@@ -11,9 +11,9 @@ IDL 并不是 CORBA 专有的技术，IDL 是一种通用技术，用来描述�
 我们来看一个 IDL(someIDL.idl) 实例：
 
 ```IDL
-module ModuleName{
-   interface InterfaceName{
-      string operationName();
+module SomeModule{
+   interface SomeInterface{
+      string someMethod();
    };
 };
 ```
