@@ -61,6 +61,7 @@
  * [Spring](_drafts/Enterprise/Spring.md)
  * [RMI](_drafts/Enterprise/RMI.md)
  * [JavaIDL](_drafts/Enterprise/JavaIDL.md)
+ * [RPC](_drafts/Enterprise/RPC.md)
  * [Servlet](_drafts/Enterprise/Servlet.md)
  * [XML](_drafts/Enterprise/XML.md)
  * [JMS](_drafts/Enterprise/JMS.md)
