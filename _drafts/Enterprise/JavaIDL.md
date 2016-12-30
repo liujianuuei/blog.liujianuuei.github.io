@@ -47,7 +47,7 @@ IIOP 是基于 TCP/IP 的协议，各个 CORBA Provider 通过实现 ORB 来提�
 ```Java
 ORB orb = ORB.init(new String[] { "-ORBInitialHost", "<host>", "-ORBInitialPort", "<port#>" }, null);
 
-org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService");
+org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService"); // CORBA Naming Service
 NamingContext namingContext = NamingContextHelper.narrow(nameServRef);
 org.omg.CORBA.Object someRef = namingContext.resolve(new NameComponent[] { new NameComponent("SomeName", "") });
 SomeInterface some = SomeInterfaceHelper.narrow(someRef);
@@ -66,7 +66,7 @@ poa.the_POAManager().activate();
 org.omg.CORBA.Object someRef = poa.servant_to_reference(new SomeInterfaceImpl());
 SomeInterface some = SomeInterfaceHelper.narrow(someRef);
 
-org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService");
+org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService"); // CORBA Naming Service
 NamingContext namingContext = NamingContextHelper.narrow(nameServRef);
 namingContext.rebind(new NameComponent[] { new NameComponent("SomeName", "") }, some);
 
