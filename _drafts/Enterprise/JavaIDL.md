@@ -38,4 +38,64 @@ CORBA 是一种 RPC 协议，也就是分布式对象交互协议。我们来看
 
 IIOP 是基于 TCP/IP 的协议，各个 CORBA Provider 通过实现 ORB 来提供对 CORBA 的支持。
 
-## Java Provider
+### Java Provider
+
+和其它所有 RPC 的实现原理一样，CORBA 也是要处理远程过程的寻址（包括调用方法和参数的网络表示等）、远程过程的实现和绑定以及伺服等功能。
+
+我们先来看客户端：
+
+```Java
+ORB orb = ORB.init(new String[] { "-ORBInitialHost", "<host>", "-ORBInitialPort", "<port#>" }, null);
+
+org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService");
+NamingContext namingContext = NamingContextHelper.narrow(nameServRef);
+org.omg.CORBA.Object someRef = namingContext.resolve(new NameComponent[] { new NameComponent("SomeName", "") });
+SomeInterface some = SomeInterfaceHelper.narrow(someRef);
+
+some.someMethod(); // return "Some"
+```
+
+服务端：
+
+```Java
+ORB orb = ORB.init(new String[] { "-ORBInitialPort", "<port#>" }, null);
+
+org.omg.CORBA.Object poaRef = orb.resolve_initial_references("RootPOA");
+POA poa = POAHelper.narrow(poaRef);
+poa.the_POAManager().activate();
+org.omg.CORBA.Object someRef = poa.servant_to_reference(new SomeInterfaceImpl());
+SomeInterface some = SomeInterfaceHelper.narrow(someRef);
+
+org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService");
+NamingContext namingContext = NamingContextHelper.narrow(nameServRef);
+namingContext.rebind(new NameComponent[] { new NameComponent("SomeName", "") }, some);
+
+orb.run();
+```
+
+服务端真正提供功能的代码：
+
+```Java
+public class SomeInterfaceImpl extends SomeInterfacePOA {
+
+    @Override
+    public String someMethod() {
+        return "Some";
+    }
+
+}
+```
+
+这里列出来的都是需要手动实现的代码，还有一些通过 IDL-to-Java compiler 生成的代码没有包括进来。所有这些完毕以后，先运行服务端代码，再运行客户端代码，在运行代码之前，需要先启动 ORB：
+
+```batch
+>orbd -ORBInitialPort <port#> -ORBInitialHost <host>
+```
+
+这样，CORBA 的整个调用过程就完成了。
+
+## 最后
+
+我们可以看到，代码非常复杂且不直观，这也是为什么 CORBA 没落的原因。即便是 [RMI](RMI.md) 也比 CORBA 清晰易懂。而就 [RPC](RPC.md) 框架来说，我们还有很多选择。
+
+就这样。
