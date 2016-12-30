@@ -88,6 +88,8 @@ public class SomeEntity implements Serializable {
 
 #### 最后
 
-RMI 其实可以被看作是 RPC（RPC 的一个应用就是 JAX-RPC，也就是基于 SOAP 协议的 [Web Services](WebServices.md)） 的 Java 版本。JAX-RPC 在网络上传递的是基于 XML 的 SOAP 消息，而 RMI 则直接**跨网传递 Java 对象**，所以其先天具有面向对象的优势，为开发分布式应用系统提供了纯 Java 的解决方案。
+RMI 其实可以被看作是 RPC 的 Java 版本。RPC 即远程过程调用，相当于 IPC（Inter-process communication）在网络上的扩展。IPC 使得本地进程间可以相互通信，RPC 使得处于网络上的进程间也可以相互通信。RPC 框架有很多，比如 [CORBA](JavaIDL.md)、[RMI](RMI.md)、[JAX-RPC](WebServices.md)、Hessian、Thrift、RESTful Web Services 等等。
+
+JAX-RPC，也就是基于 SOAP 协议的 [Web Services](WebServices.md)。JAX-RPC 在网络上传递的是基于 XML 的 SOAP 消息。RMI 则直接**跨网传递 Java 对象**，所以其先天具有面向对象的优势，为开发分布式应用系统提供了纯 Java 的解决方案。
 
 RMI 使用 Java 远程消息交换协议 JRMP（Java Remote Messaging Protocol）进行通信。但由于JRMP 是专为 Java 对象制定的，因此，RMI 不能与用非 Java 语言开发的系统进行通信，这是 RMI 的最大弊端，不过可以通过 JNI 绕开这一限制。
