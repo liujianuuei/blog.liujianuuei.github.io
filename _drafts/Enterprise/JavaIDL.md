@@ -20,7 +20,7 @@ module SomeModule{
 
 ### Mapping IDL to Java
 
-IDL 定义的接口，需要转换成 Java 接口，才能在 Java 环境中运行。执行如下命令：
+IDL 定义的接口，需要通过 IDL-to-Java compiler 转换成 Java 接口，才能在 Java 环境中运行。执行如下命令：
 
 ```
 >idlj someIDL.idl
