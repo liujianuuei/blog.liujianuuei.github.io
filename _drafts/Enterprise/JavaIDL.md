@@ -30,4 +30,4 @@ IDL 定义的接口，需要通过 IDL-to-Java compiler 转换成 Java 接口，
 
 ## What Is CORBA
 
-![The CORBA Arch](theCORBAArch.svg)
+![The CORBA Arch](theCORBAArch.png)
