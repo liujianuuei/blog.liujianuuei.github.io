@@ -42,7 +42,7 @@ IIOP 是基于 TCP/IP 的协议，各个 CORBA Provider 通过实现 ORB 来提�
 
 和其它所有 RPC 的实现原理一样，CORBA 也是要处理远程过程的寻址（包括调用方法和参数的网络表示等）、远程过程的实现和绑定以及伺服等功能。
 
-我们先来看客户端：
+我们先来看客户端（main 方法）：
 
 ```Java
 ORB orb = ORB.init(new String[] { "-ORBInitialHost", "<host>", "-ORBInitialPort", "<port#>" }, null);
@@ -55,12 +55,12 @@ SomeInterface some = SomeInterfaceHelper.narrow(someRef);
 some.someMethod(); // return "Some"
 ```
 
-服务端：
+服务端（main 方法）：
 
 ```Java
 ORB orb = ORB.init(new String[] { "-ORBInitialPort", "<port#>" }, null);
 
-org.omg.CORBA.Object poaRef = orb.resolve_initial_references("RootPOA");
+org.omg.CORBA.Object poaRef = orb.resolve_initial_references("RootPOA"); // An object adapter is the mechanism that connects a request using an object reference with the proper code to service that request. The Portable Object Adapter, or POA, is a particular type of object adapter that is defined by the CORBA specification. The root POA is managed by the ORB and provided to the application using the ORB initialization interface under the initial object name "RootPOA".
 POA poa = POAHelper.narrow(poaRef);
 poa.the_POAManager().activate();
 org.omg.CORBA.Object someRef = poa.servant_to_reference(new SomeInterfaceImpl());
@@ -72,6 +72,8 @@ namingContext.rebind(new NameComponent[] { new NameComponent("SomeName", "") }, 
 
 orb.run();
 ```
+
+注：更多关于 POA 的信息，请查看 [Portable Object Adapter (POA)](http://docs.oracle.com/javase/7/docs/technotes/guides/idl/POA.html).
 
 服务端真正提供功能的代码：
 
@@ -96,6 +98,6 @@ public class SomeInterfaceImpl extends SomeInterfacePOA {
 
 ## 最后
 
-我们可以看到，代码非常复杂且不直观，这也是为什么 CORBA 没落的原因。即便是 [RMI](RMI.md) 也比 CORBA 清晰易懂。而就 [RPC](RPC.md) 框架来说，我们还有很多选择。
+我们可以看到，代码非常复杂且不直观，封装的很差劲，这也是为什么 CORBA 没落的原因。即便是 [RMI](RMI.md) 也比 CORBA 清晰易懂。而就 [RPC](RPC.md) 框架来说，我们还有很多选择。
 
 就这样。
