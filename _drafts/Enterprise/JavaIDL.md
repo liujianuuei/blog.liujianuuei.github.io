@@ -23,7 +23,7 @@ module SomeModule{
 IDL 定义的接口，需要通过 IDL-to-Java compiler 转换成 Java 接口，才能在 Java 环境中运行。执行如下命令：
 
 ```
->idlj someIDL.idl
+>idlj -fall someIDL.idl
 ```
 
-就会生成该 IDL 的 Java 对应物。
+就会生成该 IDL 的 Java 对应物，包括客户端和服务端的代码。更多关于该命令的详细信息，请查看命令自带帮助信息。
