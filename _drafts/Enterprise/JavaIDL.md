@@ -27,3 +27,7 @@ IDL 定义的接口，需要通过 IDL-to-Java compiler 转换成 Java 接口，
 ```
 
 就会生成该 IDL 的 Java 对应物，包括客户端和服务端的代码。更多关于该命令的详细信息，请查看命令自带帮助信息。
+
+## What Is CORBA
+
+![The CORBA Arch](theCORBAArch.png)
