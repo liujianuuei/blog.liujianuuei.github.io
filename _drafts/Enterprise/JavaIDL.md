@@ -28,6 +28,14 @@ IDL 定义的接口，需要通过 IDL-to-Java compiler 转换成 Java 接口，
 
 就会生成该 IDL 的 Java 对应物，包括客户端和服务端的代码。更多关于该命令的详细信息，请查看命令自带帮助信息。
 
-## What Is CORBA
+## CORBA
+
+CORBA 是一种 RPC 协议，也就是分布式对象交互协议。我们来看下 CORBA 的架构图（以下图片来自 [The JavaTM Tutorial](http://www.cs.rtu.lv/PharePub/Java/Tutorial/idl/hello/Default.htm) 和 [Wikipedia](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture)）：
+
+![The CORBA Arch](theCORBAArch2.gif)
 
 ![The CORBA Arch](theCORBAArch.png)
+
+IIOP 是基于 TCP/IP 的协议，各个 CORBA Provider 通过实现 ORB 来提供对 CORBA 的支持。
+
+## Java Provider
