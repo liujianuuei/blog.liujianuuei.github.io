@@ -94,7 +94,7 @@ public class SomeInterfaceImpl extends SomeInterfacePOA {
 >orbd -ORBInitialPort <port#> -ORBInitialHost <host>
 ```
 
-这样，CORBA 的整个调用过程就完成了。
+这样，CORBA 的整个调用过程就完成了。更多细节，请查看文档 [Java IDL: The "Hello World" Example](http://docs.oracle.com/javase/8/docs/technotes/guides/idl/jidlExample.html)。
 
 #### Dynamic Invocation Interface
 
