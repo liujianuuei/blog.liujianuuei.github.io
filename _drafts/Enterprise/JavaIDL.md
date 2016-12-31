@@ -88,7 +88,7 @@ public class SomeInterfaceImpl extends SomeInterfacePOA {
 }
 ```
 
-这里列出来的都是需要手动实现的代码，还有一些通过 IDL-to-Java compiler 生成的代码没有包括进来。所有这些完毕以后，先运行服务端代码，再运行客户端代码，在运行代码之前，需要先启动 ORB：
+这里列出来的都是需要手动实现的代码，还有一些通过 IDL-to-Java compiler 生成的代码没有包括进来。所有这些完毕以后，先运行服务端代码，再运行客户端代码，在运行服务端代码之前，需要先启动 ORB：
 
 ```batch
 >orbd -ORBInitialPort <port#> -ORBInitialHost <host>
