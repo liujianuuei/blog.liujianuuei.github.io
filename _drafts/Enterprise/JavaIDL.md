@@ -96,6 +96,34 @@ public class SomeInterfaceImpl extends SomeInterfacePOA {
 
 这样，CORBA 的整个调用过程就完成了。
 
+#### Dynamic Invocation Interface
+
+我们再来回顾一下上述客户端的代码，我们可以看到，其只能应用于固定接口，如果远程过程的接口变了，我们还得生成相应的 Stub，并且修改客户端代码，调用相应的变化之后的接口方法。与之相比，还有种更灵活的方式，即动态调用接口（Dynamic Invocation Interface）。
+
+修改客户端代码：
+
+```Java
+ORB orb = ORB.init(new String[] { "-ORBInitialHost", "<host>", "-ORBInitialPort", "<port#>" }, null);
+
+org.omg.CORBA.Object nameServRef = orb.resolve_initial_references("NameService");
+NamingContext namingContext = NamingContextHelper.narrow(nameServRef);
+org.omg.CORBA.Object someRef = namingContext.resolve(new NameComponent[] { new NameComponent("SomeName", "") });
+
+NVList arguments = orb.create_list(1);
+Any any = orb.create_any();
+any.insert_string("Some"); // "Some" is argument value.
+arguments.add_value("arg", any, org.omg.CORBA.ARG_IN.value); // "arg" is argument name.
+any = orb.create_any();
+any.insert_string("result");  // "result" can be any text.
+NamedValue result = orb.create_named_value("result", any, org.omg.CORBA.ARG_OUT.value); // "result" can be any text.
+Request request = someRef._create_request(null, "someMethod", arguments = null, result); // "someMethod" is method name. arguments can be null for no argument.
+request.invoke();
+
+request.result().value().extract_string(); // return "Some"
+```
+
+注意，动态调用可以完全独立运行，不需要引入 IDL-to-Java compiler 生成的 Stub 等程序。服务端代码不需任何变动，就可以搭配客户端的动态代码运行。和 [RMI](RMI.md) 类似，动态调用也是基于[动态代理](../Languages/DesignPattern/TheProxyPattern.md#动态代理)实现的。
+
 ## 最后
 
 我们可以看到，代码非常复杂且不直观，封装的很差劲，这也是为什么 CORBA 没落的原因。即便是 [RMI](RMI.md) 也比 CORBA 清晰易懂。而就 [RPC](RPC.md) 框架来说，我们还有很多选择。
