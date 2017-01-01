@@ -1,3 +1,4 @@
+```Groovy
 // plugin goes here.
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -9,3 +10,4 @@ repositories {
 dependencies {
     // dependencies go here.
 }
+```
