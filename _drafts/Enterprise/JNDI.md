@@ -48,8 +48,8 @@ Java Enterprise 一般通过如下几种方式使用 JNDI（引用自 [JavaWorld
 服务端代码：
 
 ```Java
-OracleDataSource oracleDataSource = new OracleDataSource();
-oracleDataSource.setURL("jdbc:oracle:thin:system/manager@localhost:1521:XE"); // 使用 Oracle 数据库
+OracleDataSource oracleDataSource = new OracleDataSource(); // 使用 Oracle 的 JDBC 实现，需添加相应 jar 文件。
+oracleDataSource.setURL("jdbc:oracle:thin:system/manager@localhost:1521:XE"); // 使用 Oracle 数据库。
 
 Hashtable<String, String> env = new Hashtable<>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.rmi.registry.RegistryContextFactory"); // RMI can be considered as a JNDI provider, actually RMI is a of JNDI.
