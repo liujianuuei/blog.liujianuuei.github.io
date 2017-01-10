@@ -42,28 +42,6 @@ public class SimpleJTA extends JTADemo {
     }
 
     @Override
-    protected void transactA(DataSource ds) throws SQLException {
-        Connection conn = ds.getConnection();
-
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate("insert into buyer_private_identity(id, buyer_org, supplier_org, private_id) values(buyer_private_identity_seq.nextval, 109, 110, 'jta3')"); // Can be any DML.
-        stmt.close();
-
-        conn.close();
-    }
-
-    @Override
-    protected void transactB(DataSource ds) throws SQLException {
-        Connection conn = ds.getConnection();
-
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate("INSERT INTO dept VALUES (3, 'BSD', 'LONDON')"); // SQL: create table(id int, name varchar(50), location varchar(50)); Can be any DML.
-        stmt.close();
-
-        conn.close();
-    }
-
-    @Override
     protected DataSource getDataSourceA() {
         return new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos"); // Existing user in oracle instance.
     }
