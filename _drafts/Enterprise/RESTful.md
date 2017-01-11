@@ -12,7 +12,7 @@ REST 即 **Re**presentational **S**tate **T**ransfer。如果一个架构符合 
 2. 客户端和服务器之间，**传递资源的表现**；
 3. 客户端通过四个 HTTP 动词，对服务器端资源进行操作，实现**表现层状态转化**。
 
-#### Java API for RESTful Services (JAX-RS)
+#### Java API for RESTful Web Services (JAX-RS)
 
 https://jersey.java.net/
 https://dzone.com/refcardz/rest-foundations-restful
