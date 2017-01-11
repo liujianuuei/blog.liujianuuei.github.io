@@ -1,4 +1,4 @@
-### RESTful
+# REST
 
 网站，那种用于展示静态数据的页面式网站已经是过去式了。**网站即软件**，这是 Web Application 兴起的根本所在，也是习惯于以传统软件思维方式思考的人们必须转变的思维方式。通过一个唯一的入口，而且除了这个唯一的入口不再需要客户端安装任何东西，就可以使用和传统本地安装的软件相同的功能，这就是未来。正如[理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful)一文所说：
 
@@ -12,7 +12,7 @@ REST 即 **Re**presentational **S**tate **T**ransfer。如果一个架构符合 
 2. 客户端和服务器之间，**传递资源的表现**；
 3. 客户端通过四个 HTTP 动词，对服务器端资源进行操作，实现**表现层状态转化**。
 
-#### Java API for RESTful Web Services (JAX-RS)
+## Java API for RESTful Web Services (JAX-RS)
 
 https://jersey.java.net/
 https://dzone.com/refcardz/rest-foundations-restful
