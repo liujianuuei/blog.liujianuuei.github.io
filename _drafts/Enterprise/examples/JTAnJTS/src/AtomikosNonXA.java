@@ -33,10 +33,10 @@ public class AtomikosNonXA extends JTADemo {
     protected JustDataSource getDataSourceB() {
         AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
         ds.setUniqueResourceName("derbydb");
-        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;");
+        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;"); // Derby DB
         ds.setDriverClassName("org.apache.derby.jdbc.EmbeddedDriver");
-        ds.setUser("app");
-        ds.setPassword("app");
+        ds.setUser("app"); // default user
+        ds.setPassword("app"); // default password
         ds.setPoolSize(1);
         return new JustDataSource(ds);
     }

@@ -42,12 +42,12 @@ public class SimpleJTA extends JTADemo {
 
     @Override
     protected JustDataSource getDataSourceA() {
-        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos")); // Existing user in oracle instance.
+        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos"));
     }
 
     @Override
     protected JustDataSource getDataSourceB() {
-        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // app is default user.
+        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // Derby DB, app/aap is default user/password.
     }
 
     public void shutdown() {

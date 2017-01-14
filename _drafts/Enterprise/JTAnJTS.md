@@ -96,7 +96,6 @@ public abstract class JTADemo {
 ### [SimpleJTA - A Simple Java Transaction Manager](http://simplejta.sourceforge.net/)
 
 ```Java
-
 import java.util.Properties;
 
 import javax.transaction.SystemException;
@@ -140,12 +139,12 @@ public class SimpleJTA extends JTADemo {
 
     @Override
     protected JustDataSource getDataSourceA() {
-        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos")); // Existing user in oracle instance.
+        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos"));
     }
 
     @Override
     protected JustDataSource getDataSourceB() {
-        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // app is default user.
+        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // Derby DB, app/aap is default user/password.
     }
 
     public void shutdown() {
@@ -220,9 +219,9 @@ public class JOTM extends JTADemo {
     protected JustDataSource getDataSourceB() throws SQLException {
         XADataSource xads = new StandardXADataSource();
         ((StandardXADataSource) xads).setDriverName("org.apache.derby.jdbc.EmbeddedDriver");
-        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
-        ((StandardXADataSource) xads).setUser("app");
-        ((StandardXADataSource) xads).setPassword("app");
+        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb"); // Derby DB
+        ((StandardXADataSource) xads).setUser("app"); // default user
+        ((StandardXADataSource) xads).setPassword("app"); // default password
         ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
         return new JustDataSource(xads);
     }
@@ -291,10 +290,10 @@ public class AtomikosNonXA extends JTADemo {
     protected JustDataSource getDataSourceB() {
         AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
         ds.setUniqueResourceName("derbydb");
-        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;");
+        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;"); // Derby DB
         ds.setDriverClassName("org.apache.derby.jdbc.EmbeddedDriver");
-        ds.setUser("app");
-        ds.setPassword("app");
+        ds.setUser("app"); // default user
+        ds.setPassword("app"); // default password
         ds.setPoolSize(1);
         return new JustDataSource(ds);
     }
@@ -346,10 +345,10 @@ public class Atomikos extends JTADemo {
         dataSource.setUniqueResourceName("derbydb");
         dataSource.setXaDataSourceClassName("org.apache.derby.jdbc.EmbeddedXADataSource");
         Properties props = new Properties();
-        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb"); // Derby DB
         //props.put("createDatabase", "create");
-        props.setProperty("user", "app");
-        props.setProperty("password", "app");
+        props.setProperty("user", "app"); // default user
+        props.setProperty("password", "app"); // default password
         dataSource.setXaProperties(props);
         dataSource.setPoolSize(1);
         return new JustDataSource(dataSource);

@@ -39,10 +39,10 @@ public class Atomikos extends JTADemo {
         dataSource.setUniqueResourceName("derbydb");
         dataSource.setXaDataSourceClassName("org.apache.derby.jdbc.EmbeddedXADataSource");
         Properties props = new Properties();
-        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb"); // Derby DB
         //props.put("createDatabase", "create");
-        props.setProperty("user", "app");
-        props.setProperty("password", "app");
+        props.setProperty("user", "app"); // default user
+        props.setProperty("password", "app"); // default password
         dataSource.setXaProperties(props);
         dataSource.setPoolSize(1);
         return new JustDataSource(dataSource);

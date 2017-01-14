@@ -45,9 +45,9 @@ public class JOTM extends JTADemo {
     protected JustDataSource getDataSourceB() throws SQLException {
         XADataSource xads = new StandardXADataSource();
         ((StandardXADataSource) xads).setDriverName("org.apache.derby.jdbc.EmbeddedDriver");
-        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
-        ((StandardXADataSource) xads).setUser("app");
-        ((StandardXADataSource) xads).setPassword("app");
+        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb"); // Derby DB
+        ((StandardXADataSource) xads).setUser("app"); // default user
+        ((StandardXADataSource) xads).setPassword("app"); // default password
         ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
         return new JustDataSource(xads);
     }
