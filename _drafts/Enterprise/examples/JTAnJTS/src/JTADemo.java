@@ -2,7 +2,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.sql.DataSource;
 import javax.transaction.UserTransaction;
 
 public abstract class JTADemo {
@@ -23,7 +22,7 @@ public abstract class JTADemo {
         }
     }
 
-    protected void transactA(DataSource ds) throws SQLException {
+    protected void transactA(JustDataSource ds) throws SQLException {
         Connection conn = ds.getConnection();
 
         Statement stmt = conn.createStatement();
@@ -33,11 +32,11 @@ public abstract class JTADemo {
         conn.close();
     }
 
-    protected void transactB(DataSource ds) throws SQLException {
+    protected void transactB(JustDataSource ds) throws SQLException {
         Connection conn = ds.getConnection();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("INSERT INTO dept VALUES (3, 'BSD', 'LONDON')"); // SQL: create table(id int, name varchar(50), location varchar(50)); Can be any DML.
+        stmt.executeUpdate("INSERT INTO dept VALUES (7, 'CMO', 'LONDON')"); // SQL: create table dept(id int, name varchar(50), location varchar(50)); Can be any DML.
         stmt.close();
 
         conn.close();
@@ -45,8 +44,8 @@ public abstract class JTADemo {
 
     protected abstract UserTransaction getUserTransaction() throws Exception;
 
-    protected abstract DataSource getDataSourceA();
+    protected abstract JustDataSource getDataSourceA() throws SQLException;
 
-    protected abstract DataSource getDataSourceB();
+    protected abstract JustDataSource getDataSourceB() throws SQLException;
 
 }

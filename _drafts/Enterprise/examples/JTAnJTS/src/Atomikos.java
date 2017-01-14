@@ -1,6 +1,5 @@
 import java.util.Properties;
 
-import javax.sql.DataSource;
 import javax.transaction.UserTransaction;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
@@ -21,30 +20,32 @@ public class Atomikos extends JTADemo {
     }
 
     @Override
-    protected DataSource getDataSourceA() {
-        AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
-        ds.setUniqueResourceName("oracledb");
-        ds.setXaDataSourceClassName("oracle.jdbc.xa.client.OracleXADataSource");
+    protected JustDataSource getDataSourceA() {
+        AtomikosDataSourceBean dataSource = new AtomikosDataSourceBean();
+        dataSource.setUniqueResourceName("oracledb");
+        dataSource.setXaDataSourceClassName("oracle.jdbc.xa.client.OracleXADataSource");
         Properties props = new Properties();
+        props.setProperty("URL", "jdbc:oracle:thin:@localhost:1521:XE");
         props.setProperty("user", "tbeos");
         props.setProperty("password", "tbeos");
-        props.setProperty("URL", "jdbc:oracle:thin:@localhost:1521:XE");
-        ds.setXaProperties(props);
-        ds.setPoolSize(5);
-        return ds;
+        dataSource.setXaProperties(props);
+        dataSource.setPoolSize(1);
+        return new JustDataSource(dataSource);
     }
 
     @Override
-    protected DataSource getDataSourceB() {
-        AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
-        ds.setXaDataSourceClassName("org.apache.derby.jdbc.EmbeddedXADataSource");
+    protected JustDataSource getDataSourceB() {
+        AtomikosDataSourceBean dataSource = new AtomikosDataSourceBean();
+        dataSource.setUniqueResourceName("derbydb");
+        dataSource.setXaDataSourceClassName("org.apache.derby.jdbc.EmbeddedXADataSource");
         Properties props = new Properties();
-        props.put("databaseName", "derbydb");
-        props.put("createDatabase", "create");
-        ds.setXaProperties(props);
-        ds.setUniqueResourceName("derbydb");
-        ds.setPoolSize(10);
-        return ds;
+        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        //props.put("createDatabase", "create");
+        props.setProperty("user", "app");
+        props.setProperty("password", "app");
+        dataSource.setXaProperties(props);
+        dataSource.setPoolSize(1);
+        return new JustDataSource(dataSource);
     }
 
 }

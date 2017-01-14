@@ -1,4 +1,3 @@
-import javax.sql.DataSource;
 import javax.transaction.UserTransaction;
 
 import com.atomikos.icatch.jta.UserTransactionImp;
@@ -19,23 +18,27 @@ public class AtomikosNonXA extends JTADemo {
     }
 
     @Override
-    protected DataSource getDataSourceA() {
+    protected JustDataSource getDataSourceA() {
         AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
-        ds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-        ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         ds.setUniqueResourceName("oracledb");
+        ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        ds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+        ds.setUser("tbeos");
+        ds.setPassword("tbeos");
         ds.setPoolSize(1);
-        return ds;
+        return new JustDataSource(ds);
     }
 
     @Override
-    protected DataSource getDataSourceB() {
+    protected JustDataSource getDataSourceB() {
         AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
-        ds.setUrl("jdbc:derby:db;create=true");
-        ds.setDriverClassName("org.apache.derby.jdbc.EmbeddedDriver");
         ds.setUniqueResourceName("derbydb");
+        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;");
+        ds.setDriverClassName("org.apache.derby.jdbc.EmbeddedDriver");
+        ds.setUser("app");
+        ds.setPassword("app");
         ds.setPoolSize(1);
-        return ds;
+        return new JustDataSource(ds);
     }
 
 }

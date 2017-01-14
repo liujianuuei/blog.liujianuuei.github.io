@@ -1,10 +1,6 @@
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Properties;
 
-import javax.sql.DataSource;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
@@ -21,8 +17,11 @@ public class SimpleJTA extends JTADemo {
 
     public static void main(String[] args) throws Exception {
         SimpleJTA simpleJTA = new SimpleJTA();
-        simpleJTA.demoJTA();
-        simpleJTA.shutdown();
+        try {
+            simpleJTA.demoJTA();
+        } finally {
+            simpleJTA.shutdown();
+        }
     }
 
     @Override
@@ -42,13 +41,13 @@ public class SimpleJTA extends JTADemo {
     }
 
     @Override
-    protected DataSource getDataSourceA() {
-        return new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos"); // Existing user in oracle instance.
+    protected JustDataSource getDataSourceA() {
+        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos")); // Existing user in oracle instance.
     }
 
     @Override
-    protected DataSource getDataSourceB() {
-        return new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app"); // app is default user.
+    protected JustDataSource getDataSourceB() {
+        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // app is default user.
     }
 
     public void shutdown() {

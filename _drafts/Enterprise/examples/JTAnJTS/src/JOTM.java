@@ -1,8 +1,6 @@
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.naming.NamingException;
-import javax.sql.XAConnection;
 import javax.sql.XADataSource;
 import javax.transaction.UserTransaction;
 
@@ -12,39 +10,52 @@ import org.objectweb.transaction.jta.TMService;
 
 public class JOTM extends JTADemo {
 
-	private TMService jotm;
+    private TMService serv;
 
-	public JOTM() throws NamingException {
-		jotm = new Jotm(true, false);
-	}
+    public JOTM() throws NamingException {
+        serv = new Jotm(true, false);
+    }
 
-	public static void main(String[] args) throws Exception {
-		new JOTM().demoJTA();
-	}
+    public static void main(String[] args) throws Exception {
+        JOTM jotm = new JOTM();
+        try {
+            jotm.demoJTA();
+        } finally {
+            jotm.shutdown();
+        }
+    }
 
-	@Override
-	protected UserTransaction getUserTransaction() throws Exception {
-		return jotm.getUserTransaction();
-	}
+    @Override
+    protected UserTransaction getUserTransaction() throws Exception {
+        return serv.getUserTransaction();
+    }
 
-	@Override
-	protected Connection getConnectionA() throws SQLException {
-		XADataSource xads = new StandardXADataSource();
-		((StandardXADataSource) xads).setDriverName("oracle.jdbc.driver.OracleDriver");
-		((StandardXADataSource) xads).setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-		((StandardXADataSource) xads).setTransactionManager(jotm.getTransactionManager());
-		XAConnection xaconn = xads.getXAConnection("tbeos", "tbeos");
-		return xaconn.getConnection();
-	}
+    @Override
+    protected JustDataSource getDataSourceA() throws SQLException {
+        XADataSource xads = new StandardXADataSource();
+        ((StandardXADataSource) xads).setDriverName("oracle.jdbc.driver.OracleDriver");
+        ((StandardXADataSource) xads).setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+        ((StandardXADataSource) xads).setUser("tbeos");
+        ((StandardXADataSource) xads).setPassword("tbeos");
+        ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
+        return new JustDataSource(xads);
+    }
 
-	@Override
-	protected Connection getConnectionB() throws SQLException {
-		XADataSource xads = new StandardXADataSource();
-		((StandardXADataSource) xads).setDriverName("oracle.jdbc.driver.OracleDriver");
-		((StandardXADataSource) xads).setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-		((StandardXADataSource) xads).setTransactionManager(jotm.getTransactionManager());
-		XAConnection xaconn = xads.getXAConnection("tbeos", "tbeos");
-		return xaconn.getConnection();
-	}
+    @Override
+    protected JustDataSource getDataSourceB() throws SQLException {
+        XADataSource xads = new StandardXADataSource();
+        ((StandardXADataSource) xads).setDriverName("org.apache.derby.jdbc.EmbeddedDriver");
+        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        ((StandardXADataSource) xads).setUser("app");
+        ((StandardXADataSource) xads).setPassword("app");
+        ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
+        return new JustDataSource(xads);
+    }
+
+    public void shutdown() {
+        if (serv != null) {
+            serv.stop();
+        }
+    }
 
 }
