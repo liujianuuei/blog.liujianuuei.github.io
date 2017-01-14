@@ -36,7 +36,7 @@ public abstract class JTADemo {
         Connection conn = ds.getConnection();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("INSERT INTO dept VALUES (7, 'CMO', 'LONDON')"); // SQL: create table dept(id int, name varchar(50), location varchar(50)); Can be any DML.
+        stmt.executeUpdate("INSERT INTO dept VALUES (7, 'CMO', 'LONDON')"); // DDL: create table dept(id int, name varchar(50), location varchar(50)); Can be any DML.
         stmt.close();
 
         conn.close();

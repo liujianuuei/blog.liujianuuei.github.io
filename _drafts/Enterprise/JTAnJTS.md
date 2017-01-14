@@ -6,7 +6,7 @@
 
 ## 什么是分布式事务
 
-对于只操作单一数据源的应用，可以通过本地数据源接口（比如[数据库的事务](SQL.md#事务)）实现事务管理；对于跨数据源的应用，则必须使用分布式事务（Distributed Transaction）服务以保证用户操作的事务性，即所有事务源位于一个全局事务之内。分布式事务的核心是**多个异构本地事务源的协调和控制**。
+对于只操作单一数据源的应用，可以通过本地数据源接口（比如[数据库的事务](SQL.md#事务)）实现事务管理；对于跨数据源的应用，则必须使用分布式事务（Distributed Transaction）服务以保证用户操作的事务性，即所有事务源位于一个全局事务之内。分布式事务的核心是**多个异构本地事务源的协调和控制**。分布式事务也叫全局事务。
 
 ## JTA
 
@@ -37,9 +37,10 @@ try {
 在此之前，我们先对上述编程模型做部分加工：
 
 ```Java
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-import javax.sql.DataSource;
 import javax.transaction.UserTransaction;
 
 public abstract class JTADemo {
@@ -60,33 +61,44 @@ public abstract class JTADemo {
         }
     }
 
+    protected void transactA(JustDataSource ds) throws SQLException {
+        Connection conn = ds.getConnection();
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate("insert into buyer_private_identity(id, buyer_org, supplier_org, private_id) values(buyer_private_identity_seq.nextval, 109, 110, 'jta3')"); // Can be any DML.
+        stmt.close();
+
+        conn.close();
+    }
+
+    protected void transactB(JustDataSource ds) throws SQLException {
+        Connection conn = ds.getConnection();
+
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate("INSERT INTO dept VALUES (7, 'CMO', 'LONDON')"); // DDL: create table dept(id int, name varchar(50), location varchar(50)); Can be any DML.
+        stmt.close();
+
+        conn.close();
+    }
+
     protected abstract UserTransaction getUserTransaction() throws Exception;
 
-    protected abstract void transactA(DataSource ds) throws SQLException;
+    protected abstract JustDataSource getDataSourceA() throws SQLException;
 
-    protected abstract void transactB(DataSource ds) throws SQLException;
-
-    protected abstract DataSource getDataSourceA();
-
-    protected abstract DataSource getDataSourceB();
+    protected abstract JustDataSource getDataSourceB() throws SQLException;
 
 }
 ```
-可以看到，代码核心部分我们并没有任何变动，只是使其更像是程序。接下来的例子，都是基于该抽象类完成。所有例子都需要 `javax.transaction` 包，也就是 JTA 的支持。另外，我们用 Gradle 语法来表示第三方依赖。
+可以看到，代码核心部分我们并没有变动。接下来的例子，都是基于该抽象类完成。所有例子都需要 `javax.transaction` 包，也就是 JTA 的支持。另外，我们用 Gradle 来管理第三方依赖。
 
-完整的工程可以在
+完整的工程可以在 [JTAnJTS](examples/JTAnJTS) 可以找到。
 
 ### [SimpleJTA - A Simple Java Transaction Manager](http://simplejta.sourceforge.net/)
 
 ```Java
-package me.jta.test;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Properties;
 
-import javax.sql.DataSource;
 import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
@@ -103,8 +115,11 @@ public class SimpleJTA extends JTADemo {
 
     public static void main(String[] args) throws Exception {
         SimpleJTA simpleJTA = new SimpleJTA();
-        simpleJTA.demoJTA();
-        simpleJTA.shutdown();
+        try {
+            simpleJTA.demoJTA();
+        } finally {
+            simpleJTA.shutdown();
+        }
     }
 
     @Override
@@ -124,35 +139,13 @@ public class SimpleJTA extends JTADemo {
     }
 
     @Override
-    protected void transactA(DataSource ds) throws SQLException {
-        Connection conn = ds.getConnection();
-
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate("insert into buyer_private_identity(id, buyer_org, supplier_org, private_id) values(buyer_private_identity_seq.nextval, 109, 110, 'jta')"); // Can be any DML.
-        stmt.close();
-
-        conn.close();
+    protected JustDataSource getDataSourceA() {
+        return new JustDataSource(new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos")); // Existing user in oracle instance.
     }
 
     @Override
-    protected void transactB(DataSource ds) throws SQLException {
-        Connection conn = ds.getConnection();
-
-        Statement stmt = conn.createStatement();
-        stmt.executeUpdate("INSERT INTO dept VALUES (1, 'BSD', 'LONDON')"); // SQL: create table(id int, name varchar(50), location varchar(50)); Can be any DML.
-        stmt.close();
-
-        conn.close();
-    }
-
-    @Override
-    protected DataSource getDataSourceA() {
-        return new SimpleOracleXADataSource("TMGR.1", "jdbc:oracle:thin:@localhost:1521:XE", "tbeos", "tbeos"); // Existing user in oracle instance. You should have oracle instance in advance.
-    }
-
-    @Override
-    protected DataSource getDataSourceB() {
-        return new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app"); // app is default user.
+    protected JustDataSource getDataSourceB() {
+        return new JustDataSource(new SimpleDerbyXADataSource("TMGR.1", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb", "app", "app")); // app is default user.
     }
 
     public void shutdown() {
@@ -177,6 +170,210 @@ dependencies {
 }
 ```
 
-### JOTM - Java Open Transaction Manager
+### [JOTM - Java Open Transaction Manager](http://jotm.ow2.org/)
 
-### Atomikos TransactionsEssentials
+```Java
+import java.sql.SQLException;
+
+import javax.naming.NamingException;
+import javax.sql.XADataSource;
+import javax.transaction.UserTransaction;
+
+import org.enhydra.jdbc.standard.StandardXADataSource;
+import org.objectweb.jotm.Jotm;
+import org.objectweb.transaction.jta.TMService;
+
+public class JOTM extends JTADemo {
+
+    private TMService serv;
+
+    public JOTM() throws NamingException {
+        serv = new Jotm(true, false);
+    }
+
+    public static void main(String[] args) throws Exception {
+        JOTM jotm = new JOTM();
+        try {
+            jotm.demoJTA();
+        } finally {
+            jotm.shutdown();
+        }
+    }
+
+    @Override
+    protected UserTransaction getUserTransaction() throws Exception {
+        return serv.getUserTransaction();
+    }
+
+    @Override
+    protected JustDataSource getDataSourceA() throws SQLException {
+        XADataSource xads = new StandardXADataSource();
+        ((StandardXADataSource) xads).setDriverName("oracle.jdbc.driver.OracleDriver");
+        ((StandardXADataSource) xads).setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+        ((StandardXADataSource) xads).setUser("tbeos");
+        ((StandardXADataSource) xads).setPassword("tbeos");
+        ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
+        return new JustDataSource(xads);
+    }
+
+    @Override
+    protected JustDataSource getDataSourceB() throws SQLException {
+        XADataSource xads = new StandardXADataSource();
+        ((StandardXADataSource) xads).setDriverName("org.apache.derby.jdbc.EmbeddedDriver");
+        ((StandardXADataSource) xads).setUrl("C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        ((StandardXADataSource) xads).setUser("app");
+        ((StandardXADataSource) xads).setPassword("app");
+        ((StandardXADataSource) xads).setTransactionManager(serv.getTransactionManager());
+        return new JustDataSource(xads);
+    }
+
+    public void shutdown() {
+        if (serv != null) {
+            serv.stop();
+        }
+    }
+
+}
+```
+
+依赖：
+
+```Gradle
+dependencies {
+    compile group: 'javax.transaction', name: 'jta', version: '1.1'
+    // JOTM
+    compile fileTree(dir:'JOTM/ow2-jotm-dist-2.1.9/lib',include:['*.jar'])
+
+    compile group: 'org.apache.derby', name: 'derby', version: '10.13.1.1'
+    compile group: 'com.oracle', name: 'ojdbc6', version: '11.2.0.4.0-atlassian-hosted'
+}
+```
+
+### [Atomikos TransactionsEssentials](https://www.atomikos.com/Main/TransactionsEssentials)
+
+Atomikos TransactionsEssentials 支持两种事务源：XA 和 非 XA。
+
+非 XA：
+
+```Java
+import javax.transaction.UserTransaction;
+
+import com.atomikos.icatch.jta.UserTransactionImp;
+import com.atomikos.jdbc.nonxa.AtomikosNonXADataSourceBean;
+
+/*
+ * read more: https://www.atomikos.com/Documentation/NonXaDataSource
+ */
+public class AtomikosNonXA extends JTADemo {
+
+    public static void main(String[] args) throws Exception {
+        new AtomikosNonXA().demoJTA();
+    }
+
+    @Override
+    protected UserTransaction getUserTransaction() throws Exception {
+        return new UserTransactionImp();
+    }
+
+    @Override
+    protected JustDataSource getDataSourceA() {
+        AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
+        ds.setUniqueResourceName("oracledb");
+        ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        ds.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+        ds.setUser("tbeos");
+        ds.setPassword("tbeos");
+        ds.setPoolSize(1);
+        return new JustDataSource(ds);
+    }
+
+    @Override
+    protected JustDataSource getDataSourceB() {
+        AtomikosNonXADataSourceBean ds = new AtomikosNonXADataSourceBean();
+        ds.setUniqueResourceName("derbydb");
+        ds.setUrl("jdbc:derby:C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb;");
+        ds.setDriverClassName("org.apache.derby.jdbc.EmbeddedDriver");
+        ds.setUser("app");
+        ds.setPassword("app");
+        ds.setPoolSize(1);
+        return new JustDataSource(ds);
+    }
+
+}
+```
+
+XA：
+
+```Java
+import java.util.Properties;
+
+import javax.transaction.UserTransaction;
+
+import com.atomikos.icatch.jta.UserTransactionImp;
+import com.atomikos.jdbc.AtomikosDataSourceBean;
+
+/*
+ * read more: https://www.atomikos.com/Documentation/ConfiguringJdbc#XA_and_non_45XA_transactions
+ */
+public class Atomikos extends JTADemo {
+
+    public static void main(String[] args) throws Exception {
+        new Atomikos().demoJTA();
+    }
+
+    @Override
+    protected UserTransaction getUserTransaction() throws Exception {
+        return new UserTransactionImp();
+    }
+
+    @Override
+    protected JustDataSource getDataSourceA() {
+        AtomikosDataSourceBean dataSource = new AtomikosDataSourceBean();
+        dataSource.setUniqueResourceName("oracledb");
+        dataSource.setXaDataSourceClassName("oracle.jdbc.xa.client.OracleXADataSource");
+        Properties props = new Properties();
+        props.setProperty("URL", "jdbc:oracle:thin:@localhost:1521:XE");
+        props.setProperty("user", "tbeos");
+        props.setProperty("password", "tbeos");
+        dataSource.setXaProperties(props);
+        dataSource.setPoolSize(1);
+        return new JustDataSource(dataSource);
+    }
+
+    @Override
+    protected JustDataSource getDataSourceB() {
+        AtomikosDataSourceBean dataSource = new AtomikosDataSourceBean();
+        dataSource.setUniqueResourceName("derbydb");
+        dataSource.setXaDataSourceClassName("org.apache.derby.jdbc.EmbeddedXADataSource");
+        Properties props = new Properties();
+        props.put("databaseName", "C:/SAP/Programs/db-derby-10.13.1.1-bin/db/simplejtadb");
+        //props.put("createDatabase", "create");
+        props.setProperty("user", "app");
+        props.setProperty("password", "app");
+        dataSource.setXaProperties(props);
+        dataSource.setPoolSize(1);
+        return new JustDataSource(dataSource);
+    }
+
+}
+```
+
+依赖：
+
+```Gradle
+dependencies {
+    compile group: 'javax.transaction', name: 'jta', version: '1.1'
+    // Atomikos
+    compile group: 'com.atomikos', name: 'transactions-jdbc', version: '4.0.4'
+    compile group: 'com.atomikos', name: 'transactions-jms', version: '4.0.4'
+
+    compile group: 'org.apache.derby', name: 'derby', version: '10.13.1.1'
+    compile group: 'com.oracle', name: 'ojdbc6', version: '11.2.0.4.0-atlassian-hosted'
+}
+```
+
+## 最后
+
+分布式事务的编写涉及很多方面，除了逻辑还有容错等，上述例子只是最简单的对分布式事务的示意。
+
+就这样。
