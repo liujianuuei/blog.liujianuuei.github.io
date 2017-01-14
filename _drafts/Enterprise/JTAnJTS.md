@@ -89,9 +89,9 @@ public abstract class JTADemo {
 
 }
 ```
-可以看到，代码核心部分我们并没有变动。接下来的例子，都是基于该抽象类完成。所有例子都需要 `javax.transaction` 包，也就是 JTA 的支持。另外，我们用 Gradle 来管理第三方依赖。
+可以看到，代码核心部分我们并没有变动。接下来的例子，都是基于该抽象类完成。所有例子都需要 `javax.transaction` 包，也就是 JTA 的支持。示例中用到的数据库实例，需提前构建好，并创建相应的表结构。另外，我们用 Gradle 来管理第三方依赖。
 
-完整的工程可以在 [JTAnJTS](examples/JTAnJTS) 可以找到。
+完整的工程可以在[这里](examples/JTAnJTS)找到。
 
 ### [SimpleJTA - A Simple Java Transaction Manager](http://simplejta.sourceforge.net/)
 
