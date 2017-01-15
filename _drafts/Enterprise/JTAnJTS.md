@@ -250,7 +250,7 @@ dependencies {
 
 ### [Atomikos TransactionsEssentials](https://www.atomikos.com/Main/TransactionsEssentials)
 
-Atomikos TransactionsEssentials 支持两种事务源：XA 和 非 XA。
+Atomikos TransactionsEssentials 支持 XA 和 非 XA 两种模型。
 
 非 XA：
 
