@@ -367,7 +367,7 @@ DELETE FROM <table_name> [WHERE <condition>];
 **merge**
 
 ```SQL
-MERGE INTO <table_name> USING <table_name|view_name|sub_query> ON <join_condition>
+MERGE INTO <table|view> USING <table|view|subquery> ON (<condition>)
 WHEN MATCHED THEN
     <UPDATE_clause>
 WHEN NOT MATCHED THEN
