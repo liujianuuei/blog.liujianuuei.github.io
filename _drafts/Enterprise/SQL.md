@@ -339,7 +339,7 @@ SELECT TO_DATE('2016-06-21 16:49:00','yyyy-mm-dd hh24:mi:ss') FROM DUAL;
 
 ### DML
 
-DML 包括 INSERT，UPDATE，DELETE 语句。
+DML 包括 INSERT，UPDATE，DELETE 以及 MERGE 等语句。
 
 ```SQL
 INSERT INTO TABLE <table_name> [(<column_name>[, ...])] VALUES (<value>[, ...]);
@@ -356,6 +356,14 @@ UPDATE TABLE <table_name> set (<column_name>[, <column_name>]) = (<value>[, <val
 
 ```SQL
 DELETE FROM <table_name> [WHERE <condition>];
+```
+
+```SQL
+MERGE INTO <table_name> USING <table_name|view_name|sub_query> ON <join_condition>
+WHEN MATCHED THEN
+    <UPDATE_clause>
+WHEN NOT MATCHED THEN
+    <INSERT_clause>
 ```
 
 ### DDL
