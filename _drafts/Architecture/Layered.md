@@ -113,3 +113,12 @@ HTTP Post 的请求应是严格定义的数据格式，比如 XML（比如 Ariba
 后台程序类似于后台独立作业，也是独立在后台运行完成具有独立性的工作，但一般用于更高级别的任务，比如数据同步等。
 
 后台程序是一个独立的线程。
+
+// TODO This subject should be revised to an article later.
+参考:
+软件架构模式(Layered Arch)
+SAP 白皮书
+Chris Richardson
+知乎·程序人生
+题图：
+https://pixabay.com/go/?t=list-shutterstock&id=405078397
