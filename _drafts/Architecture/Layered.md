@@ -114,11 +114,15 @@ HTTP Post 的请求应是严格定义的数据格式，比如 XML（比如 Ariba
 
 后台程序是一个独立的线程。
 
-// TODO This subject should be revised to an article later.
+## TODO
+
+This subject should be revised to an article later.
+
 参考:
-软件架构模式(Layered Arch)
-SAP 白皮书
-Chris Richardson
-知乎·程序人生
-题图：
-https://pixabay.com/go/?t=list-shutterstock&id=405078397
+- Software Architecture Patterns (Layered Arch)
+- SAP Architecture Bluebook - Ariba Cloud
+- Chris Richardson
+- 陈天：微信·程序人生，知乎·迷思 | Evernote: 系统开发之设计模式，软件设计杂谈 - 迷思 - 知乎专栏
+
+题图：https://pixabay.com/go/?t=list-shutterstock&id=405078397
+
