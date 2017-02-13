@@ -14,7 +14,7 @@
  1. can we map an object to a single table, a subset of a table, or to more than one table (ﬂatten attributes)?
  2. can we map an instance variable to a derived column, such as “price * discount” or “salary * 12”?
  3. how to map an object inheritance hierarchy to database tables?
- 4. how to map table primary and foreign keys to objects, ie, relationship mapping?
+ 4. how to map table primary and foreign keys to objects, ie, relationship mapping? whether or not to manage **reciprocal relationships**, in which the destination entity of a relationship has a back reference to the source？
  5. how to map n:n? do we need to map the intermediate join table (also known as a correlation table)?
  6. how does the data type map between database and object look like?
 2. [database -> object] How to maintain that a row in the database be associated with only one object in a given context in application? Test this!
