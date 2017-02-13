@@ -8,15 +8,15 @@
 
 ## ORM
 
-ORM:
+一个 ORM 框架需要解决以下问题，我们可以用下面的问题审视任何一个 ORM 框架：
 
 1. [database <-> object]:
- a. can we map an object to a single table, a subset of a table, or to more than one table (ﬂatten attributes)?
- b. can we map an instance variable to a derived column, such as “price * discount” or “salary * 12”?
- c. how to map an object inheritance hierarchy to database tables?
- d. how to map table primary and foreign keys to objects, ie, relationship mapping?
- e. how to map n:n? do we need to map the intermediate join table (also known as a correlation table)?
- f. how does the data type map between database and object look like?
+ 1. can we map an object to a single table, a subset of a table, or to more than one table (ﬂatten attributes)?
+ 2. can we map an instance variable to a derived column, such as “price * discount” or “salary * 12”?
+ 3. how to map an object inheritance hierarchy to database tables?
+ 4. how to map table primary and foreign keys to objects, ie, relationship mapping?
+ 5. how to map n:n? do we need to map the intermediate join table (also known as a correlation table)?
+ 6. how does the data type map between database and object look like?
 2. [database -> object] How to maintain that a row in the database be associated with only one object in a given context in application? Test this!
 3. [database -> object] What is the strategy of resolution of relationships? Is prefetching relationships allowed?
 4. [object -> datasbse] Is there a mechanisms for ensuring that the integrity of data is maintained between application and the database?
