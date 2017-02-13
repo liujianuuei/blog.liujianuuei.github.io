@@ -738,3 +738,12 @@ EXECUTE IMMEDIATE 'Dynamic SQL';
 | DDL | N | N |
 | DCL | N | N |
 | TCL | Y | Y |
+
+### Entity Relationship Model
+
+1. 外键引用总是在 n:1 的另一方，即 n 所代表的表；
+2. n:n 需要第三张表来表示；
+3. n:1 的 1 是 source，n 是 destination；
+4. 一般而言，n:1 的 1 owns n。
+
+![Entity Relationship Model](theEntityRelationshipModel.jpg)
