@@ -741,9 +741,9 @@ EXECUTE IMMEDIATE 'Dynamic SQL';
 
 ### 实体关系模型（Entity Relationship Model）
 
-1. n:1 的 n 是主表，1 是外表，即被应用表，n 包含 1 的主键；
+1. n:1 的 n 是主表，1 是外表，即被引用表，n 包含 1 的主键；
 2. n:n 需要第三张表来表示；
-3. n:1 的 1 是 source，n 是 destination；
+3. n:1 的 n 是 source，1 是 destination；
 4. 一般而言，n:1 的 1 owns n。
 
 ![Entity Relationship Model](theEntityRelationshipModel.jpg)
