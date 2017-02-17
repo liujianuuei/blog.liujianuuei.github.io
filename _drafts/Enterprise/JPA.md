@@ -15,7 +15,7 @@
  2. can we map an instance variable to a derived column, such as “price * discount” or “salary * 12”?
  3. how to map an object inheritance hierarchy to database tables?
  4. how to map table primary and foreign keys to objects, ie, relationship mapping? who should be source while who should be destination? do we need to manage **reciprocal relationships**, in which the destination entity of a relationship has a back reference to the source？
- 5. how to map n:n? do we need to map the intermediate join table (also known as a correlation table)?
+ 5. how to map n:n? do we have to map the intermediate join table (also known as a correlation table)? EOF allow hide the correlation tables.
  6. how does the data types mapping between database and objects look like (RTF text, image data, and your own custom data types)?
 2. [database -> object] How to maintain that a row in the database be associated with only one object in a given context in application? (Your enterprise objects shouldn’t override the equals method. This is because EOF relies on the default implementation to check instance equality rather than value equality.) Test this!
 3. [database -> object] What is the strategy of resolution of relationships? Is prefetching relationships allowed?
