@@ -17,7 +17,7 @@
  4. how to map table primary and foreign keys to objects, ie, relationship mapping? who should be source while who should be destination? do we need to manage **reciprocal relationships**, in which the destination entity of a relationship has a back reference to the source？
  5. how to map n:n? do we need to map the intermediate join table (also known as a correlation table)?
  6. how does the data type map between database and object look like?
-2. [database -> object] How to maintain that a row in the database be associated with only one object in a given context in application? Test this!
+2. [database -> object] How to maintain that a row in the database be associated with only one object in a given context in application? (Your enterprise objects shouldn’t override the equals method. This is because EOF relies on the default implementation to check instance equality rather than value equality.) Test this!
 3. [database -> object] What is the strategy of resolution of relationships? Is prefetching relationships allowed?
 4. [object -> datasbse] Is there a mechanisms for ensuring that the integrity of data is maintained between application and the database?
  - Validation: validateForSave, validateForDelete, validateForInsert, validateForUpdate, validateValueForKey, validateXXX, which shoulld be automatically invoked before assigning value to property and saving anything to the database. But in most cases, this validation mechanism is not useful as validation always happens on UI and document parsing moment. This also raises a question what is a good validation mechanism? How to avoid duplicate validation?
