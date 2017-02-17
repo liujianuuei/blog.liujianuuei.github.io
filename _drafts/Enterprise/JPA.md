@@ -24,10 +24,11 @@
  - Referential integrity enforcement: If can specify whether a to-one relationship is optional or mandatory? If can specify delete rules(cascade, nullify, deny) for relationships?
  - Automatic primary and foreign key generation
  - Transaction management & Locking: Pessimistic, Optimistic, On-Demand. - Test this!
-5. Is manipulation to raw object thru key-value model allowed: valueForKey, takeValueForKey? I think this should be forbidden.
-6. How to apply a filter (e.g. multi-table queries)?
-7. How to execute store procedure and function?
-8. How to run raw sql?
+5. [object -> datasbse] Is there a mechanisms for setting defaults for new objects?
+6. Is manipulation to raw object thru key-value model allowed: valueForKey, takeValueForKey? I think this should be forbidden.
+7. How to apply a filter (e.g. multi-table queries)?
+8. How to execute store procedure and function?
+9. How to run raw sql?
 
 ## JPA
 
