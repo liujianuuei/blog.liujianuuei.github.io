@@ -29,7 +29,8 @@
 7. How to apply a filter (e.g. multi-table queries)?
 8. How to execute store procedure and function?
 9. How to run raw sql?
-10. Is cross-database supportted, e.g. make different models for each database, and then you can create relationships from an entity in one database to an entity in another? Is a two-phase commit implemented?
+10. How it manages database connections and how we can customize the process, e.g. limit the number of connections?
+11. Is cross-database supportted, e.g. make different models for each database, and then you can create relationships from an entity in one database to an entity in another? Is a two-phase commit implemented?
 
 ## JPA
 
