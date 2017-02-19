@@ -32,6 +32,18 @@
 10. How it manages database connections and how we can customize the process, e.g. limit the number of connections?
 11. Is cross-database supportted, e.g. make different models for each database, and then you can create relationships from an entity in one database to an entity in another? Is a two-phase commit implemented?
 
+### Locking
+
+The Framework offers three types of locking:
+
+- *Pessimistic.* With this strategy, Enterprise Objects Framework uses your database server’s native locking mechanism to lock rows as they’re fetched into your application. If you try to fetch an object that someone else has already fetched, the operation will fail because the corresponding database row is locked. This approach prevents update conﬂicts by never allowing two users to look at the same object at the same time.
+
+- *Optimistic.* With this strategy, update conﬂicts aren’t detected until you try to save an object’s changes to the database. At this point, the Framework checks the database row to see if it’s changed since your object was fetched. If the row has been changed, it aborts the save operation.
+
+   Enterprise Objects Framework determines that a database row has changed since its corresponding object was fetched using a technique called snapshotting. When the Framework fetches an object from the database, it records a snapshot of the state of the corresponding database row. When changes to an object are saved to the database, the snapshot is compared with the corresponding database row to ensure that the row data hasn’t changed since the object was last fetched. For more information on snapshots, see the EODatabaseContext class speciﬁcation in the Enterprise Objects Framework Reference.
+
+- *On-Demand.* This approach is a mixture of the pessimistic and optimistic strategies. With on-demand locking, you lock an object after you fetch it but before you attempt to modify it. When you try to get a lock on the object, it can fail for one of two reasons: the corresponding database row has changed since you fetched the object (optimistic locking), or because someone else already has a lock on the row (pessimistic locking).
+
 ## JPA
 
 http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
