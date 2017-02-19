@@ -26,7 +26,7 @@
  - Transaction management & Locking mechanisms: Pessimistic, Optimistic, On-Demand. - Test this!
 5. [object -> datasbse] Is there a mechanisms for setting defaults for new objects?
 6. Is manipulation to raw object thru key-value model allowed: valueForKey, takeValueForKey? I think this should be forbidden.
-7. How to apply a filter (e.g. multi-table queries)?
+7. How to apply a filter (e.g. multi-table queries)? How can i controll the number of objects fetched?
 8. How to execute store procedure and function?
 9. How to run raw sql?
 10. How it manages database connections and how we can customize the process, e.g. limit the number of connections?
