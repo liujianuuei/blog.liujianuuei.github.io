@@ -44,6 +44,29 @@ The ORM Framework should offer three types of locking:
 
 - *On-Demand.* This approach is a mixture of the pessimistic and optimistic strategies. With on-demand locking, you lock an object after you fetch it but before you attempt to modify it. When you try to get a lock on the object, it can fail for one of two reasons: the corresponding database row has changed since you fetched the object (optimistic locking), or because someone else already has a lock on the row (pessimistic locking).
 
+### Transactions
+
+#### Transactions and Optimistic Locking
+
+If you’re using optimistic locking (the default) and you’re just fetching objects, framework never explicitly starts or stops transactions. Instead, when a SELECT is performed on a database row, opening (and subsequently closing) a transaction is typically handled by the database server itself, implicitly. Ultimately, it is the responsibility of the adaptor for each database server to ensure that the right thing happens.
+
+Under optimistic locking, framework explicitly starts a transaction when you perform a save operation. A save operation consists of three basic parts:
+
+- Beginning a transaction
+- Performing the speciﬁed operations (including checking 
+snapshots)
+- Committing the transaction, or rolling back if the transaction fails. In either case, the transaction is closed.
+
+#### Transactions and Pessimistic Locking
+
+When you use pessimistic locking, framework explicitly starts a transaction as soon as you fetch objects, and every object you fetch is locked. The transaction stays open until you commit it, or roll it back.
+
+Consequently, using pessimistic locking is very expensive. It’s not suitable for applications that have user interaction since large portions of your database could be locked down for indeterminate periods of time. A good alternative to pessimistic locking is using on-demand locking to lock individual objects.
+
+#### Transactions and On-Demand Locking
+
+When you use on-demand locking to get a server lock on an object, framework explicitly opens a transaction and keeps it open as long as you have a lock on the object. The transaction stays open until you commit it, or roll it back.
+
 ## JPA
 
 http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html
