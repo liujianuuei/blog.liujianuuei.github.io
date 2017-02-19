@@ -6,7 +6,9 @@
 
 ## JDBC
 
-## ORM
+## ERM (Entity-Relationship Modeling)
+
+## ORM (Object-Relational Mapping)
 
 一个 ORM 框架需要解决以下问题，我们可以用下面的问题审视任何一个 ORM 框架：
 
