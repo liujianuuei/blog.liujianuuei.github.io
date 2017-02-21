@@ -1,10 +1,10 @@
-### 网络
+# 网络
 
-#### 什么是网络
+## 什么是网络
 
 网络就其本质来说，是由节点和连线构成，表示诸多对象及其相互关系的拓扑图。在计算机领域中，网络是信息传输、接收、共享的虚拟平台。
 
-#### 网络层级模型
+## 网络层级模型
 
 网络可以抽象为七层（或者更简单的五层）模型：
 
@@ -15,7 +15,7 @@
 | 网络层 | IP |  |
 | 网络接口层（数据链路层 ，物理层）| Ethernet，Serial Line |  |
 
-#### URI
+## URI
 
 URI 是统一资源标识符（uniform resource identifier），是全世界网络资源的唯一标识。URI 有两种形式的实现：
 
@@ -38,7 +38,7 @@ URI 的第二种实现是统一资源名，即 URN（uniform resource name），
 
 其基本还是遵循和 URL 一致的格式，只是不再需要资源位置信息。URN 还处于实验阶段。
 
-#### Messages
+## Messages
 
 输入浏览器的 URL，比如 `http://www.joes-hardware.com/tools.html`，会被自动转成如下格式的 HTTP 请求（Request）发往服务器端：
 
@@ -85,7 +85,7 @@ big around the house jobs.</P> ...
 
 这些请求和响应也就是 HTTP Messages，从请求到响应的一个来回，称为一个 HTTP **事务（Transaction）**。
 
-#### Methods
+## Methods
 
 每个 HTTP 请求，都必须为其指定一个请求方法（Method），HTTP 支持如下请求方法：
 
@@ -97,7 +97,7 @@ big around the house jobs.</P> ...
 | POST | Send client data into a server gateway application. |
 | HEAD | Send just the HTTP headers from the response for the named resource. |
 
-#### Status Codes
+## Status Codes
 
 每条 HTTP 响应消息，都会携带一个状态代码，告诉客户端请求的状态，下表列出了几种常见状态代码：
 
@@ -109,9 +109,9 @@ big around the house jobs.</P> ...
 
 伴随状态代码，HTTP 还会附带一条解释性的文本信息，但只是用来描述。
 
-#### HTTP/2
+## HTTP/2
 
-#### Socket
+## Socket
 
 IP 标识 Internet 上的计算机，端口号（port#）标识正在计算机上运行的进程（程序）。IP 与 端口号的组合构成一个 Socket。Socket 是语言层面的抽象，一旦通过 Socket 在服务器端和客户端建立起连接，就可以通过 IO 流进行读写操作了。
 
@@ -135,6 +135,10 @@ SDP，套接字定向协议，提供了高吞吐量低延迟的高性能网络�
 Socket 和文件的异步 IO。
 Socket channel 的功能完善，支持 binding、多播等。
 
-#### SCTP
+## SCTP
 
 SCTP(Stream Control Transmission Protocol) 即流控制传输协议，由 RFC 2960 规范。它是一种类似于 TCP 的可靠传输协议。SCTP 在两个端点之间提供稳定、有序的数据传递服务（非常类似于 TCP），并且可以保护数据消息边界（例如 UDP）。然而，与 TCP 和 UDP 不同，SCTP 是通过多宿主（Multi-homing）和多流（Multi-streaming）功能提供这些收益的，这两种功能均可提高可用性 。
+
+## Session
+
+A session is a period of time in which one user interacts with your application. Session is tied to one particular user and persists as long as the user utilizes the application.
