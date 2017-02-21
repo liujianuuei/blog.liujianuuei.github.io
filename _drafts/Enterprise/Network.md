@@ -142,3 +142,5 @@ SCTP(Stream Control Transmission Protocol) 即流控制传输协议，由 RFC 29
 ## Session
 
 A session is a period of time in which one user interacts with your application. Session is tied to one particular user and persists as long as the user utilizes the application.
+
+Dynamic web applications are possible because of, among other things, server-side state persistence and state management. HTTP, the protocol of the web, is inherently stateless. However, storing state in an application server makes persistence management in web applications possible. In WebObjects, the Session object holds state but is not solely responsible for state management. The Session object tracks sessions, flags WOComponent and WOElement objects with special identifiers, and uses other mechanisms to hold and manage state. WOComponent objects manage the state of their internal instance variables and dynamic elements.
