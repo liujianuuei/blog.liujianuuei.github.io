@@ -469,6 +469,20 @@ SELECT /*+ FIRST_ROWS(100) */ <column_name>[, ...] FROM <table_name> WHERE <cond
 SELECT /*+ INDEX(<table_name> <index_name/column_name[, ...])[ ...] */ <column_name>[, ...] FROM <table_name> WHERE <condition>;
 ```
 
+### PLAN
+
+生成 Oracle 执行某条语句的执行计划：
+
+```SQL
+EXPLAIN PLAN FOR <statement>;
+```
+
+查询执行计划：
+
+```SQL
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
+```
+
 ### 游标
 
 执行 SELECT、INSERT、UPDATE以及DELETE语句时，隐式游标会被自动生成。可以使用诸如 SQL%FOUND、SQL%NOTFOUND和SQL%ROWCOUNT等隐式游标属性。
