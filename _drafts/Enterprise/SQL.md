@@ -483,7 +483,7 @@ EXPLAIN PLAN FOR <statement>;
 SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
 ```
 
-`EXPLAIN PLAN` 可以结合 `SET AUTOT[RACE] {OFF | ON | TRACE[ONLY]} [EXP[LAIN]] [STAT[ISTICS]]` 使用。
+`EXPLAIN PLAN` 可以结合 `SET AUTOT[RACE] {OFF | ON | TRACE[ONLY]} [EXP[LAIN]] [STAT[ISTICS]]` 使用。更多细节，请查阅[Oracle Execution Plan](http://www.oracle.com/technetwork/cn/community/developer-day/explain-sql-execution-plan-433658-zhs.pdf)。
 
 ### 游标
 
