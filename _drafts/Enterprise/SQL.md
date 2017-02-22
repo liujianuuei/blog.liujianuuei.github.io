@@ -469,7 +469,7 @@ SELECT /*+ FIRST_ROWS(100) */ <column_name>[, ...] FROM <table_name> WHERE <cond
 SELECT /*+ INDEX(<table_name> <index_name/column_name[, ...])[ ...] */ <column_name>[, ...] FROM <table_name> WHERE <condition>;
 ```
 
-### PLAN
+### Plan
 
 生成 Oracle 执行某条语句的执行计划：
 
@@ -482,6 +482,8 @@ EXPLAIN PLAN FOR <statement>;
 ```SQL
 SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
 ```
+
+`EXPLAIN PLAN` 可以结合 `SET AUTOT[RACE] {OFF | ON | TRACE[ONLY]} [EXP[LAIN]] [STAT[ISTICS]]` 使用。
 
 ### 游标
 
