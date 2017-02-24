@@ -140,6 +140,7 @@
 [![Search: LIRE](https://img.shields.io/badge/Search-LIRE-DFE2DD.svg?style=flat-square)](http://www.lire-project.net/)
 
 [![Secret Storage: Vault](https://img.shields.io/badge/Secret Storage-Vault-000000.svg?style=flat-square)](https://www.vaultproject.io/)
+[![SSL/TLS: Portecle](https://img.shields.io/badge/SSL/TLS-Portecle-000000.svg?style=flat-square)](http://portecle.sourceforge.net/)
 
 [![Serialization: Apache Commons Lang](https://img.shields.io/badge/Serialization-Apache Commons Lang-F500F2.svg?style=flat-square)](http://commons.apache.org/proper/commons-lang/)
 
