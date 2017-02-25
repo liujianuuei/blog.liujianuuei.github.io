@@ -122,6 +122,7 @@
 [![Persistence: EclipseLink](https://img.shields.io/badge/Persistence-EclipseLink-2C2255.svg?style=flat-square)](http://www.eclipse.org/eclipselink)
 [![Persistence: TopLink](https://img.shields.io/badge/Persistence-TopLink-ED1C24.svg?style=flat-square)](http://www.oracle.com/technetwork/middleware/toplink/overview/index.html)
 [![Persistence: Apache OpenJPA](https://img.shields.io/badge/Persistence-Apache OpenJPA-F500F2.svg?style=flat-square)](http://openjpa.apache.org)
+[![Persistence: DAO Fusion](https://img.shields.io/badge/Persistence-DAO Fusion-D17E89.svg?style=flat-square)](http://opensource.anasoft.com/daofusion-site/index.html)
 
 [![Profiling: JConsole](https://img.shields.io/badge/Profiling-JConsole-B07219.svg?style=flat-square)](https://www.oracle.com/java/index.html)
 [![Profiling: Java VisualVM](https://img.shields.io/badge/Profiling-Java VisualVM-B07219.svg?style=flat-square)](https://www.oracle.com/java/index.html)
