@@ -151,6 +151,7 @@
 [![SQL: MySQL](https://img.shields.io/badge/SQL-MySQL-40829A.svg?style=flat-square)](http://www.oracle.com/us/products/mysql/overview/index.html)
 [![SQL: PostgreSQL](https://img.shields.io/badge/SQL-PostgreSQL-0097C8.svg?style=flat-square)](http://www.postgresql.org/docs/manuals/)
 [![SQL: SQLite](https://img.shields.io/badge/SQL-SQLite-044A64.svg?style=flat-square)](http://sqlite.org/)
+[![SQL: HSQLDB](https://img.shields.io/badge/SQL-HSQLDB-255D84.svg?style=flat-square)](http://hsqldb.org/)
 [![SQL: H2](https://img.shields.io/badge/SQL-H2-1021FF.svg?style=flat-square)](http://www.h2database.com/html/main.html)
 
 [![SQL Parsing: JSqlParser](https://img.shields.io/badge/SQL Parsing-JSqlParser-000000.svg?style=flat-square)](https://github.com/JSQLParser/JSqlParser)
