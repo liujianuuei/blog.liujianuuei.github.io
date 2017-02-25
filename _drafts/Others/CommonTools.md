@@ -28,6 +28,8 @@
 
 [![GTD: Trello](https://img.shields.io/badge/GTD-Trello-0082CE.svg?style=flat-square)](https://trello.com/)
 
+[![Hex: Hex Editor Neo](https://img.shields.io/badge/Hex-Hex Editor Neo-FFBB00.svg?style=flat-square)](https://www.hhdsoftware.com/Downloads/free-hex-editor/)
+
 [![Markdown: Atom](https://img.shields.io/badge/Markdown-Atom-99D3C3.svg?style=flat-square)](https://atom.io/)
 [![Markdown: Cmd Markdown](https://img.shields.io/badge/Markdown-Cmd Markdown-51514E.svg?style=flat-square)](https://zybuluo.com/mdeditor)
 
