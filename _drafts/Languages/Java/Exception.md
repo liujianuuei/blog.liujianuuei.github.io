@@ -70,7 +70,7 @@ In general heap dump file generated with the following causes:
 
 **Tools for core dump**
 
-+ IBM Thread and Monitor Dump Analyzer for Java - A tool that allows identification of hangs, deadlocks, resource contention, and bottlenecks in Java threads.
++ **IBM Thread and Monitor Dump Analyzer for Java** - A tool that allows identification of hangs, deadlocks, resource contention, and bottlenecks in Java threads.
 
 **Tools for heap dump**
 
