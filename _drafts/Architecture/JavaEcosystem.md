@@ -116,6 +116,7 @@
 
 [![PDF: iText](https://img.shields.io/badge/PDF-iText-F6920E.svg?style=flat-square)](http://itextpdf.com/)
 [![PDF: Aspose](https://img.shields.io/badge/PDF-Aspose-DD504F.svg?style=flat-square)](http://www.aspose.com)
+[![PDF: BFO](https://img.shields.io/badge/PDF-BFO-0d5d97.svg?style=flat-square)](http://bfo.com/)
 
 [![Persistence: Hibernate](https://img.shields.io/badge/Persistence-Hibernate-BCAE79.svg?style=flat-square)](http://hibernate.org)
 [![Persistence: MyBatis](https://img.shields.io/badge/Persistence-MyBatis-2C2323.svg?style=flat-square)](http://www.mybatis.org)
