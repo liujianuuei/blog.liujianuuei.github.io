@@ -43,7 +43,7 @@ No enclosing instance of type BootstrappingDialog is accessible. Must qualify th
 
 局部类相较匿名类使用更少一些。在任何可以声明局部变量的地方，都可以声明局部类，并且局部类也遵守同样的作用域规则。
 
-和匿名类一样，局部类不能包含静态成员。The field y cannot be declared static in a non-static inner type, unless initialized with a constant expression
+**注意**：所有非静态的内部类，包括非静态成员类以及匿名类和局部类，因其或和外围实例相关联或其本身的非静态性，所以不能包含静态成员，除非初始化为最终常量。
 
 ## 最后
 
