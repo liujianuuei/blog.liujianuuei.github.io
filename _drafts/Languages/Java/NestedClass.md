@@ -25,7 +25,7 @@ x.new A(); // where x is an instance of enclosing class of A
 No enclosing instance of type BootstrappingDialog is accessible. Must qualify the allocation with an enclosing instance of type BootstrappingDialog (e.g. x.new A() where x is an instance of BootstrappingDialog).
 ```
 
-所以，从这一点上也可以看出，非静态成员类其实是一个内部类，这就是为什么我们把非静态成员类划归内部类的原因，而不是静态成员类，虽然静态成员类通过私有修饰符也可以变成外部不可访问，但这是可见性范畴，属另一码事。
+所以，从这一点上也可以看出，非静态成员类其实是一个内部类，这就是为什么我们把非静态成员类划归内部类的原因。当然，静态成员类通过私有修饰符也可以变成外部不可访问，但这是可见性范畴，属另一码事。
 
 **注意**：由于额外的域外围实例的关联，非静态成员类的开销比静态成员类的要大，所以一般情况，我们都应该选择使用静态成员类，但静态成员类的问题在于其是静态的，所以遵从和外围类的任何其它静态成员（比如静态方法）一样的访问性，比如不能访问非静态的成员变量等，所以，这也是一个考虑的因素。
 
