@@ -7,9 +7,9 @@
 **基本数据类型**
 
 + number
- + 类似Java的double型数值。
- + NaN - 不能产生结果的运算结果，NaN不等于任何值，包括它自己。
- + Infinity - 表示无限大的一个数。
+  + 类似Java的double型数值。
+  + NaN - 不能产生结果的运算结果，NaN不等于任何值，包括它自己。
+  + Infinity - 表示无限大的一个数。
 + string
 + boolean - 下面列出的值被当做假（false），其它所有值都被当做真（true）：
   + false
