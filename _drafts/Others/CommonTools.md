@@ -50,3 +50,5 @@
 [![Diagram: draw.io](https://img.shields.io/badge/Diagram-draw.io-F18808.svg?style=flat-square)](https://www.draw.io/)
 
 [![Static Site: Static Site Generators](https://img.shields.io/badge/Static Site-Static Site Generators-000000.svg?style=flat-square)](https://staticsitegenerators.net/)
+
+[![Windows: Windows绝赞应用](https://img.shields.io/badge/Windows-Windows绝赞应用-000000.svg?style=flat-square)](https://emlvirus.gitbooks.io/windows-apps-that-amaze-us/)
