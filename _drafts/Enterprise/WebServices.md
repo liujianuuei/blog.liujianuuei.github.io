@@ -56,7 +56,7 @@ SOAP 即简单对象访问协议(Simple Object Access Protocol)，是一种简�
 WSDL是web services 描述语言，由以下几部分组成：
 
 + service（port）：定义提供 web service 的地址。
-+ portType：描述一个 web service 可被执行的操作（action），以及相关的消息。可以把 portType 元素比作传统编程语言中的一个函数库（或一个模块、或一个类）。
++ portType：描述一个 web service 可被执行的操作（operation/action），以及相关的消息。可以把 portType 元素比作传统编程语言中的一个函数库（或一个模块、或一个类）。
 + binding：为每个 portType 定义消息格式和协议细节，比如 service style 属性（style 属性可取值 rpc 或 document）和 transport 属性（transport 属性定义了要使用的 SOAP 协议，在下面的例子中我们使用 HTTP）等。
 + message：定义 web service 使用的消息，每个消息均由一个或多个 part 组成，可以把这些part比作传统编程语言中一个函数调用的参数。
 + types：定义消息类型，它使用某种类型系统（如 XSD）。
