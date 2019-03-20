@@ -344,7 +344,7 @@ DML 包括 INSERT，UPDATE，DELETE 以及 MERGE 等语句。
 **insert**
 
 ```SQL
-INSERT INTO~~TABLE~~ <table_name> [(<column_name>[, ...])] VALUES (<value>[, ...]);
+INSERT INTO <table_name> [(<column_name>[, ...])] VALUES (<value>[, ...]);
 ```
 
 其中 VALUES (<value>[, ...]) 部分可用结果集（SELECT ...）替代。
