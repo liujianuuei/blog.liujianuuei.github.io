@@ -10,6 +10,7 @@
 * [XML](XML.md)
 * [JMS](JMS.md)
 * [JTA and JTS](JTAnJTS.md)
+* [JCA](JCA.md)
 * [JavaMail and JAF](JavaMailnJAF.md)
 * [JPA](JPA.md)
 * [Cache](Cache.md)
