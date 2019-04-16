@@ -66,6 +66,7 @@
   * [XML](_drafts/Enterprise/XML.md)
   * [JMS](_drafts/Enterprise/JMS.md)
   * [JTA and JTS](_drafts/Enterprise/JTAnJTS.md)
+  * [JCA](_drafts/Enterprise/JCA.md)
   * [JavaMail and JAF](_drafts/Enterprise/JavaMailnJAF.md)
   * [JPA](_drafts/Enterprise/JPA.md)
   * [Cache](_drafts/Enterprise/Cache.md)
