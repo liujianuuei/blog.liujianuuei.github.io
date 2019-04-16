@@ -339,7 +339,7 @@ private static class SerializationProxy <E extends Enum<E>> implements Serializa
 
 反序列化代理（概念上）就是在返回反序列化得到的对象之前，用我们期望的对象进行替换。一个典型的用法就是实例受控类的序列化。
 
-在[实例受控类](InstanceControlledClass.md)主题中我们提供了一个单例的实现，我们定义了一个方法`readResolve()`来避免反序列化创建新对象从而违反了单例的约束。`ANY-ACCESS-MODIFIER Object readResolve()`允许在返回反序列化的对象给调用者之前替换序列化的对象。
+在[实例受控类](InstanceControlledClass.md)主题中我们提供了一个单例的实现，我们定义了一个方法`readResolve()`来避免反序列化创建新对象从而违反了单例的约束。`ANY-ACCESS-MODIFIER Object readResolve()`允许在返回反序列化的对象给调用者之前替换序列化的对象，因此，调用顺序是，先调用 `readObject()`，再调用 `readResolve()`。
 
 注：反序列化的对象不需要包含任何实际数据，故所有的非静态成员变量都要声明为`transient`的，排除在序列化之外。
 
