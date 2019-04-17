@@ -116,7 +116,7 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 
 Java 用于文件 IO 操作的 API，同时也用于网络资源 IO 操作，这就使得操作网络资源如同本地文件一样，简化了编程。
 
-MINA 和 Netty 都是基于 NIO 的构建网络应用的框架。
+MINA 和 Netty 都是基于 NIO 的构建网络应用的框架。**要去阅读 Netty 的源码。**
 
 http://ifeve.com/
 http://blog.chinaunix.net/uid-24186189-id-2623973.html
