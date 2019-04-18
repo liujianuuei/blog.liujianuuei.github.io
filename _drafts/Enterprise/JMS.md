@@ -2,8 +2,8 @@
 
 ## 消息模型
 
-P2P: Queue, Sender/Receiver
-Pub/Sub: Topic, Publiser/Subscriber, Listner/onMessage
+- P2P: Queue, Sender/Receiver
+- Pub/Sub: Topic, Publiser/Subscriber, Listner/onMessage
 
 **同步消息接收模型**
 
