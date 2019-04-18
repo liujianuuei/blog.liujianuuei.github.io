@@ -1,8 +1,8 @@
 ### Platform
 
-spring ---- Boot
+spring ---- [Boot](https://docs.spring.io/spring-boot/docs/2.1.4.RELEASE/reference/htmlsingle/)
 
------------  Framework { Core, MVC, WebFlux, Integration, Languages
+-----------  Framework { Core, DataAccess, MVC, WebFlux(Non-Servlet), Integration, Languages
 
 -----------  Cloud { Netflix, Zuul, Ribbon, Hystrix, Consul, Sleuth, Data Flow, AWS
 
