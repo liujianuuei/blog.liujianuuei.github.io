@@ -2,9 +2,8 @@
 
 ## 消息模型
 
-TopicPublisher - TopicSubsciber
-TopicProducer - TopicConsumer
-QueueSender - QueueReceiver
+P2P: Queue, Sender/Receiver
+Pub/Sub: Topic, Publiser/Subscriber, Listner/onMessage
 
 **同步消息接收模型**
 
@@ -25,3 +24,5 @@ Session 可以被指定为事务性的，也就是将发送的消息分组到一
 ## Java Message Service 2.0 / Simplified JMS
 
 // TODO
+
+https://www.open-open.com/doc/34845e442e93474cb12ca92ffaf1eb54.html
