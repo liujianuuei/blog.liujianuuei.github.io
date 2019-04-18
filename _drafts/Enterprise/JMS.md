@@ -2,8 +2,14 @@
 
 ## 消息模型
 
-- P2P: Queue, Sender/Receiver
-- Pub/Sub: Topic, Publiser/Subscriber, Listner/onMessage
+**Provider**
+
+Apache ActiveMQ
+
+**Domains**
+
+- P2P: Queue(Destination), Sender/Receiver
+- Pub/Sub: Topic(Destination), Publiser/Subscriber, Listner/onMessage
 
 **同步消息接收模型**
 
