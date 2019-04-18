@@ -49,5 +49,6 @@ Session 可以被指定为事务性的，也就是将发送的消息分组到一
 
 // TODO
 
-https://www.open-open.com/doc/34845e442e93474cb12ca92ffaf1eb54.html
-https://www.cnblogs.com/cyfonly/p/6380860.html
+- https://www.open-open.com/doc/34845e442e93474cb12ca92ffaf1eb54.html
+- https://www.cnblogs.com/cyfonly/p/6380860.html
+- https://dzone.com/articles/rmi-vs-jms-clarification
