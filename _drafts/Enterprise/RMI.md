@@ -92,4 +92,9 @@ RMI 其实可以被看作是 RPC 的 Java 版本。RPC 即远程过程调用，�
 
 JAX-RPC，也就是基于 SOAP 协议的 [Web Services](WebServices.md)。JAX-RPC 在网络上传递的是基于 XML 的 SOAP 消息。RMI 则直接**跨网传递 Java 对象**，所以其先天具有面向对象的优势，为开发分布式应用系统提供了纯 Java 的解决方案。
 
-RMI 使用 Java 远程消息交换协议 JRMP（Java Remote Messaging Protocol）进行通信。但由于JRMP 是专为 Java 对象制定的，因此，RMI 不能与用非 Java 语言开发的系统进行通信，这是 RMI 的最大弊端，不过可以通过 JNI 绕开这一限制。
+RMI 使用 Java 远程消息交换协议 JRMP（Java Remote Messaging Protocol）进行通信。但由于JRMP 是专为 Java 对象制定的，因此，RMI 不能与用非 Java 语言开发的系统进行通信，这是 RMI 的最大弊端，不过可以通过 JNI 绕开这一限制。另外，还有如下局限：
+
+1. 同步通信：客户发出调用后，必须等待服务对象完成处理并返回结果后才能继续执行；
+2. 客户和服务对象的生命周期紧密耦合：客户进程和服务对象进程都必须正常运行；如果由于服务对象崩溃或者网络故障导致客户的请求不可达，客户会接收到异常；
+3. 点对点通信：客户的一次调用只发送给某个单独的目标对象。
+
