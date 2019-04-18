@@ -13,7 +13,11 @@
   - Producer: Sender
   - Consumer: Receiver
   - Mode: Sync & Async(Listner/onMessage)
-- Pub/Sub: Topic(Destination), Publiser/Subscriber, Listner/onMessage
+- Pub/Sub:
+  - Destination: Topic
+  - Producer: Publiser
+  - Consumer: Subscriber
+  - Mode: Sync & Async(Listner/onMessage)
 
 **同步消息接收模型 & 异步消息接收模型**
 
