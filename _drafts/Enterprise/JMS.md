@@ -4,16 +4,30 @@
 
 **Provider**
 
-Apache ActiveMQ
+- Apache ActiveMQ
 
 **Domains**
 
-- P2P: Queue(Destination), Sender/Receiver
+- P2P:
+  - Destination: Queue
+  - Producer: Sender
+  - Consumer: Receiver
+  - Mode: Sync & Async(Listner/onMessage)
 - Pub/Sub: Topic(Destination), Publiser/Subscriber, Listner/onMessage
 
-**同步消息接收模型**
+**同步消息接收模型 & 异步消息接收模型**
 
-**异步消息接收模型**
+P2P 模式使用 queue 作为 destination，消息可以被同步或异步的发送和接收，每个消息只会给一个 Consumer 传送一次。
+
+Consumer 可以使用 MessageConsumer.receive() 同步地接收消息，也可以通过使用 MessageConsumer.setMessageListener() 注册一个 MessageListener 实现异步接收。
+
+多个 Consumer 可以注册到同一个 queue 上，但一个消息只能被一个 Consumer 所接收，然后由该 Consumer 来确认消息。并且在这种情况下，Provider 对所有注册的 Consumer 以轮询的方式发送消息。
+
+Pub/Sub 模式使用 topic 作为 destination，发布者向 topic 发送消息，订阅者注册接收来自 topic 的消息。发送到 topic 的任何消息都将自动传递给所有订阅者。接收方式（同步和异步）与 P2P 域相同。
+
+**持久化**
+
+除非显式指定，否则 topic 不会为订阅者保留消息。当然，这可以通过持久化（Durable）订阅来实现消息的保存。这种情况下，当订阅者与 Provider 断开时，Provider 会为它存储消息。当订阅者重新连接时，将会受到所有的断连期间未消费的消息。
 
 JMS Delivery Mode : PERSISTENT NON_PERSISTENT
 
