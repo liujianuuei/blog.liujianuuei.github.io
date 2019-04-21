@@ -40,7 +40,9 @@ Microservices 是一种面向服务的架构，我们知道 SOA 也是一种面�
 
 #### In-Action
 
-那么，具体如何构建 microservices 呢？有多种选择，比如 Spring Boot 就是创建 microservices 不错的选择。请查看 [Building Microservices With Java](https://dzone.com/articles/building-microservices-with-java)。#Todo#
+那么，具体如何构建 microservices 呢？有多种选择，比如 Spring Boot 就是创建 microservices 不错的选择。请查看 [Building Microservices With Java](https://dzone.com/articles/building-microservices-with-java)。
+
+Ref https://www.evernote.com/l/AREUoggBsvhNtoN5ApNdrAjTM5TMtI0rf8A/
 
 #### 最后
 
