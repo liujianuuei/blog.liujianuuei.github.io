@@ -4,20 +4,7 @@ spring ---- [Boot](https://docs.spring.io/spring-boot/docs/2.1.4.RELEASE/referen
 
 -----------  Framework { Core, DataAccess, [MVC](https://spring.io/guides/gs/serving-web-content/), [WebFlux(Non-Servlet)](https://spring.io/guides/gs/reactive-rest-service/), Integration, Languages
 
------------  Cloud { Netflix, Zuul, Ribbon, Hystrix, Consul, Sleuth, Data Flow, AWS
-
-Spring Cloud
-    - Netflix
-        - Eureka Server: Service Registry
-        - Eureka, Consul, ZK: Service Discovery
-        - Zuul: API Gateway
-        - Ribbon: Client Side Load Balancing
-        - Hystrix: Circuit Breaker
-    - Sleuth, ELK(Zipkin, HTrace, Log-based): Tracing
-    - Config
-    - Stream
-    - Bus
-
+-----------  Cloud { Netflix{Eureka, Zuul, Ribbon, Hystrix}, Sleuth, Config, Stream, Bus, Data Flow, AWS}
 
 http://blog.sina.com.cn/s/blog_6868b78d0100k3ht.html
 
