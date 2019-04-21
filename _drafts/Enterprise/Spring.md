@@ -6,6 +6,19 @@ spring ---- [Boot](https://docs.spring.io/spring-boot/docs/2.1.4.RELEASE/referen
 
 -----------  Cloud { Netflix, Zuul, Ribbon, Hystrix, Consul, Sleuth, Data Flow, AWS
 
+Spring Cloud
+    - Netflix
+        - Eureka Server: Service Registry
+        - Eureka, Consul, ZK: Service Discovery
+        - Zuul: API Gateway
+        - Ribbon: Client Side Load Balancing
+        - Hystrix: Circuit Breaker
+    - Sleuth, ELK(Zipkin, HTrace, Log-based): Tracing
+    - Config
+    - Stream
+    - Bus
+
+
 http://blog.sina.com.cn/s/blog_6868b78d0100k3ht.html
 
 \-----------------------------------------
