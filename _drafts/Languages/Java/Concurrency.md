@@ -1,4 +1,4 @@
-# 并发/Timer/AtomicReference/AtomicInteger/AtomicIntegerArray/PermGen
+# 并发
 
 ## 线程的生命周期
 
@@ -88,6 +88,30 @@ pool.shutdown();
 pool.awaitTermination(100, TimeUnit.SECONDS);
 pool.isTerminated();
 ```
+
+**corePoolSize**
+
+线程池维护的核心线程数。在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务。等按照需要创建了 corePoolSize 个线程之后，这些数量的线程即使闲置，也不会被线程池收回。这时就是线程池维护的最小线程数了。当线程池中的线程数目达到 corePoolSize 后，就会把到达的任务放到缓存队列当中。
+
+**maximumPoolSize**
+
+线程池维护的最大线程数，它表示在线程池中最多能创建多少个线程。
+
+**keepAliveTime**
+
+当线程池中的线程数量大于 corePoolSize，多出那部分数量的线程空闲 keepAliveTime 后会被收回。
+
+**unit**
+
+参数keepAliveTime的时间单位，有7种取值，在TimeUnit类中有7种静态属性：
+- TimeUnit.DAYS;               //天
+- TimeUnit.HOURS;             //小时
+- TimeUnit.MINUTES;           //分钟
+- TimeUnit.SECONDS;           //秒
+- TimeUnit.MILLISECONDS;      //毫秒
+- TimeUnit.MICROSECONDS;      //微妙
+- TimeUnit.NANOSECONDS;       //纳秒
+
 
 \#Todo#：writeObject同步，序列化同步。。《Effective Java》P764
 https://dzone.com/refcardz/core-java-concurrency
