@@ -112,6 +112,26 @@ pool.isTerminated();
 - TimeUnit.MICROSECONDS;      //微妙
 - TimeUnit.NANOSECONDS;       //纳秒
 
+**workQueue**
+
+一个阻塞队列，用来缓存等待执行的任务，阻塞队列有以下几种选择：
+- ArrayBlockingQueue;
+- PriorityBlockingQueue
+- LinkedBlockingQueue;
+- SynchronousQueue;
+
+**threadFactory**
+
+线程工厂，主要用来创建线程。
+
+**handler**
+
+表示当拒绝处理任务时的策略，有以下四种取值：
+- ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。 
+- ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。 
+- ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
+- ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务
+
 
 \#Todo#：writeObject同步，序列化同步。。《Effective Java》P764
 https://dzone.com/refcardz/core-java-concurrency
