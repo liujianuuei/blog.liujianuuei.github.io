@@ -64,34 +64,11 @@ Java中存在两种线程：用户（user-thread）线程和守护线程。所�
 2. 可有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞。
 3. 提供定时执行，定期执行，单线程，并发数控制等功能。
 
-Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executors` 创建不同类型的线程池，返回的线程池都实现自 `java.util.concurrent.Executor` 接口。如下代码：
-
-```Java
-ExecutorService pool = Executors.newCachedThreadPool(); // 一共四种线程池可创建
-
-pool.execute(new Runnable() {
-    @Override
-    public void run() {
-        // do something
-    }
-});
-
-Future<?> future = pool.submit(new Runnable() {
-    @Override
-    public void run() {
-        // do something
-    }
-});
-future.isDone();
-
-pool.shutdown();
-pool.awaitTermination(100, TimeUnit.SECONDS);
-pool.isTerminated();
-```
+Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executors` 创建不同类型的线程池。线程池有如下几个重要概念：
 
 **corePoolSize**
 
-线程池维护的核心线程数。在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务。等按照需要创建了 corePoolSize 个线程之后，这些数量的线程即使闲置，也不会被线程池收回。这时就是线程池维护的最小线程数了。当线程池中的线程数目达到 corePoolSize 后，就会把到达的任务放到缓存队列当中。
+线程池维护的核心线程数。在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务。等按照需要创建了 corePoolSize 个线程之后，这些数量的线程即使闲置，也不会被线程池收回。这时就是线程池维护的最小线程数了。当线程池中的线程数目达到 corePoolSize 后，就会把到达的任务放到缓存队列当中。corePoolSize 针对 FixedThreadPool、ScheduledThreadPool 有意义。
 
 **maximumPoolSize**
 
@@ -127,10 +104,157 @@ pool.isTerminated();
 **handler**
 
 表示当拒绝处理任务时的策略，有以下四种取值：
-- ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。 
-- ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。 
+- ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。
+- ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常。
 - ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）
 - ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务
+
+## 一些例子
+
+一个通过非线程安全的队列，实现的生产者-消费者模式：
+
+```Java
+package tech.liujianwei;
+
+import tech.liujianwei.MarketDataService;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueWorker implements Runnable {
+
+    private MarketDataService service;
+    private boolean stopped = false;
+    private Queue<byte[]> queue;
+
+    public QueueWorker(MarketDataService service) {
+        super();
+        this.service = service;
+        this.queue = new LinkedList<byte[]>();
+    }
+
+    public void run() {
+        byte[] content = null;
+        while (!stopped) {
+            while (content == null) {
+                synchronized (queue) {
+                    if (queue.isEmpty()) {
+                        try {
+                            queue.wait(500);
+                            if(!queue.isEmpty()) {
+                                content = queue.remove();
+                            }
+                        } catch (InterruptedException e) {
+                            continue;
+                        }
+                    }
+                }
+            }
+            service.parseData(content);
+            content = null;
+        }
+    }
+
+    public void addAndNotify(byte[] content) {
+        synchronized (queue) {
+            queue.add(content);
+            queue.notify();
+        }
+    }
+
+    public boolean isStopped() {
+        return stopped;
+    }
+
+    public void setStopped(boolean stopped) {
+        this.stopped = stopped;
+    }
+}
+```
+
+一个通过线程安全的队列，实现的生产者-消费者模式：
+
+```Java
+package tech.liujianwei.client;
+
+import org.apache.mina.common.IoSession;
+import org.apache.mina.handler.demux.MessageHandler;
+import tech.liujianwei.model.PlzHpMsg;
+import tech.liujianwei.model.AbstractPlzMsg;
+import tech.liujianwei.client.processors.PlzMsgHpProcessor;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.TimeUnit;
+
+public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
+
+    private ArrayBlockingQueue<AbstractPlzMsg> queue;
+    private MessageDispatcher dispatcher;
+    private boolean stopped = false;
+
+    public PlzMessageHandler() {
+        dispatcher = new MessageDispatcher();
+        queue = new ArrayBlockingQueue<>(2000);
+    }
+
+    @Override
+    public void messageReceived(IoSession ioSession, AbstractPlzMsg plzMessage) {
+        try {
+            if (stopped) {
+                return;
+            }
+            queue.offer(plzMessage, 50L, TimeUnit.MILLISECONDS);
+        } catch (Exception e) {
+            //
+        }
+    }
+
+    private void messageDispatched(AbstractPlzMsg message) {
+        if (message instanceof PlzHpMsg) {
+            new PlzMsgHpProcessor().process(message);
+        } else {
+            //
+        }
+    }
+
+    private class MessageDispatcher extends Thread {
+        private AbstractPlzMsg message;
+
+        @Override
+        public void run() {
+            while (true) {
+                if (stopped) {
+                    return;
+                }
+                try {
+                    while ((message = queue.poll(50L, TimeUnit.MILLISECONDS)) == null) {
+                        if (stopped) {
+                            return;
+                        }
+                    }
+                    messageDispatched(message);
+                } catch (Exception e) {
+                    //
+                }
+            }
+        }
+    }
+
+    public void start() {
+        dispatcher.start();
+        stopped = false;
+    }
+
+    public void stop() {
+        try {
+            stopped = true;
+            dispatcher.join();
+        } catch (Exception e) {
+            //
+        }
+    }
+}
+```
 
 
 \#Todo#：writeObject同步，序列化同步。。《Effective Java》P764
