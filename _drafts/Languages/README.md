@@ -14,16 +14,16 @@
  * [泛型](Java/Generics.md)
  * [序列化](Java/Serialization.md)
  * [并发](Java/Concurrency.md)
- * [并行](Java/Parallelism.md)
  * [集合框架](Java/CollectionsFramework.md)
  * [数组](Java/Array.md)
- * [IO](Java/IO.md)
+ * [NIO](Java/NIO.md)
+ * [网络编程](NetworkPrograming.md)
  * [字符串](Java/String.md)
  * [精密计算](Java/PreciseCalculation.md)
  * [异常](Java/Exception.md)
  * [Stream](Java/Stream.md)
- * [动态类型](Java/DynamicallyTyped.md)
- * [函数式](Java/Functional.md)
+ * ~~[动态类型](Java/DynamicallyTyped.md)~~
+ * ~~[函数式](Java/Functional.md)~~
 
 * [设计模式](DesignPattern/README.md)
 
