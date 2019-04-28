@@ -20,7 +20,7 @@ NIO 有下面几个抽象：
 
    JDK 1.4 supports readiness selection by providing selectors, which are instances of the java.nio.channels.Selector class that can examine one or more channels and determine which channels are ready for reading or writing. This way a single thread can manage multiple channels (and, therefore, multiple network connections) efficiently. Being able to use fewer threads is advantageous where thread creation and thread context switching is expensive in terms of performance and/or memory use. See Figure 1-3.
 
-[!The Multiplex](theMultiplex.png)
+![The Multiplex](theMultiplex.png)
 
 每个基本类型（除了 boolean）都对应一个 Buffer 的实现类，分别操作各自类型的数据。针对文件系统（网络稍后再说），Channel 的一个实现是 `FileChannel`。只有 `ByteBuffer` 可以和 Chanel 交互。可以通过 FileInputStream，FileOutputStream  以及 RandomAccessFile 获得 FileChannel。
 
