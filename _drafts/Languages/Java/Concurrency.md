@@ -66,6 +66,46 @@ public class CountDownLatchTest implements Runnable {
 }
 ```
 
+**CyclicBarrier**
+
+```Java
+package tech.liujianwei;
+
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+
+public class CyclicBarrierTest implements Runnable {
+
+    private CyclicBarrier barrier;
+
+    public CyclicBarrierTest(CyclicBarrier barrier) {
+        this.barrier = barrier;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " ready");
+        try {
+            this.barrier.await();
+        } catch (BrokenBarrierException | InterruptedException e) {
+            //
+        }
+        System.out.println(Thread.currentThread().getName() + " executed");
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        CyclicBarrier barrier = new CyclicBarrier(3);
+        CyclicBarrierTest t = new CyclicBarrierTest(barrier);
+
+        new Thread(t).start();
+        new Thread(t).start();
+        new Thread(t).start();
+
+        System.out.println(Thread.currentThread().getName() + " DONE");
+    }
+}
+```
+
 ### 让步执行
 
 有时候我们并不需要线程完全串行（等待某线程执行结束），也不能完全并行执行，而是在有限时间内交替执行，则就会用到`yield()`方法。yield的正确意思是让步，被让的线程可能执行也可能没有执行，根据调度让步线程可能仍然接着执行。
