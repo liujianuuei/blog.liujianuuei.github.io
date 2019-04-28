@@ -200,7 +200,7 @@ public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
 
     private ArrayBlockingQueue<AbstractPlzMsg> queue;
     private MessageDispatcher dispatcher;
-    private boolean stopped = false;
+    private volatile boolean stopped = false;
 
     public PlzMessageHandler() {
         dispatcher = new MessageDispatcher();
@@ -232,10 +232,7 @@ public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
 
         @Override
         public void run() {
-            while (true) {
-                if (stopped) {
-                    return;
-                }
+            while (!stopped && !isInterrupted()) {
                 try {
                     while ((message = queue.poll(50L, TimeUnit.MILLISECONDS)) == null) {
                         if (stopped) {
@@ -243,8 +240,8 @@ public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
                         }
                     }
                     messageDispatched(message);
-                } catch (Exception e) {
-                    //
+                } catch (InterruptedException e) {
+                    break;
                 }
             }
         }
