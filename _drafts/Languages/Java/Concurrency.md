@@ -29,6 +29,43 @@
 
 线程是并行执行的，但我们可以通过`join()`方法，让线程串行化执行，也就是直到被调用join方法的线程执行结束，才继续执行当前线程。
 
+另外，`CountDownLatch` 也可以达到同样的效果：
+
+**CountDownLatch**
+
+```Java
+package tech.liujianwei;
+
+import java.util.concurrent.CountDownLatch;
+
+public class CountDownLatchTest implements Runnable {
+
+    private CountDownLatch latch;
+
+    public CountDownLatchTest(CountDownLatch latch) {
+        this.latch = latch;
+    }
+
+    @Override
+    public void run() {
+        this.latch.countDown();
+        System.out.println(Thread.currentThread().getName() + " executed");
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(3);
+        CountDownLatchTest t = new CountDownLatchTest(latch);
+
+        new Thread(t).start();
+        new Thread(t).start();
+        new Thread(t).start();
+
+        latch.await();
+        System.out.println(Thread.currentThread().getName() + " DONE");
+    }
+}
+```
+
 ### 让步执行
 
 有时候我们并不需要线程完全串行（等待某线程执行结束），也不能完全并行执行，而是在有限时间内交替执行，则就会用到`yield()`方法。yield的正确意思是让步，被让的线程可能执行也可能没有执行，根据调度让步线程可能仍然接着执行。
