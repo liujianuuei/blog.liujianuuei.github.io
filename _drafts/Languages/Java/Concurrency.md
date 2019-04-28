@@ -256,6 +256,10 @@ public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
 }
 ```
 
+上述项目的线程模型，用图表示出来就是这样：
+
+![The XH Project Thread Model](theXHThreadModel.png)
+
 
 \#Todo#：writeObject同步，序列化同步。。《Effective Java》P764
 https://dzone.com/refcardz/core-java-concurrency
