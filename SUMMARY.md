@@ -43,17 +43,6 @@
     * [设计模式之模板方法模式](_drafts/Languages/DesignPattern/TheTemplateMethodPattern.md)
     * [设计模式概览](_drafts/Languages/DesignPattern/DesignPatternsOverview.md)
 
-  * [JavaScript](_drafts/Languages/JavaScript/README.md)
-
-    * [JavaScript](_drafts/Languages/JavaScript/JavaScript.md)
-    * [Node.js](_drafts/Languages/JavaScript/Nodejs.md)
-
-  * [JVM](_drafts/Languages/JVM/README.md)
-
-    * [JVM](_drafts/Languages/JVM/JVM.md)
-    * [JMX](_drafts/Languages/JVM/JMX.md)
-    * [JNI](_drafts/Languages/JVM/JNI.md)
-
 * [Enterprise](_drafts/Enterprise/README.md)
 
   * [JDBC](_drafts/Enterprise/JDBC.md)
@@ -82,15 +71,3 @@
   * [Security](_drafts/Enterprise/Security.md)
   * [Integration](_drafts/Enterprise/Integration.md)
 
-* [Architecture](_drafts/Architecture/README.md)
-
-  * [软件架构原则](_drafts/Architecture/SoftwareArchitecturePrinciples.md)
-  * [层级架构](_drafts/Architecture/Layered.md)
-  * [Microservices](_drafts/Architecture/Microservices.md)
-  * [API Gateway](_drafts/Architecture/APIGateway.md)
-  * [混合语言框架](_drafts/Architecture/MixedLanguageFramework.md)
-  * [Java Ecosystem](_drafts/Architecture/JavaEcosystem.md)
-
-* [Engineering](_drafts/Engineering/README.md)
-
-  * [Gradle](_drafts/Engineering/Gradle.md)

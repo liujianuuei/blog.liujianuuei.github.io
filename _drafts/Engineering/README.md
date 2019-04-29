@@ -1,3 +1,0 @@
-# Engineering
-
-* [Gradle](Gradle.md)

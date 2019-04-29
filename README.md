@@ -1,6 +1,6 @@
-# Jianwei on Software
+# Jianwei on Programing
 
-I am a software developer. This is a GitBook version of my blog. It may become a book one day, but surely serves as the study material for myself and you.
+I am a programmer. This is a GitBook version of my blog. It may become a book one day, but surely serves as the study material for myself and you.
 
 ## License
 

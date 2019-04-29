@@ -38,14 +38,3 @@
    * [设计模式之观察者模式](DesignPattern/TheObserverPattern.md)
    * [设计模式之模板方法模式](DesignPattern/TheTemplateMethodPattern.md)
    * [设计模式概览](DesignPattern/DesignPatternsOverview.md)
-
-* [JavaScript](JavaScript/README.md)
-
-   * [JavaScript](JavaScript/JavaScript.md)
-   * [Node.js](JavaScript/Nodejs.md)
-
-* [JVM](JVM/README.md)
-
-   * [JVM](JVM/JVM.md)
-   * [JMX](JVM/JMX.md)
-   * [JNI](JVM/JNI.md)
