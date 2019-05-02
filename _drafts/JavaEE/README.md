@@ -1,4 +1,4 @@
-# Enterprise
+# Java EE
 
 * [JDBC](JDBC.md)
 * [JNDI](JNDI.md)
