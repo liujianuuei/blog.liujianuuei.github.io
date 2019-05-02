@@ -755,3 +755,7 @@ EXECUTE IMMEDIATE 'Dynamic SQL';
 | DDL | N | N |
 | DCL | N | N |
 | TCL | Y | Y |
+
+### Cheat Sheet
+
+![the SQL Cheat Sheet](theSQLCheatSheet.png)
