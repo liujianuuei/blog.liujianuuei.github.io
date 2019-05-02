@@ -1,1 +1,0 @@
-http://simplejta.sourceforge.net/

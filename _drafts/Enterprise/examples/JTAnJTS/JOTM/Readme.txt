@@ -1,1 +1,0 @@
-http://jotm.ow2.org/

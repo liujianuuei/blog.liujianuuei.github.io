@@ -1,9 +1,0 @@
-# Derby Database
-> cd "path_to_derby_db"
->ij
-ij version 10.13
-ij> connect 'jdbc:derby:derbydb;create=true;';
-ij> -- run some sql here
-ij> disconnect;
-ij> exit;
->
