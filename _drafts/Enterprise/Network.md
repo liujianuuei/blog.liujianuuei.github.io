@@ -10,10 +10,10 @@
 
 |  | 协议 | 性质 |
 | ------------- |-------------| -----|
-| 应用层（表示层，会话层） | HTTP，SMTP，FTP，Telnet | HTTP：短连接、无状态 |
+| 应用层（应用层、表示层、会话层） | HTTP，SMTP，FTP，Telnet | HTTP：短连接、无状态 |
 | 传输层 | TCP，UDP | TCP：长连接、有状态；UDP：无连接、无状态 |
 | 网络层 | IP |  |
-| 网络接口层（数据链路层 ，物理层）| Ethernet，Serial Line |  |
+| 网络接口层（数据链路层、物理层）| Ethernet，Serial Line |  |
 
 ## URI
 
