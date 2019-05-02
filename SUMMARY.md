@@ -43,7 +43,7 @@
     * [设计模式之模板方法模式](_drafts/Languages/DesignPattern/TheTemplateMethodPattern.md)
     * [设计模式概览](_drafts/Languages/DesignPattern/DesignPatternsOverview.md)
 
-* [Enterprise](_drafts/Enterprise/README.md)
+* [Java EE](_drafts/Enterprise/README.md)
 
   * [JDBC](_drafts/Enterprise/JDBC.md)
   * [JNDI](_drafts/Enterprise/JNDI.md)
