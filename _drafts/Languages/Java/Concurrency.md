@@ -4,6 +4,7 @@
 
 线程的生命周期会经历哪些阶段呢？新建的线程处于New状态，start之后处于Runnable状态，执行完毕处于Terminated状态。其中Runnable状态又在Ready和真正Running之间转换。如果线程被调用了sleep、wait或者join，则进入Waiting状态，如果等待对象锁则会进入Blocked状态。如下图所示：
 
+![The Thread Life Cycle](theThreadLifeCycle2.png)
 ![The Thread Life Cycle](theThreadLifeCycle.png)
 
 ### 启动线程
