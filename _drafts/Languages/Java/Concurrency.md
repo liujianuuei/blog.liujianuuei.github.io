@@ -181,9 +181,9 @@ Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executo
 
 一个阻塞队列，用来缓存等待执行的任务，阻塞队列有以下几种选择：
 - ArrayBlockingQueue;
-- PriorityBlockingQueue
 - LinkedBlockingQueue;
 - SynchronousQueue;
+- PriorityBlockingQueue
 
 **threadFactory**
 
