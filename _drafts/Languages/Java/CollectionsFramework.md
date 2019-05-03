@@ -1,6 +1,8 @@
 # 集合框架
 
-总体来说，集合类可以分成两类，一类是Collection，一类是Map。我们先来看下整个集合框架的拓扑图：
+总体来说，集合类可以分成两类，一类是 Collection，一类是 Map。Collection 又分为 List、Set、Queue 等。
+
+我们先来看下整个集合框架的拓扑图：
 
 ![The Collection Framework Topology](theCollectionFrameworkTopology.png)
 
