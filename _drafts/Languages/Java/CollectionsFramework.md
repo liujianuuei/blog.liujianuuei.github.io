@@ -44,6 +44,34 @@
 
 ## Cheat Sheet
 
+| 接口        | 具体类   |  线程安全 |实现原理  | 注意事项 |
+| --------   | -----  | ----  |----  |-------- |
+| Set        |   HashSet   |   X   |   |    |
+|           |   TreeSet   |   X   |   |    |
+|           |   LinkedHashSet   |   X   |   |    |
+|           |   CopyOnWriteArraySet   |  Y   | 基于数组实现，每次发生写操作的时候，都复制一个新的数组。线程安全是通过 `ReentrantLock` 实现的。  |    |
+| List     | ArrayList |   X     |     |    |
+|      | LinkedList |   X   |     |    |
+|      | CopyOnWriteArrayList |   Y   |  基于数组实现，每次发生写操作的时候，都复制一个新的数组。线程安全是通过 `ReentrantLock` 实现的。   |    |
+| Map        |   HashMap   |  X  |     |    |
+|        |   LinkedHashMap   |  X  |     |    |
+|          |   IdentityHashMap   |  X  |     |    |
+|          |   TreeMap   |  X  |     |    |
+|        |   ConcurrentHashMap   |  Y  |     |    |
+| Queue        |    ArrayQueue     |  Y  |   |  |
+|         |    PriorityQueue   |  Y  |   |  |
+|         |    LinkedTransferQueue    |  Y  |   |  |
+|         |    ArrayBlockingQueue    |  Y  |   |  |
+|          |    LinkedBlockingQueue    |  Y  |   |  |
+|        |    SynchronousQueue    |  Y  |   |  |
+|       |    PriorityBlockingQueue    |  Y  |   |  |
+|       |    ConcurrentLinkedQueue    |  Y  |   |  |
+|       |    DelayQueue    |  Y  |   |  |
+|       |    ArrayDeque    |  Y  |   |  |
+|       |    LinkedBlockingDeque    |  Y  |   |  |
+|       |    ConcurrentLinkedDeque    |  Y  |   |  |
+|   Stack    |   Stack   |    |   |  |
+
 ![the Java Collections CheatSheet](theJavaCollectionsCheatSheet.png)
 
 ## 最后
