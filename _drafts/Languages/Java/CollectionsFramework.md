@@ -16,9 +16,17 @@
 
 另外，`List` 类型的集合类，可以通过 `Collections.sort(List<T> list)` 方法，进行排序，这就要求该集合类的元素必须实现 `Comparable` 接口，或者也可以使用 `Collections.sort(List<T> list, Comparator<? super T> c)` 方法，这就要求，我们外部传入比较器。
 
-## 线程安全的集合类 - #Todo# ConcurrentHashMap, CopyOnWriteArrayList
+## 线程安全的集合类
 
 上面所列出的集合类都是只能工作于单线程环境下，如果在并发环境下，我们需要支持并发的集合类：
+
+**ConcurrentHashMap**
+
+相比于 `HashMap`，`ConcurrentHashMap` 是线程安全的。
+
+**CopyOnWriteArrayList**
+
+**线程安全的队列**
 
 ![](theThreadSafeCollectionFrameworkTopology.jpg)
 
