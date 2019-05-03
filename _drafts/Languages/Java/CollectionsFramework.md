@@ -30,10 +30,11 @@
 
 **CopyOnWriteArraySet**
 
+原理和 `CopyOnWriteArrayList` 一样。
+
 **线程安全的队列**
 
 ![](theThreadSafeCollectionFrameworkTopology.jpg)
-
 
 **ArrayBlockingQueue**
  
