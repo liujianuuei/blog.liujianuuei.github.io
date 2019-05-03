@@ -25,9 +25,62 @@
 
 我们可以调用`sleep()`方法来让线程进入休眠状态，除非被中断（interrupt），否则直到休眠时间结束，线程继续执行。休眠的线程并不会释放ownership of monitor。
 
-### 等待对象锁
+### 等待对象锁暨并发环境的数据同步
 
-我们可以调用`wait()`使一个线程进入等待状态，并释放ownership of monitor，直到收到其他线程的通知（notify）或者到了timeout时间，该线程恢复执行，除非被中断。
+**volatile**
+
+`volatile` 是线程可见的，但不是原子性的。如下可证明：
+
+```Java
+public class VolatileIsNotAtomic {
+
+    private volatile int num = 0;
+
+    public void increase() {
+        num++;
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        VolatileIsNotAtomic ins = new VolatileIsNotAtomic();
+        Thread[] threads = new Thread[20];
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 99999; i++) {
+                    System.out.println(i);
+                    ins.increase();
+                }
+            }
+        };
+        for (int i = 0; i < 20; i++) {
+            threads[i] = new Thread(runnable);
+            threads[i].start();
+        }
+        for (int i = 0; i < threads.length; i++) {
+            threads[i].join();
+        }
+        System.out.println(ins.num); // 期望 1999980
+    }
+}
+```
+
+**CAS:Atomic***
+
+**synchronized/互斥锁**
+
+**ReentrantLock(boolean fairLock)**
+
+**ReentrantReadWriteLock**
+
+**StampedLock**
+
+**SpinLock?**
+
+**Condition**
+
+**wait/notify/notifyAll**
+
+我们可以调用`wait()`使一个线程进入等待状态，并释放ownership of monitor，直到收到其他线程的通知（notify、notifyAll）或者到了timeout时间，该线程恢复执行，除非被中断。
 
 > The current thread must own this object's monitor. The thread releases ownership of this monitor and waits until another thread notifies threads waiting on this object's monitor to wake up either through a call to the notify method or the notifyAll method. The thread then waits until it can re-obtain ownership of the monitor and resumes execution.
 
@@ -128,7 +181,7 @@ public class CyclicBarrierTest implements Runnable {
 
 > If this thread is blocked in a Selector then the thread's interrupt status will be set and it will return immediately from the selection operation, possibly with a non-zero value, just as if the selector's wakeup method were invoked.
 
-> If none of the previous conditions hold then this thread's interrupt status will be set. 
+> If none of the previous conditions hold then this thread's interrupt status will be set.
 
 ### 结束线程
 
@@ -304,7 +357,7 @@ public class QueueWorker implements Runnable {
                         try {
                             queue.wait(500);
                             if(!queue.isEmpty()) {
-                                content = queue.remove();
+                                content = queue.poll();
                             }
                         } catch (InterruptedException e) {
                             continue;
@@ -319,7 +372,7 @@ public class QueueWorker implements Runnable {
 
     public void addAndNotify(byte[] content) {
         synchronized (queue) {
-            queue.add(content);
+            queue.offer(content);
             queue.notify();
         }
     }
@@ -415,6 +468,43 @@ public class PlzMessageHandler implements MessageHandler<AbstractPlzMsg> {
 }
 ```
 
+两个使用 `SynchronousQueue` 的例子，JDK里 `Executors.newCachedThreadPool` 就是用的 `SynchronousQueue`：
+
+```
+BlockingQueue<String> q = new SynchronousQueue();
+new Thread(() -> {
+	try {
+		String s = q.poll(60L, TimeUnit.SECONDS); // Keep alive 60 sec
+		System.out.println(s);
+	} catch (Exception e) {
+	}
+}).start();
+new Thread(() -> {
+	try {
+		boolean r = q.offer("Data" + System.currentTimeMillis(), 60L, TimeUnit.SECONDS); // Keep alive 60 sec
+		System.out.println(r);
+	} catch (Exception e) {
+	}
+}).start();
+```
+
+```
+BlockingQueue<String> q = new SynchronousQueue();
+new Thread(() -> {
+	try {
+		String s = q.take();
+		System.out.println(s);
+	} catch (Exception e) {
+	}
+}).start();
+new Thread(() -> {
+	try {
+		q.put("Data" + System.currentTimeMillis());
+	} catch (Exception e) {
+	}
+}).start();
+```
+
 上述项目的线程模型，用图表示出来就是这样：
 
 ![The XH Project Thread Model](theXHThreadModel.png)
@@ -508,4 +598,3 @@ ForkJoinPool 一共有三种执行任务的方法，列出如下（来自于官�
 ![](theSumOfTaskExecMethods.png)
 
 另外需要说明的是，ForkJoinPool 内部维护着足够多的工作者线程，来处理提交的任务，而这些线程根据处理器的数目（parallelism level）并行也就是真正的同时工作着。
-
