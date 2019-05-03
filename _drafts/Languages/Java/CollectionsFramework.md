@@ -10,6 +10,18 @@
 
 ![](theQueueTopology.png)
 
+**HashMap**
+
+**TreeMap**
+
+**HashSet**
+
+**TreeSet**
+
+**ArrayList**
+
+**LinkedList**
+
 ## 有序
 
 一般而言，以Tree开头的集合类自动保持元素顺序，通过`compareTo`方法来确定元素顺序，底层二叉树存储；以Priority开头的集合类也是通过`compareTo`方法来确定元素优先级；通过以Linked开头的集合类保持插入顺序，底层链式存储。无序不重集合类是通过`equals`方法来识别元素，如果是基于散列的集合类，首先通过散列值即`hashCode`来判断相等性，再通过`equals`方法进行比较。
