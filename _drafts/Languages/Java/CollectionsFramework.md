@@ -37,12 +37,12 @@
 ![](theThreadSafeCollectionFrameworkTopology.jpg)
 
 **ArrayBlockingQueue**
- 
-**PriorityBlockingQueue**
- 
+
 **LinkedBlockingQueue**
  
 **SynchronousQueue**
+
+**PriorityBlockingQueue**
 
 **ConcurrentLinkedQueue**
 
