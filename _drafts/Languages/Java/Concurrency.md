@@ -9,17 +9,17 @@
 
 ### 启动线程
 
-有两种方法启动线程：
+有多种方法启动线程：
 
-+ 创建Thread类的实例（需要传入实现 Runnable 接口的类），然后调用其 `start()` 方法。
-+ 创建继承自Thread类的实例，然后调用其 `start()` 方法。
++ 创建 Thread 类的实例（需要传入实现 Runnable 接口的类），然后调用其 `start()` 方法
++ 创建继承自 Thread 类的实例，然后调用其 `start()` 方法
 + 通过线程池触发执行：
-    + execute：传入实现Runnable接口的类
+    + execute：传入实现 Runnable 接口的类
     + submit：
         + 传入实现 Runnable 接口的类
-        + 传入实现 Callable
+        + 传入实现 Callable 接口的类，返回 `java.util.concurrent.Future` 对象
 
-启动之后，线程的`run()`方法会被自动调用，执行逻辑代码，我们不能显式调用`run()`方法。
+启动之后，线程的`run()`方法或 `call`方法会被自动调用，执行逻辑代码，我们不应该显式调用`run()`方法或 `call`方法。
 
 ### 线程休眠
 
