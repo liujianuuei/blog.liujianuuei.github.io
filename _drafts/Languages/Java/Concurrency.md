@@ -189,6 +189,7 @@ Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executo
 - LinkedBlockingQueue;
 - SynchronousQueue;
 - PriorityBlockingQueue
+- ConcurrentLinkedQueue
 
 **threadFactory**
 
