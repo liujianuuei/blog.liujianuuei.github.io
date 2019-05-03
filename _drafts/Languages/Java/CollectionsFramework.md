@@ -26,9 +26,24 @@
 
 **CopyOnWriteArrayList**
 
+基于数组实现，每次发生写操作的时候，都复制一个新的数组。线程安全是通过 `ReentrantLock` 实现的。
+
+**CopyOnWriteArraySet**
+
 **线程安全的队列**
 
 ![](theThreadSafeCollectionFrameworkTopology.jpg)
+
+
+**ArrayBlockingQueue**
+ 
+**PriorityBlockingQueue**
+ 
+**LinkedBlockingQueue**
+ 
+**SynchronousQueue**
+
+**ConcurrentLinkedQueue**
 
 ## 其它特殊集合类
 
