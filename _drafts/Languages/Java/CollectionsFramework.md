@@ -10,13 +10,13 @@
 
 ![](theQueueTopology.png)
 
-## 有序性
+## 有序
 
 一般而言，以Tree开头的集合类自动保持元素顺序，通过`compareTo`方法来确定元素顺序，底层二叉树存储；以Priority开头的集合类也是通过`compareTo`方法来确定元素优先级；通过以Linked开头的集合类保持插入顺序，底层链式存储。无序不重集合类是通过`equals`方法来识别元素，如果是基于散列的集合类，首先通过散列值即`hashCode`来判断相等性，再通过`equals`方法进行比较。
 
 另外，`List` 类型的集合类，可以通过 `Collections.sort(List<T> list)` 方法，进行排序，这就要求该集合类的元素必须实现 `Comparable` 接口，或者也可以使用 `Collections.sort(List<T> list, Comparator<? super T> c)` 方法，这就要求，我们外部传入比较器。
 
-## 线程安全的集合类
+## 线程安全
 
 上面所列出的集合类都是只能工作于单线程环境下，如果在并发环境下，我们需要支持并发的集合类：
 
@@ -45,7 +45,7 @@
 
 **ConcurrentLinkedQueue**
 
-## 其它特殊集合类
+## 其它特性
 
 **受检集合类**
 
