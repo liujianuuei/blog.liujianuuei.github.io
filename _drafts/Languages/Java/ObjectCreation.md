@@ -35,68 +35,44 @@
 
 ```Java
 // Builder Pattern
-public class NutritionFacts {
-    private final int servingSize;
-    private final int servings;
-    private final int calories;
-    private final int fat;
-    private final int sodium;
-    private final int carbohydrate;
+public class SomeObject {
+    private final int someProperty;
+    private final int anotherProperty;
+    private final int yetAnotherProperty;
 
     public static class Builder {
         // Required parameters
-        private final int servingSize;
-        private final int servings;
+        private final int someProperty;
+        private final int anotherProperty;
         // Optional parameters - initialized to default values
-        private int calories = 0;
-        private int fat = 0;
-        private int carbohydrate = 0;
-        private int sodium = 0;
+        private int yetAnotherProperty = 0;
 
-        public Builder(int servingSize, int servings) {
-            this.servingSize = servingSize;
-            this.servings = servings;
+        public Builder(int someProperty, int anotherProperty) {
+            this.someProperty = someProperty;
+            this.anotherProperty = anotherProperty;
         }
 
-        public Builder calories(int val) {
-            calories = val;
+        public Builder yetAnotherProperty(int p) {
+            this.yetAnotherProperty = p;
             return this;
         }
 
-        public Builder fat(int val) {
-            fat = val;
-            return this;
-        }
-
-        public Builder carbohydrate(int val) {
-            carbohydrate = val;
-            return this;
-        }
-
-        public Builder sodium(int val) {
-            sodium = val;
-            return this;
-        }
-
-        public NutritionFacts build() {
-            return new NutritionFacts(this);
+        public SomeObject build() {
+            return new SomeObject(this);
         }
     }
 
-    private NutritionFacts(Builder builder) {
-        servingSize = builder.servingSize;
-        servings = builder.servings;
-        calories = builder.calories;
-        fat = builder.fat;
-        sodium = builder.sodium;
-        carbohydrate = builder.carbohydrate;
+    private SomeObject(Builder builder) {
+        someProperty = builder.someProperty;
+        anotherProperty = builder.anotherProperty;
+        yetAnotherProperty = builder.yetAnotherProperty;
     }
 }
 ```
 可以看到，创建的对象是不可变的且创建过程是集中在一处，而且大量的参数是分散维护的且是可选的。客户端调用示例：
 
 ```Java
-NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).calories(100).sodium(35).carbohydrate(27).build();
+SomeObject someObject = new SomeObject.Builder(10, 20).yetAnotherProperty(30).build();
 ```
 
 注意：构建器要定义成static的，否则报*No enclosing instance of type NutritionFacts is accessible. Must qualify the allocation with an enclosing instance of type NutritionFacts (e.g. x.new A() where x is an instance of NutritionFacts).*异常。
