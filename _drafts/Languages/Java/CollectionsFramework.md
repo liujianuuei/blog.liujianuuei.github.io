@@ -4,11 +4,7 @@
 
 我们先来看下整个集合框架的拓扑图：
 
-![The Collection Framework Topology](theCollectionFrameworkTopology.png)
-
-以及，关于Queue系列的补充图：
-
-![](theQueueTopology.png)
+![The Collection Framework Topology](theCollectionFrameworkTopology.png) ![](theQueueTopology.png)
 
 另外，`HashMap` 的底层数据结构如下：
 
