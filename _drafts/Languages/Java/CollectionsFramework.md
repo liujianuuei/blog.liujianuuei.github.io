@@ -2,15 +2,15 @@
 
 在 Java 编程语言中，最基本的数据结构就两种，一个是数组，另外一个是模拟指针（引用）。总体来说，集合类可以分成两类，一类是 Collection，一类是 Map。Collection 又分为 Set、List、Queue、Stack 等。
 
+## 概览
+
 我们先来看下整个集合框架的拓扑图：
 
-![The Collection Framework Topology](theCollectionFrameworkTopology.png) ![](theQueueTopology.png)
+| Set、List、Map | Queue、Stack   |
+| --------   | -----  |
+| ![The Collection Framework Topology](theCollectionFrameworkTopology.png) |   ![](theQueueTopology.png)   |
 
-另外，`HashMap` 的底层数据结构如下：
-
-![](theHashMapImplement.png)
-
-## 有序
+## 有序性
 
 一般而言，以 `Tree` 开头的集合类自动保持元素顺序，通过 `compareTo` 方法来确定元素顺序，底层红黑树存储；以Priority开头的集合类也是通过 `compareTo` 方法来确定元素优先级；以 `Linked` 开头的集合类保持插入顺序，底层链式存储。无序不重集合类是通过 `equals` 方法来识别元素，如果是基于散列的集合类，首先通过散列值即 `hashCode` 来判断相等性，再通过 `equals` 方法进行比较。
 
@@ -18,11 +18,11 @@
 
 ## 线程安全
 
-上面所列出的集合类都是只能工作于单线程环境下，如果在并发环境下，我们需要支持并发的集合类：
+上面所列出的集合类都是只能工作于单线程环境下，如果在并发环境下，我们需要支持并发的集合类。Set、List、Map，以及 Queue 和 Stack 各自都有适用于并发环境的对应类。
 
-**线程安全的队列**
-
-![](theThreadSafeCollectionFrameworkTopology.jpg)
+| Set | List   | Map   | Queue、Stack   |
+| --------   | -----  | -----  | -----  |
+| `CopyOnWriteArraySet` `Collections.synchronizedSet(Set)` | `CopyOnWriteArrayList` `Collections.synchronizedList(List)` | `ConcurrentHashMap` `Collections.synchronizedMap(Map)` | ![](theThreadSafeCollectionFrameworkTopology.jpg)  |
 
 ## 其它特性
 
@@ -42,7 +42,7 @@
 
 针对集合类泛型化的限制，即只能有固定数目的类型参数，可以通过将类型参数放在键上而不是容器上来避开这一限制，即类型安全的异构容器。[注解](Annotation.md)（Annotation） 提供的很多 API 以及 EnumMap 的定义 `public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V>` （EnumMap 就是一个类型安全的异构容器，更多细节，请查看[实例受控类](InstanceControlledClass.md)）就是其应用的实例，更多细节，请另行查看《EJ 2nd Edition》。
 
-## Cheat Sheet
+## 速查表
 
 | 接口        | 具体类   |  线程安全 | 是否有序 |允许空元素| 允许重复(equals return true) | 实现原理  | 注意事项 |
 | --------   | -----  | ----  |----  |-------- |-------- |-------- |-------- |
@@ -50,15 +50,17 @@
 |           |   TreeSet   |   X   |  Y (比较排序) | X |  X   | 基于 `TreeMap` 实现  ||
 |           |   LinkedHashSet   |   X   |  Y (插入顺序)  | Y | X  |  基于 `LinkedHashMap` 实现  ||
 |           |   CopyOnWriteArraySet   |  Y   |  Y (插入顺序)   | Y | X  | 基于 `CopyOnWriteArrayList` 实现  | 同 `CopyOnWriteArrayList` |
+|        |   Collections.synchronizedSet(Set)   |  Y  | 取决于被包装类   |  取决于被包装类  | X   |  通过 `synchronized (mutex){}` 同步互斥锁实现，读写都会阻塞  |  保证完全一致性，但性能受到影响   |
 | List     | ArrayList |   X     |   Y (插入顺序)   | Y   |  Y  | 基于`数组`实现，扩容的时候会复制数组 | 适合随机访问以及追加元素，最好指定 `initialCapacity`，避免数组复制 |
 |      | LinkedList |   X   |  Y (插入顺序)   |  Y    | Y  | 基于 `双向链表` 实现 | 适合新增和删除操作，常用于队列的实现，需要在外部考虑同步，`LinkedList` 实现了 `Deque` 接口 |
 |      | CopyOnWriteArrayList |   Y   |    Y (插入顺序)  | Y |  Y   |  基于数组实现，每次发生写操作的时候，都复制一个新的数组。写线程安全是通过 `ReentrantLock` 实现的。读写分离的思想，读和写分别操作的是不同的容器。  | 修改性能很差，多用于读的频率远大于写的频率的场景，保证最终一致性 |
-| Map        |   HashMap   |  X  |   X   |  Y (key and value)  |  N/A  | 基于数组（AKA 哈希表，hash table of buckets）和链表的组合实现，`hashCode` 即数组下标，如果发生哈希碰撞（同一个 bucket），则通过`(单向)链表`或`红黑树`存放返回相同 `hashCode` 的元素 |  循环遍历过程中，关于结构性的修改操作，需要通过 `iterator.remove` 来进行；一般不需要考虑自己设定 `initialCapacity`、`loadFactor` |
+|        |   Collections.synchronizedList(List)   |  Y  | Y (插入顺序)   |  Y  | Y   |  通过 `synchronized (mutex){}` 同步互斥锁实现，读写都会阻塞  |  保证完全一致性，但性能受到影响   |
+| Map        |   HashMap   |  X  |   X   |  Y (key and value)  |  N/A  | 基于数组（AKA 哈希表，hash table of buckets）和链表的组合实现，`hashCode` 即数组下标，如果发生哈希碰撞（同一个 bucket），则通过`(单向)链表`或`红黑树`存放返回相同 `hashCode` 的元素；详见附注① |  循环遍历过程中，关于结构性的修改操作，需要通过 `iterator.remove` 来进行；一般不需要考虑自己设定 `initialCapacity`、`loadFactor` |
 |        |   LinkedHashMap   |  X  |   Y (插入顺序)   |  Y (key and value)  | N/A | 基于 `HashMap` 和 `双向链表` 实现 | 同 `HashMap` |
 |          |   IdentityHashMap   |  X  |  X   |  Y (key and value)  |  N/A  |  用 `==`(reference-equality)而不是 `equals`(object-equality)，比较 `key` 值；使用 `System.identityHashCode()` 而不是 `hashCode` | 很少用 |
 |          |   TreeMap   |  X  |  Y (比较排序)   | X   | N/A   | 基于 `红黑树` 实现 |     |
 |        |   ConcurrentHashMap(Hashtable)   |  Y  |  X  |   X  | N/A   |  通过非常细粒度（bucket 中的元素）的 `synchronized` 锁，也称作分段锁  |  读操作没有加锁因此也不会阻塞，有可能与另外线程的写操作同时发生，读到的不完整的数据，这里的一致性是**最终一致性**   |
-|        |   Collections.synchronizedMap(HashMap)   |  Y  | X   |  Y (key and value)   | N/A   |  通过 `synchronized (mutex){}` 同步互斥锁实现，读写都会阻塞  |  保证完全一致性，但性能受到影响   |
+|        |   Collections.synchronizedMap(Map)   |  Y  | 取决于被包装类   |  取决于被包装类   | N/A   |  通过 `synchronized (mutex){}` 同步互斥锁实现，读写都会阻塞  |  保证完全一致性，但性能受到影响   |
 | Queue        |    ArrayQueue     |  X  |  Y (FIFO) | Y | Y | 同 `ArrayList` | 同 `ArrayList`，不算是真正的队列，不常用 |
 |         |    PriorityQueue   |  X  |  Y (比较排序)  | X  | Y | 基于`数组`实现，扩容的时候会复制数组  | 非多线程环境的优先队列，最好指定 `initialCapacity`，避免数组复制  |
 |         |    ArrayBlockingQueue    |  Y  |  Y (FIFO)   | X  | Y | 基于`数组`实现，不会自动扩容（有界），线程安全是通过 `ReentrantLock`（可以指定其为公平锁） 实现，通过 `Condition` 实现等待/阻塞（读取一个空队列，或者试图写入一个满队列） | 初始化的时候，必须指定 `capacity`；可能具有更高更稳定的性能  |
@@ -73,8 +75,12 @@
 |       |    ConcurrentLinkedDeque    |  Y  |  Y (插入顺序)    | X  |   Y   |  基于 `CAS(Compare-and-Swap)` 原子指令和双向链表的无界非阻塞队列  |  批量操作（`addAll`、`removeAll` 等）不保证原子性，如果读（比如 `iterator` 操作）与写（比如 `addAll`）同时发生，可能读到不完整的数据，这里的一致性是最终一致性；`size` 开销很大  |
 |   Stack    |   Stack   |  X  | Y (LIFO)  | Y |  Y  | 对于 `Vector` 的简单封装  | 作为栈，应该优先使用 `{@link Deque}` 接口和其实现  |
 
+### 附注
+
+① `HashMap` 的底层结构：
+
+![](theHashMapImplement.png)
+
+② Notable Java collections libraries
+
 ![the Java Collections CheatSheet](theJavaCollectionsCheatSheet.png)
-
-## 最后
-
-就这样。
