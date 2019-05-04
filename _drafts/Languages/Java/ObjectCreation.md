@@ -2,7 +2,7 @@
 
 ## 简单（静态）工厂
 
-对于类而言，除了显式的`new`一个实例，还应该考虑：**用静态工厂方法代替构造器**，更多细节请参考[设计模式之工厂模式](设计模式之工厂模式)。这样做的好处主要在于可以规避方法签名的冲突，和对于**不可变类**不必每次都创建一个新对象，可以重复使用缓存起来的实例，比如`Boolean.valueOf(boolean)`。
+对于类而言，除了显式的`new`一个实例，还应该考虑：**用静态工厂方法代替构造器**，更多细节请参考[设计模式之工厂模式](https://github.com/jianliuwei/blog.jianliuwei.github.io/blob/master/_drafts/Languages/DesignPattern/TheFactoryPattern.md)。这样做的好处主要在于可以规避方法签名的冲突，和对于[**不可变类**](ImmutableClass.md)不必每次都创建一个新对象，可以重复使用缓存起来的实例，比如`Boolean.valueOf(boolean)`。
 
  > The ability of static factory methods to return the same object from repeated invocations allows classes to maintain strict control over what instances exist at any time. Classes that do this are said to be instance-controlled. There are several reasons to write instance-controlled classes. Instance control allows a class to guarantee that it is a singleton (Item 3) or noninstantiable (Item 4). Also, it allows an immutable class (Item 15) to make the guarantee that no two equal instances exist: a.equals(b) if and only if a==b. If a class makes this guarantee, then its clients can use the == operator instead of the equals(Object) method, which may result in improved performance. Enum types (Item 30) provide this guarantee.
 
@@ -31,72 +31,48 @@
 
 ## 构建器（Builder）
 
-静态工厂和构造器有个共同的局限：他们不适用于大量的可选参数。一个替代办法就是JavaBean模式，调用一个无参构造器创建对象，然后用`setter`方法设置参数。这样的一个问题就是，对象创建分散到多步骤完成，而且无法做成不可变类。**构建器（Builder）**很好的同时解决了这两个问题，代码示例：
+静态工厂和构造器有个共同的局限：他们不适用于大量的可选参数。一个替代办法就是JavaBean模式，调用一个无参构造器创建对象，然后用`setter`方法设置参数。这样的一个问题就是，对象创建分散到多步骤完成，而且无法做成[不可变类](ImmutableClass.md)。构建器（Builder）很好的同时解决了这两个问题，代码示例：
 
 ```Java
 // Builder Pattern
-public class NutritionFacts {
-    private final int servingSize;
-    private final int servings;
-    private final int calories;
-    private final int fat;
-    private final int sodium;
-    private final int carbohydrate;
+public class SomeObject {
+    private final int someProperty;
+    private final int anotherProperty;
+    private final int yetAnotherProperty;
 
     public static class Builder {
         // Required parameters
-        private final int servingSize;
-        private final int servings;
+        private final int someProperty;
+        private final int anotherProperty;
         // Optional parameters - initialized to default values
-        private int calories = 0;
-        private int fat = 0;
-        private int carbohydrate = 0;
-        private int sodium = 0;
+        private int yetAnotherProperty = 0;
 
-        public Builder(int servingSize, int servings) {
-            this.servingSize = servingSize;
-            this.servings = servings;
+        public Builder(int someProperty, int anotherProperty) {
+            this.someProperty = someProperty;
+            this.anotherProperty = anotherProperty;
         }
 
-        public Builder calories(int val) {
-            calories = val;
+        public Builder yetAnotherProperty(int p) {
+            this.yetAnotherProperty = p;
             return this;
         }
 
-        public Builder fat(int val) {
-            fat = val;
-            return this;
-        }
-
-        public Builder carbohydrate(int val) {
-            carbohydrate = val;
-            return this;
-        }
-
-        public Builder sodium(int val) {
-            sodium = val;
-            return this;
-        }
-
-        public NutritionFacts build() {
-            return new NutritionFacts(this);
+        public SomeObject build() {
+            return new SomeObject(this);
         }
     }
 
-    private NutritionFacts(Builder builder) {
-        servingSize = builder.servingSize;
-        servings = builder.servings;
-        calories = builder.calories;
-        fat = builder.fat;
-        sodium = builder.sodium;
-        carbohydrate = builder.carbohydrate;
+    private SomeObject(Builder builder) {
+        someProperty = builder.someProperty;
+        anotherProperty = builder.anotherProperty;
+        yetAnotherProperty = builder.yetAnotherProperty;
     }
 }
 ```
 可以看到，创建的对象是不可变的且创建过程是集中在一处，而且大量的参数是分散维护的且是可选的。客户端调用示例：
 
 ```Java
-NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).calories(100).sodium(35).carbohydrate(27).build();
+SomeObject someObject = new SomeObject.Builder(10, 20).yetAnotherProperty(30).build();
 ```
 
 注意：构建器要定义成static的，否则报*No enclosing instance of type NutritionFacts is accessible. Must qualify the allocation with an enclosing instance of type NutritionFacts (e.g. x.new A() where x is an instance of NutritionFacts).*异常。
@@ -105,8 +81,45 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).calories(100).sodiu
 
 ```Java
 // A builder for objects of type T
-public interface Builder<T> {
+public interface ObjectBuilder<T> {
     public T build();
+}
+```
+
+```Java
+public class SomeObject {
+    private final int someProperty;
+    private final int anotherProperty;
+    private final int yetAnotherProperty;
+
+    public static class Builder implements ObjectBuilder<SomeObject> {
+        // Required parameters
+        private final int someProperty;
+        private final int anotherProperty;
+        // Optional parameters - initialized to default values
+        private int yetAnotherProperty = 0;
+
+        public Builder(int someProperty, int anotherProperty) {
+            this.someProperty = someProperty;
+            this.anotherProperty = anotherProperty;
+        }
+
+        public Builder yetAnotherProperty(int p) {
+            this.yetAnotherProperty = p;
+            return this;
+        }
+
+        @Override
+        public SomeObject build() {
+            return new SomeObject(this);
+        }
+    }
+
+    private SomeObject(Builder builder) {
+        someProperty = builder.someProperty;
+        anotherProperty = builder.anotherProperty;
+        yetAnotherProperty = builder.yetAnotherProperty;
+    }
 }
 ```
 
