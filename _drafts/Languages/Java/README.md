@@ -19,6 +19,6 @@
 * [字符串](String.md)
 * [精密计算](PreciseCalculation.md)
 * [异常](Exception.md)
-* [Stream](Stream.md)
+* ~~[Stream](Stream.md)~~
 * ~~[动态类型](DynamicallyTyped.md)~~
 * ~~[函数式](Functional.md)~~
