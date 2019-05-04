@@ -17,15 +17,14 @@
     * [反射](_drafts/Languages/Java/Reflection.md)
     * [泛型](_drafts/Languages/Java/Generics.md)
     * [序列化](_drafts/Languages/Java/Serialization.md)
+    * [集合](_drafts/Languages/Java/Collection.md)
     * [并发](_drafts/Languages/Java/Concurrency.md)
-    * [集合框架](_drafts/Languages/Java/CollectionsFramework.md)
-    * [数组](_drafts/Languages/Java/Array.md)
     * [NIO](_drafts/Languages/Java/NIO.md)
-    * [网络编程](_drafts/Languages/Java/NetworkPrograming.md)
+    * [数组](_drafts/Languages/Java/Array.md)
     * [字符串](_drafts/Languages/Java/String.md)
     * [精密计算](_drafts/Languages/Java/PreciseCalculation.md)
     * [异常](_drafts/Languages/Java/Exception.md)
-    * [Stream](_drafts/Languages/Java/Stream.md)
+    * ~~[Stream](_drafts/Languages/Java/Stream.md)~~
     * ~~[动态类型](_drafts/Languages/Java/DynamicallyTyped.md)~~
     * ~~[函数式](_drafts/Languages/Java/Functional.md)~~
 
