@@ -2,7 +2,7 @@
 
 ## 简单（静态）工厂
 
-对于类而言，除了显式的`new`一个实例，还应该考虑：**用静态工厂方法代替构造器**，更多细节请参考[设计模式之工厂模式](设计模式之工厂模式)。这样做的好处主要在于可以规避方法签名的冲突，和对于**[不可变类](ImmutableClass.md)**不必每次都创建一个新对象，可以重复使用缓存起来的实例，比如`Boolean.valueOf(boolean)`。
+对于类而言，除了显式的`new`一个实例，还应该考虑：**用静态工厂方法代替构造器**，更多细节请参考[设计模式之工厂模式](https://github.com/jianliuwei/blog.jianliuwei.github.io/blob/master/_drafts/Languages/DesignPattern/TheFactoryPattern.md)。这样做的好处主要在于可以规避方法签名的冲突，和对于[**不可变类**](ImmutableClass.md)不必每次都创建一个新对象，可以重复使用缓存起来的实例，比如`Boolean.valueOf(boolean)`。
 
  > The ability of static factory methods to return the same object from repeated invocations allows classes to maintain strict control over what instances exist at any time. Classes that do this are said to be instance-controlled. There are several reasons to write instance-controlled classes. Instance control allows a class to guarantee that it is a singleton (Item 3) or noninstantiable (Item 4). Also, it allows an immutable class (Item 15) to make the guarantee that no two equal instances exist: a.equals(b) if and only if a==b. If a class makes this guarantee, then its clients can use the == operator instead of the equals(Object) method, which may result in improved performance. Enum types (Item 30) provide this guarantee.
 
