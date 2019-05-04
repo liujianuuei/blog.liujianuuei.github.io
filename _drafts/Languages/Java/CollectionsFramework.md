@@ -1,6 +1,6 @@
 # 集合框架
 
-在 Java 编程语言中，最基本的数据结构就两种，一个是数组，另外一个是模拟指针（引用）。总体来说，集合类可以分成两类，一类是 Collection，一类是 Map。Collection 又分为 List、Set、Queue 等。
+在 Java 编程语言中，最基本的数据结构就两种，一个是数组，另外一个是模拟指针（引用）。总体来说，集合类可以分成两类，一类是 Collection，一类是 Map。Collection 又分为 List、Set、Queue、Stack 等。
 
 我们先来看下整个集合框架的拓扑图：
 
