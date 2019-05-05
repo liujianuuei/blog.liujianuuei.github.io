@@ -151,7 +151,7 @@ public void anotherMethod() {
 
 另外，还有些关于锁的概念，简单介绍一下，比如自旋锁，自旋锁不会引起调用者睡眠，如果自旋锁已经被别的线程保持，调用者就一直循环在那里看是否该自旋锁的保持者已经释放了锁，“自旋”一词就是由此而来。CAS 执行的时候就是通过自旋方式，直到执行成功。
 
-##### 线程间通信
+#### 线程间通信
 
 在  `synchronized` 控制的区域（否则抛出 `java.lang.IllegalMonitorStateException` 异常），我们可以调用`wait()`使一个线程进入等待状态，并释放 ownership of monitor，直到收到其他线程的通知（`notify`、`notifyAll`）或者到了 timeout 时间，该线程恢复执行，除非被中断。
 
