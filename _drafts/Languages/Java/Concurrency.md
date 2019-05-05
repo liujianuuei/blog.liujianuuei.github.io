@@ -289,11 +289,11 @@ Java中存在两种线程：用户（user-thread）线程和后台（Daemon）�
 
 ```Java
 new Thread(new FutureTask<>(new Callable<String>() {
-	@Override
-	public String call() throws Exception {
+    @Override
+    public String call() throws Exception {
     // do some things
-		return "some thing";
-	}
+        return "some thing";
+    }
 })).start();
 ```
 
