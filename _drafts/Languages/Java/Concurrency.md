@@ -94,7 +94,7 @@ public class VolatileIsNotAtomic {
 
 #### CAS
 
-CAS 是实现 `j.u.c.atomic.Atomic*` 等原子类型的关键。CAS 全称即 Compare-and-Swap。CAS 的语义是“我认为 V 的值应该为 A，如果是，那么将 V 的值更新为 B，否则修改 A 为 C（假设 V 当前值是 C，即更新我的认识，更新我期望的值为最新），再从头开始判断执行，直到成功”。CAS 是自旋的。CAS 利用底层操作系统级别的指令（JNI 方法）完成原子操作，是非阻塞的，也不需要线程锁。原子类非常适合做计数器（`CountDownLatch` 也可以）或生成序列号。
+CAS 是实现 `j.u.c.atomic.Atomic*` 等原子类型的关键。CAS 全称即 Compare-and-Swap。CAS 的语义是“我认为 V 的值应该为 A，如果是，那么将 V 的值更新为 B，否则修改 A 为 C（假设 V 当前值是 C，即更新我的认识，更新我期望的值为最新），再从头开始判断执行，直到成功”。CAS 是自旋的。CAS 利用底层操作系统级别的指令（JNI 方法）完成原子操作，是非阻塞的，也不需要线程锁。原子类非常适合做计数器（`CountDownLatch`、`LongAdder`、`DoubleAdder` 等也可以）或生成序列号。
 
 #### J.U.C 锁
 
