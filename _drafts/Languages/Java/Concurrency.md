@@ -337,7 +337,7 @@ Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executo
 - 调度
 - 内存的局部性
 - 算法设计
-- 伪共享（False Sharing）：缓存系统中是以缓存行（cache line）为单位存储的，当多线程修改互相独立的变量时，如果这些变量共享同一个缓存行，就会无意中影响彼此的性能，这就是伪共享；Intel® VTune™ Amplifier 可以帮我们分析是不是有伪共享影响系统性能；
+- 伪共享（False Sharing）：CPU 缓存系统（三级缓存）中是以缓存行（cache line，一般一个缓存行64字节）为单位修改的，当多线程修改互相独立的变量时，如果这些变量位于同一个缓存行，就会无意中影响彼此的性能，这就是伪共享；Intel® VTune™ Amplifier 可以帮我们分析是不是有伪共享影响系统性能；Java 8 中新增了一个注解 `@sun.misc.Contended`。加上这个注解的类会自动**补齐（Padding）**缓存行，需要注意的是此注解默认是无效的，需要在 JVM 启动时设置 `-XX:-RestrictContended` 才会生效；
 
 在编写并发代码时，应该确保这些项都考虑过了。
 
