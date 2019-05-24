@@ -1,6 +1,6 @@
-# IO
+# NIO
 
-## Classic IO
+## Java I/O
 
 我们通过一张图来看下整个传统 IO 框架的结构：
 
@@ -8,7 +8,7 @@
 
 值得注意的是，在相同操作下，原生的读写流性能非常差，比如 FileInputStream，FileOutputStream 等，而 BufferedInputStream 由于对流进行了缓冲处理，其相当于普通读写流一次读写大块数据，所以极大地提高了性能。但即便如此，仍然不敌接下来介绍的 Non-blocking IO，所以编程过程中凡是涉及 IO 操作，应尽量使用 New IO 来代替上述这些传统 IO 接口。
 
-## Non-Blocking IO
+## NIO
 
 Non-Blocking IO （以下简称 NIO）是 java.nio 包中一些用于 IO 操作的类和接口。其原理是通过使用更接近操作系统执行 IO 的方式：**通道**和**缓冲器**，从而提高了执行速度。一言以蔽之，**NIO 的目标就是快速移动大量数据**，而且数据量越大优势越明显。
 
