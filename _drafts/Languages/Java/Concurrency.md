@@ -29,7 +29,7 @@ Java 的并发模型是基于线程和锁的并发。`java.util.concurrent` 包�
 
 这里有另外**一个重要的问题**，无论是 `Runnable` 还是 `Callable`，针对启动多个线程的场景，我们应该是创建新的 `Runnable` 或 `Callable` 实例还是复用一个实例？答案是，如果你的 `Runnable` 或 `Callable` 是线程安全的，则可以复用，否则不行，比如，包含状态，且没有进行同步等。
 
-另外，需要注意的是，如果你需要提交大量任务到线程池（比如[求素数的例子](https://github.com/jianliuwei/Idonotunderstand/blob/master/j.u.c/src/multithreading/Finder.java)，需要提交100000001个任务），那么 `submit` 是比 `invokeAll` 更好的选择，首先，因为 `submit` 提交后，立马就可以开始执行，而且也不需要一个额外的集合对象来收集全部待提交的任务，这样既提前了任务开始执行的时间，同时也节省了内存的占用。
+另外，需要注意的是，如果你需要提交大量任务到线程池（比如这个[求素数的例子](https://github.com/jianliuwei/Idonotunderstand/blob/master/j.u.c/src/multithreading/Finder.java)，需要提交100000001个任务），那么 `submit` 是比 `invokeAll` 更好的选择，首先，因为 `submit` 提交后，立马就可以开始执行，而且也不需要一个额外的集合对象来收集全部待提交的任务，这样既提前了任务开始执行的时间，同时也节省了内存的占用。
 
 ## 等待对象锁暨并发环境的同步问题
 
