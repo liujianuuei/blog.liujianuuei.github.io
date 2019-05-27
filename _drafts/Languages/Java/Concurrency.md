@@ -167,7 +167,7 @@ public void anotherMethod() {
 
 如果不是使用 `synchronized` 关键字，而是使用 J.U.C 锁来保证线程间的同步，则和其搭配使用的 `Condition` 可以被用来在线程之间进行协调。
 
-另外，还可以使用队列（一般是阻塞队列），在线程间传递任务或消息。
+另外，还可以使用队列（一般是阻塞队列），在线程间传递任务或消息；管道（`PipedInputStream` 和 `PipedOutputStream`）也是不同线程之间，直接传递数据的手段。
 
 ## 线程串行化
 
