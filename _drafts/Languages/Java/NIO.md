@@ -123,9 +123,159 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 
 ![NWP](theNWP.png)
 
-Java 用于文件 IO 操作的 API，同时也用于网络资源 IO 操作，这就使得操作网络资源如同本地文件一样，简化了编程。
+Java 用于文件 IO 操作的 API，同时也用于网络资源 IO 操作，这就使得操作网络资源如同本地文件一样，简化了编程。传统网络编程一般有如下模式：
 
-MINA 和 Netty 都是基于 NIO 的构建网络应用的框架。**要去阅读 Netty 的源码。**
+```Java
+ServerSocket serverSocket = new ServerSocket(7000);
 
-http://ifeve.com/
-http://blog.chinaunix.net/uid-24186189-id-2623973.html
+ExecutorService exec = Executors.newFixedThreadPool(100);
+new Thread(() -> {
+	while (true) {
+		try {
+			Socket clientSocket = serverSocket.accept(); // 监听客户端的连接
+			exec.submit(new B64Worker(clientSocket));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}).start();
+```
+
+```Java
+package tech.liujianwei.nwp.socket.b64encodec.worker;
+
+import tech.liujianwei.nwp.socket.b64encodec.util.IO;
+
+import java.io.*;
+import java.net.Socket;
+
+public class B64Worker implements Runnable {
+    private Socket clientSocket;
+    private B64Handler handler;
+
+    private IO io;
+
+    public B64Worker(Socket clientSocket) {
+        this.clientSocket = clientSocket;
+        this.handler = new B64Handler();
+        this.io = new IO();
+    }
+
+    @Override
+    public void run() {
+        try {
+            InputStream is = new BufferedInputStream(clientSocket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()));
+            while (true) {
+                byte[] data = io.read(is);
+                dos.write(handler.toBase64(data).getBytes());
+                dos.write("\4".getBytes());
+                dos.flush();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
+
+服务端建立 `ServerSocket`，并且监听客户端的连接，然后分配一个线程给客户端连接，在线程里处理相应的逻辑。
+
+```Java
+package tech.liujianwei.nwp.socket.client;
+
+import tech.liujianwei.nwp.socket.b64encodec.util.IO;
+
+import java.io.*;
+import java.net.Socket;
+import java.util.Base64;
+import java.util.Date;
+import java.util.Random;
+
+public class Client {
+    private Socket clientSocket;
+    private DataOutputStream dos;
+    private DataInputStream dis;
+
+    private IO io;
+
+    public Client(String host) throws IOException {
+        clientSocket = new Socket(host, 7000);
+        io = new IO();
+    }
+
+    private String onMessage(byte[] bytes) throws IOException {
+        output().write(bytes);
+        output().write("\4".getBytes());
+        output().flush();
+        byte[] data = io.read(input());
+        return new String(data);
+    }
+
+    private DataOutputStream output() throws IOException {
+        if (dos == null) {
+            dos = new DataOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()));
+        }
+        return dos;
+    }
+
+    private DataInputStream input() throws IOException {
+        if (dis == null) {
+            dis = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
+        }
+        return dis;
+    }
+
+    public static void main(String[] args) {
+        client.onMessage(...);
+    }
+}
+```
+
+客户端的主要逻辑，就是连接到服务端（通过创建绑定到具体主机和端口的 `Socket`），然后通过 I/O 流收发数据。
+
+```Java
+package tech.liujianwei.nwp.socket.b64encodec.util;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public class IO {
+    List<Byte> data;
+    byte[] buffer;
+
+    public IO() {
+        data = new ArrayList<>(100 * 1024 * 1024); // 100M
+        buffer = new byte[100 * 1024 * 1024]; // 100M
+    }
+
+    public byte[] read(InputStream is) throws IOException {
+        return doRead(is);
+    }
+
+    private byte[] doRead(InputStream is) throws IOException {
+        int len;
+        System.out.println("Reading data");
+        while ((len = is.read(buffer)) != -1) {
+            System.out.println("Received " + len + " bytes data");
+            if (buffer[len - 1] == '\4'/*EOT*/) {
+                data.addAll(Bytes.toList(buffer, 0, len - 1));
+                break;
+            }
+            data.addAll(Bytes.toList(buffer, 0, len));
+        }
+        System.out.println("READ DONE.");
+        byte[] bytes = Bytes.toArray(data);
+        data.clear();
+        return bytes;
+    }
+}
+```
