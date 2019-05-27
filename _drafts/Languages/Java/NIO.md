@@ -121,7 +121,7 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 
 ## Network I/O (NWP)
 
-![N.W.P](nwp.png)
+![NWP](theNWP.png)
 
 Java 用于文件 IO 操作的 API，同时也用于网络资源 IO 操作，这就使得操作网络资源如同本地文件一样，简化了编程。
 
