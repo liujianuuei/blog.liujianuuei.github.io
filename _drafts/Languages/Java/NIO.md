@@ -119,7 +119,7 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 // new File("hibernate.cfg.xml");
 ```
 
-## Network I/O
+## Network I/O (NWP)
 
 ![N.W.P](nwp.png)
 
