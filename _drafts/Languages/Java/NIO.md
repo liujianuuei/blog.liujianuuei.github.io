@@ -24,7 +24,7 @@ NIO 有下面几个主要抽象概念：
 
 每个基本类型（除了 boolean）都对应一个 Buffer 的实现类，分别操作各自类型的数据。针对文件系统（网络稍后再说），Channel 的一个实现是 `FileChannel`。只有 `ByteBuffer` 可以和 Chanel 交互。可以通过 FileInputStream，FileOutputStream  以及 RandomAccessFile 获得 FileChannel。
 
-**内存映射文件**
+### 内存映射文件
 
 另外，FileChannel 可以把其所代表的文件的部分或全部（最大可达2GB）区域映射到内存，称为内存映射文件，这样就允许我们创建和修改那些因为太大而不能整个放入内存的文件。有了内存映射文件，我们就相当于操作的是整个文件一样，其底层实现通过数据的**交换**确保不会发生内存溢出。我们还可以为要操作的文件区域（FileChannel 提供的方法）加锁，确保数据读写不会冲突。如下示例代码：
 
@@ -36,7 +36,7 @@ MappedByteBuffer buffer = new RandomAccessFile(new File("pathTo/file"), "rw").ge
 
 ## NIO.2
 
-**Asynchronous IO**
+### Asynchronous IO
 
 在 NIO 的基础上，JDK 7 加入了异步 IO 操作。和传统 IO 相比，异步 IO 在读写时，客户端不会阻塞，而是继续往下执行。如下示例代码：
 
@@ -56,7 +56,7 @@ try (AsynchronousFileChannel channel = AsynchronousFileChannel.open(Paths.get("p
 }
 ```
 
-**NIO File**
+### NIO File
 
 Java 7 加入了 java.nio.file 包，以及相关的 java.nio.file.attribute 包，提供对文件系统的全面支持，比如文件复制，创建符号链接以及文件属等。如下示例代码：
 
@@ -119,11 +119,15 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 // new File("hibernate.cfg.xml");
 ```
 
-## Network I/O (NWP)
+## Network I/O
 
 ![NWP](theNWP.png)
 
-Java 用于文件 IO 操作的 API，同时也用于网络资源 IO 操作，这就使得操作网络资源如同本地文件一样，简化了编程。传统网络编程一般有如下模式：
+### NWP
+
+Java 用于文件 I/O 操作的 API，同时也适用于网络编程，这就使得操作网络资源如同本地文件一样。传统网络编程一般有如下模式：
+
+服务端建立 `ServerSocket`，并且监听客户端的连接，然后分配一个线程给客户端连接，在线程里处理相应的逻辑。
 
 ```Java
 ServerSocket serverSocket = new ServerSocket(7000);
@@ -185,7 +189,7 @@ public class B64Worker implements Runnable {
 }
 ```
 
-服务端建立 `ServerSocket`，并且监听客户端的连接，然后分配一个线程给客户端连接，在线程里处理相应的逻辑。
+客户端的主要逻辑，就是连接到服务端（通过创建绑定到具体主机和端口的 `Socket`），然后通过 I/O 流收发数据。
 
 ```Java
 package tech.liujianwei.nwp.socket.client;
@@ -238,7 +242,7 @@ public class Client {
 }
 ```
 
-客户端的主要逻辑，就是连接到服务端（通过创建绑定到具体主机和端口的 `Socket`），然后通过 I/O 流收发数据。
+就网络 I/O 流的操作来说，服务端和客户端可以共用一套代码。
 
 ```Java
 package tech.liujianwei.nwp.socket.b64encodec.util;
@@ -279,3 +283,9 @@ public class IO {
     }
 }
 ```
+
+#### NWP 的问题
+
+传统网络编程是阻塞模型，为每个客户端连接会分配一个线程，这样会造成大量线程阻塞，直到客户端有数据输入，同时大量线程之间的切换也非常消耗资源，再就是数据读写是以字节流为单位，效率不高。
+
+### NWP with NIO
