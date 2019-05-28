@@ -293,3 +293,17 @@ public class IO {
 - 再就是数据读写是以字节流为单位，效率不高；
 
 ### NWP with NIO
+
+NIO 模型针对上述几点，分别做了改进：
+
+- 通过采用操作系统层面的 Selector 机制，即多个连接对应一个线程，这多个连接注册到一个 Selector 上，Selector 知道哪个连接可读了，线程只需要轮询（一个 `while-true`） Selector 即可；
+- 由于一个线程可以间接监听多个连接，因此减少了需要的线程数，切换开销也相应减小了；
+- NIO 模型通过使用更接近操作系统执行 I/O 的方式，即通道和缓冲器，从而提高了执行速度；
+
+## NWP, NIO and RPC
+
+NWP, NIO（包括 NIO.2）, RPC 之间究竟是什么关系？可以用下图表示：
+
+![The NWP Model](theNWPModel.png)
+
+NIO 是 NWP 的子集，是 Java I/O 的升级版，RPC 又是基于 NIO 的封装。无论是 NWP 还是 NIO，亦或 RPC 一般都是走的 TCP 协议。个别 RPC 框架基于 HTTP 2.0，则另当别论。
