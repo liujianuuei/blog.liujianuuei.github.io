@@ -127,7 +127,7 @@ return new Configuration().configure(new File(Hibernate.class.getClassLoader().g
 
 Java 用于文件 I/O 操作的 API，同时也适用于网络编程，这就使得操作网络资源如同本地文件一样。传统网络编程一般有如下模式：
 
-服务端建立 `ServerSocket`，并且监听客户端的连接，然后分配一个线程给客户端连接，在线程里处理相应的逻辑。
+服务端启动，然后建立 `ServerSocket`，并且监听客户端的连接，然后分配一个线程给客户端连接，在线程里处理相应的逻辑。
 
 ```Java
 ServerSocket serverSocket = new ServerSocket(7000);
@@ -173,7 +173,7 @@ public class B64Worker implements Runnable {
             while (true) {
                 byte[] data = io.read(is);
                 dos.write(handler.toBase64(data).getBytes());
-                dos.write("\4".getBytes());
+                dos.write("\4".getBytes()); // `EOT`
                 dos.flush();
             }
         } catch (IOException e) {
@@ -299,6 +299,176 @@ NIO 模型针对上述几点，分别做了改进：
 - 通过采用操作系统层面的 Selector 机制，即多个连接对应一个线程，这多个连接注册到一个 Selector 上，Selector 知道哪个连接可读了，线程只需要轮询（一个 `while-true`） Selector 即可；
 - 由于一个线程可以间接监听多个连接，因此减少了需要的线程数，切换开销也相应减小了；
 - NIO 模型通过使用更接近操作系统执行 I/O 的方式，即通道和缓冲器，从而提高了执行速度；
+
+同样是上述例子，我们看下 NIO 的方式怎么做。首先，也是服务端启动，然后一个线程通过轮询 Selector 监听新的连接，并把新连接注册到另外一个负责数据监听的 Selector 上（这是和 I/O 模型的本质区别），另外一个线程轮询数据监听 Selector 查看是否有哪些连接有数据可读。除此之外，没有其它线程。
+
+```Java
+package tech.liujianwei.nio.nwp.nio.b64encodec;
+
+import tech.liujianwei.nio.nwp.nio.b64encodec.worker.B64Worker;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.Iterator;
+import java.util.Set;
+
+public class B64Server {
+    public static void main(String[] args) throws IOException {
+        Selector acceptanceSelector = Selector.open();
+        Selector readinessSelector = Selector.open();
+
+        // 对应 I/O 编程中服务端启动
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.socket().bind(new InetSocketAddress(8000));
+        serverSocketChannel.configureBlocking(false);
+        serverSocketChannel.register(acceptanceSelector, SelectionKey.OP_ACCEPT);
+
+        new Thread(() -> {
+            while (true) {
+                try {
+                    // 监测是否有新的连接
+                    //System.out.println("Checking Selector for new connection");
+                    if (acceptanceSelector.select(1) > 0) {
+                        Set<SelectionKey> selectedKeys = acceptanceSelector.selectedKeys();
+                        Iterator<SelectionKey> keys = selectedKeys.iterator();
+                        while (keys.hasNext()) {
+                            SelectionKey key = keys.next();
+                            if (key.isAcceptable()) {
+                                try {
+                                    // 每来一个新连接，不需要创建一个线程，而是直接注册到 Selector
+                                    SocketChannel clientChannel = ((ServerSocketChannel) key.channel()).accept();
+                                    clientChannel.configureBlocking(false);
+                                    clientChannel.register(readinessSelector, SelectionKey.OP_READ);
+                                } finally {
+                                    keys.remove();
+                                }
+                            }
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        new Thread(() -> {
+            while (true) {
+                try {
+                    // 批量轮询是否有哪些连接有数据可读
+                    //System.out.println("Checking Selector for ready channel");
+                    if (readinessSelector.select(1) > 0) {
+                        Set<SelectionKey> selectedKeys = readinessSelector.selectedKeys();
+                        Iterator<SelectionKey> keys = selectedKeys.iterator();
+                        while (keys.hasNext()) {
+                            SelectionKey key = keys.next();
+                            if (key.isReadable()) {
+                                try {
+                                    SocketChannel clientChannel = (SocketChannel) key.channel();
+                                    B64Worker worker = new B64Worker(clientChannel);
+                                    worker.run();
+                                } finally {
+                                    keys.remove();
+                                    key.interestOps(SelectionKey.OP_READ);
+                                }
+                            }
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        System.out.println("B64 Server started");
+    }
+}
+```
+
+就具体逻辑处理来说，没什么太大变化。
+
+```Java
+package tech.liujianwei.nio.nwp.nio.b64encodec.worker;
+
+import tech.liujianwei.nio.nwp.nio.b64encodec.util.Bytes;
+import tech.liujianwei.nio.nwp.nio.b64encodec.util.NIO;
+
+import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.util.LinkedList;
+
+public class B64Worker {
+    private SocketChannel clientChannel;
+    private B64Handler handler;
+
+    private NIO nio;
+
+    public B64Worker(SocketChannel clientChannel) {
+        this.clientChannel = clientChannel;
+        this.handler = new B64Handler();
+        this.nio = new NIO(this.clientChannel);
+    }
+
+    public void run() throws IOException {
+        byte[] data = nio.read();
+        byte[] encoded = handler.toBase64(data).getBytes(); // handler.toBase64(Bytes.decode(buffer).getBytes()).getBytes();
+        nio.write(encoded, "\4".getBytes()); // '\4' aims to be compatible with Java I/O which is ued by client.
+    }
+}
+```
+
+```Java
+package tech.liujianwei.nio.nwp.nio.b64encodec.util;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.util.LinkedList;
+
+public class NIO {
+
+    private SocketChannel clientChannel;
+
+    public NIO(SocketChannel clientChannel) {
+        this.clientChannel = clientChannel;
+    }
+
+    public byte[] read() throws IOException {
+        LinkedList<Byte> data = new LinkedList<>();
+        ByteBuffer buffer = ByteBuffer.allocate(1024 * 1024);
+        int size = clientChannel.read(buffer);
+        while (size > 0) {
+            buffer.flip();
+            while (buffer.hasRemaining()) {
+                byte b = buffer.get(); // this is in memory, should be fast.
+                if (b != "\4".getBytes()[0]) { // '\4' aims to be compatible with Java I/O which is ued by client.
+                    data.add(b);
+                }
+            }
+            buffer.clear();
+            size = clientChannel.read(buffer); // return 0 if no more data, so no need to check `EOT`.
+        }
+        return Bytes.toArray(data);
+    }
+
+    public void write(byte[]... content) throws IOException {
+        byte[] data = Bytes.toArray(Bytes.toList(content));
+        ByteBuffer buffer = ByteBuffer.allocate(data.length + 1);
+        buffer.clear();
+        buffer.put(data);
+        buffer.flip();
+        clientChannel.write(buffer);
+    }
+}
+```
+
+客户端可以直接用老式的 I/O 客户端，连接新式的 NIO 服务端。
+
+一般在实际应用当中，不会自己写这套实现，而是使用经过验证的成熟的框架，比如 Netty 框架。
 
 ## NWP, NIO and RPC
 
