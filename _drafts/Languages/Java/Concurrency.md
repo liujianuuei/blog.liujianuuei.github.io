@@ -250,6 +250,8 @@ public class CyclicBarrierTest implements Runnable {
 }
 ```
 
+另外，`CountDownLatch` 和 `CyclicBarrier` 也偶尔被称作所谓**共享锁**。
+
 ## 线程休眠
 
 我们可以调用 `sleep()` 方法来让线程进入休眠状态，除非被中断（`interrupt`），否则直到休眠时间结束，线程继续执行。休眠的线程并不会释放 ownership of monitor。
