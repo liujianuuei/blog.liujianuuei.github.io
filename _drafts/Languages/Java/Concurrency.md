@@ -114,7 +114,7 @@ J.U.C 针对性的有一些改进。
 
 **`ReentrantLock`**：**重入锁**，允许尝试性地获取锁，如果得不到不会被阻塞（当然，也可选择阻塞），即 `ReentrantLock(boolean fairLock/*公平锁还是非公平锁*/).tryLock`，一般搭配 `Condition`（条件变量） 使用，值得注意 `ReentrantLock.lock` 方法的效果和互斥量块级锁是一样的。
 
-重入锁内部实现公平锁和非公平锁的逻辑，每一个锁关联一个持有该锁的线程和计数器，锁的获取通过 `AQS(AbstractQueuedSynchronizer)` 实现，`AQS` 是基于 `sun.misc.Unsafe` 实现，`Unsafe` 提供类似 C++ 管理内存的能力，比如 `volatile` 读写、`CAS` 等，因而可以保证锁本身的实现是线程安全的。更多用法查看 API 文档。
+重入锁内部实现公平锁和非公平锁的逻辑，每一个锁关联一个持有该锁的线程和计数器，锁的获取通过 `AQS(AbstractQueuedSynchronizer)` 实现，`AQS` 是基于 `sun.misc.Unsafe` 实现，Unsafe 提供类似 C++ 管理内存的能力，比如 `volatile` 读写、CAS 等，因而可以保证锁本身的实现是线程安全的。更多用法查看 API 文档。
 
 ```Java
 private final Lock lock = new ReentrantLock();
