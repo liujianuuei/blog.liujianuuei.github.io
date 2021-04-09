@@ -79,7 +79,7 @@
 |       |    ArrayDeque    |  X  |  Y (插入顺序)   | X  |  Y  | 基于`数组`实现的无界双向队列，扩容的时候会复制数组  | 可以作为栈使用，作为栈使用，比 `Stack` 更快，作为队列，比 `LinkedList` 更快 |
 |       |    LinkedBlockingDeque    |  Y  |  Y (插入顺序)   | X |  Y | 基于`双向链表`实现的可选有界双向队列，入队和出队是一个 `ReentrantLock`，通过 `Condition` 实现等待/阻塞（读取一个空队列，或者试图写入一个满队列）  | 可以固定容量；可以作为栈使用  |
 |       |    ConcurrentLinkedDeque    |  Y  |  Y (插入顺序)    | X  |   Y   |  基于 `CAS(Compare-and-Swap)` 原子指令和双向链表的无界非阻塞队列  |  批量操作（`addAll`、`removeAll` 等）不保证原子性，如果读（比如 `iterator` 操作）与写（比如 `addAll`）同时发生，可能读到不完整的数据，这里的一致性是最终一致性；`size` 开销很大  |
-|   Stack    |   Stack   |  X  | Y (LIFO)  | Y |  Y  | 对于 `Vector` 的简单封装  | 作为栈，应该优先使用 `{@link Deque}` 接口和其实现  |
+|   Stack    |   Stack   |  Y  | Y (LIFO)  | Y |  Y  | 对于 `Vector` 的简单封装  | 作为栈，应该优先使用 `{@link Deque}` 接口和其实现  |
 
 ### 附注
 
