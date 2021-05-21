@@ -439,6 +439,19 @@ STPE(ScheduledThreadPoolExecutor) 是线程池的核心。STPE 接收任务，�
 
 Java 原生支持线程池技术。我们可以用 `java.util.concurrent.Executors` 创建不同类型的线程池。详情查看 API 文档。
 
+```Java
+Future f = Executors.newCachedThreadPool().submit(new Callable<Object>() {
+    @Override
+    public String call() throws Exception {
+        // do some things
+        Thread.sleep(10*1000);
+        return "some thing";
+    }
+});
+
+System.out.println(f.isDone());
+```
+
 ## 并发开销
 
 并发系统的开销主要来自于：
