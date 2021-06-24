@@ -17,10 +17,16 @@ BigDecimal帮我们做了两件事：
 
 这也正是精密计算所必须考虑的两件事。
 
-BigDecimal可以通过**数字**来构造，也可以通过**数字的字面值**数值字符串来构造。为BigDecimal指定精度和舍入的策略可以通过两种方式：
+BigDecimal可以通过**数字**来构造，也可以通过**数字的字面值**数值字符串来构造，而且有`new`和`valueOf`两种方式，两种区别如下（体现在浮点型数，整型数没区别）：
+
+> BigDecimal.valueOf(double) will use the canonical String representation of the double value passed in to instantiate the BigDecimal object. In other words: The value of the BigDecimal object will be what you see when you do System.out.println(d).
+
+> If you use new BigDecimal(d) however, then the BigDecimal will try to represent the double value as accurately as possible. This will usually result in a lot more digits being stored than you want. Strictly speaking, it's more correct than valueOf()……
+
+为BigDecimal指定精度和舍入的策略可以通过两种方式：
 
 + 通过`public BigDecimal setScale(int newScale, RoundingMode roundingMode)`设置精度和舍入，或者在计算（add、subtract、multiply、divide等等）的时候，即时指定精度和舍入。
-+ 通过`MathContext`，可以在构造的时候或者计算的时候即时带入；MathContext设置的也是精度和舍入两个参数，单更倾向于是业内形成的out-of-box的标准配置，比如IEEE 754R Decimal128。
++ 通过`MathContext`，可以在构造的时候或者计算的时候即时带入；MathContext设置的也是精度和舍入两个参数，但更倾向于是业内形成的out-of-box的标准配置，比如IEEE 754R Decimal128。
 
 需要特别注意的是，BigDecimal是不可变类，因此对其的任何改变都将反应在一个新的返回的实例上。比如下面的代码：
 
