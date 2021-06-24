@@ -51,7 +51,7 @@ System.out.println(new BigDecimal(0.1));
 为BigDecimal指定精度和舍入的策略可以通过两种方式：
 
 + 通过`public BigDecimal setScale(int newScale, RoundingMode roundingMode)`设置精度和舍入，或者在计算（add、subtract、multiply、divide等等）的时候，即时指定精度和舍入。
-+ 通过`MathContext`，可以在构造的时候或者计算的时候即时带入；MathContext设置的也是精度和舍入两个参数，但更倾向于是业内形成的out-of-box的标准配置，比如IEEE 754R Decimal128。
++ 通过`MathContext`，可以在构造的时候或者计算的时候即时带入；MathContext设置的也是精度（注意和上述精度/Scale略有差别）和舍入两个参数，但更倾向于是业内形成的out-of-box的标准配置，比如IEEE 754R Decimal128。
 
 需要特别注意的是，BigDecimal是不可变类，因此对其的任何改变都将反应在一个新的返回的实例上。比如下面的代码：
 
