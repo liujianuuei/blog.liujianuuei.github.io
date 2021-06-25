@@ -48,7 +48,7 @@ System.out.println(new BigDecimal(0.1).multiply(new BigDecimal("1000000000000000
 100000000000000005551115123.1257827021181583404541015625000000000000000000000000000 // 相当于 0.1000000000000000055511151231257827021181583404541015625 * 1000000000000000000000000000
 ```
 
-可以看出，对于浮点型，`new`的方式得到一个*不准确*的数据。所以，我们应该尽量用`valueOf`（Java doc: whose value is equal to or approximately equal to the value……）的方式，得到一个`BigDecimal`对象。另外，严格禁止通过+-\*/进行计算再输入`BigDecimal`系统，避免入参就已经是一个不准确的数字。
+可以看出，对于浮点型，`new`的方式得到一个*不准确*的数字。所以，我们应该尽量用`valueOf`（Java doc: whose value is equal to or approximately equal to the value……）的方式，得到一个`BigDecimal`对象。另外，严格禁止通过+-\*/进行计算再输入`BigDecimal`系统，避免入参就已经是一个不准确的数字。
 
 话说回来，为BigDecimal指定精度和舍入的策略可以通过两种方式：
 
