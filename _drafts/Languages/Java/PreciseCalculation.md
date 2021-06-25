@@ -26,13 +26,15 @@ BigDecimal可以通过**数字**来构造，也可以通过**数字的字面值*
 > > The results of this constructor can be somewhat unpredictable. One might assume that writing `new BigDecimal(0.1)` in Java creates a `BigDecimal` which is exactly equal to 0.1 (an unscaled value of 1, with a scale of 1), but it is actually equal to 0.1000000000000000055511151231257827021181583404541015625. This is because 0.1 cannot be represented exactly as a `double` (or, for that matter, as a binary fraction of any finite length). Thus, the value that is being passed in to the constructor is not exactly equal to 0.1, appearances notwithstanding.
 
 ```Java
+// 计算 1.00 - (9 * 0.10)
 System.out.println(1.00 - (9 * 0.10));
 System.out.println(BigDecimal.valueOf(1.00 - (9 * 0.10)));
 System.out.println(new BigDecimal(1.00 - (9 * 0.10)));
 
+// 计算 0.1 * 1000000000000000000000000000
 System.out.println(0.1);
-System.out.println(BigDecimal.valueOf(0.1));
-System.out.println(new BigDecimal(0.1));
+System.out.println(BigDecimal.valueOf(0.1).multiply(new BigDecimal("1000000000000000000000000000")));
+System.out.println(new BigDecimal(0.1).multiply(new BigDecimal("1000000000000000000000000000")));
 ```
 
 输出结果是：
@@ -42,11 +44,13 @@ System.out.println(new BigDecimal(0.1));
 0.09999999999999998
 0.09999999999999997779553950749686919152736663818359375
 0.1
-0.1
-0.1000000000000000055511151231257827021181583404541015625
+100000000000000000000000000.0
+100000000000000005551115123.1257827021181583404541015625000000000000000000000000000
 ```
 
-可以看出，`valueOf`相当于进行了舍入操作，而在整个计算过程中，提前舍入，并不是一个好主意，舍入应该往后放。所以，严格意义上来说，我们应该尽量用`new`的方式，得到一个`BigDecimal`对象。
+可以看出，`valueOf`相当于进行了舍入操作，而在整个计算过程中，提前舍入，并不是一个好主意，舍入应该往后放，但这里有个
+
+所以，严格意义上来说，我们应该尽量用`new`的方式，得到一个`BigDecimal`对象。
 
 为BigDecimal指定精度和舍入的策略可以通过两种方式：
 
