@@ -281,7 +281,7 @@ InnoDB 采用的是两阶段锁定协议（这个概念本身很难理解），�
 
 线程是并行执行的，但我们可以通过 `join()` 方法，让线程串行化执行，也就是直到被调用 `join` 方法的线程执行结束，才继续执行当前线程。
 
-另外，`CountDownLatch` 和 `CyclicBarrier` 类也可以达到类似的效果：
+另外，`CountDownLatch/门闩锁` 和 `CyclicBarrier/栅栏锁` 类也可以达到类似的效果：
 
 ```Java
 package tech.liujianwei;
