@@ -872,6 +872,8 @@ public class FutureTest {
 }
 ```
 
+更多细节，请看[Java CompletableFuture Tutorial with Examples](https://www.callicoder.com/java-8-completablefuture-tutorial/)。
+
 
 #### 一些知识点
 
