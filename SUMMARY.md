@@ -4,7 +4,7 @@
 
 * [Languages](_drafts/Languages/README.md)
 
-  * [Java](_drafts/Languages/Java/README.md)
+  * [Java☕](_drafts/Languages/Java/README.md)
 
     * [Java基础](_drafts/Languages/Java/JavaFundamental.md)
     * [对象创建](_drafts/Languages/Java/ObjectCreation.md)
@@ -42,9 +42,9 @@
     * [设计模式之模板方法模式](_drafts/Languages/DesignPattern/TheTemplateMethodPattern.md)
     * [设计模式概览](_drafts/Languages/DesignPattern/DesignPatternsOverview.md)
 
-* [Spring](_drafts/Spring/README.md)
+* [Spring🌿](_drafts/Spring/README.md)
 
-* [Java EE](_drafts/Enterprise/README.md)
+* [Java EE - Deprecated🚫](_drafts/Enterprise/README.md)
 
   * [JDBC](_drafts/JavaEE/JDBC.md)
   * [JNDI](_drafts/JavaEE/JNDI.md)
