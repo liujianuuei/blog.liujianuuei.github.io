@@ -19,6 +19,7 @@ Java 的并发模型是基于线程和锁的并发。`java.util.concurrent` 包�
 + 创建继承自 `Thread` 类的实例，然后调用其 `start()` 方法
 + 创建 `Thread` 类的实例，传入实现 `Runnable` 接口的实例，然后调用其 `start()` 方法
 + 创建 `Thread` 类的实例，传入 `FutureTask` 的实例（传入实现 `Callable` 接口的实例），然后调用其 `start()` 方法
++ 通过 `CompletableFuture` 的静态方法 `runAsync`、`supplyAsync`（以及 `thenApply`、`thenAccept`）等 （更多细节，请看文末的实例）
 + 通过线程池触发执行：
     + execute：传入实现 `Runnable` 接口的类
     + submit：
@@ -801,6 +802,76 @@ new Thread(() -> {
 上述项目的线程模型，用图表示出来就是这样：
 
 ![The XH Project Thread Model](theXHThreadModel.png)
+
+关于 `CompletableFuture` 的用法：
+
+```Java
+public class FutureTest {
+    public static void main(String[] args) throws Exception {
+        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+            // Simulate a long-running Job
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+            System.out.println("I'll run in a separate thread than the main thread.");
+        });
+        System.out.println("launched");
+        while (true) {
+            if (future.isDone()) {
+                break;
+            }
+        }
+
+
+        CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> {
+            // Simulate a long-running Job
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+            return "Result of the asynchronous computation";
+        });
+        System.out.println("launched");
+        while (true) {
+            if (future2.isDone()) {
+                System.out.println("DONE: " + future2.get()); // The get() method blocks until the Future is complete.
+                break;
+            }
+        }
+
+
+        CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
+            // Simulate a long-running Job
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+            return "Liu Jianwei";
+        }).thenApply(name -> "Hello " + name);
+        System.out.println("launched");
+        System.out.println("DONE: " + future3.get()); // The get() method blocks until the Future is complete.
+
+
+        CompletableFuture<Void> future4 = CompletableFuture.supplyAsync(() -> {
+            // Simulate a long-running Job
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                throw new IllegalStateException(e);
+            }
+            return "Liu Jianwei";
+        }).thenApply(name -> "Hello " + name).thenAccept(System.out::println);
+        System.out.println("launched");
+        System.out.println("DONE: " + future4.get()); // The get() method blocks until the Future is complete.
+
+    }
+}
+```
+
 
 #### 一些知识点
 
