@@ -2,7 +2,6 @@
 
 * [JDBC](JDBC.md)
 * [JNDI](JNDI.md)
-* [Spring](Spring.md)
 * [RMI](RMI.md)
 * [JavaIDL](JavaIDL.md)
 * [RPC](RPC.md)
