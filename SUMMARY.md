@@ -44,4 +44,4 @@
 
 * [Spring🌿](_drafts/Spring/README.md)
 
-* [Java EE - Deprecated🚫](_drafts/JavaEE/README.md)
+* ~~[Java EE - Deprecated🚫](_drafts/JavaEE/README.md)~~
