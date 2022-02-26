@@ -278,11 +278,11 @@ InnoDB 采用的是两阶段锁定协议（这个概念本身很难理解），�
 
 > The current thread must own this object's monitor. The thread releases ownership of this monitor and waits until another thread notifies threads waiting on this object's monitor to wake up either through a call to the notify method or the notifyAll method. The thread then waits until it can re-obtain ownership of the monitor and resumes execution.
 
-除了 `wait/notify` 这种机制，线程之间还可以在同步锁的控制下，通过共享标识符（往往就是一个变量）来达到信息的传递。另外，线程串行化技术、显式地中断线程也都是广义上的线程间通信机制，即**传递**某种指令，**感知**某种状态。
+除了 `wait/notify` 这种机制，线程之间还可以在同步锁的控制下，通过`共享标识符`（往往就是一个变量）来达到信息的传递。另外，`线程串行化`技术、`显式地中断线程`也都是广义上的线程间通信机制，即**传递**某种指令，**感知**某种状态。
 
-如果不是使用 `synchronized` 关键字，而是使用 J.U.C 锁来保证线程间的同步，则和其搭配使用的 `Condition` 可以被用来在线程之间进行协调。
+如果不是使用 `synchronized` 关键字，而是使用 `J.U.C 锁`来保证线程间的同步，则和其搭配使用的 `Condition` 可以被用来在线程之间进行协调。
 
-另外，还可以使用队列（一般是阻塞队列），在线程间传递任务或消息；管道（`PipedInputStream` 和 `PipedOutputStream`）也是不同线程之间，直接传递数据的手段。
+另外，还可以使用`队列`（一般是阻塞队列），在线程间传递任务或消息；`管道`（`PipedInputStream` 和 `PipedOutputStream`）也是不同线程之间，直接传递数据的手段。
 
 还有就是通过`文件系统`或者类似的`数据库系统`，数据库操作层面兼容多线程（比如，代码逻辑支持数据的累积修改），从而达到某种相互协作的效果。
 
