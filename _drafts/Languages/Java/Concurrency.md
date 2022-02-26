@@ -174,18 +174,6 @@ public void anotherMethod() {
 
 分布式环境下的锁机制。其实，只要在多实例环境下，即时不完全是分布式事务环境，也需要分布式锁。分布式锁的核心是多个实例的多个线程争夺唯一锁，这个锁只要是通过**单线程**（锁本身避免多线程控制）授予即可。基于 redis 的分布式锁只是其中一种实现。
 
-## 线程间协作/通信
-
-在  `synchronized` 控制的区域（否则抛出 `java.lang.IllegalMonitorStateException` 异常），我们可以调用`wait()`使一个线程进入等待状态，并释放 ownership of monitor，直到收到其他线程的通知（`notify`、`notifyAll`）或者到了 timeout 时间，该线程恢复执行，除非被中断。
-
-> The current thread must own this object's monitor. The thread releases ownership of this monitor and waits until another thread notifies threads waiting on this object's monitor to wake up either through a call to the notify method or the notifyAll method. The thread then waits until it can re-obtain ownership of the monitor and resumes execution.
-
-除了 `wait/notify` 这种机制，线程之间还可以在同步锁的控制下，通过共享标识符（往往就是一个变量）来达到信息的传递。另外，线程串行化技术、显式地中断线程也都是广义上的线程间通信机制，“传递”某种指令，“感知”某种状态。
-
-如果不是使用 `synchronized` 关键字，而是使用 J.U.C 锁来保证线程间的同步，则和其搭配使用的 `Condition` 可以被用来在线程之间进行协调。
-
-另外，还可以使用队列（一般是阻塞队列），在线程间传递任务或消息；管道（`PipedInputStream` 和 `PipedOutputStream`）也是不同线程之间，直接传递数据的手段。
-
 ## 数据库编程的并发控制
 
 #### 程序锁
@@ -283,6 +271,20 @@ InnoDB 采用的是两阶段锁定协议（这个概念本身很难理解），�
 死锁的发生是由于**没有等同于事务粒度的锁机制**。另外，由于**行锁锁定的永远是索引记录**，在多线程环境下，如果*没有为 DDL 语句的 where 字段建立联合索引*，则也有可能发生死锁，即便线程间根据 where 字段过滤出的最终记录并不冲突。
 
 推荐读物：《事务处理：概念与技术》。
+
+## 线程协作/通信
+
+在  `synchronized` 控制的区域（否则抛出 `java.lang.IllegalMonitorStateException` 异常），我们可以调用`wait()`使一个线程进入等待状态，并释放 ownership of monitor，直到收到其他线程的通知（`notify`、`notifyAll`）或者到了 timeout 时间，该线程恢复执行，除非被中断。
+
+> The current thread must own this object's monitor. The thread releases ownership of this monitor and waits until another thread notifies threads waiting on this object's monitor to wake up either through a call to the notify method or the notifyAll method. The thread then waits until it can re-obtain ownership of the monitor and resumes execution.
+
+除了 `wait/notify` 这种机制，线程之间还可以在同步锁的控制下，通过共享标识符（往往就是一个变量）来达到信息的传递。另外，线程串行化技术、显式地中断线程也都是广义上的线程间通信机制，即**传递**某种指令，**感知**某种状态。
+
+如果不是使用 `synchronized` 关键字，而是使用 J.U.C 锁来保证线程间的同步，则和其搭配使用的 `Condition` 可以被用来在线程之间进行协调。
+
+另外，还可以使用队列（一般是阻塞队列），在线程间传递任务或消息；管道（`PipedInputStream` 和 `PipedOutputStream`）也是不同线程之间，直接传递数据的手段。
+
+还有就是通过`文件系统`或者类似的`数据库系统`，数据库操作层面兼容多线程（比如，代码逻辑支持数据的累积修改），从而达到某种相互协作的效果。
 
 ## 线程串行化
 
