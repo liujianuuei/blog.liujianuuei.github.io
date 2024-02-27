@@ -1,4 +1,4 @@
-# Design Patterns
+# 设计模式
 
 * [面向对象设计原则](ObjectOrientedDesignPrinciples.md)
 * [设计模式之代理模式](TheProxyPattern.md)

@@ -1,4 +1,4 @@
-# JVM Langs
+# Java SE
 
 * [Java](Java/README.md)
 
