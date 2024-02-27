@@ -122,7 +122,7 @@ request.invoke();
 request.result().value().extract_string(); // return "Some"
 ```
 
-注意，动态调用可以完全独立运行，不需要引入 IDL-to-Java compiler 生成的 Stub 等程序。服务端代码不需任何变动，就可以搭配客户端的动态代码运行。和 [RMI](RMI.md) 类似，动态调用也是基于[动态代理](../Languages/DesignPattern/TheProxyPattern.md#动态代理)实现的。
+注意，动态调用可以完全独立运行，不需要引入 IDL-to-Java compiler 生成的 Stub 等程序。服务端代码不需任何变动，就可以搭配客户端的动态代码运行。和 [RMI](RMI.md) 类似，动态调用也是基于[动态代理](../JavaSE/DesignPattern/TheProxyPattern.md#动态代理)实现的。
 
 ## 最后
 
