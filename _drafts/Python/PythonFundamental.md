@@ -40,7 +40,7 @@ Python 是一种**强类型**语言，同时也是**动态类型**语言。动�
 |Data Type|Classes |Description|
 |---------|------------|---------------------------|
 |boolean  |bool        |存 `True` 或者 `False`      |
-|numeric  |int/整型, float/浮点型  |                |
+|numeric  |int/整型、float/浮点型  |                |
 |string   |str         |                           |
 
 更多关于集合类型的内容，请查看[集合框架](Collection.md)。
@@ -140,19 +140,19 @@ while True:
 
 ## 最佳实践
 
-一、Python 文件开头指定执行程序以及编码类型；
+一、Python 文件开头指定执行程序以及编码类型。
 
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 ```
 
-二、使用单引号而不是双引号；
+二、使用双引号而不是单引号，这样和 Java 保持一致，降低记忆成本。
 
-三、带括号优先于不带括号；
+三、带括号而不是不带括号，这样统一按函数看待，减少不必要的概念。比如下面的例子：
 
 ```python
 print('print something') # 而不是 print 'print something'
 ```
 
-四、不要语句结尾的分号。
+四、不要句末分号，和 Server-side JavaScript 保持一致，降低记忆成本。
