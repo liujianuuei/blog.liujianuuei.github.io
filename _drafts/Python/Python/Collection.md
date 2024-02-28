@@ -180,7 +180,7 @@ somehow = {}
 somehow = {"k1":"Jack", "k2":32, "k3":"Computer Science"}
 ```
 
-另外，Python 还支持通过"字典推导"创建 Dict，请参考 [Python Dict Comprehension](https://www.programiz.com/python-programming/dict-comprehension)，很少用到，不详述。
+另外，Python 还支持通过"字典推导"创建 Dict，请参考 [Python Dictionary Comprehension](https://www.programiz.com/python-programming/dictionary-comprehension)，很少用到，不详述。
 
 ### 访问元素
 
@@ -213,7 +213,7 @@ print(country_capitals)  # Output: {'Germany': 'Berlin', 'Canada': 'Ottawa', 'It
 marks = {'Physics':67, 'Maths':87}
 internal_marks = {'Practical':48}
 
-marks.update(internal_marks)
+marks.update(internal_marks)  # 如果有相同的 key，则用新 value 更新该 key 的旧 value
 
 print(marks)  # Output: {'Physics': 67, 'Maths': 87, 'Practical': 48}
 ```
@@ -224,7 +224,7 @@ print(marks)  # Output: {'Physics': 67, 'Maths': 87, 'Practical': 48}
 
 ```python
 country_capitals = {
-  "Germany": "Berlin", 
+  "Germany": "Berlin",
   "Italy": "Naples", 
   "England": "London"
 }
