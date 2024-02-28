@@ -76,3 +76,64 @@ Python 语法建议当和 `True`、`False`、`None` 等单例对象进行比较�
 另外注意，逻辑运算和 Java 的逻辑运算符 `&&`、`||`、`!` 字面表示也不同。
 
 运算符还可以重载，一般用不到，更多内容参考[运算符重载](https://www.programiz.com/python-programming/operator-overloading)。
+
+## 流程控制
+
+Python 通过 `if`、`elif`、`else` 来进行条件控制。举例如下：
+
+```python
+grade = 40
+
+if grade < 0:
+  result = 'error'
+elif grade >= 60:
+  result = 'pass' 
+else:
+  result = 'fail'
+
+print(result)
+```
+
+Python 语法不支持三元运算符，但可以通过 `if`、`else` 来模拟类似 Java 三元运算符的效果，这样可以使代码更清晰。
+
+```python
+grade = 40
+
+result = 'pass' if grade >= 60 else 'fail'
+
+print(result)
+```
+
+Python 通过 `for`、`while` 来进行循环控制。举例如下：
+
+```python
+languages = ['Swift', 'Python', 'Go']
+
+for i in languages:
+    print(i)
+```
+
+需要注意，类似 Java 的 `for(int i=0; i<100; i++)` 这种指定次数的循环控制，在 Python 里，可以通过 `range` 函数实现。
+
+```python
+# range(100) returns a sequence of 0, 1, 2, till 99.
+for i in range(100):
+    print(i)
+```
+
+```python
+while True:
+    user_input = input('Enter your name: ')
+
+    # terminate the loop when user enters end
+    if user_input == 'end':
+        print(f'The loop is ended')
+        break
+        
+    # terminate the loop when user enters end
+    if user_input == 'skip':
+        print(f'The iteration is skipped')
+        continue
+
+    print(f'Hi {user_input}')
+```
