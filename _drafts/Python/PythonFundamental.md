@@ -137,3 +137,22 @@ while True:
 
     print(f'Hi {user_input}')
 ```
+
+## 最佳实践
+
+一、Python 文件开头指定执行程序以及编码类型；
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+```
+
+二、使用单引号而不是双引号；
+
+三、带括号优先于不带括号；
+
+```python
+print('print something') # 而不是 print 'print something'
+```
+
+四、不要语句结尾的分号。
