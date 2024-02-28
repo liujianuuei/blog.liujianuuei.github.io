@@ -48,4 +48,4 @@
 * [Spring🌿](_drafts/Spring/README.md)
 
 
-* [Python 语言](_drafts/Python/README.md)
+* [Python](_drafts/Python/README.md)
