@@ -5,7 +5,7 @@
 
 * [Java SE](_drafts/JavaSE/README.md)
 
-  * [Java☕](_drafts/JavaSE/Java/README.md)
+  * [Java 语言☕](_drafts/JavaSE/Java/README.md)
 
     * [Java基础](_drafts/JavaSE/Java/JavaFundamental.md)
     * [对象创建](_drafts/JavaSE/Java/ObjectCreation.md)
@@ -48,4 +48,4 @@
 * [Spring🌿](_drafts/Spring/README.md)
 
 
-* [Python](_drafts/Python/README.md)
+* [Python 语言](_drafts/Python/README.md)

@@ -1,6 +1,6 @@
 # Java SE
 
-* [Java](Java/README.md)
+* [Java 语言](Java/README.md)
 
    * [Java基础](Java/JavaFundamental.md)
    * [对象创建](Java/ObjectCreation.md)

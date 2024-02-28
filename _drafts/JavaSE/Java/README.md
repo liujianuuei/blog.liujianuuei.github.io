@@ -1,5 +1,5 @@
 
-# Java
+# Java 语言
 
 * [Java基础](JavaFundamental.md)
 * [对象创建](ObjectCreation.md)
