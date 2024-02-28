@@ -168,6 +168,8 @@ for fruit in fruits:
 
 List 的其它有用方法，请参考 [Python List Methods](https://www.programiz.com/python-programming/list)。
 
+另外，Python 还支持一种类似 List 的但**不可变**（一旦创建不可修改）的数据结构 Tuple，使用场景不多，不详述。
+
 ## Dict
 
 ### 创建
