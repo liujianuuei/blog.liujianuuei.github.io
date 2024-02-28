@@ -6,9 +6,9 @@
 
 |Data Type|Classes |Description|
 |---------|------------|---------------------------|
-|Set  |set, frozenset        |    无序且不重         |
-|Sequence  |list, tuple      |  有序                |
-|Mapping  |dict          |      Key-Value           |
+|Set  |`set`、`frozenset`        |    无序且不重         |
+|Sequence  |`list`、`tuple`      |  有序                |
+|Mapping  |`dict`          |      key-value-pairs           |
 
 ## Set
 

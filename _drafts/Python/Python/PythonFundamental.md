@@ -39,13 +39,13 @@ Python 是一种**强类型**语言，同时也是**动态类型**语言。动�
 
 |Data Type|Classes |Description|
 |---------|------------|---------------------------|
-|boolean  |bool        |存 `True` 或者 `False`      |
-|numeric  |int/整型、float/浮点型  |                |
-|string   |str         |                           |
+|boolean  |`bool`        |存 `True` 或者 `False`      |
+|numeric  |`int`/整型、`float`/浮点型  |                |
+|string   |`str `        |                           |
 
 更多关于集合类型的内容，请查看[集合框架](Collection.md)。
 
-可以通过 `type()` 函数来检查变量或值的数据类型或类(class)类型；可以通过 `int()`、`float()`、`str()` 等函数进行显式的类型转换。
+可以通过 `int()`、`float()`、`str()` 等函数进行显式的类型转换。可以通过 `type()` 函数来检查变量或值的数据类型或类(class)类型，通过 `isinstance()` 函数检查某个对象是否是一个类的实例或者某个类是否是另一个类的子类。
 
 ## 进制
 
