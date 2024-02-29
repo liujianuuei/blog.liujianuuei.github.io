@@ -7,6 +7,8 @@
 - **Error**，即那些非受检异常，也就是程序不需要也不可能处理和恢复的异常；
 - **Exception**，即受检异常，程序应该捕获并处理和恢复。
 
+关于异常类的层级结构，请参考：[Exception hierarchy](https://docs.python.org/2/library/exceptions.html#exception-hierarchy)。
+
 ## 异常处理
 
 Python 的异常通过关键字 `try`、`except`、`finally` 来捕获并处理，语义和 Java 一致。举例如下：
@@ -20,6 +22,16 @@ except Exception as e:
     return False
 finally:
     server.quit()
+```
+
+```python
+try:
+    #3/0
+    even_numbers = [2,4,6,8]
+    print(even_numbers[5])
+
+except (ZeroDivisionError,IndexError) as e:
+    print("Error occurred: ", e)
 ```
 
 ## 资源释放
