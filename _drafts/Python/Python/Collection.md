@@ -22,6 +22,8 @@ somehow = set()
 somehow = {'Jack', 32, 'Computer Science'}
 ```
 
+需要说明，因为**一致性**（元素不重）和**Hash值稳定性**的考虑，Set 的元素必须是不可变的。
+
 ### 访问元素
 
 不适用。
@@ -177,9 +179,9 @@ List 的其它有用方法，请参考 [Python List Methods](https://www.program
 通过"中括号和逗号分隔符"来创建 Dict。例如：
 
 ```python
-somehow = {"k1":19, "k2":26, "k3":29}
+somehow = {"k1":19, "k2":26, "k3":29}  # key 是不可变的
 somehow = {}
-somehow = {"k1":"Jack", "k2":32, "k3":"Computer Science"}
+somehow = {"k1":"Jack", "k2":32, "k3":"Computer Science"} # key 是不可变的
 ```
 
 另外，Python 还支持通过"字典推导"创建 Dict，请参考 [Python Dictionary Comprehension](https://www.programiz.com/python-programming/dictionary-comprehension)，很少用到，不详述。
@@ -277,3 +279,7 @@ for country in country_capitals:
 ```
 
 Dict 的其它有用方法，请参考 [Python Dictionary Methods](https://www.programiz.com/python-programming/dictionary)。
+
+## 总结
+
+最后，Python 的集合类在语义设计上比较混乱，如果你的项目强依赖 Python 集合框架，最好的办法是自己基于原生集合类，重新设计一套集合框架。
