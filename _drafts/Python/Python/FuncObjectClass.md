@@ -84,7 +84,7 @@ print(greet("Liu Jianwei"))
 
 一般情况下，Python 函数的入参和出参和 Java 没有什么不同，如果理解 Java 的使用方式，那 Python 也一样，就如上面例子所展示的那样。
 
-需要强调的是，Python 还支持指定名字传参（Keyword Arguments），这时候参数位置就无关紧要了。例如：
+这种类似 Java 的参数传递方式，称作**位置参数**（Positional Arguments），也就是按位置传参。除此之外，Python 还支持**名字参数**（Keyword Arguments），也就是指定参数名传参，这时候参数位置就无关紧要了。例如：
 
 ```python
 def somehow(arg1, arg2):
@@ -110,7 +110,7 @@ def somehow(arg1, arg2, *args, **kwargs):
 somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 ```
 
-`*args`、`**kwargs` 称作**可变参数**，也就是可以传入任意多的参数，`*args` 是可变位置参数，`**kwargs` 是可变名字参数。同样，Python 并没有定义这些关键字，只是约定俗成叫 `args` 和 `kwargs`。当你的函数设计为参数个数不定，可变参数就是很好的实现方式。当这些参数不需要区别对待的时候，`*args` 就够了，当这些参数需要加以区分并针对性处理的时候，`**kwargs` 就派上用场了。
+`*args`、`**kwargs` 称作**可变参数**（Variable Length Arguments 或者 Arbitrary Arguments），也就是可以传入任意多的参数，`*args` 是可变位置参数，`**kwargs` 是可变名字参数。同样，Python 并没有定义这些关键字，只是约定俗成叫 `args` 和 `kwargs`。当你的函数设计为参数个数不定，可变参数就是很好的实现方式。当这些参数不需要区别对待的时候，`*args` 就够了，当这些参数需要加以区分并针对性处理的时候，`**kwargs` 就派上用场了。
 
 另外，Python 函数不支持重载（Overloading），通过可变参数一定程度可以模拟函数重载。
 
@@ -128,7 +128,51 @@ somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 
 和普通函数唯一的不同是，入参列表里第一个参数必须是 `self` 或者其它名字，Python 并没有把 `self` 作为关键字，只是大家约定俗成，如果你愿意可以指定为 `this`，事实上，`self` 的含义 就相当于 Java 里的 `this`。
 
-## 面向对象编程
+### 非常重要的 `self`
 
-## 模块/包
+## 模块与包
+
+在 Python 中，模块（Modules）的概念是指独立的以 `.py` 结尾的文件。一个文件就可以是一个模块，用来组织代码。
+
+在面向对象编程语境下，最好同样保持 Java 的好习惯，即一个文件只存放一个类。这样，模块的概念就更多的与 Java 的以 `.java` 结尾的类文件对应。
+
+在 Python 中，包（Package）的概念非常类似 Java 的包的概念，也是指组织多个 `.py` 文件的一个文件目录，该文件目录需包含一个名字为 `__init__.py` 的空文件，该文件告诉编译器，该文件目录是 Python 包，而不是普通的文件目录。
+
+### 模块使用
+
+通过 `import` 关键字，导入模块来使用。例如：
+
+```python
+import math as math  # 第二个 math 是别名
+import modules.http.http_client as http  # http 是别名
+```
+
+然后，通过模块名来调用。例如：
+
+```python
+print(math.pi)  # 推荐
+print(http.HttpClient())  # 推荐
+```
+
+如果不想通过模块名调用，想直接使用模块里具体定义，就像使用本地函数一样，可以使用如下的导入方式：
+
+```python
+from math import pi  # 推荐
+from modules.http.http_client import *  # 不推荐
+```
+
+然后，可以直接使用。例如：
+
+```python
+print(pi)
+print(HttpClient())
+```
+
+建议保留模块名的方式，这样更清晰，可以区分某个定义是本地的还是属于某个外部模块。如果确实不想要模块名，也不要采用 `from-import *` 的方式，把外部模块里的所有定义全部导入当前模块，这不是一个好的编程习惯。
+
+### 内置模块
+
+请参考：[Python Module Index](https://docs.python.org/3/py-modindex.html)。
+
+## 面向对象编程
 
