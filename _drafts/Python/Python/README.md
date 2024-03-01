@@ -1,5 +1,6 @@
 # Python 语言
 
+* [一个样例程序](TheGoodSample.md)
 * [Python基础](PythonFundamental.md)
 * [集合框架](Collection.md)
 * [代码如何组织，或面向对象编程](FuncObjectClass.md)
