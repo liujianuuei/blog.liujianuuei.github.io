@@ -136,22 +136,23 @@ somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 
 在面向对象编程语境下，最好同样保持 Java 的好习惯，即一个文件只存放一个类。这样，模块的概念就更多的与 Java 的以 `.java` 结尾的类文件对应。
 
-在 Python 中，包（Package）的概念非常类似 Java 的包的概念，也是指组织多个 `.py` 文件的一个文件目录，该文件目录需包含一个名字为 `__init__.py` 的空文件，该文件告诉编译器，该文件目录是 Python 包，而不是普通的文件目录。
+在 Python 中，包（Package）的概念非常类似 Java 的包的概念，也是指组织多个 `.py` 文件的一个文件目录，该文件目录必须包含一个名字为 `__init__.py` 的空文件，该文件告诉 Python 该文件目录是 Python 包，而不是普通的文件目录。
 
 ### 模块使用
 
 通过 `import` 关键字，导入模块来使用。例如：
 
 ```python
-import math as math  # 第二个 math 是别名
-import modules.http.http_client as http  # http 是别名
+import math as math  # 推荐；第二个 math 是别名
+import modules.http.http_client as http  # 推荐；http 是别名
+from modules.http import http_client as http  # 推荐；http 是别名
 ```
 
 然后，通过模块名来调用。例如：
 
 ```python
-print(math.pi)  # 推荐
-print(http.HttpClient())  # 推荐
+print(math.pi)
+print(http.HttpClient())
 ```
 
 如果不想通过模块名调用，想直接使用模块里具体定义，就像使用本地函数一样，可以使用如下的导入方式：
@@ -168,7 +169,7 @@ print(pi)
 print(HttpClient())
 ```
 
-建议保留模块名的方式，这样更清晰，可以区分某个定义是本地的还是属于某个外部模块。如果确实不想要模块名，也不要采用 `from-import *` 的方式，把外部模块里的所有定义全部导入当前模块，这不是一个好的编程习惯。
+建议保留模块名的方式，这样更清晰避免混淆，可以区分某个定义是本地的还是属于某个外部模块，这也释放了本地命名空间。如果确实不想要模块名，也不要采用 `from-import *` 的方式，把外部模块里的所有定义全部导入当前模块，这不是一个好的编程习惯。
 
 ### 内置模块
 
