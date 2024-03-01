@@ -120,7 +120,53 @@ somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 
 ## 类
 
+我们先来看对象是什么，对象是一个实体，该实体包含一些属性和行为。类就是对象的定义。
+
+我们先来看一个简单的 Java 的对象或类的例子：
+
+```java
+public class Parrot {
+
+    // 属性
+    String name = "";
+
+    Parrot(String name) {
+        this.name = name;
+    }
+
+    // 行为
+    void say() {
+        System.out.print("Hi I'm " + this.name);
+    }
+}
+```
+
 ### 类创建
+
+我们现在把上面这个 Java 对象或类改造成一个 Python 对象或类。Python 没有权限修饰符的概念，也不需要指定属性的类型，和函数一样，不是通过花括号来标识类体，而是通过冒号和缩进。最终看起来是这样：
+
+```python
+class Parrot:
+
+    # 属性
+    name = ""
+    
+    def __init__(this, name):
+        super(Parrot, this).__init__()
+        this.name = name
+
+    # 行为
+    def say(this):
+        print(f"Hi I'm {this.name}")
+```
+
+我们可以看到有几点不同：
+
+一、`__init__` 是 Python 的构造器，而不是像 Java 类名作为构造器。
+
+二、`super()` 必须显式调用，而在 Java 里无参构造器是默认调用。
+
+三、`this` 必须作为形参（Parameters），而在 Java 里不需要，Java 里是系统级的关键字。
 
 ### 类实例化
 
@@ -177,3 +223,4 @@ print(HttpClient())
 
 ## 面向对象编程
 
+Python 面向对象编程的思路和 Java 面向对象编程的思路是一致的。
