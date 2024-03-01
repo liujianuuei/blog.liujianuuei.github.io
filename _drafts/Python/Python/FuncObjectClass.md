@@ -128,14 +128,14 @@ somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 public class Parrot {
 
     // 属性
-    String name = "";
+    private String name = "";
 
-    Parrot(String name) {
+    public Parrot(String name) {
         this.name = name;
     }
 
     // 行为
-    void say() {
+    public void say() {
         System.out.print("Hi I'm " + this.name);
     }
 }
@@ -224,3 +224,10 @@ print(HttpClient())
 ## 面向对象编程
 
 Python 面向对象编程的思路和 Java 面向对象编程的思路是一致的。
+
+### 继承
+
+### 封装
+
+### 多态
+
