@@ -186,6 +186,8 @@ class Parrot(object):
 
 和 Java 一样，`object` 是所有 Python 对象的父类。在 Java 中，继承 `Object` 是不需要显式指定的，但在 Python（尤其 Python 2）中，需要明确指定 `(object)`，从而确保方法解析顺序（MRO）广度优先（因为 Java 单继承，所以不涉及广度优先还是深度优先的选择问题），但 Python 3 不再需要显式制定 `(object)`，默认就是广度优先。
 
+后面会专门讨论继承，本篇文章建议采用单继承。因此，是否指定 `(object)` 反而无关紧要了，但还是建议统一采用 `object()` 形式。
+
 ### 类实例化
 
 和 Java 不同，Python 创建对象即实例化类，不需要 `new` 关键字。例如：
