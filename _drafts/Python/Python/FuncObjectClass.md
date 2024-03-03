@@ -146,7 +146,7 @@ public class Parrot {
 我们现在把上面这个 Java 对象或类改造成一个 Python 对象或类。Python 没有权限修饰符的概念，也不需要指定属性的类型，和函数一样，不是通过花括号来标识类体，而是通过冒号和缩进。最终看起来是这样：
 
 ```python
-class Parrot(O):
+class Parrot(object):
 
     # 属性
     name = ""
@@ -171,7 +171,7 @@ Python 和 Java 一样都是通过关键字 `class` 定义类。我们可以看�
 Python 是动态类型语言，因此属性可以不用事先声明，可以在构造器（再次注意 Python 的构造器是 `__init__` 方法）里直接初始化。因此上面的类创建代码可以简化为：
 
 ```python
-class Parrot(O):
+class Parrot(object):
 
     def __init__(this, name):
         super(Parrot, this).__init__()  # 调用父类构造器
@@ -182,7 +182,9 @@ class Parrot(O):
         print(f"Hi I'm {this.name}")
 ```
 
-注：技术上严格来说，`__init__()` 并不是构造器，因为第一个参数传入的就是对象本身，意味着对象已经创建好了，在 Python 语言里，真正的构造器是 `__new__(clasz, *args, **kwargs)`，第一个参数（clasz）是自动传入的类本身。`__init__()` 在对象创建后第一时间调用，对程序员来说，在效果上等同于构造器的效果，就是做一些对象初始化的事情。另外，基于这些信息，为什么 `super()` 必须显式调用，也就不难理解了。
+注1：技术上严格来说，`__init__()` 并不是构造器，因为第一个参数传入的就是对象本身，意味着对象已经创建好了，在 Python 语言里，真正的构造器是 `__new__(clasz, *args, **kwargs)`，第一个参数（clasz）是自动传入的类本身。`__init__()` 在对象创建后第一时间调用，对程序员来说，在效果上等同于构造器的效果，就是做一些对象初始化的事情。另外，基于这些信息，为什么 `super()` 必须显式调用，也就不难理解了。
+
+在 Java 中，继承 `Object` 是不需要显式指定的，但在 Python（尤其 Python 2）中，需要明确指定 `(object)`（确保使用新式类），但 Python 3 不再需要显式制定 `(object)`。
 
 ### 类实例化
 
@@ -223,7 +225,7 @@ Parrot.say(parrot1)  # 也就是 `object.method(args)` 等同于 `Class.method(o
 通过 function decorator `@staticmethod` 可以把一个普通方法变成静态方法。如同 Java 的静态工具类，相比外露的普通函数，静态方法是更好的实现工具函数的方式。
 
 ```python
-class FileUtils(O):
+class FileUtils(object):
 
     @staticmethod
     def read_file(path):
@@ -240,7 +242,7 @@ from modules.common.file_utils import FileUtils as FileUtils
 FileUtils.read_file("...")
 ```
 
-Python 还有一个装饰器 `@classmethod` 称作"类方法"，用于定义类方法。在 Java 里，静态方法和类方法其实是一个东西，但 Python 有一些不同，这里暂不详述。
+Python 还有一个装饰器 `@classmethod` 称作"类方法"，用于定义类方法。在 Java 里，静态方法和类方法其实是一个东西，但 Python 有一些不同，类方法的使用场景让人联想到 Java 的泛型，这里暂不详述。
 
 ## 模块与包
 
@@ -298,7 +300,7 @@ Python 面向对象编程的思路和 Java 面向对象编程的思路是一致�
 Python 的继承（Inheritance）和 Java 在概念上没有什么不同。
 
 ```python
-class Bird(O):
+class Bird(object):
 
     def __init__(self, name):
         super(Parrot, self).__init__()  # 调用父类构造器
