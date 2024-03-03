@@ -218,9 +218,9 @@ Parrot.say(parrot1)  # 也就是 `object.method(args)` 等同于 `Class.method(o
 
 如前所述，`self` 等同于 Java 的 `this`，指代的是当前对象。`self` 作为形参（Parameters）需要显式定义，但实参（Arguments）是 Python 自动传入的。
 
-### 类方法
+### 静态方法
 
-通过 function decorator `@staticmethod` 可以把一个普通方法变成静态方法即类方法。如同 Java 的静态工具类，相比外露的普通函数，类方法是更好的实现工具函数的方式。
+通过 function decorator `@staticmethod` 可以把一个普通方法变成静态方法。如同 Java 的静态工具类，相比外露的普通函数，静态方法是更好的实现工具函数的方式。
 
 ```python
 class FileUtils(O):
@@ -233,12 +233,14 @@ class FileUtils(O):
         return content.encode(encoding='utf-8')
 ```
 
-注意，类方法是不需要 `self` 参数的。调用也是通过类名来调用。
+注意，静态方法是不需要 `self` 参数的。调用也是通过类名来调用。
 
 ```python
 from modules.common.file_utils import FileUtils as FileUtils
 FileUtils.read_file("...")
 ```
+
+Python 还有一个装饰器 `@classmethod` 称作"类方法"，用于定义类方法。在 Java 里，静态方法和类方法其实是一个东西，但 Python 有一些不同，这里暂不详述。
 
 ## 模块与包
 
