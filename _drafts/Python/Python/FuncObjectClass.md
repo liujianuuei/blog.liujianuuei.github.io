@@ -122,7 +122,7 @@ somehow(1,2,  3,4,  name="Liu Jianwei",greeting="Hello")
 
 我们先来看对象是什么，对象是一个实体，该实体包含一些属性和行为。类就是对象的定义。
 
-我们先来看一个简单的 Java 的对象或类的例子：
+我们先来看一个简单的 Java 的对象或类（类是对象的说明或定义）的例子：
 
 ```java
 public class Parrot {
@@ -160,19 +160,45 @@ class Parrot:
         print(f"Hi I'm {this.name}")
 ```
 
-我们可以看到有几点不同：
+Python 和 Java 一样都是通过关键字 `class` 定义类。我们可以看到有几点不同：
 
-一、`__init__` 是 Python 的构造器，而不是像 Java 类名作为构造器。
+一、`__init__()` 是 Python 的构造器，而不是像 Java 类名作为构造器。
 
-二、`super()` 必须显式调用，而在 Java 里无参构造器是默认调用。
+二、`super()` 必须显式调用，而在 Java 里无参构造器是默认调用。注意写法 `super(本类名, this).__init__()`。如果调用有参构造器，参数通过 `super()` 后面的 `__init__(这里给父类传入参数)` 传入。
 
-三、`this` 必须作为形参（Parameters），而在 Java 里不需要，Java 里是系统级的关键字。
+三、`this` 必须作为形参（Parameters），而在 Java 里不需要，Java 里是关键字。
+
+Python 是动态类型语言，因此属性可以不用事先声明，可以在构造器（再次注意 Python 的构造器是 `__init__` 方法）里直接初始化。因此上面的类创建代码可以简化为：
+
+```python
+class Parrot:
+
+    def __init__(this, name):
+        super(Parrot, this).__init__()  # 调用父类构造器
+        this.name = name  # 属性初始化
+
+    # 行为
+    def say(this):
+        print(f"Hi I'm {this.name}")
+```
 
 ### 类实例化
 
+和 Java 不同，Python 创建对象即实例化类，不需要 `new` 关键字。例如：
+
+```python
+parrot1 = Parrot("Polly")
+```
+
 ### 函数作为类的方法
 
-和普通函数唯一的不同是，入参列表里第一个参数必须是 `self` 或者其它名字，Python 并没有把 `self` 作为关键字，只是大家约定俗成，如果你愿意可以指定为 `this`，事实上，`self` 的含义 就相当于 Java 里的 `this`。
+作为类的函数，也叫做方法，作为类的变量也叫做属性。
+
+和普通函数唯一的不同是，入参列表里第一个参数必须是 `this` 或者其它名字，Python 并没有把 `this` 作为关键字，相反大家约定俗成用 `self`（后续我们都按照 Python 的惯例，采用 `self`）。但如果你愿意可以指定为 `this`，事实上，`self` 的含义 就相当于 Java 里的 `this`。
+
+#### 方法使用
+
+和 Java 一样，通过 `.` 访问对象的方法。
 
 ### 非常重要的 `self`
 
@@ -217,6 +243,8 @@ print(HttpClient())
 
 建议保留模块名的方式，这样更清晰避免混淆，可以区分某个定义是本地的还是属于某个外部模块，这也释放了本地命名空间。如果确实不想要模块名，也不要采用 `from-import *` 的方式，把外部模块里的所有定义全部导入当前模块，这不是一个好的编程习惯。
 
+另外，本质上 `import` 和 `from-import` 没有区别，只是写法不同。
+
 ### 内置模块
 
 请参考：[Python Module Index](https://docs.python.org/3/py-modindex.html)。
@@ -227,7 +255,65 @@ Python 面向对象编程的思路和 Java 面向对象编程的思路是一致�
 
 ### 继承
 
+Python 的继承和 Java 在概念上没有什么不同。
+
+```python
+class Bird:
+
+    def __init__(self, name):
+        super(Parrot, self).__init__()  # 调用父类构造器
+        self.name = name  # 父类属性初始化
+
+    # 父类行为
+    def say(self):
+        print(f"Hi I'm {self.name}")
+
+
+# Parrot 类继承自 Bird 类，Parrot 叫做子类，Bird 叫做父类。
+class Parrot(Bird):
+    def __init__(self, name):
+            super(Parrot, self).__init__(name)  # 调用父类构造器
+
+    # 子类行为
+    def sing(self):
+        print(f"Hi I'm singing")
+```
+
+属性 `name` 和方法 `say()` 被子类继承，子类现在拥有 `name`、`say()`、`sing()` 三个属性或方法。
+
+#### 方法重写
+
+继承的威力就在于方法重写，也就是针对同一个方法，子类可以根据需要修改其行为。
+
+和 Java 一样，Python 也支持**方法重写**（Method Overriding）。
+
+```python
+class Parrot(Bird):
+    def __init__(self, name):
+            super(Parrot, self).__init__(name)  # 调用父类构造器
+
+    # 子类重写的行为
+    def say(self):
+        print(f"Hi I'm is {self.name}. How are you!")
+
+    # 子类原生行为
+    def sing(self):
+        print(f"Hi I'm singing")
+```
+
+在子类的重写的方法里，如果需要访问父类的同名方法，可以通过 `super()` 函数访问，注意比 Java 多一对括号。
+
+#### 多继承
+
+Java 是单继承，Python 支持多继承，也就是继承多个父类。该篇文章不推荐多继承，因为多继承会破坏对象或实体的逻辑性，且基于这样的哲学思考：任何事物在一个单一语境下必然是且仅是一个事物。
+
+如果想了解关于多继承的知识，可以参考 [Python Multiple Inheritance](https://www.programiz.com/python-programming/multiple-inheritance)，这里不详述。
+
 ### 封装
+
+__ - private
+
+others - public
 
 ### 多态
 
