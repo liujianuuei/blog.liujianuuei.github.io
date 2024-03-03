@@ -14,7 +14,7 @@
 def main():
     pass
 
-if __name__ == '__main__':  # 如果直接执行某个文件，则 __name__的 值就是 __main__，可以认为就是 Python 的"程序入口"
+if __name__ == '__main__':  # 如果直接作为独立文件执行，则 __name__的 值就是 __main__，可以认为就是 Python 的"程序入口"
     sys.exit(main())
 ```
 
