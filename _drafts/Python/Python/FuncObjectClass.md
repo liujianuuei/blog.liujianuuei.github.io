@@ -146,7 +146,7 @@ public class Parrot {
 我们现在把上面这个 Java 对象或类改造成一个 Python 对象或类。Python 没有权限修饰符的概念，也不需要指定属性的类型，和函数一样，不是通过花括号来标识类体，而是通过冒号和缩进。最终看起来是这样：
 
 ```python
-class Parrot:
+class Parrot(O):
 
     # 属性
     name = ""
@@ -162,7 +162,7 @@ class Parrot:
 
 Python 和 Java 一样都是通过关键字 `class` 定义类。我们可以看到有几点不同：
 
-一、`__init__()` 是 Python 的构造器，而不是像 Java 类名作为构造器。
+一、`__init__()` 相当于 Python 的构造器，而不是像 Java 类名作为构造器。
 
 二、`super()` 必须显式调用，而在 Java 里无参构造器是默认调用。注意写法 `super(本类名, this).__init__()`。如果调用有参构造器，参数通过 `super()` 后面的 `__init__(这里给父类传入参数)` 传入。
 
@@ -171,7 +171,7 @@ Python 和 Java 一样都是通过关键字 `class` 定义类。我们可以看�
 Python 是动态类型语言，因此属性可以不用事先声明，可以在构造器（再次注意 Python 的构造器是 `__init__` 方法）里直接初始化。因此上面的类创建代码可以简化为：
 
 ```python
-class Parrot:
+class Parrot(O):
 
     def __init__(this, name):
         super(Parrot, this).__init__()  # 调用父类构造器
@@ -181,6 +181,8 @@ class Parrot:
     def say(this):
         print(f"Hi I'm {this.name}")
 ```
+
+注：技术上严格来说，`__init__()` 并不是构造器，因为第一个参数传入的就是对象本身，意味着对象已经创建好了，在 Python 语言里，真正的构造器是 `__new__(clasz, *args, **kwargs)`，第一个参数（clasz）是自动传入的类本身。`__init__()` 在对象创建后第一时间调用，对程序员来说，在效果上等同于构造器的效果，就是做一些对象初始化的事情。另外，基于这些信息，为什么 `super()` 必须显式调用，也就不难理解了。
 
 ### 类实例化
 
@@ -198,9 +200,45 @@ parrot1 = Parrot("Polly")
 
 #### 方法使用
 
-和 Java 一样，通过 `.` 访问对象的方法。
+和 Java 一样，通过 `.` 访问对象的方法。例如：
+
+```python
+parrot1.say()
+```
+
+这里对为什么 `self` 不需要显式传入（但需要显式定义），做个简单说明。实际上最直接的方法调用应该是如下形式：
+
+```python
+Parrot.say(parrot1)  # 也就是 `object.method(args)` 等同于 `Class.method(object,args)`。
+```
+
+也就是 `self` 所代表的对象，确实需要传入。`parrot1.say()` 只是 `Parrot.say(parrot1)` 的简写形式。
 
 ### 非常重要的 `self`
+
+如前所述，`self` 等同于 Java 的 `this`，指代的是当前对象。`self` 作为形参（Parameters）需要显式定义，但实参（Arguments）是 Python 自动传入的。
+
+### 类方法
+
+通过 function decorator `@staticmethod` 可以把一个普通方法变成静态方法即类方法。如同 Java 的静态工具类，相比外露的普通函数，类方法是更好的实现工具函数的方式。
+
+```python
+class FileUtils(O):
+
+    @staticmethod
+    def read_file(path):
+        with open(path, encoding='utf-8') as myfile:
+            # 读取文件内容
+            content = myfile.read()
+        return content.encode(encoding='utf-8')
+```
+
+注意，类方法是不需要 `self` 参数的。调用也是通过类名来调用。
+
+```python
+from modules.common.file_utils import FileUtils as FileUtils
+FileUtils.read_file("...")
+```
 
 ## 模块与包
 
@@ -258,7 +296,7 @@ Python 面向对象编程的思路和 Java 面向对象编程的思路是一致�
 Python 的继承（Inheritance）和 Java 在概念上没有什么不同。
 
 ```python
-class Bird:
+class Bird(O):
 
     def __init__(self, name):
         super(Parrot, self).__init__()  # 调用父类构造器
@@ -320,6 +358,10 @@ Java 是单继承，Python 支持多继承，也就是继承多个父类。该�
 封装（Encapsulation）是面向对象编程思想的核心特性。应该坚持一条这样的原则：尽可能地封装，任何信息（属性、方法等）能不对外暴露就不对外暴露。
 
 Python 没有 类似 Java 的 `private` 关键字，而是通过两个下划线 `__` 来表示私有性。如上我们讨论的私有方法就属此例。理论上，所有的类属性都应该加双下划线，让其变成对外不可见。
+
+#### 如何访问属性
+
+@property
 
 ### 多态
 
