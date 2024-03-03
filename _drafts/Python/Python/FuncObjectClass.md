@@ -327,4 +327,10 @@ Python 没有 类似 Java 的 `private` 关键字，而是通过两个下划线 
 
 因为 Python 不像 Java 需要提前声明类型，多态在 Python 中的应用，就更加简单了。只要两个类——即使没有继承关系——有相同签名的方法，就可以利用多态特性，达到统一调用的效果。当然，实际应用中，更多的是基于继承的多态应用，因为继承天然的包含相同签名的方法。
 
+```python
+@engine.setter
+def engine(self, engine):
+    self.__engine_client = engine
 
+self.__engine_client.execute(...)
+```
