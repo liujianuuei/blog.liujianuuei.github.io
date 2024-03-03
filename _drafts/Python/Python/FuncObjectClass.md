@@ -18,7 +18,7 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-二、作为 utils 使用的工具函数，一般放在一个独立文件里。比如下面的 file_utils.py：
+二、作为 utils 使用的工具函数（更推荐的做法是稍后会讨论到的静态方法），一般放在一个独立文件里。比如下面的 file_utils.py：
 
 ```python
 #!/usr/bin/env python
