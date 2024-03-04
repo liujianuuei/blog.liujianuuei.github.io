@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Python](_drafts/Python/README.md)
-    * [Python 语言](_drafts/Python/Python/README.md)
+    * [Python 语言🐍](_drafts/Python/Python/README.md)
         * [一个样例程序](_drafts/Python/Python/TheGoodSample.md)
         * [Python基础](_drafts/Python/Python/PythonFundamental.md)
         * [集合框架](_drafts/Python/Python/Collection.md)
