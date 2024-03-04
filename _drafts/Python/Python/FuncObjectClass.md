@@ -367,7 +367,52 @@ Python 没有 类似 Java 的 `private` 关键字，而是通过两个下划线 
 
 #### 如何访问属性
 
-@property
+对象属性一般通过所谓的 Getter 和 Setter 访问，Python 也提供了类似 Java 的属性访问控制。如下代码所示：
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# import ignored
+
+class Client(object):
+    """客户端类"""
+    __load_config = yaml_utils.load_yaml_conf('./conf')
+
+    def __init__(self):
+        self.__config = self.__load_config
+        self.__database = 'default_database'
+
+    @property
+    def config(self):
+        return self.__config
+
+    @property
+    def rccgroup(self):
+        return self.config['auth']['rccgroup']
+
+    @rccgroup.setter
+    def rccgroup(self, rccgroup):
+        if string_utils.is_blank(rccgroup):
+            return
+        self.config['auth']['rccgroup'] = rccgroup
+
+    @property
+    def database(self):
+        return self.__database
+
+    @database.setter
+    def database(self, database):
+        if string_utils.is_blank(database):
+            return
+        self.__database = database
+
+    @property
+    def database_itself(self):
+        return self.config['database']['hive'][self.__database]
+```
+
+通过关键字 `@property` 定义 Getter 方法，通过关键字 `@<property>.setter` 定义 Setter 方法。
 
 ### 多态
 
