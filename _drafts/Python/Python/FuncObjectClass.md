@@ -367,13 +367,13 @@ Python 没有 类似 Java 的 `private` 关键字，而是通过两个下划线 
 
 #### 如何访问属性
 
-对象属性一般通过所谓的 Getter 和 Setter 访问，Python 也提供了类似 Java 的属性访问控制。如下代码所示：
+在 Java 中，对象属性一般通过所谓的 Getter 和 Setter 访问，Python 也提供了类似 Java 的属性访问控制。如下代码所示：
 
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# import ignored
+# imports ignored
 
 class Client(object):
     """客户端类"""
