@@ -388,14 +388,14 @@ class Client(object):
         return self.__config
 
     @property
-    def rccgroup(self):
-        return self.config['auth']['rccgroup']
+    def authgroup(self):
+        return self.config['auth']['authgroup']
 
-    @rccgroup.setter
-    def rccgroup(self, rccgroup):
-        if string_utils.is_blank(rccgroup):
+    @authgroup.setter
+    def authgroup(self, authgroup):
+        if string_utils.is_blank(authgroup):
             return
-        self.config['auth']['rccgroup'] = rccgroup
+        self.config['auth']['authgroup'] = authgroup
 
     @property
     def database(self):
