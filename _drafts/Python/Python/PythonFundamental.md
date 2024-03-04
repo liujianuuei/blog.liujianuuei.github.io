@@ -32,6 +32,8 @@ print(type(123) == int)  # Output: True
 print(isinstance(123, int))  # Output: True
 ```
 
+需要强调的是，如果要求"精密计算"，需要使用 decimal.py 模块的 `Decimal` 类来达到精准（符合数据认知）的结果。
+
 ## 变量定义
 
 直接通过变量名定义变量。例如：
