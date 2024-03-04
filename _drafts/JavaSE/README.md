@@ -1,7 +1,6 @@
 # Java SE
 
 * [Java 语言](Java/README.md)
-
    * [Java基础](Java/JavaFundamental.md)
    * [对象创建](Java/ObjectCreation.md)
    * [实例受控](Java/InstanceControlledClass.md)
@@ -23,9 +22,7 @@
    * [Stream](Java/Stream.md)
    * ~~[动态类型](Java/DynamicallyTyped.md)~~
    * ~~[函数式](Java/Functional.md)~~
-
 * [设计模式](DesignPattern/README.md)
-
    * [面向对象设计原则](DesignPattern/ObjectOrientedDesignPrinciples.md)
    * [设计模式之代理模式](DesignPattern/TheProxyPattern.md)
    * [设计模式之包装模式:适配器模式（补偿模式）](DesignPattern/TheAdapterPattern.md)

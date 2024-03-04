@@ -1,51 +1,53 @@
 # Summary
 
 * [Introduction](README.md)
-
-
-* [Java SE](_drafts/JavaSE/README.md)
-
-  * [Java 语言☕](_drafts/JavaSE/Java/README.md)
-
-    * [Java基础](_drafts/JavaSE/Java/JavaFundamental.md)
-    * [对象创建](_drafts/JavaSE/Java/ObjectCreation.md)
-    * [实例受控](_drafts/JavaSE/Java/InstanceControlledClass.md)
-    * [不可变类](_drafts/JavaSE/Java/ImmutableClass.md)
-    * [对象复制](_drafts/JavaSE/Java/ObjectCopy.md)
-    * [对象比较](_drafts/JavaSE/Java/ObjectComparison.md)
-    * [嵌套类](_drafts/JavaSE/Java/NestedClass.md)
-    * [注解](_drafts/JavaSE/Java/Annotation.md)
-    * [反射](_drafts/JavaSE/Java/Reflection.md)
-    * [集合框架](_drafts/JavaSE/Java/Collection.md)
-    * [并发编程](_drafts/JavaSE/Java/Concurrency.md)
-    * [网络编程](_drafts/JavaSE/Java/NWP.md)
-    * [序列化](_drafts/JavaSE/Java/Serialization.md)
-    * [泛型](_drafts/JavaSE/Java/Generics.md)
-    * [数组](_drafts/JavaSE/Java/Array.md)
-    * [字符串](_drafts/JavaSE/Java/String.md)
-    * [精密计算](_drafts/JavaSE/Java/PreciseCalculation.md)
-    * [异常](_drafts/JavaSE/Java/Exception.md)
-    * ~~[Stream](_drafts/JavaSE/Java/Stream.md)~~
-    * ~~[动态类型](_drafts/JavaSE/Java/DynamicallyTyped.md)~~
-    * ~~[函数式](_drafts/JavaSE/Java/Functional.md)~~
-
-  * [设计模式](_drafts/JavaSE/DesignPattern/README.md)
-
-    * [面向对象设计原则](_drafts/JavaSE/DesignPattern/ObjectOrientedDesignPrinciples.md)
-    * [设计模式之代理模式](_drafts/JavaSE/DesignPattern/TheProxyPattern.md)
-    * [设计模式之包装模式:适配器模式（补偿模式）](_drafts/JavaSE/DesignPattern/TheAdapterPattern.md)
-    * [设计模式之外观模式（补偿模式）](_drafts/JavaSE/DesignPattern/TheFacadePattern.md)
-    * [设计模式之包装模式:装饰者模式](_drafts/JavaSE/DesignPattern/TheDecoratorPattern.md)
-    * [设计模式之工厂模式](_drafts/JavaSE/DesignPattern/TheFactoryPattern.md)
-    * [设计模式之享元模式](_drafts/JavaSE/DesignPattern/TheFlyweightPattern.md)
-    * [设计模式之单例模式](_drafts/JavaSE/DesignPattern/TheSingletonPattern.md)
-    * [设计模式之观察者模式](_drafts/JavaSE/DesignPattern/TheObserverPattern.md)
-    * [设计模式之模板方法模式](_drafts/JavaSE/DesignPattern/TheTemplateMethodPattern.md)
-    * [设计模式概览](_drafts/JavaSE/DesignPattern/DesignPatternsOverview.md)
-
-* ~~[Java EE - Deprecated🚫](_drafts/JavaEE/README.md)~~
-
-* [Spring🌿](_drafts/Spring/README.md)
-
-
 * [Python](_drafts/Python/README.md)
+    * [Python 语言](_drafts/Python/Python/README.md)
+        * [一个样例程序](_drafts/Python/Python/TheGoodSample.md)
+        * [Python基础](_drafts/Python/Python/PythonFundamental.md)
+        * [集合框架](_drafts/Python/Python/Collection.md)
+        * [代码如何组织，或面向对象编程](_drafts/Python/Python/FuncObjectClass.md)
+        * [异常](_drafts/Python/Python/Exception.md)
+        * [并发编程](_drafts/Python/Python/Concurrency.md)
+        * [生成器](_drafts/Python/Python/Generator.md)
+        * [闭包](_drafts/Python/Python/Closure.md)
+        * [装饰器](_drafts/Python/Python/Decorator.md)
+        * [我该选择 Python 2 还是 Python 3](_drafts/Python/Python/Python2vs3.md)
+    * [设计模式](DesignPattern/README.md)
+* [Java SE](_drafts/JavaSE/README.md)
+    * [Java 语言☕](_drafts/JavaSE/Java/README.md)
+        * [Java基础](_drafts/JavaSE/Java/JavaFundamental.md)
+        * [对象创建](_drafts/JavaSE/Java/ObjectCreation.md)
+        * [实例受控](_drafts/JavaSE/Java/InstanceControlledClass.md)
+        * [不可变类](_drafts/JavaSE/Java/ImmutableClass.md)
+        * [对象复制](_drafts/JavaSE/Java/ObjectCopy.md)
+        * [对象比较](_drafts/JavaSE/Java/ObjectComparison.md)
+        * [嵌套类](_drafts/JavaSE/Java/NestedClass.md)
+        * [注解](_drafts/JavaSE/Java/Annotation.md)
+        * [反射](_drafts/JavaSE/Java/Reflection.md)
+        * [集合框架](_drafts/JavaSE/Java/Collection.md)
+        * [并发编程](_drafts/JavaSE/Java/Concurrency.md)
+        * [网络编程](_drafts/JavaSE/Java/NWP.md)
+        * [序列化](_drafts/JavaSE/Java/Serialization.md)
+        * [泛型](_drafts/JavaSE/Java/Generics.md)
+        * [数组](_drafts/JavaSE/Java/Array.md)
+        * [字符串](_drafts/JavaSE/Java/String.md)
+        * [精密计算](_drafts/JavaSE/Java/PreciseCalculation.md)
+        * [异常](_drafts/JavaSE/Java/Exception.md)
+        * ~~[Stream](_drafts/JavaSE/Java/Stream.md)~~
+        * ~~[动态类型](_drafts/JavaSE/Java/DynamicallyTyped.md)~~
+        * ~~[函数式](_drafts/JavaSE/Java/Functional.md)~~
+    * [设计模式](_drafts/JavaSE/DesignPattern/README.md)
+        * [面向对象设计原则](_drafts/JavaSE/DesignPattern/ObjectOrientedDesignPrinciples.md)
+        * [设计模式之代理模式](_drafts/JavaSE/DesignPattern/TheProxyPattern.md)
+        * [设计模式之包装模式:适配器模式（补偿模式）](_drafts/JavaSE/DesignPattern/TheAdapterPattern.md)
+        * [设计模式之外观模式（补偿模式）](_drafts/JavaSE/DesignPattern/TheFacadePattern.md)
+        * [设计模式之包装模式:装饰者模式](_drafts/JavaSE/DesignPattern/TheDecoratorPattern.md)
+        * [设计模式之工厂模式](_drafts/JavaSE/DesignPattern/TheFactoryPattern.md)
+        * [设计模式之享元模式](_drafts/JavaSE/DesignPattern/TheFlyweightPattern.md)
+        * [设计模式之单例模式](_drafts/JavaSE/DesignPattern/TheSingletonPattern.md)
+        * [设计模式之观察者模式](_drafts/JavaSE/DesignPattern/TheObserverPattern.md)
+        * [设计模式之模板方法模式](_drafts/JavaSE/DesignPattern/TheTemplateMethodPattern.md)
+        * [设计模式概览](_drafts/JavaSE/DesignPattern/DesignPatternsOverview.md)
+* ~~[Java EE - Deprecated🚫](_drafts/JavaEE/README.md)~~
+* [Spring🌿](_drafts/Spring/README.md)
