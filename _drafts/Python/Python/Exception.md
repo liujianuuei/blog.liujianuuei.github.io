@@ -38,7 +38,7 @@ except (ZeroDivisionError,IndexError) as e:
 
 和异常处理结合非常紧密的是资源释放。我们一般在 `finally` 子句里（如果只是为了资源的释放，`except` 子句可能都不需要），执行资源释放。
 
-对于那些实现了 `__exit__` （如下代码示例）函数的类，我们在创建对象时，可以通过 `with` 语法，采用一种类似 Java 的简单写法，这时候我们完全不需要操心资源释放的问题，资源会被自动释放。举例如下：
+对于那些实现了 `__enter__()` 和 `__exit__()` 方法的类，我们在创建对象时，可以通过 `with` 语法，采用一种类似 Java 的简单写法，这时候我们完全不需要操心资源释放的问题，资源会被自动释放。举例如下：
 
 ```python
 #!/usr/bin/env python
@@ -53,10 +53,10 @@ class Job(O):
         self.init_log()
 
     def __enter__(self):
-        return self
+        return self  # 返回当前创建的对象或者打开资源
 
     def __exit__(self, *args):
-        logging.debug("releasing resource")
+        logging.debug("releasing resource")  # 执行对象、资源释放
 
     def run(self):
         logging.info("job running...")
@@ -79,6 +79,8 @@ else:
     raise EngineNotSupport("Engine only support presto or hive or spark!!!")
 logging.info('Done.')
 ```
+
+`with...as...` 后面的变量（该例子里的 job），就是 `__enter__()` 返回的对象的引用。当 `with` 语句执行完的时候，`__exit__()` 会被自动调用执行（即使在 `with` 语句块中发生异常），从而达到自动释放资源的效果。
 
 ## 抛出异常
 
