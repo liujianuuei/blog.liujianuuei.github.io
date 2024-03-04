@@ -23,3 +23,5 @@ for value in some_generator_function(3):
 一、产生一个要返回的值，并返回该值；
 
 二、暂停函数执行，直到需要下一个值的时候。
+
+更多请参考 [Python Generators](https://www.programiz.com/python-programming/generator)。
