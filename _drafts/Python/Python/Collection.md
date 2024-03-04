@@ -91,7 +91,7 @@ somehow = []
 somehow = ['Jack', 32, 'Computer Science']
 ```
 
-另外，Python 还支持通过"列表推导"创建 List，请参考 [Python List Comprehension](https://www.programiz.com/python-programming/list-comprehension)，很少用到，不详述。
+另外，Python 还支持通过"列表推导式"创建 List，请参考 [Python List Comprehension](https://www.programiz.com/python-programming/list-comprehension)，很少用到，不详述。
 
 ### 访问元素
 
@@ -184,7 +184,7 @@ somehow = {}
 somehow = {"k1":"Jack", "k2":32, "k3":"Computer Science"} # key 是不可变的
 ```
 
-另外，Python 还支持通过"字典推导"创建 Dict，请参考 [Python Dictionary Comprehension](https://www.programiz.com/python-programming/dictionary-comprehension)，很少用到，不详述。
+另外，Python 还支持通过"字典推导式"创建 Dict，请参考 [Python Dictionary Comprehension](https://www.programiz.com/python-programming/dictionary-comprehension)，很少用到，不详述。
 
 ### 访问元素
 
