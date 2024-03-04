@@ -412,9 +412,7 @@ class Client(object):
         return self.config['database']['hive'][self.__database]
 ```
 
-通过关键字 `@property` 定义 Getter 方法，通过关键字 `@<property>.setter` 定义 Setter 方法。
-
-在 Python 中，Getter 和 Setter 的方法名必须是同一个（比如例子中的 `database`），使用的时候当作对象的属性直接赋值或读取即可，注意不是通过函数调用（通过小括号）的方式。
+通过关键字 `@property` 定义 Getter 方法，通过关键字 `@<属性名>.setter` 定义 Setter 方法。Getter 和 Setter 的方法名设置成同一个名字（比如例子中的 `database`），这样使用的时候就可以当作对象的属性直接赋值或读取，注意不是通过函数调用（通过小括号）的方式。
 
 ```python
 self.engine.database = context['database'] # 赋值，自动调用 def database(self, database)，也就是 Setter。
