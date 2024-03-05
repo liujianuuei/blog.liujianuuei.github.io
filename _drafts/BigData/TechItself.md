@@ -63,6 +63,8 @@ Now let’s take a deeper look into three popular file formats for big data: Avr
 
 ### MepReduce(MR)
 
+MepReduce 是一种编程模型。
+
 ## Hive
 
 ## HBase
