@@ -2,7 +2,11 @@
 
 ## Hadoop
 
+Generally speaking, Hadoop includes HDFS and MapReduce two components.
+
 ### HDFS
+
+HDFS stands for Hadoop Distributed File System. It is a distributed file system which can run on normal machines.
 
 #### Row vs. Columnar
 
@@ -54,6 +58,8 @@ Further, columnar-formatted files usually support a number of flexible compressi
 ##### Popular file formats for big data
 
 Now let’s take a deeper look into three popular file formats for big data: Avro, ORC, and Parquet.
+
+文章摘自：[Parquet, ORC, and Avro: The File Format Fundamentals of Big Data](https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data)。
 
 ### MepReduce(MR)
 
