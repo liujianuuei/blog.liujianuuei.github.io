@@ -128,9 +128,15 @@ Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，�
 
 ![](cluster-computing-spark-overview.png)
 
-Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央驱动节点（Driver Node）负责中央协调，调度其它各个分布式工作节点（Worker Node）。
+Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央驱动节点（Driver Node）负责中央协调，调度其它各个分布式工作节点（Worker Node）进行计算。节点也是独立运行的 Java 进程。
 
-驱动节点通过 SparkContext（你的程序创建出来的和 Spark 交互的重要对象）协调其它节点，首先 SparkContext 申请资源，然后申请工作节点上的执行器（Executor），再把主任务（程序所代表的的任务）拆分为多个子任务（DAG），把子任务分发给各个执行器执行。
+驱动节点（上运行的驱动程序，也即 Java 进程）通过 SparkContext（你的程序创建出来的和 Spark 交互的重要对象）协调其它节点（上运行的驱动程序，也即 Java 进程），
+
+一、首先通过资源管理器（比如 YARN）申请资源；
+
+二、然后申请工作节点上的执行器（Executor，其上运行的驱动程序，也即 Java 进程）；
+
+三、再把主任务（程序所代表的的任务）拆分为多个子任务（DAG），把子任务分发给各个执行器执行。
 
 ## ZooKeeper(ZK)
 
