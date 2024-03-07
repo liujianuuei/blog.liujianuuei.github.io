@@ -72,7 +72,77 @@ MepReduce 是一种编程模型。
 Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，通过语法 `CREATE TEMPORARY FUNCTION <函数名> AS <类名>` 绑定函数名。例如：
 
 ```hiveql
-<hive_udf.sql.base64>
+SET hive.exec.dynamic.partition=TRUE
+SET hive.exec.dynamic.partition.mode=nonstrict;
+-- ocr格式表加
+SET hive.merge.orcfile.stripe.level=FALSE;
+-- 小文件合并
+SET hive.merge.mapfiles=TRUE;
+SET hive.merge.mapredfiles=TRUE;
+SET hive.merge.smallfiles.avgsize=64000000;
+SET hive.merge.size.per.task=256000000;
+SET hive.merge.tezfiles=TRUE;
+SET mapreduce.input.fileinputformat.split.maxsize=256000000;
+SET mapreduce.input.fileinputformat.split.minsize=1;
+SET mapreduce.input.fileinputformat.split.minsize.per.node=128000000;
+SET mapreduce.input.fileinputformat.split.minsize.per.rack=128000000;
+-- 其他设置
+SET hive.map.aggr=TRUE;
+SET hive.exec.parallel=TRUE;
+SET hive.exec.parallel.thread.number=256;
+SET hive.exec.reducers.max=2000;
+SET mapreduce.job.running.map.limit=256;
+SET mapreduce.job.running.reduce.limit=256;
+SET mapreduce.job.reduces=2000;
+SET mapreduce.map.memory.mb=40960;
+SET mapreduce.map.java.opts=-Xmx37000m;
+SET mapreduce.reduce.memory.mb=40960;
+SET mapreduce.reduce.java.opts=-Xmx37000m;
+SET yarn.app.mapreduce.am.resource.mb=6096;
+SET yarn.app.mapreduce.am.command-opts=-Xmx5200m;
+
+ADD jar dgs://path/to/hive/behavior_UDF-1.0-SNAPSHOT.jar;
+CREATE TEMPORARY FUNCTION hc AS 'com.credit.app.udf.HashCode';
+CREATE TEMPORARY FUNCTION isNumber AS 'com.credit.app.udf.JudgeNum';
+
+INSERT overwrite TABLE loan_data_warehouse.dwd_loan_track_statistic_metric_di_1 PARTITION (dt = '{DATE-1}',stat_code)
+SELECT hc('did="', t.did, '"&&statCode=', t.stat_code) AS stat_hash,
+       NULL AS rm_dupl_stat_hash,
+       NULL AS global_uni_key,
+       t.create_time AS create_time,
+       NULL AS insert_time,
+       NULL AS process_numeral_field,
+       NULL AS process_string_field,
+       t.stat_code AS stat_code
+FROM (
+    SELECT
+        distinct_id did,
+        concat(unix_timestamp(time), '000') AS create_time,
+        CASE WHEN ch in ('umoneyappnew','umoneyapp','wallet') then 1023
+          else 1024
+        end as stat_code
+    from mdw_dwd.dwd_flw_sensors_events_back_dd
+    where ds = '{DATE-1}'
+     AND distinct_id IS NOT NULL
+     AND length(distinct_id) = 14
+     AND substring(distinct_id, 1, 1) NOT IN ('0','1','-')
+     AND isNumber(distinct_id)
+     AND event_key in ('jxj001_apply_userguide_click','jxj001_operation_activity_click')
+     AND from_unixtime(unix_timestamp(time), 'yyyyMMdd') = '{DATE-1}'
+    UNION ALL
+    SELECT
+        did,
+        concat(unix_timestamp(optime),'000') AS create_time,
+        IF(event_key = 'xloan_repay_customizedrepaycalculate',1025,1026) AS stat_code
+    from mdw_dwd.dwd_flw_track_event_dd
+    where ds = '{DATE-1}'
+        AND did is not null
+        AND length(did) = 14
+        AND substring(did, 1, 1) not in ('0', '1', '-')
+        AND isNumber(did)
+        AND event_key in ('xloan_repay_customizedrepaycalculate','xloan_repay_overdueprecalculate')
+        AND from_unixtime(unix_timestamp(optime),'yyyyMMdd') = '{DATE-1}'
+) t;
 ```
 
 ```java
