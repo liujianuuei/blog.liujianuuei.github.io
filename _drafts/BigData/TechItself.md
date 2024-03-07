@@ -80,8 +80,7 @@ package com.credit.app.udf;
 
 import org.apache.hadoop.hive.ql.exec.UDF;
 
-public class JudgeNum
-  extends UDF
+public class JudgeNum extends UDF
 {
   public boolean evaluate(String s) {
     if (s.startsWith("-")) {
