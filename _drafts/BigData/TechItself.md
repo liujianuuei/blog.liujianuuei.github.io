@@ -87,6 +87,19 @@ Apache Spark™ is a multi-language engine for executing data engineering, data 
 
 ![](cluster-computing-spark-overview.png)
 
+Spark Core 类似于 MR，其提供了类似 MR-API 的底层 API 称作 Dataset-API（旧称 RDD-API），基于 Dataset-API 封装了 Java、Python 等高级编程语言接口。
+
+Spark SQL 是一个类似 SQL-on-Hadoop 的 SQL-on-Spark 的模块，提供对结构化数据的 SQL 形式的访问能力。Dataset-API 也可以访问结构化数据（并不推荐这种方式），这时候，Dataset-API 称作 DataFrame-API。
+
+![](cluster-computing-spark-role.png)
+
+### 选型原则
+
+—— CLI/spark-sql.sh – 重SQL也即结构化数据处理（如果有需要处理少量非结构化数据，则应独立前置预处理好）
+—— Java-Program/Python-Program – 重半结构化或非结构化数据处理（可结合少量SQL也即结构化数据处理）
+
+例外情况：如果是重SQL任务，但涉及UDF，则只能通过Python-API或Java-API的方式做
+
 ## ZooKeeper(ZK)
 
 ## Kafka
