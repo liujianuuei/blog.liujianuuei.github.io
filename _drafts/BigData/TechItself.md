@@ -83,6 +83,10 @@ Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，�
 
 ## Spark
 
+Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.
+
+![](cluster-computing-spark-overview.png)
+
 ## ZooKeeper(ZK)
 
 ## Kafka
