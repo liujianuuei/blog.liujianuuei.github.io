@@ -75,6 +75,8 @@ Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，�
 <hive_udf.sql.base64>
 ```
 
+函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
+
 ## HBase
 
 ## Presto
