@@ -75,6 +75,30 @@ Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，�
 <hive_udf.sql.base64>
 ```
 
+```java
+package com.credit.app.udf;
+
+import org.apache.hadoop.hive.ql.exec.UDF;
+
+public class JudgeNum
+  extends UDF
+{
+  public boolean evaluate(String s) {
+    if (s.startsWith("-")) {
+      s = s.substring(1);
+    }
+    char[] ch = s.toCharArray();
+    int l = ch.length;
+    if (l == 1 && Integer.valueOf(s).intValue() == 0) return true; 
+    for (int i = 0; i < l; i++) {
+      if (i == 0 && ch[i] == '0') return false; 
+      if (!Character.isDigit(ch[i])) return false; 
+    } 
+    return true;
+  }
+}
+```
+
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
 
 ## HBase
