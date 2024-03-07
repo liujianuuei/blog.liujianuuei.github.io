@@ -91,7 +91,7 @@ Spark Core 类似于 MR，其提供了类似 MR-API 的底层 API 称作 Dataset
 
 Spark SQL 是一个类似 SQL-on-Hadoop 的 SQL-on-Spark 的模块，提供对结构化数据的 SQL 形式的访问能力。Dataset-API 也可以访问结构化数据（并不推荐这种方式），这时候，Dataset-API 称作 DataFrame-API。
 
-Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，以及其它一些不同来源不同格式的数据，理论上只要有新的数据源，为其编写一个 Connector，就可以被 Spark 支持。
+Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，以及其它一些不同来源不同格式（比如 JSON、非结构化文本等）的数据，理论上只要有新的数据源，为其编写一个 Connector，就可以被 Spark 支持。
 
 ![](cluster-computing-spark-role.png)
 
