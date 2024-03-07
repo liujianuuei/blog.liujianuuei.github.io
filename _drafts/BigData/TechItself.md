@@ -95,8 +95,9 @@ Spark SQL 是一个类似 SQL-on-Hadoop 的 SQL-on-Spark 的模块，提供对�
 
 ### 选型原则
 
-- CLI/spark-sql.sh - 重SQL也即结构化数据处理（如果有需要处理少量非结构化数据，则应独立前置预处理好）
-- Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量SQL也即结构化数据处理）
+—— CLI/spark-sql.sh - 重SQL也即结构化数据处理（如果有需要处理少量非结构化数据，则应独立前置预处理好）
+
+—— Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量SQL也即结构化数据处理）
 
 例外情况：如果是重SQL任务，但涉及UDF，则只能通过Python-API或Java-API的方式做。
 
