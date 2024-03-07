@@ -85,8 +85,6 @@ Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，�
 
 Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.
 
-![](cluster-computing-spark-overview.png)
-
 Spark Core 类似于 MR，其提供了类似 MR-API 的底层 API 称作 Dataset-API（旧称 RDD-API），基于 Dataset-API 封装了 Java、Python 等高级编程语言接口。
 
 Spark SQL 是一个类似 SQL-on-Hadoop 的 SQL-on-Spark 的模块，提供对结构化数据的 SQL 形式的访问能力。Dataset-API 也可以访问结构化数据（并不推荐这种方式），这时候，Dataset-API 称作 DataFrame-API。
@@ -102,6 +100,14 @@ Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，�
 —— Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量SQL也即结构化数据处理）
 
 例外情况：如果是重SQL任务，但涉及UDF，则只能通过Python-API或Java-API的方式做。
+
+### 运行时架构
+
+![](cluster-computing-spark-overview.png)
+
+Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央驱动节点（Driver Node）负责中央协调，调度其它各个分布式工作节点（Worker Node）。
+
+驱动节点通过 SparkContext 协调其它节点，首先 SparkContext 申请资源，然后申请工作节点上的执行器（Executor），再把大任务拆分为多个子任务（DAG），把子任务分发给各个执行器执行。
 
 ## ZooKeeper(ZK)
 
