@@ -67,6 +67,14 @@ MepReduce 是一种编程模型。
 
 ## Hive
 
+### UDF
+
+Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，通过语法 `CREATE TEMPORARY FUNCTION <函数名> AS <类名>` 绑定函数名。例如：
+
+```hiveql
+<hive_udf.sql.base64>
+```
+
 ## HBase
 
 ## Presto
