@@ -176,6 +176,8 @@ public class JudgeNum extends UDF
 
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
 
+## YARN
+
 ## HBase
 
 ## Presto
