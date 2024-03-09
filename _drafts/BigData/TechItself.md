@@ -2,11 +2,11 @@
 
 ## Hadoop
 
-Generally speaking, Hadoop includes HDFS and MapReduce two components.
+从狭义上来说, Hadoop 包括 HDFS（Hadoop Distributed File System） 和 MapReduce 两个组件。
 
 ### HDFS
 
-HDFS stands for Hadoop Distributed File System. It is a distributed file system which can run on normal machines.
+HDFS 是一个分布式的文件系统，可以运行在大规模廉价机器上。
 
 #### Row vs. Columnar
 
@@ -63,7 +63,11 @@ Now let’s take a deeper look into three popular file formats for big data: Avr
 
 ### MepReduce(MR)
 
-MepReduce 是一种编程模型。
+MepReduce 是一种用于数据处理的编程模型。
+
+#### MapReduce 如何处理数据
+
+
 
 ## Hive
 
