@@ -65,9 +65,9 @@ Now let’s take a deeper look into three popular file formats for big data: Avr
 
 MepReduce 是一种用于数据处理的编程模型。
 
-#### MapReduce 如何处理数据
+#### MapReduce 逻辑数据流
 
-
+![](mapreduce-dataflow-overview.jpg)
 
 ## Hive
 
