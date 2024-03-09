@@ -4,9 +4,19 @@
 
 从狭义上来说, Hadoop 包括 HDFS（Hadoop Distributed File System） 和 MapReduce 两个组件。
 
+### MepReduce(MR)
+
+MepReduce 是一种用于数据处理的编程模型。
+
+#### MapReduce 逻辑数据流
+
+![](mapreduce-dataflow-overview.jpg)
+
 ### HDFS
 
-HDFS 是一个分布式的文件系统，可以运行在大规模廉价机器上。
+HDFS 是一个分布式的文件系统，可以运行在大规模廉价机器上。可以通过 YARN 管理这些分布式集群资源，YARN 在物理资源之上，提供一层抽象。
+
+基于"数据处理和计算应该尽可能地靠近数据源，以减少数据传输的开销和提高处理效率"原则，Hadoop 把 MapReduce 程序转移到 HDFS 的各个分布式节点上去运行。
 
 #### Row vs. Columnar
 
@@ -60,14 +70,6 @@ Further, columnar-formatted files usually support a number of flexible compressi
 Now let’s take a deeper look into three popular file formats for big data: Avro, ORC, and Parquet.
 
 ——Excerpt From: [Parquet, ORC, and Avro: The File Format Fundamentals of Big Data](https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data)。
-
-### MepReduce(MR)
-
-MepReduce 是一种用于数据处理的编程模型。
-
-#### MapReduce 逻辑数据流
-
-![](mapreduce-dataflow-overview.jpg)
 
 ## Hive
 
