@@ -12,11 +12,15 @@ MepReduce 是一种用于数据处理的编程模型。
 
 ![](mapreduce-dataflow-overview.jpg)
 
+如果是多个 Reduce 任务，需要通过算法确保相同 Key 的键值对数据传递给同一个 Reduce 任务。
+
+![](mapreduces-dataflow-overview.jpg)
+
 ### HDFS
 
 HDFS 是一个分布式的文件系统，可以运行在大规模廉价机器上。可以通过 YARN 管理这些分布式集群资源，YARN 在物理资源之上，提供一层抽象。
 
-基于"数据处理和计算应该尽可能地靠近数据源，以减少数据传输的开销和提高处理效率"原则，Hadoop 把 MapReduce 程序转移到 HDFS 的各个分布式节点上去运行。
+基于**数据本地化优化原则**（数据处理和计算应该尽可能地靠近数据源，以减少数据传输的开销和提高处理效率），Hadoop 把 MapReduce 程序转移到 HDFS 的各个分布式节点上去运行。但注意，数据本地化优化原则主要适用 Map 程序，因为 Reduce 程序的输入通常来自于所有 Map 程序的输出，必然会涉及跨节点数据传输。
 
 #### Row vs. Columnar
 
