@@ -22,27 +22,25 @@ HDFS 是一个分布式的文件系统，可以运行在大规模廉价普通机
 
 基于**数据本地化优化原则**（数据处理和计算应该尽可能地靠近数据源，以减少数据传输的开销和提高处理效率），Hadoop 把 MapReduce 程序转移到 HDFS 的各个分布式节点上去运行。但注意，数据本地化优化原则主要适用 Map 程序，因为 Reduce 程序的输入通常来自于所有 Map 程序的输出，必然会涉及跨节点数据传输。
 
-#### 基本概念
-
-**数据块**
+#### 数据块
 
 HDFS 上存储的文件被划分为多个分块（chunk），作为独立的存储单元。数据块通过**副本**的方式容错。
 
-**NameNode & DataNode**
+#### NameNode & DataNode
 
 HDFS 也是主/从（M/S）架构。NameNode 是主节点（管理节点，只有一个），DataNode 是从节点（工作节点，有多个）。主节点管理文件系统的元数据，DataNode 受主节点的调度，存储或并检索数据块。
 
-**主节点容错**
+#### 主节点容错
 
 NameNode 只有一个，需要容错（单点故障）。一般分布式系统通过"选主"重建主节点。HDFS 在活动主节点之外，增加了备用主节点，并在活动主节点故障后启动备用主节点提供服务，来达到容错的目的。
 
 HDFS 这一高可用机制称为 **Active/Standby** 架构，也是一种常用的解决单点故障的方法，只是实现上面 HDFS 可能有自己特殊的地方。
 
-**主节点扩展**
+#### 主节点扩展
 
 NameNode 只有一个，因此存储的元数据必然是有上限的。**联邦 HDFS** 允许添加多个 NameNode 来实现扩展，不详述。
 
-#### Row vs. Columnar
+#### 行式存储和列式存储（Row vs. Columnar）
 
 There are two main ways in which you can organize your data: rows and columns.
 
