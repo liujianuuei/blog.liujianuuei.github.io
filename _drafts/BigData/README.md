@@ -1,6 +1,7 @@
 # 大数据
 
-* [大数据技术](TechItself.md)
+* [大数据技术——离线处理](TechItself-batch.md)
+* [大数据技术——实时处理](TechItself-realtime.md)
 * [数据仓库](DataWarehouse.md)
 * [数据质量](DataQuality.md)
 * [元数据](Metadata.md)

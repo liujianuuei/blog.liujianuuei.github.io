@@ -1,17 +1,17 @@
 # 大数据技术
 
-[[Haddop](TechItself.md#hadoop)]
-[[MapReduce](TechItself.md#mapreduce)]
-[[HDFS](TechItself.md#hdfs)]
-[[YARN](TechItself.md#yarn)]
-[[Hive](TechItself.md#hive)]
-[[HBase](TechItself.md#hbase)]
-[[Spark](TechItself.md#spark)]
-[[Presto](TechItself.md#presto)]
-[[ZooKeeper](TechItself.md#zookeeper)]
-[[OLAP](TechItself.md#olap)]
-[[Kafka](TechItself.md#kafka)]
-[[Flink](TechItself.md#flink)]
+[[Haddop](TechItself-batch.md#hadoop)]
+[[MapReduce](TechItself-batch.md#mapreduce)]
+[[HDFS](TechItself-batch.md#hdfs)]
+[[YARN](TechItself-batch.md#yarn)]
+[[Hive](TechItself-batch.md#hive)]
+[[HBase](TechItself-batch.md#hbase)]
+[[Spark](TechItself-batch.md#spark)]
+[[Presto](TechItself-batch.md#presto)]
+[[ZooKeeper](TechItself-batch.md#zookeeper)]
+[[OLAP](TechItself-batch.md#olap)]
+[[Kafka](TechItself-batch.md#kafka)]
+[[Flink](TechItself-batch.md#flink)]
 
 
 ## Hadoop
@@ -32,7 +32,7 @@ MepReduce(MR) 是一种用于分布式数据处理的编程模型。
 
 #### 编程模型
 
-MepReduce 是一种编程模型，但过于底层，要写出复杂的数据处理程序非常困难。Apache Pig 是基于 MR-API 的更高层次的编程抽象。但用的也不多，实际应用当中，更多的是使用 [Hive SQL](TechItself.md#hive-sql) 执行 MepReduce 任务。
+MepReduce 是一种编程模型，但过于底层，要写出复杂的数据处理程序非常困难。Apache Pig 是基于 MR-API 的更高层次的编程抽象。但用的也不多，实际应用当中，更多的是使用 [Hive SQL](TechItself-batch.md#hive-sql) 执行 MepReduce 任务。
 
 ### HDFS
 
