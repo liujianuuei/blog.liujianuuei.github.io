@@ -8,7 +8,7 @@
 
 MepReduce 是一种用于分布式数据处理的编程模型。
 
-#### MapReduce 逻辑数据流
+#### MapReduce 数据流
 
 ![](mapreduce-dataflow-overview.jpg)
 
@@ -39,6 +39,12 @@ HDFS 这一高可用机制称为 **Active/Standby** 架构，也是一种常用�
 #### 主节点扩展
 
 NameNode 只有一个，因此存储的元数据必然是有上限的。**联邦 HDFS** 允许添加多个 NameNode 来实现扩展，不详述。
+
+#### HDFS 读取数据流
+
+![](hdfs-dataflow-overview.jpg)
+
+图中展示了，从客户端发出数据读取指令，到主节点寻址，再到从节点回传数据的整个过程。
 
 #### 行式存储和列式存储（Row vs. Columnar）
 
