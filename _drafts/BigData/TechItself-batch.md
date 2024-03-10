@@ -154,11 +154,13 @@ Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL �
 
 Hive 表分为托管表和外部表。
 
+另外，Hive 还支持视图。
+
 #### 分区和分桶
 
 Hive 表支持按分区（partition ——`partitioned by`）组织，分区可以加快数据的寻址速度；而插入数据的时候可以通过动态分区插入。
 
-Hive 表还支持在分区的基础上再分桶（bucket ——`clustered by`），也可以加快数据查询。不详述。
+Hive 表还支持在分区的基础上再分桶（bucket ——`clustered by`，采用 Hash 算法分桶），也可以加快数据查询。物理上，每个桶就是分区目录里的一个文件。
 
 ### Hive SQL
 
