@@ -156,7 +156,7 @@ Hive 表分为托管表和外部表。
 
 #### 分区和分桶
 
-Hive 表支持按分区（partition ——`partitioned by`）组织，分区可以加快数据的寻址速度。
+Hive 表支持按分区（partition ——`partitioned by`）组织，分区可以加快数据的寻址速度；而插入数据的时候可以通过动态分区插入。
 
 Hive 表还支持在分区的基础上再分桶（bucket ——`clustered by`），也可以加快数据查询。不详述。
 
