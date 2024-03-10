@@ -135,7 +135,17 @@ YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责
 
 ## Hive
 
+Hive 是建构于 MapReduce 之上的一个通用数据处理框架，其使用 SQL 进行数据分析，底层把 SQL 转化为 MapReduce 任务执行。
+
+Hive 通过 Hive on Spark 支持 Spark 作为其底层数据处理引擎，更多内容参考 [Spark](TechItself-batch.md#spark)。
+
 ### Hive Table
+
+Hive 表不支持更新，不支持事务，这也是和事务型数据库（比如 MySQL）的本质区别。因为应用场景不同，Hive 表的这种特性并不是什么劣势。
+
+Hive 表也不支持索引，因为在基于 MapReduce 的离线批处理场景下，全表扫描是常态，性能的提升主要是在于分布式处理。
+
+Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上。值得注意，这部分元数据信息可以被第三方的计算引擎所使用。
 
 ### Hive SQL
 
@@ -246,7 +256,7 @@ public class JudgeNum extends UDF
 
 ## Spark
 
-Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.
+Apache Spark™ 是一个 DAG 计算引擎。
 
 Hadoop（主要指 MapReduce）的优势在于批处理（Batch Processing），但是在交互式分析（Interactive SQL）和迭代处理（Iterative Processing）方便表现不佳。Spark 主要就是为了解决这两方面的问题而设计。
 
