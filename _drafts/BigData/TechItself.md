@@ -214,9 +214,11 @@ public class JudgeNum extends UDF
 
 ## YARN
 
-YARN 是一个分布式资源管理框架，即对物理资源的抽象。其在整个 Hadoop 体系中位于 HDFS 之上，计算处理框架之下。
+YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU 等）的抽象。其在整个 Hadoop 体系中位于 HDFS 之上，计算处理框架之下。
 
 ![](resource-manager-yarn-overview.png)
+
+YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（执行数据处理任务的地方）的启动和监控。
 
 ## HBase
 
