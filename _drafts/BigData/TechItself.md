@@ -1,6 +1,16 @@
 # 大数据技术
 
-[[Haddop](TechItself.md#hadoop)][[MapReduce](TechItself.md]
+[[Haddop](TechItself.md#hadoop)]
+[[MapReduce](TechItself.md#mapreduce)]
+[[HFS](TechItself.md#hdfs)]
+[[YARN](TechItself.md#yarn)]
+[[Hive](TechItself.md#hive)]
+[[HBase](TechItself.md#hbase)]
+[[Spark](TechItself.md#spark)]
+[[Presto](TechItself.md#presto)]
+[[ZooKeeper](TechItself.md#zookeeper)]
+[[Kafka](TechItself.md#kafka)]
+
 
 ## Hadoop
 
@@ -107,6 +117,14 @@ Now let’s take a deeper look into three popular file formats for big data: Avr
 
 ——Excerpt From: [Parquet, ORC, and Avro: The File Format Fundamentals of Big Data](https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data)。
 
+## YARN
+
+YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU 等）的抽象。其在整个 Hadoop 体系中位于 HDFS 之上，计算处理框架之下。
+
+![](resource-manager-yarn-overview.png)
+
+YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（执行数据处理任务的地方）的启动和监控。
+
 ## Hive
 
 ### UDF
@@ -212,17 +230,7 @@ public class JudgeNum extends UDF
 
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
 
-## YARN
-
-YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU 等）的抽象。其在整个 Hadoop 体系中位于 HDFS 之上，计算处理框架之下。
-
-![](resource-manager-yarn-overview.png)
-
-YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（执行数据处理任务的地方）的启动和监控。
-
 ## HBase
-
-## Presto
 
 ## Spark
 
@@ -261,6 +269,8 @@ Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央�
 三、再把主任务（程序所代表的的任务）拆转化为多个子任务（a DAG of tasks），并把子任务分发给各个执行器执行，执行结果会返回给驱动节点。
 
 在 M/S 架构中，还有一个客户端角色需要关注，客户端通过 `spark-submit` 命令提交任务给 Spark 并等待处理结果（驱动节点会返回处理结果给客户端）。
+
+## Presto
 
 ## ZooKeeper
 
