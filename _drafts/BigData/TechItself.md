@@ -30,6 +30,10 @@ MepReduce(MR) 是一种用于分布式数据处理的编程模型。
 
 ![](mapreduces-dataflow-overview.jpg)
 
+#### 编程模型
+
+MepReduce 是一种编程模型，但过于底层，要写出复杂的数据处理程序非常困难。Apache Pig 是基于 MR-API 的更高层次的编程抽象。但用的也不多，实际应用当中，更多的使用 [Hive SQL](TechItself.md#hive-sql)。
+
 ### HDFS
 
 HDFS 是一个分布式的文件系统，可以运行在大规模廉价普通机器上。HDFS 适合一次写入，多次读取的场景，不像事务型数据系统，不支持修改。可以通过 YARN 管理这些分布式集群资源，YARN 在物理资源之上，提供一层抽象。
@@ -130,6 +134,10 @@ YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU �
 YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（执行数据处理任务的地方）的启动和监控。
 
 ## Hive
+
+### Hive Table
+
+### Hive SQL
 
 ### UDF
 
