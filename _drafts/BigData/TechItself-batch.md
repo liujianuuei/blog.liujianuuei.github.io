@@ -186,7 +186,7 @@ WHERE ads_day='{ads_day}'
 
 ### UDF
 
-Hive 支持用户自定义函数，通过语法 `ADD JAR` 加载函数实现，通过语法 `CREATE TEMPORARY FUNCTION <函数名> AS <类名>` 绑定函数名。例如：
+Hive 支持 UDF（用户自定义函数），通过语法 `ADD JAR` 加载函数实现，通过语法 `CREATE TEMPORARY FUNCTION <函数名> AS <类名>` 绑定函数名。例如：
 
 ```hiveql
 SET hive.exec.dynamic.partition=TRUE
@@ -286,6 +286,8 @@ public class JudgeNum extends UDF
 ```
 
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
+
+除了 UDF，还有 UDAF（用户自定义聚集函数） 和 UDTF（用户自定义表生成函数）。
 
 ## HBase
 
