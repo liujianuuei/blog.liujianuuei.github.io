@@ -52,7 +52,8 @@
 * ~~[Java EE - Deprecated🚫](_drafts/JavaEE/README.md)~~
 * [Spring🌿](_drafts/Spring/README.md)
 * [BigData🐘](_drafts/BigData/README.md)
-    * [大数据技术](_drafts/BigData/TechItself.md)
+    * [大数据技术——离线处理](_drafts/BigData/TechItself-batch.md)
+    * [大数据技术——实时处理](_drafts/BigData/TechItself-realtime.md)
     * [数据仓库](_drafts/BigData/DataWarehouse.md)
     * [数据质量](_drafts/BigData/DataQuality.md)
     * [元数据](_drafts/BigData/Metadata.md)
