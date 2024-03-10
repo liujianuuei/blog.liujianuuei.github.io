@@ -1,6 +1,6 @@
 # 大数据技术
 
-[[Haddop](TechItself-batch.md#hadoop)]
+[[Hadoop](TechItself-batch.md#hadoop)]
 [[MapReduce](TechItself-batch.md#mapreduce)]
 [[HDFS](TechItself-batch.md#hdfs)]
 [[YARN](TechItself-batch.md#yarn)]
@@ -153,6 +153,12 @@ Hive 表也不支持索引（或有限支持），因为在基于 MapReduce 的�
 Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上。值得注意，这部分元数据信息可以被第三方的处理引擎所使用。
 
 Hive 表分为托管表和外部表。
+
+#### 分区和分桶
+
+Hive 表支持按分区（partition ——`partitioned by`）组织，分区可以加快数据的寻址速度。
+
+Hive 表还支持在分区的基础上再分桶（bucket ——`clustered by`），也可以加快数据查询。不详述。
 
 ### Hive SQL
 
