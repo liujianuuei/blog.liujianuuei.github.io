@@ -9,9 +9,8 @@
 [[Spark](TechItself-batch.md#spark)]
 [[Presto](TechItself-batch.md#presto)]
 [[ZooKeeper](TechItself-batch.md#zookeeper)]
+[[Flume/Sqoop/Datax](TechItself-batch.md#数据采集)]
 [[OLAP](TechItself-batch.md#olap)]
-[[Kafka](TechItself-batch.md#kafka)]
-[[Flink](TechItself-batch.md#flink)]
 
 
 ## Hadoop
@@ -394,4 +393,4 @@ Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集
 
 ## 最后
 
-整个大数据技术体系要解决的问题就是"**大**"的问题，解决方案是通过**分布式**的方式实现并行处理，而分布式的**协同*是整个处理过程的难点和这套技术体系的价值所在。
+整个大数据技术体系要解决的问题就是"**大**"的问题，解决方案是通过**分布式**的方式实现并行处理，而分布式的**协同**是整个处理过程的难点和这套技术体系的价值所在。
