@@ -20,7 +20,7 @@
 
 ### MapReduce
 
-MepReduce(MR) 是一种用于分布式数据处理的编程模型。
+MapReduce(MR) 是一种用于分布式数据处理的编程模型。
 
 #### MapReduce 数据流
 
@@ -32,7 +32,7 @@ MepReduce(MR) 是一种用于分布式数据处理的编程模型。
 
 #### 编程模型
 
-MepReduce 是一种编程模型，但过于底层，要写出复杂的数据处理程序非常困难。Apache Pig 是基于 MR-API 的更高层次的编程抽象。但用的也不多，实际应用当中，更多的是使用 [Hive SQL](TechItself-batch.md#hive-sql) 执行 MepReduce 任务。
+MapReduce 是一种编程模型，但过于底层，要写出复杂的数据处理程序非常困难。Apache Pig 是基于 MR-API 的更高层次的编程抽象。但用的也不多，实际应用当中，更多的是使用 [Hive SQL](TechItself-batch.md#hive-sql) 执行 MapReduce 任务。
 
 ### HDFS
 
