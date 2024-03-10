@@ -2,7 +2,7 @@
 
 [[Haddop](TechItself.md#hadoop)]
 [[MapReduce](TechItself.md#mapreduce)]
-[[HFS](TechItself.md#hdfs)]
+[[HDFS](TechItself.md#hdfs)]
 [[YARN](TechItself.md#yarn)]
 [[Hive](TechItself.md#hive)]
 [[HBase](TechItself.md#hbase)]
