@@ -141,6 +141,10 @@ Hive 通过 Hive on Spark 支持 Spark 作为其底层数据处理引擎，更�
 
 注：除了 Hive，其它 SQL-on-Hadoop 框架还有：Apache Drill、Apache Impala 等。
 
+### 读时模式和写时模式
+
+传统事务型数据库，一般都是写时模式（schema on write），Hive 作为一个通用数据（包括结构化和半结构化以及非结构化）处理引擎，是读时模式（schema on read）。写时模式可以保证数据的"正确"，但是会花更多时间校验。读时模式可以使数据写入非常快速，对于写的时候还不能确定数据样式（schema）的场景也非常有用。
+
 ### Hive Table
 
 Hive 表不支持更新，不支持事务（或有限支持），这也是和事务型数据库（比如 MySQL）的本质区别。因为应用场景不同，Hive 表的这种特性并不是什么劣势。
@@ -149,9 +153,31 @@ Hive 表也不支持索引（或有限支持），因为在基于 MapReduce 的�
 
 Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上。值得注意，这部分元数据信息可以被第三方的处理引擎所使用。
 
+Hive 表分为托管表和外部表。
+
 ### Hive SQL
 
-SQL 在底层会被解析并转化为 MapReduce（或其它处理引擎） 任务执行。
+SQL 在底层会被解析并转化为 MapReduce（或其它处理引擎） 任务执行。看一个直接通过 SQL 写 HDFS 文件的例子：
+
+```hiveql
+set mapred.job.name='ads_loan_user_tag_df_{tag_code}';
+set mapred.child.java.opts=-Xmx4096;
+set mapreduce.map.java.opts=-Xmx3700m;
+set mapreduce.map.memory.mb=4096;
+set mapreduce.reduce.memory.mb=4096;
+set mapreduce.job.running.map.limit = 100;
+set mapreduce.job.running.reduce.limit = 100;
+set mapreduce.job.queuename=root.loan.data_label;
+INSERT overwrite directory '{dgs_path}' ROW format delimited fields terminated BY '\t' lines terminated BY '\n'
+SELECT entity_id ,
+       tag_value AS {tag_code}
+FROM  {tag_table}
+WHERE ads_day='{ads_day}'
+  AND entity_type = '{entity_type}'
+  AND tag_code = '{tag_code}'
+  AND version='{version}'
+  AND entity_id IS NOT NULL;
+```
 
 ### UDF
 
