@@ -1,12 +1,14 @@
 # 大数据技术
 
+[[Haddop](TechItself.md#hadoop)][[MapReduce](TechItself.md]
+
 ## Hadoop
 
 从狭义上来说, Hadoop 包括 HDFS（Hadoop Distributed File System） 和 MapReduce 两个组件。
 
-### MepReduce(MR)
+### MapReduce
 
-MepReduce 是一种用于分布式数据处理的编程模型。
+MepReduce(MR) 是一种用于分布式数据处理的编程模型。
 
 #### MapReduce 数据流
 
@@ -211,6 +213,10 @@ public class JudgeNum extends UDF
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
 
 ## YARN
+
+YARN 是一个分布式资源管理框架，即对物理资源的抽象。其在整个 Hadoop 体系中位于 HDFS 之上，计算处理框架之下。
+
+![](resource-manager-yarn-overview.png)
 
 ## HBase
 
