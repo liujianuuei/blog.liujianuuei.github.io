@@ -345,6 +345,8 @@ Presto 基于 M/S（也就是主/从）架构。主节点（Presto Coordinator�
 
 来源于：https://www.alluxio.io/learn/presto/architecture/
 
+如果需要了解更多内容，请参考 [Getting Started With PrestoDB](https://dzone.com/refcardz/getting-started-with-prestodb)。
+
 ### Catalog
 
 Presto 支持异构数据源，比如 Hive、Greenplum、MySQL 等（可用通过 Presto’s SPI 开发新的 Connector 支持新的数据源）。通过一个称为 Catalog 的概念来标识不同的数据源和相应的元数据。
@@ -365,6 +367,10 @@ else:
         cmd.extend(['--file', pqlfile.name])
 logging.debug('cmd: %s', cmd)
 ```
+
+### 和 Spark 的不同
+
+一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
 
 ```sql
 SELECT if(count(1)>1, 0, 1) AS res 
