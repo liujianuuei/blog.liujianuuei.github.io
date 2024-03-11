@@ -368,7 +368,7 @@ else:
 logging.debug('cmd: %s', cmd)
 ```
 
-### 和 Spark 的不同
+### 对比 Spark
 
 一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
 
