@@ -381,6 +381,8 @@ FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
 
 HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value）列式（适用于 read-heavy 场景）数据库。HBase 提供对大规模数据集的**随机访问**（对比 Hive 的[全表扫描](TechItself-batch.md#hive-table)）和**实时访问**，访问包括读和写，也就是说 "HBase provides low latency lookups for single rows from large tables"。类似的 NoSQL 数据库还有 Cassandra、CouchDB、MongoDB 等。
 
+
+
 ### 如何做到随机快速访问
 
 HBase 内部使用 Hash Table 来支持随机访问，数据存储在索引后（indexed）的 HDFS 文件上来支持快速查找。
@@ -398,6 +400,8 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列簇（colu
 ![](nosql-hbase-features-vs-rdbms.png)
 
 注意：HBase 不支持事务。
+
+来源于：https://www.tutorialspoint.com/hbase/hbase_tutorial.pdf
 
 Apache Phoenix
 
