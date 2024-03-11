@@ -321,7 +321,7 @@ Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，�
 
 ![](cluster-computing-spark-overview.png)
 
-Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央驱动节点（Driver Node）负责中央协调，调度其它各个分布式工作节点（Worker Node）进行计算。节点也是独立运行的 Java 进程。
+Spark 基于 M/S（也就是主/从）架构，在集群中，有一个中央驱动节点（Driver Node）负责中央协调，调度其它各个分布式工作节点（Worker Node）进行计算。节点也是独立运行的 Java 进程。
 
 驱动节点（上运行的驱动程序，也即 Java 进程）通过 SparkContext（你的程序创建出来的和 Spark 交互的重要对象）协调其它节点（上运行的驱动程序，也即 Java 进程）工作，主要步骤如下：
 
@@ -335,7 +335,13 @@ Spark 基于 M/S（也就是主/从） 架构，在集群中，有一个中央�
 
 ## Presto
 
-Presto 是作为 Hive SQL 的替代方案出现的。// Apache Drill, Impala
+Presto 是作为 Hive SQL 的替代方案出现的，它也是一个用来快速查询分析大规模（large scale）数据的分布式 SQL Query Engine，主要解决 Hive 在交互式分析（Interactive SQL）或 Ad-hoc 分析上的短板。
+
+注：Presto was initially designed at Facebook as they needed to run interactive queries against large data warehouses in Hadoop. It was explicitly designed to fill the gap/need to be able to run fast queries against data warehouses storing petabytes of data. 
+
+Presto 基于 M/S（也就是主/从）架构。主节点（Presto Coordinator）负责解析SQL、分配查询任务给从节点。从节点（Presto Worker）负责执行查询。如下图所示：
+
+![](sql-on-hadoop-presto-architecture.png)
 
 ## ZooKeeper
 
