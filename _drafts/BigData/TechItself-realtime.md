@@ -2,4 +2,6 @@
 
 ## Kafka
 
+![](realtime-messaging-kafka.jpg)
+
 ## Flink
