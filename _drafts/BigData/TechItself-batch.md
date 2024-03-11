@@ -289,9 +289,13 @@ public class JudgeNum extends UDF
 
 函数加载和绑定语句，可以和普通 Hive SQL 放在一起执行。这样，制作 UDF 就非常方便，不需要另起一个程序上下文环境（当然，UDF 本身还是需要在 Java 环境中实现）。
 
-除了 UDF，还有 UDAF（用户自定义聚集函数） 和 UDTF（用户自定义表生成函数）。
+除了 UDF，还有 UDAF（用户自定义聚集函数）和 UDTF（用户自定义表生成函数）。
 
 ## HBase
+
+Apache HBase 是一个构建于 HDFS 之上的 NoSQL（Key-Value） 分布式数据库。HBase 提供对大规模数据的随机、实时的读写访问。
+
+### 数据模型
 
 Apache Phoenix
 
@@ -437,7 +441,7 @@ ZK 设计为尽量满足一致性和可用性。在发生分区错误的时候�
 
 ## 数据采集
 
-Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集结构化数据到 HDFS。国内一般用 Datax。
+Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集结构化数据到 HDFS。国内一般用 Datax。这类技术也统称为 Data Pipeline，类似的框架还有比如 Apache NiFi。
 
 ## OLAP
 
