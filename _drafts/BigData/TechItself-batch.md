@@ -397,6 +397,8 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列簇（colu
 
 ![](nosql-hbase-features-vs-rdbms.png)
 
+注意：HBase 不支持事务。
+
 Apache Phoenix
 
 ## ZooKeeper
