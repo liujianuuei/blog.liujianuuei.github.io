@@ -391,6 +391,12 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列簇（colu
 
 ![](nosql-hbase-datamodel-overview.png)
 
+### 对比 RDBMS
+
+对比传统的 RDBMS，HBase 有一些自己的特性。
+
+![](nosql-hbase-features-vs-rdbms.png)
+
 Apache Phoenix
 
 ## ZooKeeper
