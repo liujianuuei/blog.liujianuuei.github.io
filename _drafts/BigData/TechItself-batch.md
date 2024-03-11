@@ -132,6 +132,8 @@ YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU �
 
 YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（执行数据处理任务的地方）的启动和监控。
 
+注：除了 YARN 之外，常用的资源管理框架还有 Apache Mesos。
+
 ## Hive
 
 Hive 是建构于 MapReduce 之上的一个通用数据处理框架，其使用 SQL 进行数据分析，底层把 SQL 转化为 MapReduce 任务执行。
@@ -441,7 +443,9 @@ ZK 设计为尽量满足一致性和可用性。在发生分区错误的时候�
 
 ## 数据采集
 
-Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集结构化数据到 HDFS。国内一般用 Datax。这类技术也统称为 Data Pipeline，类似的框架还有比如 Apache NiFi。
+Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集结构化数据到 HDFS。国内一般用 Datax。
+
+注：这类技术也被称为 Data Pipeline，类似的框架还有比如 Apache NiFi。
 
 ## OLAP
 
