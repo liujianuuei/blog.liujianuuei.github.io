@@ -309,11 +309,11 @@ Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，�
 
 **选型原则**
 
-—— CLI/spark-sql.sh - 重SQL也即结构化数据处理（如果有需要处理少量非结构化数据，则应独立前置预处理好）
+—— CLI/spark-sql.sh - 重 SQL 也即结构化数据处理（如果有需要处理少量非结构化数据，则应独立前置预处理好）
 
-—— Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量SQL也即结构化数据处理）
+—— Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量 SQL 也即结构化数据处理）
 
-例外情况：如果是重SQL任务，但涉及UDF，则只能通过Python-API或Java-API的方式做。
+例外情况：如果是重 SQL 任务，但涉及 UDF，则只能通过 Python-API 或 Java-API 的方式做。
 
 ### 运行时架构
 
