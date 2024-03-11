@@ -150,7 +150,7 @@ Hive 通过 Hive on Spark 支持 Spark 作为其底层数据处理引擎，更�
 
 Hive 表不支持更新，不支持事务（或有限支持），这也是和事务型数据库（比如 MySQL）的本质区别。因为应用场景不同，Hive 表的这种特性并不是什么劣势。
 
-Hive 表也不支持索引（或有限支持），因为在基于 MapReduce 的离线批处理场景下，全表扫描是常态，性能的提升主要是在于分布式处理。
+Hive 表也不支持索引（或有限支持），因为在基于 MapReduce 的离线批处理场景下，**全表扫描**是常态，性能的提升主要是在于分布式处理。
 
 Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上。值得注意，这部分元数据信息可以被第三方的处理引擎所使用。
 
@@ -293,14 +293,6 @@ public class JudgeNum extends UDF
 
 除了 UDF，还有 UDAF（用户自定义聚集函数）和 UDTF（用户自定义表生成函数）。
 
-## HBase
-
-Apache HBase 是一个构建于 HDFS 之上的 NoSQL（Key-Value） 分布式数据库。HBase 提供对大规模数据的随机、实时的读写访问。
-
-### 数据模型
-
-Apache Phoenix
-
 ## Spark
 
 Apache Spark™ 是一个 DAG 计算引擎。
@@ -382,6 +374,16 @@ logging.debug('cmd: %s', cmd)
 SELECT if(count(1)>1, 0, 1) AS res 
 FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
 ```
+
+## HBase
+
+现在，让我们来回顾一下大数据生态体系的成员。HDFS 提供大规模分布式存储，MapReduce 提供大规模数据集分布式处理，以及 Hive SQL 提供的 SQL 交互方式，但 MapReduce 和 Hive SQL 都比较慢不适合交互式分析，这时候，Spark 基于内存和 DAG 的处理模型解决了效率的问题，Presto 则针对快速查询（Ad-hoc Query）提供了解决方案。缺什么？上述所有操作基本都是大批量读取数据，然后处理，结果可能会保存在另一张表里，或者直接输出。唯独没有对"随机读写"（random real-time read/write access）的支持——就是类似传统 SQL 数据库的随机读取记录并修改记录值的操作。Apache HBase 就是被设计出来以适应这种场景的。
+
+Apache HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value）列式（适用于 read-heavy 场景）数据库。HBase 提供对大规模数据集的**随机访问**（对比 Hive 的[全表扫描](TechItself-batch.md#hive-table)）和**实时访问**，访问包括读和写。类似的 NoSQL 数据库还有 Cassandra、CouchDB、MongoDB 等。
+
+### 数据模型
+
+Apache Phoenix
 
 ## ZooKeeper
 
