@@ -401,9 +401,9 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列簇（colu
 
 ![](nosql-hbase-features-vs-rdbms.png)
 
-注意：HBase 不支持事务。
-
 来源于：https://www.tutorialspoint.com/hbase/hbase_tutorial.pdf
+
+注意：HBase 不支持事务。Apache Phoenix 在 HBase 基础上，提供完整的 ACID 事务特性——结合 SQL 和 NoSQL 两个世界的优点。
 
 ## ZooKeeper
 
