@@ -391,7 +391,7 @@ HBase 内部使用 Hash Table 来支持随机访问，数据存储在索引后�
 
 ### 数据模型
 
-HBase 的一张表由许多行（rows）组成，每一行由许多列族（column families）组成，每个列族由许多列（columns）组成，每一列存放着最终的数据。
+HBase 的一张表由许多行（rows）组成，每一行由许多列族（column families）组成，每个列族由许多列（columns）组成，每一列存放着最终的任意类型的数据。
 
 ![](nosql-hbase-datamodel-overview.png)
 
