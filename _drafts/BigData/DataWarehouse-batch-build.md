@@ -42,13 +42,13 @@ DW* 模型表命名规范：`[分层]_[一级主题域]_[二级主题域]_[自�
 
 ![](dw-batch-dw-ingest-bp-fields.png)
 
-如果MySQL表是覆盖的且用到的字段是覆盖的，则同步字段是 **CREATED+MODIFIED**，反例比如交易 detail 表同步问题。
+一、如果 MySQL 表是覆盖的且用到的字段是覆盖的，则同步字段是 **CREATED+MODIFIED**，反例比如交易 detail 表同步问题。
 
-如果MySQL表是覆盖的且用到的字段是不变的，则同步字段是 **CREATED+MODIFIED**，或者 **CREATED**（是否同步 MODIFIED 可以取决于需求，但一般建议都同步）。
+二、如果 MySQL 表是覆盖的且用到的字段是不变的，则同步字段是 **CREATED+MODIFIED**，或者 **CREATED**（是否同步 MODIFIED 可以取决于需求，但一般建议都同步）。
 
 注：另外，某些情况下结合 till-now 可以取巧成只同步 MODIFIED，但不建议这么做，徒增理解成本，反例比如核心的 tloan 同步。
 
-如果 MySQL 表是流水，则同步字段是 **CREATED**。
+三、如果 MySQL 表是流水，则同步字段是 **CREATED**。
 
 注意，无论是 CREATED 还是 MODIFIED，都必须是**系统时间字段（或数据时间字段）**，而不能是带业务含义的**业务时间字段**；如果业务系统缺失系统时间字段，不得已用业务时间字段替代，需说明可行性和影响。
 
