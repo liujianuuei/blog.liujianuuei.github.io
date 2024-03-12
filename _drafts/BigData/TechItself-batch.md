@@ -429,7 +429,7 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列族（colu
 
 来源于：https://www.tutorialspoint.com/hbase/hbase_tutorial.pdf
 
-注意：HBase 不支持事务。Apache Phoenix 在 HBase 基础上，提供完整的 ACID 事务特性——结合 SQL 和 NoSQL 两个世界的优点。
+注意：HBase 不支持事务。Apache Phoenix 在 HBase 基础上，提供完整的 ACID 事务特性——结合 SQL 和 NoSQL 两个世界的优点，既支持低延迟的 OLTP 又支持数据分析操作。
 
 ## ZooKeeper
 
