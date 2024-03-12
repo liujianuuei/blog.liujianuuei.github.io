@@ -2,7 +2,8 @@
 
 * [大数据技术——离线处理](TechItself-batch.md)
 * [大数据技术——实时处理](TechItself-realtime.md)
-* [数据仓库](DataWarehouse.md)
+* [数据仓库——离线](DataWarehouse-batch.md)
+* [数据仓库——实时](DataWarehouse-realtime.md)
 * [数据质量](DataQuality.md)
 * [元数据](Metadata.md)
 * [数据血缘](DataLineage.md)
