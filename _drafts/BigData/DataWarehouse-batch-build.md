@@ -241,4 +241,10 @@ ADS应用层数据加工，应该不涉及【关联范围】的决策，关联�
 
 ## DW*快照表最佳实践
 
+![](dw-batch-dw-build-sht-nostate.png)
+
+![](dw-batch-dw-build-sht-withstate.png)
+
+![](dw-batch-dw-build-sht-merge.png)
+
 ## ADS快照表最佳实践
