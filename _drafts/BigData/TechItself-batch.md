@@ -379,11 +379,17 @@ FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
 
 现在，让我们来回顾一下大数据生态体系的成员。HDFS 提供大规模分布式存储，MapReduce 提供大规模数据集分布式处理，以及 Hive SQL 提供的 SQL 交互方式，但 MapReduce 和 Hive SQL 都比较慢不适合交互式分析，这时候，Spark 基于内存和 DAG 的处理模型解决了效率的问题，Presto 则针对快速查询（Ad-hoc Query）提供了解决方案。缺什么？上述所有操作基本都是大批量读取数据，然后处理，结果可能会保存在另一张表里，或者直接输出。唯独没有对"随机读写"（random real-time read/write access）的支持——就是类似传统 SQL 数据库的随机读取记录并修改记录值的操作。Apache HBase 就是被设计出来以适应这种场景的。
 
-HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value）列式（适用于 read-heavy 场景）数据库。HBase 提供对大规模数据集的**随机访问**（对比 Hive 的[全表扫描](TechItself-batch.md#hive-table)）和**实时访问**，访问包括读和写，也就是说 "HBase provides low latency lookups for single rows from large tables"。类似的 NoSQL 数据库还有 Cassandra、CouchDB、MongoDB 等。
+HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value，所以**不支持 SQL**）列式（适用于 read-heavy 场景）数据库。HBase 提供对大规模数据集的**随机访问**（对比 Hive 的[全表扫描](TechItself-batch.md#hive-table)）和**实时访问**，访问包括读和写，也就是说 "HBase provides low latency lookups for single rows from large tables"。类似的 NoSQL 数据库还有 Cassandra、CouchDB、MongoDB 等。
 
 HBase 也是 M/S（主/从）架构。主节点（Master Server）负责分配**区块**（regions - 在存储层面，表是由区块组成的）给从节点（Automatic Sharding），并负责负载均衡，以及维护从节点的状态，以及表的元数据管理。从节点（Region Server）负责和客户端通信并处理数据操作请求。HBase 通过 ZK 帮助实现分布式协同。
 
 ![](nosql-hbase-arch-overview.png)
+
+### Key 是由什么组成的
+
+如上所述，在 HBase 中，底层数据是 Key-Value 格式组织的，Key 是一个复杂的结构，由多个部分组成：RowKey、ColumnFamily、Qualifier、TimeStamp、KeyType，这些元素共同组成 Key 值。
+
+注：Value 是一个简单的二进制数据块，可以是任意类型的数据。
 
 ### 如何做到随机快速访问
 
@@ -391,7 +397,7 @@ HBase 内部使用 Hash Table 来支持随机访问，数据存储在索引后�
 
 ### 数据模型
 
-HBase 的一张表由许多行（rows）组成，每一行由许多列簇（column families）组成，每个列簇由许多列（columns）组成，每一列由许多键值对（key-value-pairs）组成。
+HBase 的一张表由许多行（rows）组成，每一行由许多列族（column families）组成，每个列族由许多列（columns）组成，每一列由许多键值对（key-value-pairs）组成。
 
 ![](nosql-hbase-datamodel-overview.png)
 
