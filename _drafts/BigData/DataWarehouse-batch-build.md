@@ -248,3 +248,5 @@ ADS应用层数据加工，应该不涉及【关联范围】的决策，关联�
 ![](dw-batch-dw-build-sht-merge.png)
 
 ## ADS快照表最佳实践
+
+没有什么特殊性。可参考[ADS事务表最佳实践](DataWarehouse-batch-build.md#ADS事务表最佳实践)。
