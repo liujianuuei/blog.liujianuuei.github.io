@@ -413,7 +413,7 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列族（colu
 
 **KeyType**
 
-表示 KeyValue的 类型，例如Put（插入）、Delete（删除）等。
+表示 KeyValue的 类型，例如 Put（插入）、Delete（删除）等。
 
 ### Key 是由什么组成的
 
