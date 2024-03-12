@@ -385,21 +385,41 @@ HBase 也是 M/S（主/从）架构。主节点（Master Server）负责分配**
 
 ![](nosql-hbase-arch-overview.png)
 
-### Key 是由什么组成的
-
-如上所述，在 HBase 中，底层数据是 Key-Value 格式组织的，Key 是一个复杂的结构，由多个部分组成：RowKey、ColumnFamily、Qualifier、TimeStamp、KeyType，这些元素共同组成 Key 值。
-
-注：Value 是一个简单的二进制数据块，可以是任意类型的数据。
-
 ### 如何做到随机快速访问
 
 HBase 内部使用 Hash Table 来支持随机访问，数据存储在索引后（indexed）的 HDFS 文件上来支持快速查找。
 
 ### 数据模型
 
-HBase 的一张表由许多行（rows）组成，每一行由许多列族（column families）组成，每个列族由许多列（columns）组成，每一列由许多键值对（key-value-pairs）组成。
+HBase 的一张表由许多行（rows）组成，每一行由许多列族（column families）组成，每个列族由许多列（columns）组成，每一列存放着最终的数据。
 
 ![](nosql-hbase-datamodel-overview.png)
+
+**RowKey**
+
+用于唯一标识表中的每一行。通常建议设计为能够反映数据某些特性的有序字符串，以便于范围扫描。
+
+**ColumnFamily**
+
+列族是数据的逻辑分组，用于优化数据的存储和读取。
+
+**Qualifier**
+
+限定符（可选）用于在列族内进一步细分列。
+
+**TimeStamp**
+
+时间戳用于标识同一列族和列限定符下的多个版本的数据。
+
+**KeyType**
+
+表示 KeyValue的 类型，例如Put（插入）、Delete（删除）等。
+
+### Key 是由什么组成的
+
+如上所述，在 HBase 中，底层数据是 Key-Value 格式组织的，Key 是一个复杂的结构，由多个部分组成：RowKey、ColumnFamily、Qualifier、TimeStamp、KeyType，这些元素共同组成 Key 值。
+
+注：Value 是一个简单的二进制数据块，可以是任意类型的数据。
 
 ### 对比 RDBMS
 
