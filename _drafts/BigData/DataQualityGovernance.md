@@ -12,17 +12,39 @@
 
 ## 数据质量实现
 
-### 数据加工引擎
-
-![](dw-batch-quality-build-arch.png)
-
-![](dw-batch-quality-build-features.png)
-
-### 实时监控工具/watchdog/corndog
-
 ### 开发流程规范
 
-略。
+规范化的开发流程是保证数据质量的第一步。具体不详述。
+
+### 数据线上监控
+
+数据任务上线后的监控是保证数据质量的第二步。
+
+**就地监控——数据加工引擎**
+
+数据在加工的时候进行及时监控（就地监控）和拦截是保证质量的主要方式。实现如下：
+
+![](dw-batch-quality-self-impl-arch.png)
+
+![](dw-batch-quality-self-impl-features.png)
+
+针对实时数据，也需要应用类似的前（①过滤②脏数据分流）后（①结果检查）置逻辑，不同的是操作对象是无边界的数据流。
+
+注：本文不提供针对实时数据的监控框架，加工引擎只适用于离线加工，但针对实时数据原理相同。
+
+**质量中心——离线监控工具**
+
+除了就地监控之外，作为第三方的集中式质量中兴的作用也是很有必要的。实现如下：
+
+![](dw-batch-quality-corndog-impl-arch.png)
+
+其中核心点在于：①实体的抽象②监控指标的设计③规则表达式。
+
+![](dw-batch-quality-corndog-impl-details.png)
+
+**质量中心——实时监控工具**
+
+/watchdog/corndog/woof
 
 ## 模型优化/稳定性
 
