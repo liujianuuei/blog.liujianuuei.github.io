@@ -4,6 +4,8 @@
 
 ## 数据质量标准
 
+![](dw-batch-quality-standards.png)
+
 ## 数据质量全景
 
 ## 数据质量实现
