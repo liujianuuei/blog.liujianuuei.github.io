@@ -381,7 +381,7 @@ FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
 
 HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value，所以**不支持 SQL**）列式（适用于 read-heavy 场景）数据库。HBase 提供对大规模数据集的**随机访问**（对比 Hive 的[全表扫描](TechItself-batch.md#hive-table)）和**实时访问**，访问包括读和写，也就是说 "HBase provides low latency lookups for single rows from large tables"。类似的 NoSQL 数据库还有 Cassandra、CouchDB、MongoDB 等。
 
-HBase 也是 M/S（主/从）架构。主节点（Master Server）负责分配**区块**（regions - 在存储层面，表是由区块组成的）给从节点（Automatic Sharding），并负责负载均衡，以及维护从节点的状态，以及表的元数据管理。从节点（Region Server）负责和客户端通信并处理数据操作请求。HBase 通过 ZK 帮助实现分布式协同。
+HBase 也是 M/S（主/从）架构。主节点（Master Server）负责分配**区块**（regions - 在存储层面，表按行水平划分成区块）给从节点（Automatic Sharding），并负责负载均衡，以及维护从节点的状态，以及表的元数据管理。从节点（Region Server）负责和客户端通信并处理数据操作请求。HBase 通过 ZK 帮助实现分布式协同。
 
 ![](nosql-hbase-arch-overview.png)
 
