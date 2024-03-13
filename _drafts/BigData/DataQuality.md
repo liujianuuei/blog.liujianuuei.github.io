@@ -8,6 +8,8 @@
 
 ## 数据质量全景
 
+![](dw-batch-quality-arch-overview.png)
+
 ## 数据质量实现
 
 ### 数据加工引擎
