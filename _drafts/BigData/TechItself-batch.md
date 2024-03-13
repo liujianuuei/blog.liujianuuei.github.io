@@ -1,4 +1,4 @@
-# 大数据技术
+# 大数据技术——离线
 
 [[Hadoop](TechItself-batch.md#hadoop)]
 [[MapReduce](TechItself-batch.md#mapreduce)]
