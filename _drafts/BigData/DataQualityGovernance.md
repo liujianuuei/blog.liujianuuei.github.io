@@ -22,7 +22,7 @@
 
 **就地监控——数据加工引擎**
 
-数据在加工的时候进行及时监控（就地监控）和拦截是保证质量的主要方式。实现如下：
+数据在加工的时候进行及时监控（就地监控）和拦截是保证质量的主要方式。实现如下（loan-data-warehouse-python - 用 Python 实现）：
 
 ![](dw-batch-quality-self-impl-arch.png)
 
@@ -34,7 +34,7 @@
 
 **质量中心——离线监控工具**
 
-除了就地监控之外，作为第三方的集中式质量中心的作用也是很有必要的。实现如下（corndog）：
+除了就地监控之外，作为第三方的集中式质量中心的作用也是很有必要的。实现如下（metadata-corndog - 用 Java 实现）：
 
 ![](dw-batch-quality-corndog-impl-arch.png)
 
@@ -45,6 +45,10 @@
 注：规则引擎推荐 MVEL 或者 Drools/Rete。后者功能强大但过于复杂，适用于重量级平台化方案。前者完全支持 Java 语法，支持表现力强大的高精度计算（`System.out.println(1.00B - (9B * 0.10B));`），函数语法类似 Python + Java，可以引用 Java 类。更对关于规则引擎选型如下：
 
 ![](dw-batch-quality-corndog-impl-exps.png)
+
+另外需要注意的一个技术点——是**任务调度**。因为监控平台相当于一个调度器，需要就用户配置的例行化执行周期和时间动态启停任务，所以需要一个调度框架的支持。推荐 Quartz 并附具体选型过程如下：
+
+![](dw-batch-quality-corndog-impl-scheduling.png)
 
 **质量中心——实时监控工具**
 
