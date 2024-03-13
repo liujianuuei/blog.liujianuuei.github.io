@@ -35,13 +35,17 @@
 
 ![](dw-batch-index-arch-overview.png)
 
+**指标举例**
+
+。。。
+
 **存储方式**
 
 指标和标签类似，也需要一种非耦合的设计，所以采用横向存储。
 
 ![](dw-batch-index-tables.png)
 
-
+注：分区字段 `ads_day=20240312/viewperiod=MTD/viewpoint=T0/entity=ORDER_ID/code=S5.n`。
 
 ## 埋点配置化加工工具
 
