@@ -8,7 +8,7 @@
     * [数据仓库理论——实时](_drafts/BigData/DataWarehouse-realtime-overview.md)
     * [数据仓库开发——离线](_drafts/BigData/DataWarehouse-batch-build.md)
     * [数据仓库开发——实时](_drafts/BigData/DataWarehouse-realtime-build.md)
-    * [数据质量或数据治理](_drafts/BigData/DataQuality.md)
+    * [数据质量或治理](_drafts/BigData/DataQualityGovernance.md)
     * [元数据管理](_drafts/BigData/Metadata.md)
     * [数据血缘](_drafts/BigData/DataLineage.md)
     * [数据平台](_drafts/BigData/DataTools.md)
