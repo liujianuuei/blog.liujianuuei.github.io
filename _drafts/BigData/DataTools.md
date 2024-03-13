@@ -68,3 +68,9 @@ ZGVsZXRlIGZyb20gbG9hbl9kYXRhX3dhcmVob3VzZS5hZHNfbG9hbl9zZXJ2X2luZGV4X3JvX2RkIHdo
 ## 自助数据分析工具
 
 本文讨论限定于离线数据分析。
+
+自助数据分析工具并不完善，不详述。
+
+![](dw-batch-self-service-analysis-tool.png)
+
+![](dw-batch-self-service-path-analysis.png)
