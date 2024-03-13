@@ -14,6 +14,10 @@
 
 ### 数据加工引擎
 
+![](dw-batch-quality-build-arch.png)
+
+![](dw-batch-quality-build-features.png)
+
 ### 实时监控工具/watchdog/corndog
 
 ### 开发流程规范
