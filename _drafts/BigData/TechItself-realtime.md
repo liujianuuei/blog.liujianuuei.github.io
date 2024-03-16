@@ -19,7 +19,7 @@ Kafka 提供的高性能和**持久性**是 Flink 按预期工作的前提。尤
 
 批处理总是作用于确定范围内的数据，流可以看做无边界数据，批可以看做有限静态的流（有限数据集）。
 
-Flink 是一个分布式的高吞吐的[有状态](TechItself-realtime.md#状态)的流处理引擎。
+Flink 是一个分布式的高吞吐的[有状态](TechItself-realtime.md#状态)的流处理引擎。Flink 也是 M/S 架构。
 
 ### 流处理系统 vs. 在线工程系统
 
@@ -39,7 +39,7 @@ Flink 是一个分布式的高吞吐的[有状态](TechItself-realtime.md#状态
 
 ### 编程模型
 
-本文所有编程相关讨论都是限定 Flink Streaming 编程模型接口。Flink SQL 是否成熟尚不可知。
+本文所有编程相关讨论都是限定 Flink DataStream API 编程模型。Flink SQL（或者 Table API） 是否成熟尚不可知。
 
 **Source**
 
@@ -66,6 +66,8 @@ Flink 可以"理解"事件时间，从而允许应用程序设置更合理的计
 从另一个角度看，窗口是一种"触发机制"，触发系统聚合窗口内容并计算结果。事实上，窗口背后的实现原理就是靠触发器，我们也可以实现自定义的触发器。
 
 #### Watermark
+
+Watermark 用于实现事件时钟。
 
 #### 乱序
 
