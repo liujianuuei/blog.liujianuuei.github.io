@@ -39,7 +39,7 @@ Flink 是一个分布式的高吞吐的[有状态](TechItself-realtime.md#状态
 
 ### 编程模型
 
-本文所有编程相关讨论都是限定 Flink DataStream API 编程模型。Flink SQL（或者 Table API） 是否成熟尚不可知。
+本文所有编程相关讨论都是限定 Flink DataStream API 编程模型。Flink SQL（或者 Table API） 是否成熟尚不可知，其目的是为实现批流统一编程而设计。
 
 **Source**
 
