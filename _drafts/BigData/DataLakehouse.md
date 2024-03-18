@@ -16,7 +16,7 @@ Lambda(λ) 架构是最简单最容易自然长成的批流架构，但问题也
 
 ### 流式架构（或批流一体架构）——第二代架构
 
-Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。*离线（Batch View）怎么存？*
+Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 ![](dw-arch-kappa.png)
 
@@ -24,7 +24,15 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。*离线
 
 来源：https://nexocode.com/blog/posts/kappa-architecture/
 
-### Lambda(λ) vs Kappa(κ)
+但问题是，供事后分析的批视图（Batch View）怎么存储。批存储介质需要满足如下特性：
+
+① 支持大规模数据集
+
+② 支持事务性增删改
+
+③ 自动按时间封版
+
+#### Kappa(κ) vs. Lambda(λ)
 
 ![](dw-arch-lambda-vs-kappa.png)
 
