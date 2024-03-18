@@ -89,13 +89,17 @@ Flink 可以"理解"事件时间，从而允许应用程序设置更合理的计
 
 Watermark（可以勉强翻译为"水位线"）用于实现事件时钟（逻辑时钟），也就是用于决定事件时间窗口的触发时机。换句话说，Watermark 是事件时间窗口的**全局进度指标**。
 
+![](dw-flink-watermark.jpg)
+
 #### 乱序
 
-乱序的发生不可避免。
+乱序的发生不可避免。可以通过 `forBoundedOutOfOrderness()` 方法设置最大允许乱序时间，以及 `withTimestampAssigner()` 设置事件的时间戳。
 
 #### 迟到
 
-迟到的发生不可避免。
+迟到的发生不可避免。可以通过 `allowedLateness()` 方法设置最大允许迟到时间。
+
+如果一个事件在 `allowedLateness()` 指定的时间窗口内到达，Flink 仍然会处理它；否则，该事件会被丢弃。可以通过 `sideOutputLateData()` 方法对迟到的数据进行处理，比如旁路输出。
 
 ### 状态
 
