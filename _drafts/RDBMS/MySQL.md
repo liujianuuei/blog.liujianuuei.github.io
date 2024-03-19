@@ -64,6 +64,8 @@ InnoDB 也是通过 WAL（Write-Ahead Log）的方式进行写数据操作（[HB
 
 ![](rdbms-mysql-btree-sample.jpg)
 
+注：B-Tree/B+Tree 索引所包含的**列的顺序**非常关键，直接决定索引是否可以被查询使用。
+
 **Hash 索引**
 
 Hash 索引适用于等值查询，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。
