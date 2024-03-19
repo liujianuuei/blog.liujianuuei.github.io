@@ -86,7 +86,7 @@ MySQL 服务器会对提交的的 SQL 进行优化。用户还可以通过 `hint
 
 ## ORM——SQL Mapper
 
-ORM(Object-Relational Mapping) 允许通过 OOP 的方式访问关系型数据库。
+ORM（Object-Relational Mapping）允许通过 OOP 的方式访问关系型数据库。
 
 **MyBatis - SQL Mapper Framework for Java**
 
