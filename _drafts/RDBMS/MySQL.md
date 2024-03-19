@@ -68,6 +68,8 @@ B-Tree/B+Tree 索引适用于范围、多列组合查询（最左匹配）等�
 
 ![](rdbms-mmysql-btree.jpg)
 
+![](rdbms-mysql-btree-sample.jpg)
+
 **Hash 索引**
 
 Hash 索引适用于等值查询，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。
