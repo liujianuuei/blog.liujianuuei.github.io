@@ -1,8 +1,16 @@
 # MySQL
 
-架构、存储引擎
+MySQL 是一个被普遍使用的关系型（SQL）数据库。其架构核心点在于"处理"（服务器）和"存储"的分离，这样可以按需替换不同存储引擎。服务器和存储通过低级 API 交互。
+
+每个客户端（应用）连接都会在服务器进程中占用一个线程。需要注意的是，服务器也会缓存线程，不会频繁的创建销毁线程。
+
+![](rdbms-mysql-arch.jpg)
+
+
 
 ## 并发控制
+
+参考[](../JavaSE/Java/Concurrency.md#附录：数据库引擎并发控制原理)
 
 ### 锁
 
@@ -66,7 +74,7 @@ InnoDB 针对索引进行加锁的实现方式意味着，只有通过索引条�
 
 ### 隔离级别
 
-**隔离级别高意味着可靠性高，但并发量低，而隔离级别低则意味着可靠性低，但并发量高**。事务的隔离级别有如下四种：
+隔离级别高意味着可靠性高，但并发量低，而隔离级别低则意味着可靠性低，但并发量高。事务的隔离级别有如下四种：
 
 
 
@@ -91,23 +99,21 @@ To ensure that a column is UNIQUE and cannot contain null values, the column mus
 
 A unique constraint is defined at the time a table is created. A unique constraint allows null values. Initially, this may seem like a contradiction, but a null is the complete absence of a value (not a zero or space). Thus, it is not possible to say that the value in that null field is not unique, as nothing is stored in that field. A null value cannot be compared to an actual value. For example, the Queen of America cannot be compared to the Queen of England because the Queen of America is a null that does not exist.
 
-## 分库分表
-
-分库分表（sharding）是
-
 ## 优化
 
-暂略。
+MySQL 服务器会对提交的的 SQL 进行优化。用户还可以通过 `hint` 提示服务器的优化策略，以及通过 `explain` 查看优化过程。
+
+除了索引之外，服务器还支持查询缓存，通过缓存提高查询效率，但根据经验命中缓存的概率不高。
 
 ## 复制（高可用）
 
-暂略。
+一般一主库两从库一备库架构。主库负责写和事务内（或事务后压秒范围内）查询，从库负责读（查询），从库辅助离线查询等。
 
-## 扩展
+## 扩展（分库分表）
 
-暂略。
+分库分表（sharding）是
 
-## ORM
+## ORM——SQL Mapper
 
 ORM(Object-Relational Mapping) 允许通过 OOP 的方式访问关系型数据库。
 
