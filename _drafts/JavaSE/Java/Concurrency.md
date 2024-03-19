@@ -240,8 +240,8 @@ select c1 from t where c1 between 10 and 20 for update; -- 加间隙锁/显式�
 Next-Key 锁主要解决幻读问题。Next-Key 锁是索引记录锁（即行锁）和索引记录之前的间隙锁的组合。
 
 ```SQL
-select ... lock in share mode; -- 显式锁
-select ... for update; -- 显式锁
+select ... lock in share mode; -- 共享锁/显式锁
+select ... for update; -- 排他锁/显式锁
 ```
 
 但注意上面这些 SQL 应该尽量避免使用。
