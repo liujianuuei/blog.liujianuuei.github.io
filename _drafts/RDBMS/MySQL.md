@@ -10,7 +10,7 @@ MySQL 是一个被普遍使用的关系型（SQL）数据库。其架构核心�
 
 ## 并发控制
 
-参考[](../JavaSE/Java/Concurrency.md#附录：数据库引擎并发控制原理)
+参阅[数据库引擎并发控制原理](../JavaSE/Java/Concurrency.md#附录：数据库引擎并发控制原理)。
 
 ### 锁
 
