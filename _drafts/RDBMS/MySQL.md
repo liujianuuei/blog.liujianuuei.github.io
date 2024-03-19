@@ -50,23 +50,27 @@ InnoDB 也是通过 WAL（Write-Ahead Log）的方式进行写数据操作（[HB
 
 唯一组合键索引属于二级索引。
 
+> A unique constraint is a type of column restriction within a table, which dictates that all values in that column must be unique though may be null.
+>
+> To ensure that a column is UNIQUE and cannot contain null values, the column must be specified as NOT NULL.
+>
+> A unique constraint is defined at the time a table is created. A unique constraint allows null values. Initially, this may seem like a contradiction, but a null is the complete absence of a value (not a zero or space). Thus, it is not possible to say that the value in that null field is not unique, as nothing is stored in that field. A null value cannot be compared to an actual value. For example, the Queen of America cannot be compared to the Queen of England because the Queen of America is a null that does not exist.
+
 **覆盖索引**
 
 如果一个索引包含（或者说覆盖/cover）所有需要查询的字段的值，我们就称之为**覆盖索引**。
 
 ### 索引实现
 
-B-Tree/B+Tree 索引：适用于范围、多列组合查询（最左匹配）等。
+**B-Tree/B+Tree 索引**
 
 ![](rdbms-mmysql-btree.jpg)
 
-Hash 索引：适用于等值查询，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。
+适用于范围、多列组合查询（最左匹配）等。
 
-> A unique constraint is a type of column restriction within a table, which dictates that all values in that column must be unique though may be null.
+**Hash 索引**
 
-> To ensure that a column is UNIQUE and cannot contain null values, the column must be specified as NOT NULL.
-
-> A unique constraint is defined at the time a table is created. A unique constraint allows null values. Initially, this may seem like a contradiction, but a null is the complete absence of a value (not a zero or space). Thus, it is not possible to say that the value in that null field is not unique, as nothing is stored in that field. A null value cannot be compared to an actual value. For example, the Queen of America cannot be compared to the Queen of England because the Queen of America is a null that does not exist.
+适用于等值查询，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。
 
 ## 优化
 
