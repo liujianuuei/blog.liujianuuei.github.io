@@ -14,6 +14,6 @@
 
 ## ORM
 
-Object-Relational Mapping
+ORM(Object-Relational Mapping) 允许通过 OOP 的方式访问关系型数据库。
 
 **MyBatis - SQL Mapper Framework for Java**
