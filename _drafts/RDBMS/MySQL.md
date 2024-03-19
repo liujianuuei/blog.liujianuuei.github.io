@@ -56,19 +56,13 @@ InnoDB 也是通过 WAL（Write-Ahead Log）的方式进行写数据操作（[HB
 >
 > A unique constraint is defined at the time a table is created. A unique constraint allows null values. Initially, this may seem like a contradiction, but a null is the complete absence of a value (not a zero or space). Thus, it is not possible to say that the value in that null field is not unique, as nothing is stored in that field. A null value cannot be compared to an actual value. For example, the Queen of America cannot be compared to the Queen of England because the Queen of America is a null that does not exist.
 
-### 索引实现
-
-**B-Tree/B+Tree 索引**
+### 索引实现——B-Tree/B+Tree
 
 ![](rdbms-mmysql-btree.jpg)
 
 ![](rdbms-mysql-btree-sample.jpg)
 
 注：B-Tree/B+Tree 索引所包含的**列的顺序**非常关键，直接决定索引是否可以被查询使用。
-
-**Hash 索引**
-
-Hash 索引适用于等值查询，在有大量重复键值情况下，哈希索引的效率也是极低的，因为存在所谓的哈希碰撞问题。
 
 ## 优化
 
