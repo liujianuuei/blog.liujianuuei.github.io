@@ -4,6 +4,8 @@ MySQL 是一个被普遍使用的关系型（SQL）数据库。其架构核心�
 
 每个客户端（应用）连接都会在服务器进程中占用一个线程。需要注意的是，服务器也会缓存线程，不会频繁的创建销毁线程。
 
+InnoDB 也是通过 WAL（Write-Ahead Log）的方式进行写数据操作（[HBase](../BigData/TechItself-batch.md#hbase) 也是）。
+
 ![](rdbms-mysql-arch.jpg)
 
 后续所有讨论都基于 InnoDB 存储引擎。
