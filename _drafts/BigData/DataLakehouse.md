@@ -26,17 +26,17 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 但问题是，供事后分析的离线数据或批视图（Batch View）怎么存储。批存储介质应该是一个 Analytics SQL Database，且需要满足如下特性：
 
-① 支持大规模数据集（large-volume） - 至少是分布式存储介质。
+① 支持大规模数据集（Large-Volume） - 至少是分布式存储介质。
 
-② 支持事务型增删改 - 因为要通过流式计算生成离线数据。
+② 支持事务型增删改（ACID） - 因为要通过流式计算生成离线数据。
 
-③ 支持高并发写（可以低并发读，high-velocity） - 因为要通过流式计算不断更新数据集。
+③ 支持高并发写（可以低并发读，High-Performance） - 因为要通过流式计算不断更新数据集。
 
 ④ 自动按时间封版 - 自动按时间（比如天级或小时级）分区。
 
 ⑤ 支持 SQL 查询 - 业务人员更熟悉 SQL。
 
-备选设施：数据湖、Doris、Phoenix(HBase)、Ignite - As a SQL Database、Apache Pinot（Shopify's use-case）。
+备选存储介质：数据湖（Delta Lake、）、Doris、Phoenix(HBase)、Ignite - As a SQL Database、Apache Pinot（Shopify's use-case）。
 
 重要参考：[Kappa Architecture is Mainstream Replacing Lambda](Kappa-Architecture-is-Mainstream-Replacing-Lambda-Kai-Waehner.pdf)
 
