@@ -138,7 +138,7 @@ YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责
 
 Hive 是建构于 MapReduce 之上的一个通用数据处理框架，其使用 SQL 进行数据分析，底层把 SQL 转化为 MapReduce 任务执行。
 
-Hive 通过 Hive on Spark 支持 Spark 作为其底层数据处理引擎，更多内容参考 [Spark](TechItself-batch.md#spark)。
+Hive 通过 [Hive on Spark](https://issues.apache.org/jira/browse/HIVE-7292) 支持 Spark 作为其底层数据处理引擎，更多内容参考 [Spark](TechItself-batch.md#spark)。
 
 注：除了 Hive，其它 SQL-on-Hadoop 框架还有：Apache Drill、Apache Impala 等。
 
