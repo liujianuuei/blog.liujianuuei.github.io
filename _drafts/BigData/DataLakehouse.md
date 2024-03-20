@@ -43,6 +43,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 - Apache Phoenix(HBase)
 - Apache Ignite - As a SQL Database
 - Apache Pinot（Shopify's use-case）
+- Apache Kudu
 
 重要参考：[Kappa Architecture is Mainstream Replacing Lambda](Kappa-Architecture-is-Mainstream-Replacing-Lambda-Kai-Waehner.pdf)
 
