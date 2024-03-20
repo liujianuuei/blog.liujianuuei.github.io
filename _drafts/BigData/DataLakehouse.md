@@ -24,7 +24,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 来源：https://nexocode.com/blog/posts/kappa-architecture/
 
-但问题是，供事后分析的离线数据或批视图（Batch View）怎么存储。批存储介质应该是一个 SQL Database，且需要满足如下特性：
+但问题是，供事后分析的离线数据或批视图（Batch View）怎么存储。批存储介质应该是一个 Analytics SQL Database，且需要满足如下特性：
 
 ① 支持大规模数据集（large-volume） - 至少是分布式存储介质。
 
@@ -36,7 +36,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 ⑤ 支持 SQL 查询 - 业务人员更熟悉 SQL。
 
-备选设施：数据湖、Doris、Phoenix(HBase)、Ignite - As a SQL Database。
+备选设施：数据湖、Doris、Phoenix(HBase)、Ignite - As a SQL Database、Apache Pinot（Shopify's use-case）。
 
 #### Kappa(κ) vs. Lambda(λ)
 
