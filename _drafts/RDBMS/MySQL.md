@@ -88,9 +88,9 @@ MySQL 服务器会对提交的的 SQL 进行优化。用户还可以通过 `hint
 
 比如，假设每行数据都包含用户ID，用`用户ID`，对 `32` 取模，这样所有的数据行都会计算出一个位于 0-31 之间的一个数字，也就是对应的分表的索引。分库也一样的原理。
 
-分库分表的取模映射逻辑，可以做在应用层，也可以做在 ORM 层，推荐在 ORM 层实现（比如，通过 MyBatis Plugin 使表参数化来实现），这样对上层应用透明。
+分库分表的取模映射逻辑有多种实现方式，可以做在应用层，也可以做在 ORM 层，甚至做在代理层（DBProxy）。推荐在 ORM 层实现（比如，通过 MyBatis Plugin 使表参数化来实现），这样对上层应用透明，实现成本也低。
 
-还有些分库分表技术，比如：https://shardingsphere.apache.org/
+还有些分库分表开原框架，比如：https://shardingsphere.apache.org/、http://mycatone.top/ 等。
 
 ## ORM——SQL Mapper
 
