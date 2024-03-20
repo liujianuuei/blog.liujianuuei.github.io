@@ -383,7 +383,7 @@ HBase 是一个构建于 HDFS 之上的分布式 NoSQL（Key-Value，所以**不
 
 HBase 也是 M/S（主/从）架构。主节点（Master Server）负责分配**区块**（regions - 在存储层面，表按行水平划分成区块）给从节点（Automatic Sharding），并负责负载均衡，以及维护从节点的状态，以及表的元数据管理。从节点（Region Server）负责和客户端通信并处理数据操作请求。HBase 通过 ZK 帮助实现分布式协同。
 
-HBase 是通过 WAL（Write-Ahead Log）的方式进行写数据操作。
+HBase 是通过 `LSM + WAL(Write-Ahead Log) + 磁盘` 的方式进行写数据操作。
 
 ![](nosql-hbase-arch-overview.png)
 
