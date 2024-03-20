@@ -36,7 +36,13 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 ⑤ 支持 SQL 查询 - 业务人员更熟悉 SQL。
 
-备选存储介质：数据湖（Delta Lake、）、Doris、Phoenix(HBase)、Ignite - As a SQL Database、Apache Pinot（Shopify's use-case）。
+备选存储介质：
+
+- 数据湖（比如 Delta Lake、Apache Iceberg）
+- Apache Doris
+- Apache Phoenix(HBase)
+- Apache Ignite - As a SQL Database
+- Apache Pinot（Shopify's use-case）
 
 重要参考：[Kappa Architecture is Mainstream Replacing Lambda](Kappa-Architecture-is-Mainstream-Replacing-Lambda-Kai-Waehner.pdf)
 
