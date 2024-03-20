@@ -38,7 +38,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 备选存储介质：
 
-- 数据湖（比如 Delta Lake、Apache Iceberg）
+- 数据湖（比如 Delta Lake、Apache Iceberg、Apache Hudi）
 - Apache Doris
 - Apache Phoenix(HBase)
 - Apache Ignite - As a SQL Database
