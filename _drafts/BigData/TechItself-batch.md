@@ -313,7 +313,7 @@ Spark 的数据源可以是本地文件（不常用）、HDFS、Hive、HBase，�
 
 —— Java-Program/Python-Program - 半结构化或非结构化数据处理（可结合少量 SQL 也即结构化数据处理）
 
-例外情况：如果是重 SQL 任务，但涉及 UDF，则只能通过 Python-API 或 Java-API 的方式做。
+例外情况：如果是重 SQL 任务，但涉及 UDF（内置函数不够用），则只能通过 Python-API 或 Java-API 的方式做。
 
 ### 运行时架构
 
@@ -330,6 +330,10 @@ Spark 基于 M/S（也就是主/从）架构，在集群中，有一个中央驱
 三、再把主任务（程序所代表的的任务）拆转化为多个子任务（a DAG of tasks），并把子任务分发给各个执行器执行，执行结果会返回给驱动节点。
 
 在 M/S 架构中，还有一个客户端角色需要关注，客户端通过 `spark-submit` 命令提交任务给 Spark 并等待处理结果（驱动节点会返回处理结果给客户端）。
+
+### UDF
+
+Spark 支持 UDF（用户自定义函数），通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。
 
 ## Presto
 
