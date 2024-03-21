@@ -366,14 +366,14 @@ else:
 logging.debug('cmd: %s', cmd)
 ```
 
-### 对比 Spark
-
-一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
-
 ```sql
 SELECT if(count(1)>1, 0, 1) AS res 
 FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
 ```
+
+### 对比 Spark
+
+一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
 
 ## HBase
 
