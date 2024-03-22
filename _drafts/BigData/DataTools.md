@@ -11,7 +11,29 @@
 ![](dw-batch-tag-arch-overview.png)
 
 另外需要注意的是，通过配置化的方式加工数据，必然涉及对用户配置的 SQL 的合法性校验。一般目标执行引擎都会提供对应的 SQL 解析工具，比如 [presto-parser (Facebook Opensource, part of Presto)](https://mvnrepository.com/artifact/com.facebook.presto/presto-parser
-)。
+)。例如：
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.facebook.presto/presto-parser -->
+<dependency>
+    <groupId>com.facebook.presto</groupId>
+    <artifactId>presto-parser</artifactId>
+    <version>0.283</version>
+</dependency>
+```
+
+```java
+String content = FileUtils.readFileToString(new File("/Users/dxm/DXM/projects/dxm/loan-data/loan-data-warehouse-python/dw/ads/tag/user5PercentLeaveBlankId/user5PercentLeaveBlankId.sql"));
+SqlParser parser = new SqlParser();
+Query query = (Query) parser.createStatement(content, ParsingOptions.builder().build());
+
+//QuerySpecification body = (QuerySpecification)insert.getQuery().getChildren().get(0);
+
+QuerySpecification body = (QuerySpecification) query.getQueryBody();
+Select select = body.getSelect();
+
+select.getSelectItems().forEach(e -> System.out.print(e.toString().split(" ")[1]+" "));
+```
 
 **存储方式**
 
