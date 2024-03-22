@@ -98,4 +98,17 @@ ORM（Object-Relational Mapping）允许通过 OOP 的方式访问关系型数�
 
 **MyBatis - SQL Mapper Framework for Java**
 
-略。
+针对记录批量**更新**场景，有如下几种方式：
+
+1、replace: 注意，不要使用这个，因为不指定的值，会清空，即先删除，再插入
+
+2、update-foreach-in-xml: 不能正确返回修改过的行数
+
+3、insert-on-duplicate-key-update: 语义不好，且如果出于某种原因（比如bug），导致主键/唯一索引键没有match，则会插入新纪录
+   https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html
+
+4、case-when-update: 非常低效
+
+5、update-foreach-in-java: 反而是最佳选择❤
+
+可以看出，通过在 Java 程序里循环处理并对外暴露批量接口的方式是最佳选择。
