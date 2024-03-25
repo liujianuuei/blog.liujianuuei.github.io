@@ -1,4 +1,4 @@
-# 数据平台
+# 数据效率
 
 ## 标签配置化加工工具
 
@@ -86,13 +86,3 @@ ZGVsZXRlIGZyb20gbG9hbl9kYXRhX3dhcmVob3VzZS5hZHNfbG9hbl9zZXJ2X2luZGV4X3JvX2RkIHdo
 **存储方式**
 
 采用横向存储。
-
-## 自助数据分析工具
-
-本文讨论限定于离线数据分析。
-
-自助分析工具（或多维分析工具）并不完善，不详述。
-
-![自助分析工具或多维分析工具](dw-batch-self-service-analysis-tool.png)
-
-![路径分析工具实现参考](dw-batch-self-service-path-analysis.png)
