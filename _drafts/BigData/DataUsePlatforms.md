@@ -33,3 +33,5 @@
 ![自助分析工具或多维分析工具](dw-batch-self-service-analysis-tool.png)
 
 ![路径分析工具实现参考](dw-batch-self-service-path-analysis.png)
+
+![用户路径分析工具方案](dw-batch-self-service-path-analysis+tag.png)
