@@ -30,8 +30,8 @@
 
 自助分析工具（或多维分析工具）并不完善，不详述。
 
-![自助分析工具或多维分析工具](dw-batch-self-service-analysis-tool.png)
+![自助数据分析工具/多维分析工具](dw-batch-self-service-analysis-tool.png)
 
-![路径分析工具实现参考](dw-batch-self-service-path-analysis.png)
+![用户路径分析工具/时序验证工具实现参考](dw-batch-self-service-path-analysis.png)
 
-![用户路径分析工具方案](dw-batch-self-service-path-analysis+tag.png)
+![用户路径分析工具+经营时机工具实现方案](dw-batch-self-service-path-analysis+tag.png)
