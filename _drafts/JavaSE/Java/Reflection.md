@@ -37,4 +37,4 @@ x.getClass(); // x is an instance of class X
 
 ## 最后
 
-反射的一个用例就是解析Retention是RUNTIME的[注解](Annotation.md)，比如Google 的DI框架Guice就是依次原理来实现的[对象创建](ObjectCreation.md)。
+反射的一个用例就是解析Retention是RUNTIME的[注解](Annotation.md)，比如Google 的DI框架Guice就是依此原理来实现的[对象创建](ObjectCreation.md)。
