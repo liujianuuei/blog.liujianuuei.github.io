@@ -8,7 +8,7 @@
 
 用户画像的应用分两种场景，一种是直接面向业务人员平台展示，一种是通过某种形式的 API 和功能系统对接，比如经营场景。我们这里讨论狭义的画像，即平台展示这种，系统对接后面讨论。
 
-平台展示的场景是通过用户ID查询该用户所有标签，即“人查值”，对性能比较敏感，其本质上是类似一个 OLAP 场景（大数据量快速查询），可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)（所有标签按用户ID维度聚合成一行，本质上还是 KV 结构）。
+平台展示的场景是通过用户ID查询该用户所有标签，即“人查值”，对性能比较敏感，其本质上是类似一个 OLAP 场景（大数据量快速查询），可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)、[RocksDB](https://rocksdb.org/)、[LevelDB](https://github.com/google/leveldb) 等，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)（所有标签按用户ID维度聚合成一行，本质上还是 KV 结构）。
 
 ## 用户旅程
 
@@ -16,7 +16,7 @@
 
 ### 存储方式
 
-用户旅程的场景是通过用户ID查询该用户所有旅程事件，本质上是类似一个 OLAP 场景，可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)。
+用户旅程的场景是通过用户ID查询该用户所有旅程事件，本质上是类似一个 OLAP 场景，可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)、[RocksDB](https://rocksdb.org/)、[LevelDB](https://github.com/google/leveldb) 等，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)。
 
 ## 指标体系
 
@@ -44,7 +44,7 @@
 
 上述方式，提供的是实时标签，但并不能保证实时经营，或者说需要功能系统考虑经营触发的时效性。除此之外，可以考虑触发时机也由数据平台控制，这样就需要一种通知下游的机制，比如下游提供通知 API 或者下游监听数据链路的 Kafka 消息。
 
-另外，针对某些实时标签语义，需要考虑合并离线历史数据后生成最终准确结果的问题。这种情况下，离线标签数据需要存储在不仅可以支持**大数据量快速查询**且同时支持**高并发**（和面向业务人员的 OLAP 场景不同）的介质上，一般比较合适的是 KV 存储，比如 [HBase](TechItself-batch.md#HBase)。
+另外，针对某些实时标签语义，需要考虑合并离线历史数据后生成最终准确结果的问题。这种情况下，离线标签数据需要存储在不仅可以支持**大数据量快速查询**且同时支持**高并发**（和面向业务人员的 OLAP 场景不同）的介质上，一般比较合适的是 KV 存储，比如 [HBase](TechItself-batch.md#HBase)、[RocksDB](https://rocksdb.org/)、[LevelDB](https://github.com/google/leveldb) 等。
 
 ## 数据服务——API
 
