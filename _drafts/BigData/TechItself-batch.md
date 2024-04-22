@@ -507,7 +507,7 @@ Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集
 
 ## OLAP
 
-这里主要介绍 Greenplum 的相关知识。其它不详述。
+这里主要介绍 Greenplum 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等不详述。
 
 ![](olap-mpp-greenplum-arch.jpg)
 
