@@ -16,7 +16,7 @@
 
 ### 存储方式
 
-用户旅程的场景是通过用户ID查询该用户所有旅程事件，本质上是一个 OLAP 场景，可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)。
+用户旅程的场景是通过用户ID查询该用户所有旅程事件，本质上是类似一个 OLAP 场景，可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)。
 
 ## 指标体系
 
