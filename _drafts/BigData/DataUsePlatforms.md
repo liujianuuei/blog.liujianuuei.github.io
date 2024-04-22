@@ -8,7 +8,7 @@
 
 用户画像的应用分两种场景，一种是直接面向业务人员平台展示，一种是通过某种形式的 API 和功能系统对接，比如经营场景。我们这里讨论狭义的画像，即平台展示这种，系统对接后面讨论。
 
-平台展示的场景是通过用户ID查询该用户所有标签，即“人查值”，对性能比较敏感，其本质上是一个 OLAP 场景（大数据量快速查询），可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)（所有标签按用户ID维度聚合成一行，本质上还是 KV 结构）。
+平台展示的场景是通过用户ID查询该用户所有标签，即“人查值”，对性能比较敏感，其本质上是类似一个 OLAP 场景（大数据量快速查询），可以采用 KV 存储，比如 [HBase](TechItself-batch.md#HBase)，或者一般的 OLAP 引擎，比如 [Greenplum](TechItself-batch.md#OLAP)（所有标签按用户ID维度聚合成一行，本质上还是 KV 结构）。
 
 ## 用户旅程
 
