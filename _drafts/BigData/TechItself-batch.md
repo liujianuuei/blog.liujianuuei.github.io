@@ -413,7 +413,7 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列族（colu
 
 **Qualifier**
 
-限定符（可选）用于在列族内进一步细分列。
+限定符（可选）用于在列族内进一步细分列，即列名。完整列名需要包含列族，即 `ColumnFamily:Qualifier`。
 
 **TimeStamp**
 
