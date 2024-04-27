@@ -427,6 +427,8 @@ HBase 的一张表由许多行（rows）组成，每一行由许多列族（colu
 
 如上所述，在 HBase 中，底层数据是 Key-Value 格式组织的，Key 是一个复杂的结构，由多个部分组成：RowKey、ColumnFamily、Qualifier、TimeStamp、KeyType，这些元素共同组成 Key 值。
 
+但一般意义上，尤其是在纯粹 Key-Value 场景中，即表结构只包含一列，RowKey 就是通常所说的 Key。
+
 注：Value 是一个简单的二进制数据块，可以是任意类型的数据。
 
 ### 对比 RDBMS
