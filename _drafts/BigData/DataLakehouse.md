@@ -38,7 +38,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 备选存储介质：
 
-- 数据湖（比如 Delta Lake、Apache Iceberg、Apache Hudi）
+- 数据湖（比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
 - Apache Doris
 - Apache Phoenix(HBase)
 - Apache Ignite - As a SQL Database
@@ -47,29 +47,29 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 
 > Delta Lake
-
+> 
 > ACID Transactions: Protect your data with serializability, the strongest level of isolation.
 > DML Operations: SQL, Scala/Java and Python APIs to **merge, update and delete datasets**.
-
-
+> 
+> 
 > Apache Iceberg
-
+> 
 > Iceberg is a high-performance format for huge analytic tables. Iceberg brings the reliability and simplicity of **SQL tables** to big data, while making it possible for engines like Spark, Trino, Flink, Presto, Hive and Impala to safely work with the same tables, at the same time. Iceberg supports flexible SQL commands to **merge new data, update existing rows, and perform targeted deletes**. Iceberg can eagerly rewrite data files for read performance, or it can use delete deltas for faster updates.
-
-
+> 
+> 
 > Apache Hudi
-
+> 
 > Hudi brings **transactions** to data lakes.
 > Hudi brings **row-level updates/deletes** to data lakes.
 > Hudi brings CDC and indexes to data lakes.
-
-
-> Apache Paimon™
-
+> 
+> 
+> Apache Paimon
+> 
 > A **lake format** that enables building a Realtime Lakehouse Architecture with Flink and Spark for both streaming and batch operations. Innovatively combines lake format and LSM structure, bringing **realtime streaming updates** into the lake architecture.
-
+> 
 > Real-time **Updates**: **Primary-key table** supports real-time streaming updates of large amounts of data. Real-time query within 1 minute.
-
+> 
 > Flexible Updates: Defining Merge Engines, **update records** however you like. Deduplicate to keep last row, or partial-update, or aggregate records, or first-row, you decide.
 
 
