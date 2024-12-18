@@ -49,12 +49,12 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 > Delta Lake
 
 > ACID Transactions: Protect your data with serializability, the strongest level of isolation.
-> DML Operations: SQL, Scala/Java and Python APIs to <u>merge, update and delete datasets</u>.
+> DML Operations: SQL, Scala/Java and Python APIs to **merge, update and delete datasets**.
 
 
 > Iceberg
 
-> Iceberg is a high-performance format for huge analytic tables. Iceberg brings the reliability and simplicity of SQL tables to big data, while making it possible for engines like Spark, Trino, Flink, Presto, Hive and Impala to safely work with the same tables, at the same time. Iceberg supports flexible SQL commands to merge new data, update existing rows, and perform targeted deletes. Iceberg can eagerly rewrite data files for read performance, or it can use delete deltas for faster updates.
+> Iceberg is a high-performance format for huge analytic tables. Iceberg brings the reliability and simplicity of **SQL tables** to big data, while making it possible for engines like Spark, Trino, Flink, Presto, Hive and Impala to safely work with the same tables, at the same time. Iceberg supports flexible SQL commands to **merge new data, update existing rows, and perform targeted deletes**. Iceberg can eagerly rewrite data files for read performance, or it can use delete deltas for faster updates.
 
 
 重要参考：[Kappa Architecture is Mainstream Replacing Lambda](Kappa-Architecture-is-Mainstream-Replacing-Lambda-Kai-Waehner.pdf)
