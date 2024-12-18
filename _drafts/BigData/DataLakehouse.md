@@ -49,7 +49,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 > Delta Lake
 
 > ACID Transactions: Protect your data with serializability, the strongest level of isolation.
-> DML Operations: SQL, Scala/Java and Python APIs to merge, update and delete datasets.
+> DML Operations: SQL, Scala/Java and Python APIs to <u>merge, update and delete datasets</u>.
 
 
 > Iceberg
