@@ -8,7 +8,7 @@
 
 ODS+DW* 所有字段均为 `string` 类型，且不允许有 `null`（应用 `coalesce()` 函数） 值，都转化成空串 `''`。
 
-ADS 字段类型按需，一般不涉及小数字段的采用 `bigint`，涉及小数的字段采用 `decimal(38,4)` 或者 `double`。
+ADS 字段类型按需，一般不涉及小数字段的采用 `bigint`，涉及小数的字段采用 `decimal(38,4)` ~~或者 `double`~~。
 
 统一时间格式，比如 `yyyy-MM-dd HH:mm:ss.SSS`。
 
