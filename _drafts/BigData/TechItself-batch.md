@@ -130,7 +130,17 @@ YARN 是一个分布式资源管理框架，即对物理资源（内存、CPU �
 
 ![](resource-manager-yarn-overview.png)
 
-YARN 也是采用 M/S（主/从）架构，主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（Container - 执行数据处理任务的地方）的启动和监控。
+YARN 也是采用 M/S（主/从）架构。主节点（Resource Manager）负责管理集群资源，运行在 HDFS 从节点（DataNode）上的从节点（Node Manager）负责容器（Container - 执行数据处理任务的地方）的启动和监控；Application Master 负责管理整个任务的状态和生命周期。
+
+Application Workflow in YARN:
+1. Client submits an application.
+2. Resource Manager allocates a container to start the Application Master.
+3. Application Master registers with the Resource Manager.
+4. Application Master negotiates containers from the Resource Manager.
+5. Application Master notifies the Node Manager to launch containers.
+6. Application code is executed in the container.
+7. Client monitors application status through Resource Manager/Application Master.
+8. Application Master un-registers with the Resource Manager once processing is complete.
 
 注：除了 YARN 之外，常用的资源管理框架还有 Apache Mesos。
 
