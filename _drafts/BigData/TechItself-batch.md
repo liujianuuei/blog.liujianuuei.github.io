@@ -124,9 +124,9 @@ Now let’s take a deeper look into three popular file formats for big data: Avr
 
 ——Excerpt From: [Parquet, ORC, and Avro: The File Format Fundamentals of Big Data](https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data)。
 
-#### HDFS操作
+#### HDFS 操作
 
-HDFS 文件复制样例：
+分布式文件复制样例：
 
 ```bash
 c2V0IC1lICAjIOW9k+S7u+S9leWRveS7pOWksei0pe+8iOmdnumbtumAgOWHuueKtuaAge+8ieaXtu+8jOeri+WNs+mAgOWHuuiEmuacrAoKa2luaXQgLWt0IC9ldGMvc2VjdXJpdHkva2V5dGFicy9saXVqaWFud2VpLmtleXRhYiBsaXVqaWFud2VpCgplY2hvICJTdGFydGluZyB0byBkaXN0Y3AoZHQ9JHtwcmV2aW91c19kYXl9KS4uLiIKCmhhZG9vcCBkaXN0Y3AgLWJhbmR3aWR0aCAxMCAtbSAyMCAtc2tpcGNyY2NoZWNrIC1pIC1kaXJlY3QgXAogICAgaGRmczovL2hkZnMtY2x1c3Rlci91c2VyL2hpdmUvd2FyZWhvdXNlL3Jkcy5kYi9lcy9hY2Nlc3NfcHJvZC9kdD0ke3ByZXZpb3VzX2RheX0gXAogICAgb3NzOi8vanpzay1iaWdkYXRhLWhsc3ovdXNlci9oaXZlL3dhcmVob3VzZS9yZHMuZGIvZXMvYWNjZXNzX3Byb2QvCgpoYWRvb3AgZnMgLXRvdWNoeiBvc3M6Ly9qenNrLWJpZ2RhdGEtaGxzei91c2VyL2hpdmUvd2FyZWhvdXNlL3Jkcy5kYi9lcy9hY2Nlc3NfcHJvZC9kdD0ke3ByZXZpb3VzX2RheX0vX1NVQ0NFU1MKCmVjaG8gIkFMTCBET05FLiIK
