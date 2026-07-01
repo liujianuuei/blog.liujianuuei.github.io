@@ -89,7 +89,7 @@ ZGVsZXRlIGZyb20gbG9hbl9kYXRhX3dhcmVob3VzZS5hZHNfbG9hbl9zZXJ2X2luZGV4X3JvX2RkIHdo
 
 ## 变量配置化校验工具
 
-本文讨论限定于离线变量校验。通过配置化的方式自动和目标值进行比对，从而提升大量变量正确性校验的效率。
+本文讨论限定于离线变量校验。通过配置化的方式自动和目标值进行比对，从而提升大量变量正确性校验的效率。计算引擎采用`OLAP`引擎，比如`StarRocks`。
 
 **技术方案**
 
@@ -130,7 +130,7 @@ def start():
 
 
 def compare(var):
-    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZCh2YXIpfVwi"
+    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZCh2YXIpfVwiliujianwei"
     logging.info(f"comparing [{var}] with line: {line}")
     result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     logging.info(f"comparison of [{var}] DONE: {result.returncode}")
@@ -150,7 +150,7 @@ def method(var):
 
 def collect(var):
     results_table = f"hive_catalog.test.{var}_{STAMP}"
-    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZF9vZl9jb2xsZWN0KHJlc3VsdHNfdGFibGUpfVwi"
+    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZF9vZl9jb2xsZWN0KHJlc3VsdHNfdGFibGUpfVwiliujianwei"
     logging.info(f"collecting [{var}] results with line: {line}")
     result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     logging.info(f"collection of [{var}] DONE: {result.returncode}")
@@ -219,7 +219,7 @@ with t as (
     order_id as entity_id,
     item_code as var_value
     --需要修改
-    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2Zk
+    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2Zkliujianwei
     where dt='2026-06-29'
 )
 
@@ -229,7 +229,7 @@ with t as (
     item_code as var_value
     --需要修改
     --from dm.dm_var_comp_results_fd_dev
-    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2ZkX2Rldg==
+    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2ZkX2Rldg==liujianwei
     where dt='2026-06-29'
 )
 
