@@ -86,3 +86,184 @@ ZGVsZXRlIGZyb20gbG9hbl9kYXRhX3dhcmVob3VzZS5hZHNfbG9hbl9zZXJ2X2luZGV4X3JvX2RkIHdo
 **存储方式**
 
 采用横向存储。
+
+## 变量配置化校验工具
+
+本文讨论限定于离线变量校验。通过配置化的方式自动和目标值进行比对，从而提升大量变量正确性校验的效率。
+
+**技术方案**
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+A general purpose Distcp wrapper implementation.
+"""
+import base64
+import logging
+import subprocess
+import sys
+from datetime import datetime
+
+import props
+
+logging.basicConfig(filename='./compare.log', filemode='w', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+vars_file = "compare_vars.csv"
+method_file = "compare_method.sql"
+method_of_collect_file = "compare_collect_method.sql"
+results_file = "compare_results.txt"
+
+propz = props.load("compare.properties")
+
+STAMP = datetime.now().strftime('%Y%m%d%H%M')
+
+
+def start():
+    with open(vars_file, "r", encoding="utf-8") as file:
+        logging.info(f"STARTING to compare variables in: {vars_file}")
+        for line in file:
+            compare(line.strip())
+            collect(line.strip())
+        logging.info(f"END of comparison of variables in: {vars_file}")
+
+
+def compare(var):
+    line = f"mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u gaoxianglin -p{base64.b64decode(propz['ZHIMAKAIMEN']).decode('utf-8')} -e \"{method(var)}\""
+    logging.info(f"comparing [{var}] with line: {line}")
+    result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    logging.info(f"comparison of [{var}] DONE: {result.returncode}")
+
+
+def method(var):
+    with open(method_file, 'r', encoding='utf-8') as file:
+        content = file.read()
+        content = content.replace("VAR_TO_REPLACE", var)
+        content = content.replace("STAMP", STAMP)
+        content = content.replace("SOURCE_TABLE_NAME", propz["source_table_name"])
+        content = content.replace("SOURCE_TABLE_DT", propz["source_table_dt"])
+        content = content.replace("TARGET_TABLE_NAME", propz["target_table_name"])
+        content = content.replace("TARGET_TABLE_DT", propz["target_table_dt"])
+        return content
+
+
+def collect(var):
+    results_table = f"hive_catalog.test.{var}_{STAMP}"
+    line = f"mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u gaoxianglin -p{base64.b64decode(propz['ZHIMAKAIMEN']).decode('utf-8')} -e \"{method_of_collect(results_table)}\""
+    logging.info(f"collecting [{var}] results with line: {line}")
+    result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    logging.info(f"collection of [{var}] DONE: {result.returncode}")
+    write_results_to_file(f"{results_table}\n{result.stdout.decode('utf-8')}")
+
+
+def method_of_collect(results_table):
+    with open(method_of_collect_file, 'r', encoding='utf-8') as file:
+        content = file.read()
+        content = content.replace("RESULTS_TABLE_NAME", results_table)
+        return content
+
+
+def write_results_to_file(results):
+    with open(results_file, 'a', encoding="utf-8") as file:
+        file.write(results + "\n\n\n")
+
+
+def main():
+    try:
+        start()
+        logging.info(f"ALL DONE.")
+    except Exception as e:
+        logging.info(f"ERROR: {e}")
+        raise e
+
+
+if __name__ == '__main__':  # 如果直接作为独立文件执行，则 __name__的 值就是 __main__，可以认为就是 Python 的"程序入口"
+    sys.exit(main())
+```
+
+```sql
+create table hive_catalog.test.VAR_TO_REPLACE_STAMP as
+
+with s as (
+select * from SOURCE_TABLE_NAME
+where dt='SOURCE_TABLE_DT'
+--and id_no_des='8KikuRWLqYI7XfFbGBynj5wAJKOrlCW6nymkBz6PC3k='
+),
+
+t as (
+select * from TARGET_TABLE_NAME
+--where id_no_des='8KikuRWLqYI7XfFbGBynj5wAJKOrlCW6nymkBz6PC3k='
+)
+
+select
+t.id_no_des,
+
+t.VAR_TO_REPLACE as t_VAR_TO_REPLACE,
+s.VAR_TO_REPLACE as s_VAR_TO_REPLACE
+
+from t
+left join s
+on t.id_no_des = s.id_no_des
+
+where 1=1
+  and abs(coalesce(s.VAR_TO_REPLACE,0) - coalesce(t.VAR_TO_REPLACE,0)) > 0.00001 --对于数值类型，极小概率可能需要单独处理null
+   --or coalesce(s.VAR_TO_REPLACE,'') <> coalesce(t.VAR_TO_REPLACE,'')
+;
+```
+
+自动化工具针对大量变量的校验工作。对于少量变量，可以手动校验，模版如下：
+
+```sql
+--数据验证，数据比对，数据校验，验证数据，比对数据，校验数据--
+with t as (
+    select 
+    order_id as entity_id,
+    item_code as var_value
+    --需要修改
+    from dm_f_facui.dm_f_facui_xq_lawsuit_order_info_zjdd_fd
+    where dt='2026-06-29'
+    --and var_code='c_sh_card'
+    --and case_number is not null
+)
+
+,s as (
+    select 
+    order_id as entity_id,
+    item_code as var_value
+    --需要修改
+    --from dm.dm_var_comp_results_fd_dev
+    from dm_f_facui.dm_f_facui_xq_lawsuit_order_info_zjdd_fd_dev
+    where dt='2026-06-29'
+    --and var_code='c_sh_card'
+    --and case_number is not null
+)
+
+-- ,check_details as (
+--     select 
+--     t.entity_id as t_entity_id
+--     ,s.entity_id as s_entity_id
+--     ,t.var_value as t_value
+--     ,s.var_value as s_value
+--     from t
+--     full join s 
+--     on s.entity_id = t.entity_id
+--     where coalesce(t.var_value,'')<>coalesce(s.var_value,'')
+-- )
+
+-- select * from check_details
+-- ;
+
+
+select 
+'数据比对'
+--需要修改
+,count(if(coalesce(t.var_value,'')<>coalesce(s.var_value,''),1,null)) as value_diff
+from t
+full join s 
+--需要修改
+on s.entity_id = t.entity_id
+;
+```
+
+注：如果目标表没有唯一主键，可以考虑使用`全字段拼接`作为关联键。
