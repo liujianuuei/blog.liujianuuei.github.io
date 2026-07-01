@@ -130,7 +130,7 @@ def start():
 
 
 def compare(var):
-    line = f"mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u gaoxianglin -p{base64.b64decode(propz['ZHIMAKAIMEN']).decode('utf-8')} -e \"{method(var)}\""
+    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZCh2YXIpfVwi"
     logging.info(f"comparing [{var}] with line: {line}")
     result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     logging.info(f"comparison of [{var}] DONE: {result.returncode}")
@@ -150,7 +150,7 @@ def method(var):
 
 def collect(var):
     results_table = f"hive_catalog.test.{var}_{STAMP}"
-    line = f"mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u gaoxianglin -p{base64.b64decode(propz['ZHIMAKAIMEN']).decode('utf-8')} -e \"{method_of_collect(results_table)}\""
+    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZF9vZl9jb2xsZWN0KHJlc3VsdHNfdGFibGUpfVwi"
     logging.info(f"collecting [{var}] results with line: {line}")
     result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     logging.info(f"collection of [{var}] DONE: {result.returncode}")
@@ -188,12 +188,10 @@ create table hive_catalog.test.VAR_TO_REPLACE_STAMP as
 with s as (
 select * from SOURCE_TABLE_NAME
 where dt='SOURCE_TABLE_DT'
---and id_no_des='8KikuRWLqYI7XfFbGBynj5wAJKOrlCW6nymkBz6PC3k='
 ),
 
 t as (
 select * from TARGET_TABLE_NAME
---where id_no_des='8KikuRWLqYI7XfFbGBynj5wAJKOrlCW6nymkBz6PC3k='
 )
 
 select
@@ -221,10 +219,8 @@ with t as (
     order_id as entity_id,
     item_code as var_value
     --需要修改
-    from dm_f_facui.dm_f_facui_xq_lawsuit_order_info_zjdd_fd
+    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2Zk
     where dt='2026-06-29'
-    --and var_code='c_sh_card'
-    --and case_number is not null
 )
 
 ,s as (
@@ -233,10 +229,8 @@ with t as (
     item_code as var_value
     --需要修改
     --from dm.dm_var_comp_results_fd_dev
-    from dm_f_facui.dm_f_facui_xq_lawsuit_order_info_zjdd_fd_dev
+    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2ZkX2Rldg==
     where dt='2026-06-29'
-    --and var_code='c_sh_card'
-    --and case_number is not null
 )
 
 -- ,check_details as (
