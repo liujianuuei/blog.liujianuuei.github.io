@@ -198,6 +198,12 @@ WHERE ads_day='{ads_day}'
   AND entity_id IS NOT NULL;
 ```
 
+如果 Hive 表分区和实际 HDFS 文件不匹配，可以通过如下命令修复：
+
+```sql
+bXNjayByZXBhaXIgdGFibGUgZG0uZG1fY29sbF9sZWdhbF9jb2xsZWN0aW9uX3ZhcnNfb3JkZXJfZmQ7
+```
+
 ### UDF
 
 Hive 支持 UDF（用户自定义函数），通过语法 `ADD JAR` 加载函数实现，通过语法 `CREATE TEMPORARY FUNCTION <函数名> AS <类名>` 绑定函数名。例如：
