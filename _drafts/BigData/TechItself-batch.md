@@ -198,11 +198,7 @@ WHERE ads_day='{ads_day}'
   AND entity_id IS NOT NULL;
 ```
 
-如果 Hive 表分区和实际 HDFS 文件不匹配，可以通过如下命令修复：
-
-```sql
-bXNjayByZXBhaXIgdGFibGUgZG0uZG1fY29sbF9sZWdhbF9jb2xsZWN0aW9uX3ZhcnNfb3JkZXJfZmQ7
-```
+注：如果 Hive 表分区和实际 HDFS 文件不匹配，可以通过`bXNjayByZXBhaXIgdGFibGUgZG0uZG1fY29sbF9sZWdhbF9jb2xsZWN0aW9uX3ZhcnNfb3JkZXJfZmQ7`命令修复。
 
 ### UDF
 
