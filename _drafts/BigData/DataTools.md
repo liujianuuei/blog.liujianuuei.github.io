@@ -94,170 +94,17 @@ ZGVsZXRlIGZyb20gbG9hbl9kYXRhX3dhcmVob3VzZS5hZHNfbG9hbl9zZXJ2X2luZGV4X3JvX2RkIHdo
 **技术方案**
 
 ```python
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-A general purpose Distcp wrapper implementation.
-"""
-import base64
-import logging
-import subprocess
-import sys
-from datetime import datetime
-
-import props
-
-logging.basicConfig(filename='./compare.log', filemode='w', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
-vars_file = "compare_vars.csv"
-method_file = "compare_method.sql"
-method_of_collect_file = "compare_collect_method.sql"
-results_file = "compare_results.txt"
-
-propz = props.load("compare.properties")
-
-STAMP = datetime.now().strftime('%Y%m%d%H%M')
-
-
-def start():
-    with open(vars_file, "r", encoding="utf-8") as file:
-        logging.info(f"STARTING to compare variables in: {vars_file}")
-        for line in file:
-            compare(line.strip())
-            collect(line.strip())
-        logging.info(f"END of comparison of variables in: {vars_file}")
-
-
-def compare(var):
-    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZCh2YXIpfVwiliujianwei"
-    logging.info(f"comparing [{var}] with line: {line}")
-    result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    logging.info(f"comparison of [{var}] DONE: {result.returncode}")
-
-
-def method(var):
-    with open(method_file, 'r', encoding='utf-8') as file:
-        content = file.read()
-        content = content.replace("VAR_TO_REPLACE", var)
-        content = content.replace("STAMP", STAMP)
-        content = content.replace("SOURCE_TABLE_NAME", propz["source_table_name"])
-        content = content.replace("SOURCE_TABLE_DT", propz["source_table_dt"])
-        content = content.replace("TARGET_TABLE_NAME", propz["target_table_name"])
-        content = content.replace("TARGET_TABLE_DT", propz["target_table_dt"])
-        return content
-
-
-def collect(var):
-    results_table = f"hive_catalog.test.{var}_{STAMP}"
-    line = f"bXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZF9vZl9jb2xsZWN0KHJlc3VsdHNfdGFibGUpfVwiliujianwei"
-    logging.info(f"collecting [{var}] results with line: {line}")
-    result = subprocess.run(line, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    logging.info(f"collection of [{var}] DONE: {result.returncode}")
-    write_results_to_file(f"{results_table}\n{result.stdout.decode('utf-8')}")
-
-
-def method_of_collect(results_table):
-    with open(method_of_collect_file, 'r', encoding='utf-8') as file:
-        content = file.read()
-        content = content.replace("RESULTS_TABLE_NAME", results_table)
-        return content
-
-
-def write_results_to_file(results):
-    with open(results_file, 'a', encoding="utf-8") as file:
-        file.write(results + "\n\n\n")
-
-
-def main():
-    try:
-        start()
-        logging.info(f"ALL DONE.")
-    except Exception as e:
-        logging.info(f"ERROR: {e}")
-        raise e
-
-
-if __name__ == '__main__':  # 如果直接作为独立文件执行，则 __name__的 值就是 __main__，可以认为就是 Python 的"程序入口"
-    sys.exit(main())
+IyEvdXNyL2Jpbi9lbnYgcHl0aG9uCiMgLSotIGNvZGluZzogdXRmLTggLSotCgoiIiIKQSBnZW5lcmFsIHB1cnBvc2UgRGlzdGNwIHdyYXBwZXIgaW1wbGVtZW50YXRpb24uCiIiIgppbXBvcnQgYmFzZTY0CmltcG9ydCBsb2dnaW5nCmltcG9ydCBzdWJwcm9jZXNzCmltcG9ydCBzeXMKZnJvbSBkYXRldGltZSBpbXBvcnQgZGF0ZXRpbWUKCmltcG9ydCBwcm9wcwoKbG9nZ2luZy5iYXNpY0NvbmZpZyhmaWxlbmFtZT0nLi9jb21wYXJlLmxvZycsIGZpbGVtb2RlPSd3JywgbGV2ZWw9bG9nZ2luZy5JTkZPLCBmb3JtYXQ9JyUoYXNjdGltZSlzIC0gJShuYW1lKXMgLSAlKGxldmVsbmFtZSlzIC0gJShtZXNzYWdlKXMnKQoKdmFyc19maWxlID0gImNvbXBhcmVfdmFycy5jc3YiCm1ldGhvZF9maWxlID0gImNvbXBhcmVfbWV0aG9kLnNxbCIKbWV0aG9kX29mX2NvbGxlY3RfZmlsZSA9ICJjb21wYXJlX2NvbGxlY3RfbWV0aG9kLnNxbCIKcmVzdWx0c19maWxlID0gImNvbXBhcmVfcmVzdWx0cy50eHQiCgpwcm9weiA9IHByb3BzLmxvYWQoImNvbXBhcmUucHJvcGVydGllcyIpCgpTVEFNUCA9IGRhdGV0aW1lLm5vdygpLnN0cmZ0aW1lKCclWSVtJWQlSCVNJykKCgpkZWYgc3RhcnQoKToKICAgIHdpdGggb3Blbih2YXJzX2ZpbGUsICJyIiwgZW5jb2Rpbmc9InV0Zi04IikgYXMgZmlsZToKICAgICAgICBsb2dnaW5nLmluZm8oZiJTVEFSVElORyB0byBjb21wYXJlIHZhcmlhYmxlcyBpbjoge3ZhcnNfZmlsZX0iKQogICAgICAgIGZvciBsaW5lIGluIGZpbGU6CiAgICAgICAgICAgIGNvbXBhcmUobGluZS5zdHJpcCgpKQogICAgICAgICAgICBjb2xsZWN0KGxpbmUuc3RyaXAoKSkKICAgICAgICBsb2dnaW5nLmluZm8oZiJFTkQgb2YgY29tcGFyaXNvbiBvZiB2YXJpYWJsZXMgaW46IHt2YXJzX2ZpbGV9IikKCgpkZWYgY29tcGFyZSh2YXIpOgogICAgbGluZSA9IGYibXlzcWwgLWggZmUtYy1iODY2MzU2NjdmYmRkYmYwLWludGVybmFsLnN0YXJyb2Nrcy5hbGl5dW5jcy5jb20gLVAgOTAzMCAtdSBnYW94aWFuZ2xpbiAtcHtiYXNlNjQuYjY0ZGVjb2RlKHByb3B6WydaSElNQUtBSU1FTiddKS5kZWNvZGUoJ3V0Zi04Jyl9IC1lIFwie21ldGhvZCh2YXIpfVwiIgogICAgbG9nZ2luZy5pbmZvKGYiY29tcGFyaW5nIFt7dmFyfV0gd2l0aCBsaW5lOiB7bGluZX0iKQogICAgcmVzdWx0ID0gc3VicHJvY2Vzcy5ydW4obGluZSwgc2hlbGw9VHJ1ZSwgY2hlY2s9VHJ1ZSwgc3Rkb3V0PXN1YnByb2Nlc3MuUElQRSwgc3RkZXJyPXN1YnByb2Nlc3MuUElQRSkKICAgIGxvZ2dpbmcuaW5mbyhmImNvbXBhcmlzb24gb2YgW3t2YXJ9XSBET05FOiB7cmVzdWx0LnJldHVybmNvZGV9IikKCgpkZWYgbWV0aG9kKHZhcik6CiAgICB3aXRoIG9wZW4obWV0aG9kX2ZpbGUsICdyJywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZmlsZToKICAgICAgICBjb250ZW50ID0gZmlsZS5yZWFkKCkKICAgICAgICBjb250ZW50ID0gY29udGVudC5yZXBsYWNlKCJWQVJfVE9fUkVQTEFDRSIsIHZhcikKICAgICAgICBjb250ZW50ID0gY29udGVudC5yZXBsYWNlKCJTVEFNUCIsIFNUQU1QKQogICAgICAgIGNvbnRlbnQgPSBjb250ZW50LnJlcGxhY2UoIlNPVVJDRV9UQUJMRV9OQU1FIiwgcHJvcHpbInNvdXJjZV90YWJsZV9uYW1lIl0pCiAgICAgICAgY29udGVudCA9IGNvbnRlbnQucmVwbGFjZSgiU09VUkNFX1RBQkxFX0RUIiwgcHJvcHpbInNvdXJjZV90YWJsZV9kdCJdKQogICAgICAgIGNvbnRlbnQgPSBjb250ZW50LnJlcGxhY2UoIlRBUkdFVF9UQUJMRV9OQU1FIiwgcHJvcHpbInRhcmdldF90YWJsZV9uYW1lIl0pCiAgICAgICAgY29udGVudCA9IGNvbnRlbnQucmVwbGFjZSgiVEFSR0VUX1RBQkxFX0RUIiwgcHJvcHpbInRhcmdldF90YWJsZV9kdCJdKQogICAgICAgIHJldHVybiBjb250ZW50CgoKZGVmIGNvbGxlY3QodmFyKToKICAgIHJlc3VsdHNfdGFibGUgPSBmImhpdmVfY2F0YWxvZy50ZXN0Lnt2YXJ9X3tTVEFNUH0iCiAgICBsaW5lID0gZiJteXNxbCAtaCBmZS1jLWI4NjYzNTY2N2ZiZGRiZjAtaW50ZXJuYWwuc3RhcnJvY2tzLmFsaXl1bmNzLmNvbSAtUCA5MDMwIC11IGdhb3hpYW5nbGluIC1we2Jhc2U2NC5iNjRkZWNvZGUocHJvcHpbJ1pISU1BS0FJTUVOJ10pLmRlY29kZSgndXRmLTgnKX0gLWUgXCJ7bWV0aG9kX29mX2NvbGxlY3QocmVzdWx0c190YWJsZSl9XCIiCiAgICBsb2dnaW5nLmluZm8oZiJjb2xsZWN0aW5nIFt7dmFyfV0gcmVzdWx0cyB3aXRoIGxpbmU6IHtsaW5lfSIpCiAgICByZXN1bHQgPSBzdWJwcm9jZXNzLnJ1bihsaW5lLCBzaGVsbD1UcnVlLCBjaGVjaz1UcnVlLCBzdGRvdXQ9c3VicHJvY2Vzcy5QSVBFLCBzdGRlcnI9c3VicHJvY2Vzcy5QSVBFKQogICAgbG9nZ2luZy5pbmZvKGYiY29sbGVjdGlvbiBvZiBbe3Zhcn1dIERPTkU6IHtyZXN1bHQucmV0dXJuY29kZX0iKQogICAgd3JpdGVfcmVzdWx0c190b19maWxlKGYie3Jlc3VsdHNfdGFibGV9XG57cmVzdWx0LnN0ZG91dC5kZWNvZGUoJ3V0Zi04Jyl9IikKCgpkZWYgbWV0aG9kX29mX2NvbGxlY3QocmVzdWx0c190YWJsZSk6CiAgICB3aXRoIG9wZW4obWV0aG9kX29mX2NvbGxlY3RfZmlsZSwgJ3InLCBlbmNvZGluZz0ndXRmLTgnKSBhcyBmaWxlOgogICAgICAgIGNvbnRlbnQgPSBmaWxlLnJlYWQoKQogICAgICAgIGNvbnRlbnQgPSBjb250ZW50LnJlcGxhY2UoIlJFU1VMVFNfVEFCTEVfTkFNRSIsIHJlc3VsdHNfdGFibGUpCiAgICAgICAgcmV0dXJuIGNvbnRlbnQKCgpkZWYgd3JpdGVfcmVzdWx0c190b19maWxlKHJlc3VsdHMpOgogICAgd2l0aCBvcGVuKHJlc3VsdHNfZmlsZSwgJ2EnLCBlbmNvZGluZz0idXRmLTgiKSBhcyBmaWxlOgogICAgICAgIGZpbGUud3JpdGUocmVzdWx0cyArICJcblxuXG4iKQoKCmRlZiBtYWluKCk6CiAgICB0cnk6CiAgICAgICAgc3RhcnQoKQogICAgICAgIGxvZ2dpbmcuaW5mbyhmIkFMTCBET05FLiIpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgbG9nZ2luZy5pbmZvKGYiRVJST1I6IHtlfSIpCiAgICAgICAgcmFpc2UgZQoKCmlmIF9fbmFtZV9fID09ICdfX21haW5fXyc6ICAjIOWmguaenOebtOaOpeS9nOS4uueLrOeri+aWh+S7tuaJp+ihjO+8jOWImSBfX25hbWVfX+eahCDlgLzlsLHmmK8gX19tYWluX1/vvIzlj6/ku6XorqTkuLrlsLHmmK8gUHl0aG9uIOeahCLnqIvluo/lhaXlj6MiCiAgICBzeXMuZXhpdChtYWluKCkp
 ```
 
 ```sql
-create table hive_catalog.test.VAR_TO_REPLACE_STAMP as
-
-with s as (
-select * from SOURCE_TABLE_NAME
-where dt='SOURCE_TABLE_DT'
-),
-
-t as (
-select * from TARGET_TABLE_NAME
-)
-
-select
-t.id_no_des,
-
-t.VAR_TO_REPLACE as t_VAR_TO_REPLACE,
-s.VAR_TO_REPLACE as s_VAR_TO_REPLACE
-
-from t
-left join s
-on t.id_no_des = s.id_no_des
-
-where 1=1
-  and abs(coalesce(s.VAR_TO_REPLACE,0) - coalesce(t.VAR_TO_REPLACE,0)) > 0.00001 --对于数值类型，极小概率可能需要单独处理null
-   --or coalesce(s.VAR_TO_REPLACE,'') <> coalesce(t.VAR_TO_REPLACE,'')
-;
+Y3JlYXRlIHRhYmxlIGhpdmVfY2F0YWxvZy50ZXN0LlZBUl9UT19SRVBMQUNFX1NUQU1QIGFzCgp3aXRoIHMgYXMgKApzZWxlY3QgKiBmcm9tIFNPVVJDRV9UQUJMRV9OQU1FCndoZXJlIGR0PSdTT1VSQ0VfVEFCTEVfRFQnCiksCgp0IGFzICgKc2VsZWN0ICogZnJvbSBUQVJHRVRfVEFCTEVfTkFNRQopCgpzZWxlY3QKdC5pZF9ub19kZXMsCgp0LlZBUl9UT19SRVBMQUNFIGFzIHRfVkFSX1RPX1JFUExBQ0UsCnMuVkFSX1RPX1JFUExBQ0UgYXMgc19WQVJfVE9fUkVQTEFDRQoKZnJvbSB0CmxlZnQgam9pbiBzCm9uIHQuaWRfbm9fZGVzID0gcy5pZF9ub19kZXMKCndoZXJlIDE9MQogIGFuZCBhYnMoY29hbGVzY2Uocy5WQVJfVE9fUkVQTEFDRSwwKSAtIGNvYWxlc2NlKHQuVkFSX1RPX1JFUExBQ0UsMCkpID4gMC4wMDAwMSAtLeWvueS6juaVsOWAvOexu+Wei++8jOaegeWwj+amgueOh+WPr+iDvemcgOimgeWNleeLrOWkhOeQhm51bGwKICAgLS1vciBjb2FsZXNjZShzLlZBUl9UT19SRVBMQUNFLCcnKSA8PiBjb2FsZXNjZSh0LlZBUl9UT19SRVBMQUNFLCcnKQo7
 ```
 
 自动化工具针对大量变量的校验工作。对于少量变量，可以手动校验，模版如下：
 
 ```sql
---数据验证，数据比对，数据校验，验证数据，比对数据，校验数据--
-with t as (
-    select 
-    order_id as entity_id,
-    item_code as var_value
-    --需要修改
-    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2Zkliujianwei
-    where dt='2026-06-29'
-)
-
-,s as (
-    select 
-    order_id as entity_id,
-    item_code as var_value
-    --需要修改
-    --from dm.dm_var_comp_results_fd_dev
-    from ZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2ZkX2Rldg==liujianwei
-    where dt='2026-06-29'
-)
-
--- ,check_details as (
---     select 
---     t.entity_id as t_entity_id
---     ,s.entity_id as s_entity_id
---     ,t.var_value as t_value
---     ,s.var_value as s_value
---     from t
---     full join s 
---     on s.entity_id = t.entity_id
---     where coalesce(t.var_value,'')<>coalesce(s.var_value,'')
--- )
-
--- select * from check_details
--- ;
-
-
-select 
-'数据比对'
---需要修改
-,count(if(coalesce(t.var_value,'')<>coalesce(s.var_value,''),1,null)) as value_diff
-from t
-full join s 
---需要修改
-on s.entity_id = t.entity_id
-;
+LS3mlbDmja7pqozor4HvvIzmlbDmja7mr5Tlr7nvvIzmlbDmja7moKHpqozvvIzpqozor4HmlbDmja7vvIzmr5Tlr7nmlbDmja7vvIzmoKHpqozmlbDmja4tLQp3aXRoIHQgYXMgKAogICAgc2VsZWN0IAogICAgb3JkZXJfaWQgYXMgZW50aXR5X2lkLAogICAgaXRlbV9jb2RlIGFzIHZhcl92YWx1ZQogICAgLS3pnIDopoHkv67mlLkKICAgIGZyb20gZG1fZl9mYWN1aS5kbV9mX2ZhY3VpX3hxX2xhd3N1aXRfb3JkZXJfaW5mb196amRkX2ZkCiAgICB3aGVyZSBkdD0nMjAyNi0wNi0yOScKKQoKLHMgYXMgKAogICAgc2VsZWN0IAogICAgb3JkZXJfaWQgYXMgZW50aXR5X2lkLAogICAgaXRlbV9jb2RlIGFzIHZhcl92YWx1ZQogICAgLS3pnIDopoHkv67mlLkKICAgIC0tZnJvbSBkbS5kbV92YXJfY29tcF9yZXN1bHRzX2ZkX2RldgogICAgZnJvbSBkbV9mX2ZhY3VpLmRtX2ZfZmFjdWlfeHFfbGF3c3VpdF9vcmRlcl9pbmZvX3pqZGRfZmRfZGV2CiAgICB3aGVyZSBkdD0nMjAyNi0wNi0yOScKKQoKLS0gLGNoZWNrX2RldGFpbHMgYXMgKAotLSAgICAgc2VsZWN0IAotLSAgICAgdC5lbnRpdHlfaWQgYXMgdF9lbnRpdHlfaWQKLS0gICAgICxzLmVudGl0eV9pZCBhcyBzX2VudGl0eV9pZAotLSAgICAgLHQudmFyX3ZhbHVlIGFzIHRfdmFsdWUKLS0gICAgICxzLnZhcl92YWx1ZSBhcyBzX3ZhbHVlCi0tICAgICBmcm9tIHQKLS0gICAgIGZ1bGwgam9pbiBzIAotLSAgICAgb24gcy5lbnRpdHlfaWQgPSB0LmVudGl0eV9pZAotLSAgICAgd2hlcmUgY29hbGVzY2UodC52YXJfdmFsdWUsJycpPD5jb2FsZXNjZShzLnZhcl92YWx1ZSwnJykKLS0gKQoKLS0gc2VsZWN0ICogZnJvbSBjaGVja19kZXRhaWxzCi0tIDsKCgpzZWxlY3QgCifmlbDmja7mr5Tlr7knCi0t6ZyA6KaB5L+u5pS5Cixjb3VudChpZihjb2FsZXNjZSh0LnZhcl92YWx1ZSwnJyk8PmNvYWxlc2NlKHMudmFyX3ZhbHVlLCcnKSwxLG51bGwpKSBhcyB2YWx1ZV9kaWZmCmZyb20gdApmdWxsIGpvaW4gcyAKLS3pnIDopoHkv67mlLkKb24gcy5lbnRpdHlfaWQgPSB0LmVudGl0eV9pZAo7
 ```
 
 注：如果目标表没有唯一主键，可以考虑使用`全字段拼接`作为关联键。
