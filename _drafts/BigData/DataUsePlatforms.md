@@ -96,11 +96,13 @@
 
 ![平台化部署方式](dw-batch-model-predict-platform-auto.png)
 
-### 具体实现
+### 实现方式
 
 **手动部署方式**
 
-具体代码参见：`projects/bigdata-tools-python/tools/whats_selfhost`。任务启动方式：
+参考：`projects/bigdata-tools-python/tools/whats_selfhost`。
+
+任务启动方式：
 
 ```bash
 c3NoIGdhdGV3YXktMS0xICIKICAgIHNvdXJjZSAvZXRjL3Byb2ZpbGUgJiYgCiAgICBjZCBzZWxmaG9zdCAmJiAKICAgIHNoIHN0YXJ0X3B5c3Bhcmtfam9iLnNoIFwKICAgICAgICAtLWpvYl9uYW1lIGJpZ2RhdGEtdG9vbHMtcHl0aG9uLXRvb2xzLXdoYXRzX3NlbGZob3N0LXB5c3Bhcmtfam9iX1NFTEZIT1NUMDAwMDAwMDAwMyBcCiAgICAgICAgLS1tb2RlbF9jb2RlIFNFTEZIT1NUMDAwMDAwMDAwMyBcCiAgICAgICAgLS1tb2RlbF9uYW1lIOWHj+WFjeWIhuacn+aooeWei3YyLeS6jOWIhuexu+aooeWeiyBcCiAgICAgICAgLS1ydW5faWQgU0VMRkhPU1QwMDAwMDAwMDAzIFwKICAgICAgICAtLWlucHV0X3RhYmxlIGRtX2ZfMTUuZG1fY29sbF9sZWdhbF9jb2xsZWN0aW9uX3JlZHVjdGlvbl9tb2RlbF9mZWF0dXJlc192Ml9mZCBcCiAgICAgICAgLS1wcm9maWxlIHByb2QKICAgICIK
@@ -109,3 +111,5 @@ c3NoIGdhdGV3YXktMS0xICIKICAgIHNvdXJjZSAvZXRjL3Byb2ZpbGUgJiYgCiAgICBjZCBzZWxmaG9z
 **平台化部署方式**
 
 参考：`bigdata-tools-python/tools/whats_mlflow`。
+
+任务启动方式：
