@@ -389,7 +389,46 @@ IyNAcmVzb3VyY2VfcmVmZXJlbmNleyJiaWdkYXRhLWZlYXR1cmUtcGxhdGZvcm0uamFyIn0Kc3Bhcmst
 
 ### UDF
 
-Spark 支持 UDF（用户自定义函数），通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。
+Spark 支持在 SQL 中引用预定义好的 UDF（用户自定义函数）。
+
+**函数实现**
+
+```sql
+cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRhdGFiYXNlUmVhZGVyOwppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLm1vZGVsLkNpdHlSZXNwb25zZTsKaW1wb3J0IG9yZy5hcGFjaGUuaGFkb29wLmhpdmUucWwuZXhlYy5VREY7CgppbXBvcnQgamF2YS5pby5JbnB1dFN0cmVhbTsKaW1wb3J0IGphdmEubmV0LkluZXRBZGRyZXNzOwppbXBvcnQgamF2YS50aW1lLkxvY2FsRGF0ZVRpbWU7CmltcG9ydCBqYXZhLnRpbWUuZm9ybWF0LkRhdGVUaW1lRm9ybWF0dGVyOwoKcHVibGljIGNsYXNzIExhdGl0dWRlRnVuY3Rpb24gZXh0ZW5kcyBVREYgewoKICAgIHByaXZhdGUgc3RhdGljIERhdGFiYXNlUmVhZGVyIHJlYWRlcjsKCiAgICBzdGF0aWMgewogICAgICAgIHRyeSB7CiAgICAgICAgICAgIElucHV0U3RyZWFtIGZpbGUgPSBMYXRpdHVkZUZ1bmN0aW9uLmNsYXNzLmdldENsYXNzTG9hZGVyKCkuZ2V0UmVzb3VyY2VBc1N0cmVhbSgiR2VvTGl0ZTItQ2l0eS5tbWRiIik7CiAgICAgICAgICAgIHJlYWRlciA9IG5ldyBEYXRhYmFzZVJlYWRlci5CdWlsZGVyKGZpbGUpLmJ1aWxkKCk7CiAgICAgICAgfSBjYXRjaCAoRXhjZXB0aW9uIGUpIHsKICAgICAgICAgICAgLy8gZG8gbm90aGluZwogICAgICAgIH0KICAgIH0KCiAgICBwdWJsaWMgZG91YmxlIGV2YWx1YXRlKFN0cmluZyB2YWx1ZSkgewogICAgICAgIHRyeSB7CiAgICAgICAgICAgIFN5c3RlbS5vdXQucHJpbnRmKCIlcyAtIElORk8gLSBMYXRpdHVkZUZ1bmN0aW9uLCB2YWx1ZT0lcyVuIiwgTG9jYWxEYXRlVGltZS5ub3coKS5mb3JtYXQoRGF0ZVRpbWVGb3JtYXR0ZXIub2ZQYXR0ZXJuKCJ5eXl5LU1NLWRkIEhIOm1tOnNzLlNTUyIpKSwgdmFsdWUpOwogICAgICAgICAgICBDaXR5UmVzcG9uc2UgcmVzcCA9IHJlYWRlci5jaXR5KEluZXRBZGRyZXNzLmdldEJ5TmFtZSh2YWx1ZSkpOwogICAgICAgICAgICByZXR1cm4gcmVzcC5nZXRMb2NhdGlvbigpLmdldExhdGl0dWRlKCk7CiAgICAgICAgfSBjYXRjaCAoRXhjZXB0aW9uIGUpIHsKICAgICAgICAgICAgU3lzdGVtLm91dC5wcmludGYoIiVzIC0gV0FSTiAtIExhdGl0dWRlRnVuY3Rpb24sIFdBUk4gb2NjdXJyZWQsIHZhbHVlPSVzLCBlPSVzJW4iLCBMb2NhbERhdGVUaW1lLm5vdygpLmZvcm1hdChEYXRlVGltZUZvcm1hdHRlci5vZlBhdHRlcm4oInl5eXktTU0tZGQgSEg6bW06c3MuU1NTIikpLCB2YWx1ZSwgZSk7CiAgICAgICAgICAgIHJldHVybiAtOTk5OTsKICAgICAgICB9CiAgICB9CgogICAgcHVibGljIHN0YXRpYyB2b2lkIG1haW4oU3RyaW5nW10gYXJncykgewogICAgICAgIFN5c3RlbS5vdXQucHJpbnRsbihuZXcgTGF0aXR1ZGVGdW5jdGlvbigpLmV2YWx1YXRlKCIxMTAuMjQyLjY4LjY2IikpOwogICAgfQp9Cg==
+```
+
+**函数注册**
+
+![](dw-batch-spark-udf.png)
+
+**函数使用**
+
+使用方法同其它内置函数。
+
+```sql
+……
+select
+  user_id,
+
+  latitude(dns) as dns_latitude,
+  longitude(dns) as dns_longitude,
+
+  latitude(ip) as ip_latitude,
+  longitude(ip) as ip_longitude
+
+from
+  (
+    select
+      *,
+      row_number() over(partition by user_id order by operation_time desc) rn
+    from
+      devices
+  ) t
+where t.rn = 1
+……
+```
+
+~~通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。~~
 
 ## Presto
 
