@@ -71,3 +71,9 @@
 ![用户路径分析工具/时序验证工具实现参考](dw-batch-self-service-path-analysis.png)
 
 ![用户路径分析工具+经营时机工具实现方案](dw-batch-self-service-path-analysis+tag.png)
+
+## 变量服务网关平台
+
+**技术架构**
+
+略。
