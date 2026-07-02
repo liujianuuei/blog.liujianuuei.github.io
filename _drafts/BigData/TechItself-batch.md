@@ -210,7 +210,7 @@ WHERE ads_day='{ads_day}'
   AND entity_id IS NOT NULL;
 ```
 
-注：如果 Hive 表分区和实际 HDFS 文件不匹配，可以通过`bXNjayByZXBhaXIgdGFibGUgZG0uZG1fY29sbF9sZWdhbF9jb2xsZWN0aW9uX3ZhcnNfb3JkZXJfZmQ7`命令修复。
+注：如果 Hive 表分区和实际 HDFS 文件不匹配，可以通过`bXNjayByZXBhaXIgdGFibGUgPHRhYmxlX25hbWU+IHN5bmMgcGFydGl0aW9uczs=`命令修复。
 
 ### UDF
 
