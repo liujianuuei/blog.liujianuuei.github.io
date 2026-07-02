@@ -50,6 +50,14 @@
 
 上述所讲的都是指数据的应用。数据可以通过广义上的 API 的方式（比如：HDFS 文件地址、Kafka 所代表的的消息队列、SQL 和 NoSQL 数据库等）对外提供服务。
 
+**技术架构**
+
+![大数据服务平台架构](dw-batch-bigdata-service-platform-arch.png)
+
+**交互接口**
+
+![大数据服务平台API](dw-batch-bigdata-service-platform-api.png)
+
 ## 数据服务——自助数据分析工具
 
 除了 API 的方式，业务自助取数进行分析也是一种数据服务策略。本文讨论限定于离线数据分析。
