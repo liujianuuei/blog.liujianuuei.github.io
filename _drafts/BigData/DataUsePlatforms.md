@@ -54,6 +54,8 @@
 
 ![大数据服务平台架构](dw-batch-bigdata-service-platform-arch.png)
 
+注：采用触发式，外部系统和大数据平台通过接口交互，并控制整个流程各环节的执行触发时间。
+
 **交互接口**
 
 ![大数据服务平台API](dw-batch-bigdata-service-platform-api.png)
