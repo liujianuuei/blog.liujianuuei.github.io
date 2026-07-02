@@ -79,3 +79,11 @@
 ④考虑垂直分表 - 适用表比较稀疏（大量的空值和0值）的场景
 
 注：外表的 `insert` 需搭配 `hivedgs.insert_existing_partitions_behavior='OVERWRITE'` 使用，设置该参数则分区级覆盖，不设置该参数，则新增；外表禁止使用 `delete` 操作。
+
+## 数据上云
+
+### 数据迁移
+
+### 元数据（HMS）迁移
+
+### 任务迁移
