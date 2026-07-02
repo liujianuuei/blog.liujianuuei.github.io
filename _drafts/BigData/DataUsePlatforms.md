@@ -95,3 +95,13 @@
 **平台化部署方式**
 
 ![平台化部署方式](dw-batch-model-predict-platform-auto.png)
+
+### 实现方案
+
+**手动部署方式**
+
+参考：`projects/bigdata-tools-python/tools/whats_selfhost`。
+
+**平台化部署方式**
+
+参考：`bigdata-tools-python/tools/whats_mlflow`。
