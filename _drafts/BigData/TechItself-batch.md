@@ -399,7 +399,7 @@ cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRh
 
 **函数注册**
 
-![](dw-batch-spark-udf.png)
+![阿里云开发环境](dw-batch-spark-udf.png)
 
 **函数使用**
 
