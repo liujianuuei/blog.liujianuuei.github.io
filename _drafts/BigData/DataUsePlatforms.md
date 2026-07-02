@@ -96,7 +96,7 @@
 
 ![平台化部署方式](dw-batch-model-predict-platform-auto.png)
 
-### 实现方案
+### 具体实现
 
 **手动部署方式**
 
