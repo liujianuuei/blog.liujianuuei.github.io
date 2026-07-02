@@ -86,6 +86,12 @@
 
 模型的部署分为手动方式和平台化方式，主要区别在于模型文件、模型元数据和执行环境的提供方式。出于初期简单快速上线考虑，可以选择手动部署方式。
 
+![部署方式](dw-batch-model-predict-platform-ways.png)
+
 **手动部署方式**
 
+![手动部署方式](dw-batch-model-predict-platform-manual.png)
+
 **平台化部署方式**
+
+![平台化部署方式](dw-batch-model-predict-platform-auto.png)
