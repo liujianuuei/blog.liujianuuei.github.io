@@ -86,10 +86,10 @@
 
 ### 数据迁移
 
-参考数据迁移工具`bigdata-tools-python/tools/whats_hdfs_migration`。具体不详述。
+参考数据迁移工具：`bigdata-tools-python/tools/whats_hdfs_migration`。具体不详述。
 
 ### 元数据（HMS）迁移
 
 ### 任务迁移
 
-参考任务迁移工具`bigdata-yun-tools`。具体不详述。
+参考任务迁移工具：`bigdata-yun-tools`。具体不详述。
