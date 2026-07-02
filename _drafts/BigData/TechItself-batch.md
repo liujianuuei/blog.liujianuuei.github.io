@@ -406,26 +406,7 @@ cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRh
 使用方法同其它内置函数。
 
 ```sql
-……
-select
-  user_id,
-
-  latitude(dns) as dns_latitude,
-  longitude(dns) as dns_longitude,
-
-  latitude(ip) as ip_latitude,
-  longitude(ip) as ip_longitude
-
-from
-  (
-    select
-      *,
-      row_number() over(partition by user_id order by operation_time desc) rn
-    from
-      devices
-  ) t
-where t.rn = 1
-……
+4oCm4oCmCnNlbGVjdAogIHVzZXJfaWQsCgogIGxhdGl0dWRlKGRucykgYXMgZG5zX2xhdGl0dWRlLAogIGxvbmdpdHVkZShkbnMpIGFzIGRuc19sb25naXR1ZGUsCgogIGxhdGl0dWRlKGlwKSBhcyBpcF9sYXRpdHVkZSwKICBsb25naXR1ZGUoaXApIGFzIGlwX2xvbmdpdHVkZQoKZnJvbQogICgKICAgIHNlbGVjdAogICAgICAqLAogICAgICByb3dfbnVtYmVyKCkgb3ZlcihwYXJ0aXRpb24gYnkgdXNlcl9pZCBvcmRlciBieSBvcGVyYXRpb25fdGltZSBkZXNjKSBybgogICAgZnJvbQogICAgICBkZXZpY2VzCiAgKSB0CndoZXJlIHQucm4gPSAxCuKApuKApg==
 ```
 
 ~~通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。~~
