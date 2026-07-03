@@ -403,6 +403,22 @@ LS1FTVIgU3BhcmsgU1FMCi0tKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 Cgoic3BhcmsueWFybi5xdWV1ZSI6ICJ2YXJpYWJsZV9iYXRjaF9ocCIsCgoic3BhcmsuZHJpdmVyLmNvcmVzIjogIjEiLAoKInNwYXJrLmRyaXZlci5tZW1vcnkiOiAiMmciLAoKInNwYXJrLmV4ZWN1dG9yLmNvcmVzIjogIjQiLAoKInNwYXJrLmV4ZWN1dG9yLm1lbW9yeSI6ICI4ZyIsCgoic3BhcmsuZXhlY3V0b3IuaW5zdGFuY2VzIjogIjEwIiwKCiJzcGFyay55YXJuLm1heEFwcEF0dGVtcHRzIjogIjEiLAoKInNwYXJrLnNxbC5zdG9yZUFzc2lnbm1lbnRQb2xpY3kiOiAiTEVHQUNZIiwKCiJzcGFyay5zcWwuZXh0ZW5zaW9ucyI6ICJvcmcuYXBhY2hlLnBhaW1vbi5zcGFyay5leHRlbnNpb25zLlBhaW1vblNwYXJrU2Vzc2lvbkV4dGVuc2lvbnMiLAoKInNwYXJrLnNxbC5jYXRhbG9nLnNwYXJrX2NhdGFsb2ciOiAib3JnLmFwYWNoZS5wYWltb24uc3BhcmsuU3BhcmtHZW5lcmljQ2F0YWxvZyIsCgoic3BhcmsuamFycyI6ICJvc3M6Ly9qenNrLWJpZ2RhdGEtbGFrZWhvdXNlLW9zcy9saWJzL2phcnMvc3BhcmstcGFpbW9uL3BhaW1vbi1hbGktZW1yLXNwYXJrLTMuNC0xLjAtYWxpLVNOQVBTSE9ULTM4OTFlYzY3LWVkNzkyY2E0LTIwMjQxMjA0LmphciIK
 ```
 
+**JSON 处理**
+
+JSON 生成补齐 null 字段，有两种方法：①设置如下参数；②或者值预先处理成非null（推荐）。
+
+```sql
+"spark.sql.jsonGenerator.ignoreNullFields": "false"
+```
+
+```sql
+--可成功执行
+SELECT to_json(named_struct('name', null,'age', coalesce(null, 0),'address', coalesce('1233', ''))) as json_column;
+
+--可成功执行
+SELECT to_json(struct(null as name, coalesce(null, 0) as age, coalesce('1233', '') as address)) as json_column;
+```
+
 ### Spark Jar
 
 应该避免通过 Jar 来提交 Spark 任务，其应该作为框架的一部分，应该更多采用 Spark SQL。下面是通过 Jar 来提交任务的三个例子：
