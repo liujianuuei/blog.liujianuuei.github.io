@@ -80,6 +80,10 @@
 
 注：外表的 `insert` 需搭配 `hivedgs.insert_existing_partitions_behavior='OVERWRITE'` 使用，设置该参数则分区级覆盖，不设置该参数，则新增；外表禁止使用 `delete` 操作。
 
+⑤对于存在`null`值的字段，统一`coalesce`成对应字段类型。
+
+⑥所有日期类型用`string`存储。
+
 #### Hive 任务优化
 
 Hive 任务加工效率低下，考虑：
