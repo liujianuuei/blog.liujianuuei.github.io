@@ -78,7 +78,7 @@
 
 **技术架构**
 
-![大数据服务平台架构](dw-batch-var-gw-platform-arch.png)
+![大数据服务平台架构](dw-batch-var-gw-platform-arch.jpg)
 
 ## 模型部署预测平台
 
