@@ -419,6 +419,14 @@ SELECT to_json(named_struct('name', null,'age', coalesce(null, 0),'address', coa
 SELECT to_json(struct(null as name, coalesce(null, 0) as age, coalesce('1233', '') as address)) as json_column;
 ```
 
+**最大分区获取**
+
+当上游表无法依赖的时候，需要通过逻辑判断获取上游表当前最大分区。
+
+```sql
+LGRtX2ZfMTVfb3JpZ2luYWxfZmljb19sYWJlbF92aWV3IGFzICgKICAgIHNlbGVjdCAKICAgIGlkX25vX2RlcyBhcyBjZXJ0X25vLAogICAgdGFnCiAgICBmcm9tIGRtX2ZfMTUub3JpZ2luYWxfZmljb19sYWJlbF9mZCAtLee7tOW6pjppZF9ub19kZXMvaWRfbm9fdXVpZAogICAgd2hlcmUgZHQ9KHNlbGVjdCBtYXgoZHQpIGZyb20gZG1fZl8xNS5vcmlnaW5hbF9maWNvX2xhYmVsX2ZkIHdoZXJlIGR0Pj0nJHt0aHJlZV9kYXlzX2Fnb30nKQop
+```
+
 ### Spark Jar
 
 应该避免通过 Jar 来提交 Spark 任务，其应该作为框架的一部分，应该更多采用 Spark SQL。下面是通过 Jar 来提交任务的三个例子：
