@@ -174,17 +174,15 @@ Hive 表不支持更新，不支持事务（或有限支持），这也是和事
 
 Hive 表也不支持索引（或有限支持），因为在基于 MapReduce 的离线批处理场景下，**全表扫描**是常态，性能的提升主要是在于分布式处理。
 
-Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上。值得注意，这部分元数据信息可以被第三方的处理引擎所使用。
+Hive 表的所有元数据信息，一般独立存储在 JDBC 数据库 MySQL 上，称作 HMS（Hive Metadata Store）。值得注意，这部分元数据信息可以被第三方的处理引擎所使用。
 
-Hive 表分为托管表和外部表。
-
-另外，Hive 还支持视图。
-
-一个 Hive 外表的例子：
+Hive 表分为托管表和外部表。我们来看一个 Hive 外表的例子：
 
 ```sql
 Q1JFQVRFIEVYVEVSTkFMIFRBQkxFIHJkcy5yZHNfZXNfYWNjZXNzX3Byb2RfaWQoCiAgYGFwcHJvdmVyZXN1bHRgIHN0cmluZywgCiAgYGJyYW5jaGVzYCBzdHJpbmcsIAogIGBjaGFubmVsaWRgIHN0cmluZywgCiAgYGNoYW5uZWxuYW1lYCBzdHJpbmcsIAogIGBjcmVhdGV0aW1lYCBzdHJpbmcsIAogIGBjdXN0b21lcmlkYCBzdHJpbmcsIAogIGBpZGAgc3RyaW5nLCAKICBgaWRjYXJkYCBzdHJpbmcsIAogIGBqY25vYCBzdHJpbmcsIAogIGBqY3Jlc3VsdGAgc3RyaW5nLCAKICBgbmFtZWAgc3RyaW5nLCAKICBgcGhvbmVgIHN0cmluZywgCiAgYHJlcXBhcmFtYCBzdHJpbmcsIAogIGBzY2VuZWNvZGVgIHN0cmluZywgCiAgYHNjZW5lbmFtZWAgc3RyaW5nKQpjb21tZW50ICfpo47mjqflh4blhaXooagnClBBUlRJVElPTkVEIEJZIChkdCBTVFJJTkcpClNUT1JFRCBBUyBQYXJxdWV0CkxPQ0FUSU9OICdvc3M6Ly9qenNrLWJpZ2RhdGEtaGxzei91c2VyL2hpdmUvd2FyZWhvdXNlL3Jkcy5kYi9lcy9hY2Nlc3NfcHJvZCc7
 ```
+
+另外，Hive 还支持视图。
 
 #### 分区和分桶
 
