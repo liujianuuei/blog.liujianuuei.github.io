@@ -431,6 +431,12 @@ SELECT to_json(struct(null as name, coalesce(null, 0) as age, coalesce('1233', '
 LGRtX2ZfMTVfb3JpZ2luYWxfZmljb19sYWJlbF92aWV3IGFzICgKICAgIHNlbGVjdCAKICAgIGlkX25vX2RlcyBhcyBjZXJ0X25vLAogICAgdGFnCiAgICBmcm9tIGRtX2ZfMTUub3JpZ2luYWxfZmljb19sYWJlbF9mZCAtLee7tOW6pjppZF9ub19kZXMvaWRfbm9fdXVpZAogICAgd2hlcmUgZHQ9KHNlbGVjdCBtYXgoZHQpIGZyb20gZG1fZl8xNS5vcmlnaW5hbF9maWNvX2xhYmVsX2ZkIHdoZXJlIGR0Pj0nJHt0aHJlZV9kYXlzX2Fnb30nKQop
 ```
 
+### 生僻函数使用
+
+```sql
+Y29uY2F0X3dzKCcsJyxzb3J0X2FycmF5KGNvbGxlY3RfbGlzdChzdHJ1Y3QoY29tcGxhaW50X3RpbWUgYXMgayx0b19sZWdhbF9jb21wbGFpbnRfdHlwZV9uX2NvbXBsYWludF90aW1lIGFzIHYpKSxmYWxzZSkudik=
+```
+
 ### Spark Jar
 
 应该避免通过 Jar 来提交 Spark 任务，其应该作为框架的一部分，应该更多采用 Spark SQL。下面是通过 Jar 来提交任务的三个例子：
