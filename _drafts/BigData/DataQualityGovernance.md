@@ -152,6 +152,17 @@ Ci0tZXhwbGFpbiAKCi0tIHdpdGggc2Vzc2lvbl9zdG9yYWdlIGFzICgKLS0gICAgIHNlbGVjdCBtYXgo
 
 注意：CTE、临时视图（temporary view）、以及物理表不起作用，每次使用可能会触发重新执行。
 
+### 动态分区使用
+
+动态分区可以避免显式指定分区信息，从而简化SQL。
+
+和动态分区相关的配置参数：
+
+```
+hive.exec.dynamic.partition.mode=nonstrict
+hive.exec.dynamic.partition=true
+```
+
 ## 数据上云
 
 相比于自建机房，大数据上云，会带来更高的稳定性和更低的成本。上云主要涉及云上服务搭建、数据迁移、元数据迁移、任务迁移等事项。
