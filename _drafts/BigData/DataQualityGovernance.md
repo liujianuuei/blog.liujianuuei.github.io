@@ -171,7 +171,7 @@ hive.exec.dynamic.partition=true
 
 谓词下推是引擎本身的优化措施，但存在诸多例外，也就是无法优化的情况，出于减轻记忆负荷的考虑，不依赖谓词下推。
 
-![谓词下推](dw-batch-quality-predict-pushdown.png)
+![谓词下推](dw-batch-quality-predicate-pushdown.png)
 
 ### 流程治理
 
