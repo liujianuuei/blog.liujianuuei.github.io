@@ -154,7 +154,7 @@ Ci0tZXhwbGFpbiAKCi0tIHdpdGggc2Vzc2lvbl9zdG9yYWdlIGFzICgKLS0gICAgIHNlbGVjdCBtYXgo
 
 ### 动态分区使用
 
-动态分区可以避免显式指定分区信息，从而简化SQL。
+动态分区可以避免显式指定分区信息，从而简化代码。
 
 和动态分区相关的配置参数：
 
