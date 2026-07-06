@@ -167,6 +167,24 @@ hive.exec.dynamic.partition=true
 
 优先使用`/*+ REPARTITION(int) */`和`repartition(int)`。
 
+### 所谓“谓词下推”
+
+谓词下推是引擎本身的优化措施，但存在诸多例外，也就是无法优化的情况，出于减轻记忆负荷的考虑，不依赖谓词下推。
+
+![谓词下推](dw-batch-quality-predict-pushdown.png)
+
+### 流程治理
+
+除了上述技术手段的治理，通过制定流程和操作规范也可以达到治理的效果。
+
+**测试规范**
+
+![测试规范](dw-batch-quality-test-framework.png)
+
+**监控规范**
+
+![监控规范](dw-batch-quality-monitoring-framework.png)
+
 ## 数据上云
 
 相比于自建机房，大数据上云，会带来更高的稳定性和更低的成本。上云主要涉及云上服务搭建、数据迁移、元数据迁移、任务迁移等事项。
