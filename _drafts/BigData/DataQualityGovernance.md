@@ -163,6 +163,10 @@ hive.exec.dynamic.partition.mode=nonstrict
 hive.exec.dynamic.partition=true
 ```
 
+### 小文件治理
+
+优先使用`/*+ REPARTITION(int) */`和`repartition(int)`。
+
 ## 数据上云
 
 相比于自建机房，大数据上云，会带来更高的稳定性和更低的成本。上云主要涉及云上服务搭建、数据迁移、元数据迁移、任务迁移等事项。
