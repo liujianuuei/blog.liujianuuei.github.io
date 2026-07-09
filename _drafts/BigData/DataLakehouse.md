@@ -83,4 +83,4 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 ## 湖仓（Lakehouse）
 
-![](dw-arch-lakehouse.png)
+![lakehouse](dw-arch-lakehouse.png)
