@@ -80,3 +80,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 ![](dw-arch-lambda-vs-kappa.png)
 
 来源：https://nexocode.com/blog/posts/lambda-vs-kappa-architecture/
+
+## 湖仓（Lakehouse）
+
+![](dw-arch-lakehouse.png)
