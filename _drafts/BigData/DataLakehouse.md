@@ -14,7 +14,7 @@ Lambda(λ) 架构是最简单最容易自然长成的批流架构，但问题也
 
 ![](dw-arch-lambda.png)
 
-### 流式架构（或批流一体架构）——第二代架构
+### 批流一体——第二代架构
 
 Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
@@ -38,7 +38,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 备选存储介质：
 
-- 数据湖表或开放表格式（Open Table Formats，比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
+- 实时表或开放表格式（Open Table Formats，比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
 - Apache Doris
 - Apache Phoenix(HBase)
 - Apache Ignite - As a SQL Database
@@ -82,5 +82,9 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 来源：https://nexocode.com/blog/posts/lambda-vs-kappa-architecture/
 
 ## 湖仓（Lakehouse）
+
+**湖仓**这一命名并不能准确体现同时支持离线和实时的数据仓库的核心概念，就像其渊源之一**数据湖**这一概念也不能传达任何有价值的信息一样。
+
+更准确的命名是——**实时离线一体数仓**，简称一体数仓。但湖仓已经是既定命名事实，故保留此叫法，但数据湖、湖表等叫法不再被使用。
 
 ![Lakehouse](dw-arch-lakehouse.png)
