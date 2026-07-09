@@ -38,7 +38,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 备选存储介质：
 
-- 数据湖（比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
+- ~~数据湖~~开放表格式（Open Table Formats，比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
 - Apache Doris
 - Apache Phoenix(HBase)
 - Apache Ignite - As a SQL Database
@@ -77,10 +77,10 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 #### Kappa(κ) vs. Lambda(λ)
 
-![](dw-arch-lambda-vs-kappa.png)
+![Kappa(κ) vs. Lambda(λ)](dw-arch-lambda-vs-kappa.png)
 
 来源：https://nexocode.com/blog/posts/lambda-vs-kappa-architecture/
 
 ## 湖仓（Lakehouse）
 
-![lakehouse](dw-arch-lakehouse.png)
+![Lakehouse](dw-arch-lakehouse.png)
