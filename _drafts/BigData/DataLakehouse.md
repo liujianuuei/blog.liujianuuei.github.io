@@ -39,12 +39,11 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 备选存储介质：
 
 - 实时表或开放表格式（Open Table Formats，比如 Delta Lake、Apache Iceberg、Apache Hudi、Apache Paimon）
-- Apache Doris
-- Apache Phoenix(HBase)
-- Apache Ignite - As a SQL Database
-- Apache Pinot（Shopify's use-case）
-- Apache Kudu
-
+- ~~Apache Doris~~
+- ~~Apache Phoenix(HBase)~~
+- ~~Apache Ignite - As a SQL Database~~
+- ~~Apache Pinot（Shopify's use-case）~~
+- ~~Apache Kudu~~
 
 > Delta Lake
 > 
