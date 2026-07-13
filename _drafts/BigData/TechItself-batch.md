@@ -120,7 +120,7 @@ Further, columnar-formatted files usually support a number of flexible compressi
 
 ##### Popular file formats for big data
 
-Now let’s take a deeper look into three popular file formats for big data: Avro, ORC, and Parquet.
+Now let’s take a deeper look into three popular file formats for big data: Avro（行式存储）, ORC（列式存储）, and Parquet（列式存储）.
 
 ——Excerpt From: [Parquet, ORC, and Avro: The File Format Fundamentals of Big Data](https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data)。
 
