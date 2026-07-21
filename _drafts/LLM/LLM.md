@@ -4,7 +4,7 @@
 
 ## 原理
 
-当前市面上的大语言模型的核心是 Transformer 架构。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的神经网络设计，也就是注意力机制（Google 论文：Attention Is All You Need）。
+大语言模型的核心是 Transformer 架构。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的神经网络设计，也就是注意力机制（Google 论文：Attention Is All You Need）。
 
 ## 训练
 
