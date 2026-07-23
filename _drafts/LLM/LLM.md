@@ -8,7 +8,7 @@
 
 *注：*
 1. *更多细节，请查看 Google 论文 [Attention Is All You Need](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
-2. *②[A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)*
+2. *关于神经网络的简单实现，可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)*
 
 **注意力机制**
 
