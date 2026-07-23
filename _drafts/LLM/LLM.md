@@ -4,9 +4,10 @@
 
 ## 原理
 
-大语言模型的核心是 Transformer 架构。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的深度[神经网络](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，也就是注意力机制。
+大语言模型的核心是 Transformer 架构。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的深度神经网络，也就是注意力机制。
 
-*注：更多细节，请查看 Google 论文 [Attention Is All You Need](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*注1：更多细节，请查看 Google 论文 [Attention Is All You Need](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*注2：[A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)*
 
 **注意力机制**
 
