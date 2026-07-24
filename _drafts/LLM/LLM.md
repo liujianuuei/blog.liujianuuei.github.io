@@ -8,7 +8,7 @@
 
 *注① 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
-*注② 关于 Transformer 的更多细节，请查看 Google 论文 [Attention Is All You Need](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*注② 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
 
 **注意力机制**
 
