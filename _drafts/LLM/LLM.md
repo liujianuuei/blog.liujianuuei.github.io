@@ -4,16 +4,17 @@
 
 ## 原理
 
-大语言模型基于 Transformer 架构。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的深度神经网络，其核心是注意力机制。
+大语言模型基于 Transformer 架构①。Transformer 架构本质上是一套“**放弃词语顺序，采用全局关联**”的深度神经网络①，其核心是注意力机制。
 
 **注意力机制**
 
 注意力机制的底层逻辑是用数学计算**全局关联**。
 
 ___________________________________________________
-*注① 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
-*注② 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*注① 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+
+*注② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
 ## 训练
 
@@ -36,6 +37,7 @@ Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 训练就是在词向量空间中为每一个词找到具有语义关联性的位置（词向量），也就是所谓的**词嵌入**。训练的最终结果是向量空间中的一张“语义地图”，而且这张地图还是“立体”的。
 
 ___________________________________________________
+
 *注③ 这里所谓语义关联性指的是，在一个词出现的情况下，另一个词大概率也会出现，也就是会作为**下一个词**出现。*
 
 ## 生成
