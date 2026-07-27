@@ -45,7 +45,7 @@ X_new = X_old + Attention(Q, K, V)
 ```
 ∇_W = ∂L/∂W
 
-W_new = W_old − η ⋅ ∇_W ⋅ L
+W_new = W_old − η ⋅ ∇_WL
 
 注：η 是常数，代表学习率；L 代表损失值。
 ```
