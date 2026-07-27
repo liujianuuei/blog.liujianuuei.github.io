@@ -35,7 +35,11 @@ Q = X·W^Q, K = X·W^K, V = X·W^V
 
 Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 
-X_n+1 = X_n + Attention(Q, K, V)
+X_n+0.5 = X_n + Attention(Q, K, V)
+
+FFN(X) = Activation(X·W_1 + b_1)·W_2 + b_2
+
+X_n+1 = X_n+0.5 + FFN(X_n+0.5)
 
 注：在最一开始，X、W^Q、W^K、W^V 被随机初始化；初始化后，第一层 X 不会变化，其它层 X 会被相应地更新，即残差连接。
 ```
@@ -73,13 +77,5 @@ ___________________________________________________
 **动态修正**
 
 针对同词异义是一个向量还是多个向量。
-
-激活函数
-
-```
-FFN(X) = ReLU(X·W_1 + b_1)·W_2 + b_2
-
-ReLU(x) = max(0,x)
-```
 
 
