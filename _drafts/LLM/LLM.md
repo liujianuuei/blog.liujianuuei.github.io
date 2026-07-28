@@ -91,7 +91,7 @@ X0 ————W1————> X1 ————W2————> X2 ————W3�
 ```
 Y = X_n · W_LMH + b_LM
 
-y^^ = Softmax(Y)
+y^ = Softmax(Y)
 
 注：W_LMH 代表词表矩阵。
 ```
