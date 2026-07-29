@@ -66,9 +66,8 @@ y^ = Softmax(Y)
 
 ```math
 L = -\sum_{i=1}^{V} y_i \log(\hat{y}_i)
-
-L = −log(y^)
-
+```
+```
 ∇_WL = ∂L/∂W
 
 W_new = W_old − η ⋅ ∇_WL
