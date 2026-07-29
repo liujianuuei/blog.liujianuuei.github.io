@@ -67,9 +67,8 @@ y^ = Softmax(Y)
 ```math
 L = -\sum_{i=1}^{V} y_i \log(\hat{y}_i)
 ```
-```
 <img src="https://latex.codecogs.com/svg.latex?L%20=%20-\log(\hat{y}_{target})" />
-
+```
 ∇_WL = ∂L/∂W
 
 W_new = W_old − η ⋅ ∇_WL
