@@ -82,7 +82,7 @@ L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_ytrue) # 损失函数，交�
 
 链式推导如下:
 
-L→Y:   ∂L/∂Y
+L→Y:   ∂L/∂Y # 应用链式法则，反向传播的起点
 
 Y→X:   ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
        ∂L/∂W_LMH = (∂L/∂Y) * (∂Y/∂W_LMH)
