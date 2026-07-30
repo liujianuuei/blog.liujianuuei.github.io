@@ -77,6 +77,21 @@ dy/dx = dy/du ⋅ du/dx
 ```
 L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_ytrue) # 损失函数，交叉熵公式
 
+
+L→Y:   ∂L/∂Y
+
+Y→X:   ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
+       ∂L/∂W_LMH = (∂L/∂Y) * (∂Y/∂W_LMH)
+
+X→QK:  ∂L/∂QK = (∂L/∂X) * (∂X/∂QK)
+
+QK→Q:  ∂L/∂Q = (∂L/∂QK) * (∂(QK)/∂Q)
+QK→K:  ∂L/∂K = (∂L/∂QK) * (∂(QK)/∂K)
+
+Q→W^Q: ∂L/∂W^Q = (∂L/∂Q) * (∂Q/∂W^Q)
+Q→W^K: ∂L/∂W^K = (∂L/∂K) * (∂K/∂W^K)
+
+
 ∇_WL = ∂L/∂W
 
 W_new = W_old − η ⋅ ∇_WL
