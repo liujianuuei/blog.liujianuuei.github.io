@@ -82,23 +82,26 @@ L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_ytrue) # 损失函数，交�
 
 链式法则推导如下:
 
-L→Y:   ∂L/∂Y # 应用链式法则，反向传播的起点
+L→Y:       ∂L/∂Y # 应用链式法则，反向传播的起点
 
-Y→X:   ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
-       ∂L/∂W_LMH = (∂L/∂Y) * (∂Y/∂W_LMH)
+Y→W_LMH:   ∂L/∂W_LMH = (∂L/∂Y) * (∂Y/∂W_LMH)
+Y→X:       ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
 
 前馈网络部分:
 
+X→W_2:     ∂L/∂W_2 = (∂L/∂X) * (∂X/∂W_2)
+X→b_2:     ∂L/∂b_2 = (∂L/∂X) * (∂X/∂b_2)
+           ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
 
 注意力部分:
 
-X→QK:  ∂L/∂QK = (∂L/∂X) * (∂X/∂QK)
+X→QK:      ∂L/∂QK = (∂L/∂X) * (∂X/∂QK)
 
-QK→Q:  ∂L/∂Q = (∂L/∂QK) * (∂(QK)/∂Q)
-QK→K:  ∂L/∂K = (∂L/∂QK) * (∂(QK)/∂K)
+QK→Q:      ∂L/∂Q = (∂L/∂QK) * (∂(QK)/∂Q)
+QK→K:      ∂L/∂K = (∂L/∂QK) * (∂(QK)/∂K)
 
-Q→W^Q: ∂L/∂W^Q = (∂L/∂Q) * (∂Q/∂W^Q)
-Q→W^K: ∂L/∂W^K = (∂L/∂K) * (∂K/∂W^K)
+Q→W^Q:     ∂L/∂W^Q = (∂L/∂Q) * (∂Q/∂W^Q)
+Q→W^K:     ∂L/∂W^K = (∂L/∂K) * (∂K/∂W^K)
 
 
 更新权重向量(这里就是模型学习发生的地方✍🏻):
