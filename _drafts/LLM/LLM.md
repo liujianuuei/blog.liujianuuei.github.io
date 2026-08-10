@@ -107,7 +107,7 @@ Activation→FFN1:  ∂L/∂FFN1 = (∂L/∂Activation) * (∂Activation/∂FFN1
 FFN1→W_1:         ∂L/∂W_1 = (∂L/∂FFN1) * (∂FFN1/∂W_1)
 FFN1→b_1:         ∂L/∂b_1 = (∂L/∂FFN1) * (∂FFN1/∂b_1)
 
-FFN1→X_n+0.5:     ∂L/∂X_n+0.5 = (∂L/∂FFN1) * (∂FFN1/∂X_n_0.5)
+FFN1→X_n+0.5:     ∂L/∂X_n+0.5 = (∂L/∂FFN1) * (∂FFN1/∂X_n+0.5)
 
 注意力部分:
 
