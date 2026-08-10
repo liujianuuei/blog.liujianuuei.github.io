@@ -37,9 +37,11 @@ Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 
 X_n+0.5 = X_n + Attention(Q, K, V)
 
-FFN(X) = Activation(X·W_1 + b_1)·W_2 + b_2
+FFN1(X) = Activation(X·W_1 + b_1)
 
-X_n+1 = X_n+0.5 + FFN(X_n+0.5)
+FFN2(X) = FFN1(X)·W_2 + b_2
+
+X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
 
 注：在最一开始，X、W^Q、W^K、W^V、W_1、W_2、b_1、b_2 被随机初始化；初始化后，第一层 X 不会变化，其它层 X 会被相应地更新，即残差连接。
 ```
@@ -91,7 +93,7 @@ Y→X:       ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
 
 X→W_2:     ∂L/∂W_2 = (∂L/∂X) * (∂X/∂W_2)
 X→b_2:     ∂L/∂b_2 = (∂L/∂X) * (∂X/∂b_2)
-           ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
+           ∂L/∂FFN2 = (∂L/∂X) * (∂X / ∂FFN2)
 
 注意力部分:
 
