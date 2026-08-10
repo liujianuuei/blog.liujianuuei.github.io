@@ -39,7 +39,6 @@ Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 
 X_n+0.5 = X_n + Attention(Q, K, V)
 
-
 前馈网络部分:
 
 FFN1(X) = X·W_1 + b_1
@@ -49,7 +48,6 @@ Activation(X) = ReLU(FFN1(X))
 FFN2(X) = Activation(X)·W_2 + b_2
 
 X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
-
 
 注：在最一开始，X、W^Q、W^K、W^V、W_1、W_2、b_1、b_2 被随机初始化；初始化后，第一层 X 不会变化，其它层 X 会被相应地更新，即残差连接。
 ```
