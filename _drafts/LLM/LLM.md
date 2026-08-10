@@ -31,17 +31,25 @@ X0/输入层 ————W1————> X1/隐藏层 ————W2————
 词的最终表示是一个**高维向量**，其计算过程会考虑所有其它词向量（向量点积——方向一致性的度量），因此被称作（相互）注意力值。
 
 ```
+注意力部分:
+
 Q = X·W^Q, K = X·W^K, V = X·W^V
 
 Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 
 X_n+0.5 = X_n + Attention(Q, K, V)
 
-FFN1(X) = Activation(X·W_1 + b_1)
 
-FFN2(X) = FFN1(X)·W_2 + b_2
+前馈网络部分:
+
+FFN1(X) = X·W_1 + b_1
+
+Activation(X) = ReLU(FFN1(X))
+
+FFN2(X) = Activation(X)·W_2 + b_2
 
 X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
+
 
 注：在最一开始，X、W^Q、W^K、W^V、W_1、W_2、b_1、b_2 被随机初始化；初始化后，第一层 X 不会变化，其它层 X 会被相应地更新，即残差连接。
 ```
@@ -93,7 +101,7 @@ Y→X:       ∂L/∂X = (∂L/∂Y) * (∂Y/∂X)
 
 X→W_2:     ∂L/∂W_2 = (∂L/∂X) * (∂X/∂W_2)
 X→b_2:     ∂L/∂b_2 = (∂L/∂X) * (∂X/∂b_2)
-           ∂L/∂FFN2 = (∂L/∂X) * (∂X / ∂FFN2)
+           ∂L/∂FFN1 = (∂L/∂X) * (∂X / ∂FFN1)
 
 注意力部分:
 
