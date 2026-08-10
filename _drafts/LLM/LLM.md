@@ -86,7 +86,7 @@ dy/dx = dy/du ⋅ du/dx
 L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_ytrue) # 损失函数，交叉熵公式
 
 
-根据: ∇_WL = ∂L/∂W
+根据: ∇_WL = ∂L/∂W # 符号化表示
 
 链式法则推导如下:
 
