@@ -706,13 +706,13 @@ CnNob3cgY2F0YWxvZ3M7CgpzaG93IGRhdGFiYXNlcyBmcm9tIGhpdmVfY2F0YWxvZzsgLS1kZWZhdWx0
 
 #### StarRocks@阿里云
 
-![阿里云开发环境](dw-batch-olap-starrocks-aliyun1.jpg)
+![阿里云开发环境](dw-batch-olap-starrocks-aliyun1.png)
 
-![阿里云开发环境](dw-batch-olap-starrocks-aliyun2.jpg)
+![阿里云开发环境](dw-batch-olap-starrocks-aliyun2.png)
 
-![阿里云开发环境](dw-batch-olap-starrocks-aliyun3.jpg)
+![阿里云开发环境](dw-batch-olap-starrocks-aliyun3.png)
 
-![阿里云开发环境](dw-batch-olap-starrocks-aliyun4.jpg)
+![阿里云开发环境](dw-batch-olap-starrocks-aliyun4.png)
 
 ## 最后
 
