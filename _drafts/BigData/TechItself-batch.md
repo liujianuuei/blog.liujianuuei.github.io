@@ -508,7 +508,9 @@ cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRh
 
 ![阿里云开发环境](dw-batch-emr-aliyun.png)
 
-![阿里云开发环境](dw-batch-emr-spark-serverless-aliyun.png)
+![阿里云开发环境](dw-batch-emr-spark-serverless-aliyun1.png)
+
+![阿里云开发环境](dw-batch-emr-spark-serverless-aliyun2.png)
 
 ## Presto
 
