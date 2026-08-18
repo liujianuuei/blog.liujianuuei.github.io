@@ -504,6 +504,12 @@ cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRh
 
 ~~通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。~~
 
+### Spark on ECS @阿里云
+
+![阿里云开发环境](dw-batch-emr-spark-serverfull-aliyun.png)
+
+https://emr-core-master-1.juzifenqi.com:8443/gateway/cluster-topo/yarn/cluster/apps
+
 ### Spark Serverless @阿里云
 
 ![阿里云开发环境](dw-batch-emr-aliyun.png)
