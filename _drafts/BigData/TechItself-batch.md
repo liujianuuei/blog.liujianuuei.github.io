@@ -504,6 +504,12 @@ cGFja2FnZSBjb20uanpzay5iaWdkYXRhLnVkZnM7CgppbXBvcnQgY29tLm1heG1pbmQuZ2VvaXAyLkRh
 
 ~~通过语法 `spark.udf.register("注册的函数名",函数) # in Python language` 注册任何普通的 Python 函数实现。~~
 
+### Spark Serverless @阿里云
+
+![阿里云开发环境](dw-batch-emr-aliyun.png)
+
+![阿里云开发环境](dw-batch-emr-spark-serverless-aliyun.png)
+
 ## Presto
 
 Presto 是作为 Hive SQL 的替代方案出现的，它也是一个用来快速查询分析大规模（large scale）数据的分布式 SQL Query Engine，主要解决 Hive 在交互式分析（Interactive SQL）或 Ad-hoc 分析上的短板。
@@ -704,9 +710,9 @@ StarRocks 的其它辅助性命令：
 CnNob3cgY2F0YWxvZ3M7CgpzaG93IGRhdGFiYXNlcyBmcm9tIGhpdmVfY2F0YWxvZzsgLS1kZWZhdWx0X2NhdGFsb2c7CgotLXVzZSBkZWZhdWx0X2NhdGFsb2cucm1zX2xhd191cmdlX2JpOwoKc2hvdyB0YWJsZXMgZnJvbSBkZWZhdWx0X2NhdGFsb2cucm1zX2xhd191cmdlX2JpOwoKc2VsZWN0ICogZnJvbSBkZWZhdWx0X2NhdGFsb2cucm1zX2xhd191cmdlX2JpLmxlZ2FsX21xX2RhdGE7CgoKc2hvdyBjcmVhdGUgdGFibGUgZGVmYXVsdF9jYXRhbG9nLnJtc19sYXdfdXJnZV9iaS5sZWdhbF9tcV9kYXRhOwoKc2VsZWN0ICogZnJvbSBkbV9mX2ZhY3VpLmRtX2ZfZmFjdWlfbGVnYWxfb3JkZXJfb3JnX21lbV9mbG93X2RldGFpbF9mZDsKCgpzZWxlY3QgKiBmcm9tIGhpdmVfY2F0YWxvZy5kbV9mX2ZhY3VpLmRtX2ZfZmFjdWlfeHFfbGF3c3VpdF9vcmRlcl9pbmZvX2ZkIHdoZXJlIGR0PScyMDI2LTA0LTI2JyBsaW1pdCAxMDsKCi0taW5zZXJ0IG92ZXJ3cml0ZSBkZWZhdWx0X2NhdGFsb2cucm1zX2xhd191cmdlX2JpLmxlZ2FsX3BheWJhY2tfdDFfZGF0YSB2YWx1ZXMoJzEwMDk2Jyw5MjE0MS44MzAwMDAsMTU3MTM3MDUuNjkwMDAwKTsKCnNlbGVjdCAqIGZyb20gZGVmYXVsdF9jYXRhbG9nLnJtc19sYXdfdXJnZV9iaS5sZWdhbF9wYXliYWNrX3QxX2RhdGE7CgpzaG93IGNyZWF0ZSB0YWJsZSBkZWZhdWx0X2NhdGFsb2cucm1zX2xhd191cmdlX2JpLnRlc3Q7
 ```
 
-#### StarRocks@阿里云
+#### StarRocks @阿里云
 
-![阿里云开发环境](dw-batch-olap-starrocks-aliyun1.png)
+![阿里云开发环境](dw-batch-emr-aliyun.png)
 
 ![阿里云开发环境](dw-batch-olap-starrocks-aliyun2.png)
 
