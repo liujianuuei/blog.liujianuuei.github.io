@@ -119,8 +119,8 @@ FFN1→X_n+0.5:     ∂L/∂X_n+0.5 = (∂L/∂FFN1) · (∂FFN1/∂X_n+0.5)
 
 X_n+0.5→QK:       ∂L/∂QK = (∂L/∂X_n+0.5) · (∂X_n+0.5/∂QK)
 
-QK→Q:             ∂L/∂Q = (∂L/∂QK) · (∂(QK)/∂Q)
-QK→K:             ∂L/∂K = (∂L/∂QK) · (∂(QK)/∂K)
+QK→Q:             ∂L/∂Q = (∂L/∂QK) · (∂QK/∂Q)
+QK→K:             ∂L/∂K = (∂L/∂QK) · (∂QK/∂K)
 
 Q→W^Q:            ∂L/∂W^Q = (∂L/∂Q) · (∂Q/∂W^Q)
 K→W^K:            ∂L/∂W^K = (∂L/∂K) · (∂K/∂W^K)
