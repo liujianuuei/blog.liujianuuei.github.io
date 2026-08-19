@@ -113,7 +113,7 @@ X→b_2:            ∂L/∂b_2 = (∂L/∂X_n+1) · (∂X_n+1/∂b_2)
 
 X→Activation:     ∂L/∂Activation = (∂L/∂X_n+1) · (∂X_n+1/∂Activation)
 
-Activation→FFN1:  ∂L/∂FFN1 = (∂L/∂Activation) · (∂Activation/∂FFN1)
+Activation→FFN1:  ∂L/∂FFN1 = (∂L/∂Activation) ⊙ (∂Activation/∂FFN1)
 
 FFN1→W_1:         ∂L/∂W_1 = (∂L/∂FFN1) · (∂FFN1/∂W_1)
 FFN1→b_1:         ∂L/∂b_1 = (∂L/∂FFN1) · (∂FFN1/∂b_1)
