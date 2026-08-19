@@ -103,42 +103,42 @@ L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_ytrue)  # 损失函数，交�
 
 L→Y:              ∂L/∂Y  # 应用链式法则，反向传播的起点
 
-Y→W_LMH:          ∂L/∂W_LMH = (∂L/∂Y) * (∂Y/∂W_LMH)
-Y→X_n+1:          ∂L/∂X_n+1 = (∂L/∂Y) * (∂Y/∂X_n+1)
+Y→W_LMH:          ∂L/∂W_LMH = (∂L/∂Y) · (∂Y/∂W_LMH)
+Y→X_n+1:          ∂L/∂X_n+1 = (∂L/∂Y) · (∂Y/∂X_n+1)
 
 前馈网络部分:
 
-X→W_2:            ∂L/∂W_2 = (∂L/∂X_n+1) * (∂X_n+1/∂W_2)
-X→b_2:            ∂L/∂b_2 = (∂L/∂X_n+1) * (∂X_n+1/∂b_2)
+X→W_2:            ∂L/∂W_2 = (∂L/∂X_n+1) · (∂X_n+1/∂W_2)
+X→b_2:            ∂L/∂b_2 = (∂L/∂X_n+1) · (∂X_n+1/∂b_2)
 
-X→Activation:     ∂L/∂Activation = (∂L/∂X_n+1) * (∂X_n+1/∂Activation)
+X→Activation:     ∂L/∂Activation = (∂L/∂X_n+1) · (∂X_n+1/∂Activation)
 
-Activation→FFN1:  ∂L/∂FFN1 = (∂L/∂Activation) * (∂Activation/∂FFN1)
+Activation→FFN1:  ∂L/∂FFN1 = (∂L/∂Activation) · (∂Activation/∂FFN1)
 
-FFN1→W_1:         ∂L/∂W_1 = (∂L/∂FFN1) * (∂FFN1/∂W_1)
-FFN1→b_1:         ∂L/∂b_1 = (∂L/∂FFN1) * (∂FFN1/∂b_1)
+FFN1→W_1:         ∂L/∂W_1 = (∂L/∂FFN1) · (∂FFN1/∂W_1)
+FFN1→b_1:         ∂L/∂b_1 = (∂L/∂FFN1) · (∂FFN1/∂b_1)
 
 FFN1→X_n+0.5:     ∂L/∂X_n+0.5 = (∂L/∂FFN1) * (∂FFN1/∂X_n+0.5)
 
 自注意力部分:
 
-X_n+0.5→QK:       ∂L/∂QK = (∂L/∂X_n+0.5) * (∂X_n+0.5/∂QK)
+X_n+0.5→QK:       ∂L/∂QK = (∂L/∂X_n+0.5) · (∂X_n+0.5/∂QK)
 
-QK→Q:             ∂L/∂Q = (∂L/∂QK) * (∂(QK)/∂Q)
-QK→K:             ∂L/∂K = (∂L/∂QK) * (∂(QK)/∂K)
+QK→Q:             ∂L/∂Q = (∂L/∂QK) · (∂(QK)/∂Q)
+QK→K:             ∂L/∂K = (∂L/∂QK) · (∂(QK)/∂K)
 
-Q→W^Q:            ∂L/∂W^Q = (∂L/∂Q) * (∂Q/∂W^Q)
-K→W^K:            ∂L/∂W^K = (∂L/∂K) * (∂K/∂W^K)
+Q→W^Q:            ∂L/∂W^Q = (∂L/∂Q) · (∂Q/∂W^Q)
+K→W^K:            ∂L/∂W^K = (∂L/∂K) · (∂K/∂W^K)
 
-Q→X_n:            ∂L/∂X_n = (∂L/∂Q) * (∂Q/∂X_n)
-K→X_n:            ∂L/∂X_n = (∂L/∂K) * (∂K/∂X_n)
-Q+K→X_n:          ∂L/∂X_n = (∂L/∂Q) * (∂Q/∂X_n) + (∂L/∂K) * (∂K/∂X_n)
+Q→X_n:            ∂L/∂X_n = (∂L/∂Q) · (∂Q/∂X_n)
+K→X_n:            ∂L/∂X_n = (∂L/∂K) · (∂K/∂X_n)
+Q+K→X_n:          ∂L/∂X_n = (∂L/∂Q) · (∂Q/∂X_n) + (∂L/∂K) · (∂K/∂X_n)
 
 ...
 
 词表矩阵部分（在训练完成后，词表矩阵 W_E 跟其它参数向量矩阵一样，就是固定不变的了，然后在模型生成的时候，W_E 被用来初始化词向量）:
 
-X_0→W_E:          ∂L/∂W_E = (∂L/∂X_0) * (∂X_0/∂W_E)
+X_0→W_E:          ∂L/∂W_E = (∂L/∂X_0) · (∂X_0/∂W_E)
 
 
 更新参数向量(这里就是模型学习发生的地方✍🏻):
