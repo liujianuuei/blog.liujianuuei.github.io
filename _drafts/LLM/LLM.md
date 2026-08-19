@@ -89,7 +89,7 @@ dz/dx = dz/dy ⋅ dy/dx
 
 求偏导:
 
-z = f(y,a), y = g(x,c)
+z = f(y,a), y = g(x,b)
 
 ∂z/∂x = ∂z/∂y · ∂y/∂x
 ```
