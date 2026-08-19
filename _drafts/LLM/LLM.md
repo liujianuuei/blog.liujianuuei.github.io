@@ -83,9 +83,9 @@ y-hat = Softmax(Y)
 
 求导:
 
-y = f(x), x = g(u)
+z = f(x), x = g(u)
 
-dy/du = dy/dx ⋅ dx/du
+dz/du = dz/dx ⋅ dx/du
 
 求偏导:
 
