@@ -81,14 +81,6 @@ y-hat = Softmax(Y)
 ```
 链式法则:
 
-求导:
-
-z = f(y), y = g(x)
-
-dz/dx = dz/dy ⋅ dy/dx
-
-求偏导:
-
 z = f(y,a), y = g(x,b)
 
 ∂z/∂x = ∂z/∂y · ∂y/∂x
