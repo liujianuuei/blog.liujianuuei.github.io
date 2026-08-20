@@ -37,7 +37,7 @@ X_0 = W_E[token化索引] # W_E 是词表矩阵，真实公式其实为 X_0=One-
 ```
 自注意力部分:
 
-Q = X·W^Q, K = X·W^K, V = X·W^V  # X 是单个词的向量，K 是词序列所有词
+Q = X·W^Q, K = X·W^K, V = X·W^V
 
 Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
 
