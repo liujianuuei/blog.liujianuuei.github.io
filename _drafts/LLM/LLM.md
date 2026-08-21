@@ -4,7 +4,7 @@
 
 ## 概述
 
-大语言模型基于 Transformer 架构①。Transformer 本质上是一套深度神经网络①，其核心是自注意力机制。
+大语言模型基于 Transformer 架构①。Transformer 本质上是一套深度神经网络②，其核心是自注意力机制。
 
 #### 自注意力机制
 
