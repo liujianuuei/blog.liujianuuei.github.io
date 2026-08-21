@@ -149,9 +149,11 @@ W_new = W_old − η ⋅ ∇_WL
 
 ___________________________________________________
 
-*注③ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
+注释
 
-*注④ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
+*③ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
+
+*④ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
 
 ## 生成，或模型推理
 
