@@ -12,9 +12,11 @@
 
 ___________________________________________________
 
-*注① 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*注释*
 
-*注② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
+*① 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+
+*② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
 ## 训练，或模型学习
 
@@ -149,7 +151,7 @@ W_new = W_old − η ⋅ ∇_WL
 
 ___________________________________________________
 
-注释
+*注释*
 
 *③ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
 
