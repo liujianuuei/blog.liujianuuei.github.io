@@ -197,4 +197,4 @@ W_new = W_old − η ⋅ ∇_WL
 
 *⑦ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
 
-*⑧ 同样，出于逻辑一致性的需要，表述略作调整，实际处理过程是矩阵计算。*
+*⑧ 同样，出于逻辑一致性和理解的需要，表述略作调整，实际处理过程是矩阵计算，但本质相同。*
