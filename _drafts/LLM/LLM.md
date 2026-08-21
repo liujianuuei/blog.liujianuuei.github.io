@@ -10,14 +10,6 @@
 
 自注意力机制的底层逻辑是用数学计算**全局关联**（所有词都能“看到”所有词，这就是人类语言的特点）。
 
-___________________________________________________
-
-*注释*
-
-*① 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
-
-*② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
-
 ## 训练，或模型学习
 
 一个典型的模型执行路径是多层网络堆叠的，前层输出作为后层输入，每层都是同构的，比如`X1 ————W2————> X2`（其含义可以符号化表示为`X2 = W2 · X1`）就是相对独立的一段。后续概念都以单层为例说明，全链路同理。
@@ -149,14 +141,6 @@ W_new = W_old − η ⋅ ∇_WL
 
 模型训练好后，`W_E`、`W^Q`、`W^K`、`W^V`、`W_1`、`W_2`、`b_1`、`b_2`、`W_LMH`、`b_LM`不再发生变化，智能就封存在这些参数里。那么，当和模型开始对话，输入一个问题的时候，模型是如何工作的呢？
 
-___________________________________________________
-
-*注释*
-
-*③ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
-
-*④ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
-
 ## 生成，或模型推理
 
 我们再来看下训练。模型训练的时候，大量原始文本通过分词、拼接与切块后，变成固定长度的词（token，本篇文章不区分词和词元，两者混用）序列，然后输入模型，模型预测词序列里**每个位置**的**下一个词**。
@@ -190,3 +174,15 @@ ___________________________________________________
 ## 总结
 
 大语言模型是基于**线性代数**、**微积分**、**概率论**的超大规模工程实现。回顾整个过程，最不可思议的地方在于**人类语言的可计算性**。
+
+___________________________________________________
+
+*注释*
+
+*① 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+
+*② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
+
+*③ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
+
+*④ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
