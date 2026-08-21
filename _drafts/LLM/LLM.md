@@ -189,7 +189,7 @@ W_new = W_old − η ⋅ ∇_WL
 
 *③ 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
-*④ 出于讨论简单的目的，不考虑因果掩码设计的作用。*
+*④ 出于讨论简单的目的，不详述因果掩码设计的作用。*
 
 *⑤ 本文所有公式推导以及讨论，都不考虑出于优化目的的模型并行计算，从而让逻辑推导过程清晰一致。*
 
