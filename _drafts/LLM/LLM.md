@@ -183,7 +183,7 @@ ___________________________________________________
 
 *② 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
-*③ 出于讨论方便的目的，不考虑因果掩码的设计机制。*
+*③ 出于讨论简单的目的，不考虑因果掩码设计的作用。*
 
 *④ 现实情况中，每层还涉及多头（不同角度）自注意力，核心算法一致。*
 
