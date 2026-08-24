@@ -39,11 +39,11 @@ X_n+0.5 = X_n + Attention(Q, K, V)
 
 前馈网络部分:
 
-FFN1(X) = X·W_1 + b_1  # 扩维
+FFN1(X) = X·W_1 + b_1  # 扩维，相当于在知识库里找所有可能联系
 
-Activation(X) = ReLU(FFN1(X))  # 激活（非线性）
+Activation(X) = ReLU(FFN1(X))  # 激活（非线性），过滤筛选需要的信息
 
-FFN2(X) = Activation(X)·W_2 + b_2  # 缩维
+FFN2(X) = Activation(X)·W_2 + b_2  # 缩维，修改 X 值，在 X 上体现找到的信息
 
 X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
 
