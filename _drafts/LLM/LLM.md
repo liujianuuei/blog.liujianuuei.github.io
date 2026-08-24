@@ -39,11 +39,11 @@ X_n+0.5 = X_n + Attention(Q, K, V)
 
 前馈网络部分:
 
-FFN1(X) = X·W_1 + b_1
+FFN1(X) = X·W_1 + b_1  # 扩维
 
-Activation(X) = ReLU(FFN1(X))
+Activation(X) = ReLU(FFN1(X))  # 激活（非线性）
 
-FFN2(X) = Activation(X)·W_2 + b_2
+FFN2(X) = Activation(X)·W_2 + b_2  # 压缩
 
 X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
 
