@@ -91,10 +91,10 @@ L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_target)  # 损失函数，交
 
 链式法则推导如下:
 
-L→Y:              ∂L/∂Y  # 应用链式法则，反向传播的起点。
+z→Y:              ∂L/∂z  # 应用链式法则，反向传播的起点。
 
-Y→W_LMH:          ∂L/∂W_LMH = (∂L/∂Y) · (∂Y/∂W_LMH)
-Y→X_n+1:          ∂L/∂X_n+1 = (∂L/∂Y) · (∂Y/∂X_n+1)
+z→W_LMH:          ∂L/∂W_LMH = (∂L/∂z) · (∂z/∂W_LMH)
+z→X_n+1:          ∂L/∂X_n+1 = (∂L/∂z) · (∂z/∂X_n+1)
 
 前馈网络部分:
 
