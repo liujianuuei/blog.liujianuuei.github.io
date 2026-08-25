@@ -43,7 +43,7 @@ FFN1(X) = X·W_1 + b_1  # 扩维，相当于在知识库里查找全部有关联
 
 Activation(X) = ReLU(FFN1(X))  # 激活（非线性变换），过滤筛选真正相关联（真正有用的）的知识。
 
-FFN2(X) = Activation(X)·W_2 + b_2  # 缩维，调整 X 值，在 X 上体现找到的关联知识。
+FFN2(X) = Activation(X)·W_2 + b_2  # 缩维，更新 X 值，在 X 上体现找到的关联知识。
 
 X_n+1 = X_n+0.5 + FFN2(X_n+0.5)
 
