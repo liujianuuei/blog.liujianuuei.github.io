@@ -6,8 +6,8 @@
 
 <table>
   <colgroup>
-    <col width="100">
-    <col width="200">
+    <col width="500">
+    <col width="500">
     <col width="*">
   </colgroup>
   <tr>
