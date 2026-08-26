@@ -5,20 +5,15 @@
 #### 有哪些可能应用场景
 
 <table>
-  <colgroup>
-    <col width="5000">
-    <col width="500">
-    <col width="*">
-  </colgroup>
   <tr>
-    <th>列 1</th>
-    <th>列 2</th>
-    <th>列 3</th>
+    <th width="150">固定150px</th>
+    <th width="30%">占30%宽度</th>
+    <th>自适应剩余宽度</th>
   </tr>
   <tr>
-    <td>固定100</td>
-    <td>固定200</td>
-    <td>自适应</td>
+    <td>内容 A</td>
+    <td>内容 B</td>
+    <td>内容 C</td>
   </tr>
 </table>
 
