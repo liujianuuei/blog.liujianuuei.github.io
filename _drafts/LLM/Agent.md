@@ -6,7 +6,7 @@
 
 <table>
   <tr>
-    <th width="150">固定150px</th>
+    <th width="40%">固定150px</th>
     <th width="30%">占30%宽度</th>
     <th>自适应剩余宽度</th>
   </tr>
