@@ -4,6 +4,24 @@
 
 #### 有哪些可能应用场景
 
+<table>
+  <colgroup>
+    <col width="100">
+    <col width="200">
+    <col width="*">
+  </colgroup>
+  <tr>
+    <th>列 1</th>
+    <th>列 2</th>
+    <th>列 3</th>
+  </tr>
+  <tr>
+    <td>固定100</td>
+    <td>固定200</td>
+    <td>自适应</td>
+  </tr>
+</table>
+
 | 应用场景 | 主要产品 | 场景说明 |
 | :--- | :--- | :--- |
 | 编程 |  |  |
