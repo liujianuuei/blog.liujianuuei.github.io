@@ -12,7 +12,9 @@
 
 #### 二、编程
 
-Qoder、https://cloud.tencent.com/developer/article/2649106
+Qoder、claude code, cursor openclaw, codex, github copilot, sonnet
+Invisible AI to Cheat on Conversations
+https://cloud.tencent.com/developer/article/2649106
 
 #### 三、生成（文、图、视频等）
 
