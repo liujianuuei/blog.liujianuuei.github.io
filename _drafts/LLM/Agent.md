@@ -8,7 +8,7 @@
 
 #### 一、编程
 
-Qoder、https://cloud.tencent.com/developer/article/2649106、
+Qoder、https://cloud.tencent.com/developer/article/2649106
 
 #### 二、生成（文、图、视频等）
 
