@@ -6,7 +6,7 @@
 
 <table>
   <colgroup>
-    <col width="500">
+    <col width="5000">
     <col width="500">
     <col width="*">
   </colgroup>
