@@ -94,6 +94,7 @@ L = -∑_i=1^V y_i · log(y-hat_i) => −log(y-hat_target)  # 损失函数，交
 L→z:              ∂L/∂z  # 应用链式法则，反向传播的起点；从损失函数看，第一步是 L 对 y-hat 求偏导，但工程实现直接计算的是 L 对 z 的偏导。
 
 z→W_LMH:          ∂L/∂W_LMH = (∂L/∂z) · (∂z/∂W_LMH)
+z→b_LM:           ∂L/∂b_LM = (∂L/∂z) · (∂z/∂b_LM)
 z→X_n+1:          ∂L/∂X_n+1 = (∂L/∂z) · (∂z/∂X_n+1)
 
 前馈网络部分:
