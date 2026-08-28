@@ -11,9 +11,9 @@
 | DeepSeek | 深度求索 | 中国 | DeepSeek(网页/App)、DeepSeek Harness |
 | Qwen/千问 | 阿里巴巴 | 中国 | 千问(网页/App)、Qoder |
 | Doubao/豆包<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、Trae、剪映、即梦 |
-| GLM | 智谱 | 中国(清华) | 智谱清言(网页/App)、ZCode |
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App)、Kimi Work、Kimi Code |
 | MiniMax | 稀宇 | 中国 | MiniMax(网页/App)、MiniMax Code、MiniMax Design |
+| GLM | 智谱 | 中国(清华) | 智谱清言(网页/App)、ZCode |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
 
 ### 有哪些可能应用场景
