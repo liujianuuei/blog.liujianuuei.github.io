@@ -4,17 +4,17 @@
 
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
-| GPT | OpenAI | 美国 | ChatGPT(App/网页)、Sora |
-| Claude | Anthropic | 美国 | Claude(App/网页) |
+| GPT | OpenAI | 美国 | ChatGPT(网页/App)、Sora |
+| Claude | Anthropic | 美国 | Claude(网页/App) |
 | Gemini | Google(DeepMind) | 美国 ||
 | Grok | xAI | 美国 ||
 | DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness |
-| GLM | 智谱 | 中国(清华) | 智谱清言(App/网页) |
-| Qwen/千问 | 阿里巴巴 | 中国 | 千问(App/网页) |
-| Kimi | 月之暗面 | 中国 | Kimi(App/网页) |
+| GLM | 智谱 | 中国(清华) | 智谱清言(网页/App) |
+| Qwen/千问 | 阿里巴巴 | 中国 | 千问(网页/App) |
+| Kimi | 月之暗面 | 中国 | Kimi(网页/App) |
 | MiniMax | 稀宇 | 中国 |  |
 | Hy/混元 | 腾讯 | 中国 | WorkBuddy(Agent)、CodeBuddy(Agent)、元宝App |
-| Doubao/豆包<br>Seedance | 字节跳动 | 中国 | 豆包(App/网页)、扣子(Agent)、剪映、即梦 |
+| Doubao/豆包<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、剪映、即梦 |
 
 ### 有哪些可能应用场景
 
