@@ -7,7 +7,12 @@
 | GPT | OpenAI | 美国 |
 | Claude | Anthropic | 美国 |
 | Gemini | Google(DeepMind) | 美国 |
-| Grok | xAI | 美国 |
+| DeepSeek | 深度求索 | 中国 |
+| 千问 | 智谱 | 中国 |
+| Kimi | 月之暗面 | 中国 |
+| MiniMax | 稀宇 | 中国 |
+| 混元 | 腾讯 | 中国 |
+| 豆包 | 字节跳动 | 中国 |
 
 ### 有哪些可能应用场景
 
