@@ -8,7 +8,7 @@
 | Claude | Anthropic | 美国 ||
 | Gemini | Google(DeepMind) | 美国 ||
 | Grok | xAI | 美国 ||
-| DeepSeek | 深度求索 | 中国 ||
+| DeepSeek | 深度求索 | 中国 | DeepSeek App/网页、DeepSeek Harness |
 | GLM | 智谱 | 中国 ||
 | 千问 | 阿里巴巴 | 中国 ||
 | Kimi | 月之暗面 | 中国 ||
