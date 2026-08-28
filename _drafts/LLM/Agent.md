@@ -29,6 +29,7 @@
 Qoder、claude code, cursor openclaw, codex, github copilot, sonnet
 ,Invisible AI to Cheat on Conversations
 https://cloud.tencent.com/developer/article/2649106
+https://bbs.huaweicloud.com/blogs/484999
 
 #### 三、生成（文、图、视频等）
 
