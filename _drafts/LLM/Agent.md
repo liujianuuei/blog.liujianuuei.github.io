@@ -2,19 +2,19 @@
 
 ### 当前有哪些大语言模型
 
-| 模型 | 公司 | 国家 |
-| :--- | :--- | --- |
-| GPT | OpenAI | 美国 |
-| Claude | Anthropic | 美国 |
-| Gemini | Google(DeepMind) | 美国 |
-| Grok | xAI | 美国 |
-| DeepSeek | 深度求索 | 中国 |
-| GLM | 智谱 | 中国 |
-| 千问 | 阿里巴巴 | 中国 |
-| Kimi | 月之暗面 | 中国 |
-| MiniMax | 稀宇 | 中国 |
-| 混元 | 腾讯 | 中国 |
-| 豆包 | 字节跳动 | 中国 |
+| 模型 | 公司 | 国家 | 引用产品 |
+| :--- | :--- | :--- | :--- |
+| GPT | OpenAI | 美国 | ChatGPT |
+| Claude | Anthropic | 美国 ||
+| Gemini | Google(DeepMind) | 美国 ||
+| Grok | xAI | 美国 ||
+| DeepSeek | 深度求索 | 中国 ||
+| GLM | 智谱 | 中国 ||
+| 千问 | 阿里巴巴 | 中国 ||
+| Kimi | 月之暗面 | 中国 ||
+| MiniMax | 稀宇 | 中国 ||
+| 混元 | 腾讯 | 中国 ||
+| 豆包 | 字节跳动 | 中国 ||
 
 ### 有哪些可能应用场景
 
