@@ -2,6 +2,13 @@
 
 ### 当前有哪些大语言模型
 
+| 模型 | 公司 | 国家 |
+| :--- | :--- | --- |
+| GPT | OpenAI | 美国 |
+| Claude | Anthropic | 美国 |
+| Gemini | Google(DeepMind) | 美国 |
+| Grok | xAI | 美国 |
+
 ### 有哪些可能应用场景
 
 #### 一、问答（网页或App交互）
