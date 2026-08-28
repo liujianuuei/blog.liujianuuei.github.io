@@ -32,9 +32,9 @@ X_0 = W_E[词]  # 或 X_0 = One-hot(词) · W_E，W_E 为词表向量矩阵，�
 
 Q = X·W^Q, K = X·W^K, V = X·W^V  # K 和 V 其实是矩阵，在实际计算过程中，涉及一个操作动作，即从缓存中读取所有前文词的 K 和 V，然后组装成矩阵。至于为什么可以使用缓存的“旧版本”，是因为自注意力机制的因果掩码限定。
 
-Attention(Q, K, V) = Softmax( (Q·K^T) / √d_k ) · V
+Attention = Softmax( (Q·K^T) / √d_k ) · V
 
-X_n+0.5 = X_n + Attention(Q, K, V)
+X_n+0.5 = X_n + Attention
 
 前馈网络部分（模型“推理”发生在这里）:
 
