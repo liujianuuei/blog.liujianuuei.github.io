@@ -7,7 +7,7 @@
 | GPT | OpenAI | 美国 | ChatGPT(网页/App)、Codex |
 | Claude | Anthropic | 美国 | Claude(网页/App)、Claude Code |
 | Gemini | Google(DeepMind) | 美国 |  |
-| Grok | xAI | 美国 | Grok(网页/App)、Cursor |
+| Grok | SpaceX | 美国 | Grok(网页/App)、Cursor |
 | DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness |
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App) |
 | Qwen/千问 | 阿里巴巴 | 中国 | 千问(网页/App)、Qoder |
