@@ -14,7 +14,7 @@
 | Kimi | 月之暗面 | 中国 ||
 | MiniMax | 稀宇 | 中国 ||
 | 混元 | 腾讯 | 中国 ||
-| Doubao,Seedance | 字节跳动 | 中国 | 豆包(App/网页)、扣子(Agent)、剪映 |
+| Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(App/网页)、扣子(Agent)、剪映 |
 
 ### 有哪些可能应用场景
 
