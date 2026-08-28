@@ -14,7 +14,7 @@
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App)、Kimi Work、Kimi Code |
 | MiniMax | 稀宇 | 中国 |  |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
-| Doubao/豆包、Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、剪映、即梦、Trae |
+| Doubao/豆包、Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、Trae、剪映、即梦 |
 
 ### 有哪些可能应用场景
 
