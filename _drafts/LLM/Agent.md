@@ -4,7 +4,7 @@
 
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
-| GPT | OpenAI | 美国 | ChatGPT(网页/App)、Sora |
+| GPT<br>Sora | OpenAI | 美国 | ChatGPT(网页/App)、Sora |
 | Claude | Anthropic | 美国 | Claude(网页/App) |
 | Gemini | Google(DeepMind) | 美国 | Flow |
 | Grok | xAI | 美国 ||
