@@ -8,12 +8,12 @@
 | Claude | Anthropic | 美国 | Claude(网页/App)、Claude Code |
 | Gemini | Google(DeepMind) | 美国 | Flow |
 | Grok | xAI | 美国 | Grok(网页/App) |
-| DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness(Agent) |
+| DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness |
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App) |
 | Qwen/千问 | 阿里巴巴 | 中国 | 千问(网页/App) |
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App) |
 | MiniMax | 稀宇 | 中国 | 海螺(网页/App)、MiniMax Agent |
-| Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy(Agent)、CodeBuddy(Agent) |
+| Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
 | Doubao/豆包、Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、剪映、即梦 |
 
 ### 有哪些可能应用场景
