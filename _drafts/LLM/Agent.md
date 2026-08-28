@@ -5,7 +5,7 @@
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
 | GPT | OpenAI | 美国 | ChatGPT(网页/App) |
-| Claude | Anthropic | 美国 | Claude(网页/App) |
+| Claude | Anthropic | 美国 | Claude(网页/App)、Claude Code |
 | Gemini | Google(DeepMind) | 美国 | Flow |
 | Grok | xAI | 美国 | Grok(网页/App) |
 | DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness(Agent) |
