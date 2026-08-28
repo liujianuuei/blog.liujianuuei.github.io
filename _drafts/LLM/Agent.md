@@ -4,17 +4,17 @@
 
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
-| GPT | OpenAI | 美国 | ChatGPT |
-| Claude | Anthropic | 美国 ||
+| GPT | OpenAI | 美国 | ChatGPT(网页/App)、Sora |
+| Claude | Anthropic | 美国 | Claude(App/网页) |
 | Gemini | Google(DeepMind) | 美国 ||
 | Grok | xAI | 美国 ||
-| DeepSeek | 深度求索 | 中国 | DeepSeek App/网页、DeepSeek Harness |
+| DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness |
 | GLM | 智谱 | 中国 ||
-| 千问 | 阿里巴巴 | 中国 ||
+| 千问 | 阿里巴巴 | 中国 | 千问(App/网页) |
 | Kimi | 月之暗面 | 中国 ||
 | MiniMax | 稀宇 | 中国 ||
 | 混元 | 腾讯 | 中国 ||
-| 豆包 | 字节跳动 | 中国 ||
+| Doubao | 字节跳动 | 中国 | 豆包(App/网页)、扣子(Agent)、剪映 |
 
 ### 有哪些可能应用场景
 
