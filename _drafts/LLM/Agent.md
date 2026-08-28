@@ -6,7 +6,7 @@
 | :--- | :--- | :--- | :--- |
 | GPT | OpenAI | 美国 | ChatGPT(网页/App)、Sora |
 | Claude | Anthropic | 美国 | Claude(网页/App) |
-| Gemini | Google(DeepMind) | 美国 ||
+| Gemini | Google(DeepMind) | 美国 | Flow |
 | Grok | xAI | 美国 ||
 | DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness(Agent) |
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App) |
