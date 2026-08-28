@@ -12,7 +12,7 @@
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App) |
 | Qwen/千问 | 阿里巴巴 | 中国 | 千问(网页/App) |
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App) |
-| MiniMax | 稀宇 | 中国 |  |
+| MiniMax | 稀宇 | 中国 | 海螺(网页/App)、MiniMax Agent |
 | Hy/混元 | 腾讯 | 中国 | WorkBuddy(Agent)、CodeBuddy(Agent)、元宝App |
 | Doubao/豆包<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、剪映、即梦 |
 
