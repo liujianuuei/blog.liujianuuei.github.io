@@ -11,9 +11,9 @@
 | DeepSeek | 深度求索 | 中国 | DeepSeek(App/网页)、DeepSeek Harness |
 | GLM | 智谱 | 中国 ||
 | Qwen/千问 | 阿里巴巴 | 中国 | 千问(App/网页) |
-| Kimi | 月之暗面 | 中国 ||
-| MiniMax | 稀宇 | 中国 ||
-| Hy/混元 | 腾讯 | 中国 | WorkBuddy、CodeBuddy |
+| Kimi | 月之暗面 | 中国 | Kimi(App) |
+| MiniMax | 稀宇 | 中国(清华) | 智谱清言(App) |
+| Hy/混元 | 腾讯 | 中国 | WorkBuddy(Agent)、CodeBuddy(Agent)、元宝App |
 | Doubao/豆包<br>Seedance | 字节跳动 | 中国 | 豆包(App/网页)、扣子(Agent)、剪映、即梦 |
 
 ### 有哪些可能应用场景
