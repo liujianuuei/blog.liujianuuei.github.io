@@ -34,7 +34,7 @@ Q = X_n·W^Q, K = X_n·W^K, V = X_n·W^V  # K 和 V 其实是矩阵，在实际�
 
 Attention = Softmax( (Q·K^T) / √d_k ) · V
 
-X_n+0.5 = X_n + Attention
+X_n+₀.₅ = X_n + Attention
 
 前馈网络部分（模型“推理”发生在这里）:
 
