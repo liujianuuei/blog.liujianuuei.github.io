@@ -184,22 +184,22 @@ W_new = W_old − η ⋅ ∇_WL
 
 注释
 
-*1. 需要注意，出于简化讨论的目的，本文对大语言模型原理进行了极大的简化和概念抽象，对严谨度有妥协，你需要知道这一点。*
+*⒈ 需要注意，出于简化讨论的目的，本文对大语言模型原理进行了极大的简化和概念抽象，对严谨度有妥协，你需要知道这一点。*
 
-*2. 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
+*⒉ 关于 Transformer 的更多细节，请查看 Google 论文 [《Attention Is All You Need》](https://ar5iv.labs.arxiv.org/html/1706.03762v5)。*
 
-*3. 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
+*⒊ 关于神经网络的简单实现（一个神经元），可以查看 [A simplest form of a neural network](https://www.geeksforgeeks.org/deep-learning/what-is-perceptron-the-simplest-artificial-neural-network/)，同时可以阅读[《动手学深度学习》](https://zh.d2l.ai/)。*
 
-*4. 出于简化讨论的目的，本文不考虑因果掩码限定，即模型在预测第 t 个词时，只能看到它前面的词（1 到 t-1），看不到后面的词（t+1 到 n）。*
+*⒋ 出于简化讨论的目的，本文不考虑因果掩码限定，即模型在预测第 t 个词时，只能看到它前面的词（1 到 t-1），看不到后面的词（t+1 到 n）。*
 
-*5. 本文所有公式推导以及讨论，都不考虑出于优化目的的模型并行计算或矩阵计算，从而让推导过程逻辑一致。*
+*⒌ 本文所有公式推导以及讨论，都不考虑出于优化目的的模型并行计算或矩阵计算，从而让推导过程逻辑一致。*
 
-*6. 实际情况中，每层还涉及多头（不同角度）自注意力，每个头的算法和单头一致，最终再线性混合，不详述。*
+*⒍ 实际情况中，每层还涉及多头（不同角度）自注意力，每个头的算法和单头一致，最终再线性混合，不详述。*
 
-*7. 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
+*⒎ 关于前馈网络，可以阅读[《Transformer Feed-Forward Layers Are Key-Value Memories》](https://arxiv.org/abs/2012.14913)。*
 
-*8. 大语言模型领域的投影含义，相当于通过矩阵乘法（旋转缩放）和加法（平移），把一个向量从一个空间变换到另一个空间。*
+*⒏ 大语言模型领域的投影含义，相当于通过矩阵乘法（旋转缩放）和加法（平移），把一个向量从一个空间变换到另一个空间。*
 
-*9. 这里其实是词元序列，但出于同样的简化讨论的目的，本文不区分词和词元，两者混用。*
+*⒐ 这里其实是词元序列，但出于同样的简化讨论的目的，本文不区分词和词元，两者混用。*
 
-*10. 同样，出于逻辑一致性和理解的需要，表述略作调整，实际情况是矩阵计算，但本质相同。*
+*⒑ 同样，出于逻辑一致性和理解的需要，表述略作调整，实际情况是矩阵计算，但本质相同。*
