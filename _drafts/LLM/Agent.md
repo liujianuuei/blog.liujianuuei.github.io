@@ -24,7 +24,7 @@
 | 编程 | Qoder、claude code, cursor openclaw, codex, github copilot, sonnet,Invisible AI to Cheat on Conversations,<br>https://cloud.tencent.com/developer/article/2649106,https://bbs.huaweicloud.com/blogs/484999 |
 | 生成（文、图、视频等） | seedance、即梦 |
 | 办公 | workbuddy、扣子 |
-| 智能数据分析（智能 BI）🧠 | 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），<br>系统即可自动查询数据、生成图表并给出归因分析。 |
+| 智能数据分析（智能 BI） | 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），<br>系统即可自动查询数据、生成图表并给出归因分析。 |
 | 行业垂直应用 | 依赖行业知识。 |
 | GPT | OpenAI |
 | GPT | OpenAI |
