@@ -18,34 +18,16 @@
 
 ### 有哪些可能应用场景
 
-#### 一、问答（网页或App交互）
-
-问答是最典型的大语言模型对外提供的使用方式。
-
-大语言模型除了作为问答工具，还可以嵌入工作流程和执行能力结合，进而完成具体任务。
-
-#### 二、编程
-
-Qoder、claude code, cursor openclaw, codex, github copilot, sonnet
-,Invisible AI to Cheat on Conversations
-https://cloud.tencent.com/developer/article/2649106
-https://bbs.huaweicloud.com/blogs/484999
-
-#### 三、生成（文、图、视频等）
-
-seedance、即梦
-
-#### 四、办公
-
-workbuddy、扣子
-
-#### 五、智能数据分析（智能 BI）🧠
-
-业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。
-
-#### 六、行业垂直应用
-
-依赖行业知识。
+| 场景 | 主要工具 |
+| :--- | :--- |
+| 问答（网页或App交互） | OpenAI |
+| 编程 | Qoder、claude code, cursor openclaw, codex, github copilot, sonnet,Invisible AI to Cheat on Conversations,https://cloud.tencent.com/developer/article/2649106,https://bbs.huaweicloud.com/blogs/484999 |
+| 生成（文、图、视频等） | seedance、即梦 |
+| 办公 | workbuddy、扣子 |
+| 智能数据分析（智能 BI）🧠 | 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。 |
+| 行业垂直应用 | 依赖行业知识。 |
+| GPT | OpenAI |
+| GPT | OpenAI |
 
 ### 大语言模型嵌入工作流程的工作方式
 
