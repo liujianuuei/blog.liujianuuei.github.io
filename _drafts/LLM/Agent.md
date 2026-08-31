@@ -20,9 +20,9 @@
 
 | 场景 | 主要工具 |
 | :--- | :--- |
-| 问答<br>*注：网页或App交互。*） | OpenAI |
+| 问答<br>*注：网页或App交互。* | OpenAI |
 | 编程 | Qoder、claude code, cursor openclaw, codex, github copilot, <br>sonnet,Invisible AI to Cheat on Conversations,<br>https://cloud.tencent.com/developer/article/2649106,https://bbs.huaweicloud.com/blogs/484999 |
-| 生成<br>*注：生成图片、视频等。* | seedance、即梦 |
+| 生成<br>*注：生成文字、图片、视频等。* | seedance、即梦 |
 | 办公 | workbuddy、扣子 |
 | 智能数据分析（智能 BI） | 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），<br>系统即可自动查询数据、生成图表并给出归因分析。 |
 | 行业垂直应用 | 依赖行业知识。 |
