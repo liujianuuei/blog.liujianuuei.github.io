@@ -20,7 +20,7 @@
 
 | 场景 | 主要工具 |
 | :--- | :--- |
-| 问答 - *网页或App交互* | OpenAI |
+| 问答 - *网页或App交互* | 略 |
 | 编程 | Qoder、claude code, cursor openclaw, codex, github copilot, <br>sonnet,Invisible AI to Cheat on Conversations,<br>https://cloud.tencent.com/developer/article/2649106,https://bbs.huaweicloud.com/blogs/484999 |
 | 生成 - *生成文字、图片、视频等* | seedance、即梦 |
 | 办公 | workbuddy、扣子 |
