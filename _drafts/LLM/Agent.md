@@ -20,7 +20,7 @@
 
 | 场景 | 主要工具 | 样品 |
 | :--- | :--- | :--- |
-| 问答 - *网页或App交互* | 略 | bigdata-tools-python/tools/whats_mlflow |
+| 问答 - *网页或App交互* | DeepSeek、千问 | bigdata-tools-python/tools/whats_mlflow |
 | 生成 - *生成文字、图片、视频等* | seedance、即梦 |  |
 | 办公 - *Work Agent* | workbuddy、扣子 |  |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Qoder、claude code, cursor openclaw, codex, github copilot, <br>sonnet,Invisible AI to Cheat on Conversations,<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 |  |
