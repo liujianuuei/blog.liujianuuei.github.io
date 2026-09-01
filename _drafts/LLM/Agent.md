@@ -51,6 +51,8 @@
 
 **Codex CLI**
 
+**Codex web**
+
 
 
 
