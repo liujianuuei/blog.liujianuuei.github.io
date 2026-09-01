@@ -36,7 +36,7 @@
 
 > With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
 
-**Multi-agent Workflowss**
+**Multi-agent workflows**
 
 **Always-on background work**
 
