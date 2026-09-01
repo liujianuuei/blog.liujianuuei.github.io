@@ -47,6 +47,8 @@
 
 ### Codex - Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
 
+https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
+
 **Codex in ChatGPT (Codex mode) (as a desktop app)**
 
 **Codex IDE extension**
