@@ -31,7 +31,7 @@
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
 
-### 编程 - Agentic coding, Coding with agents.
+### 编程 - Coding agent, Agentic coding, Code with agents, AI coding.
 
 #### Agents
 
