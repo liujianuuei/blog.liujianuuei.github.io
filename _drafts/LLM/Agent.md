@@ -18,7 +18,7 @@
 
 ### 当前有哪些大语言模型应用场景
 
-| 场景 | 主要工具 | 样品 |
+| 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
 | 问答 - *网页或App交互* | DeepSeek、千问 | bigdata-tools-python/tools/whats_mlflow |
 | 生成 - *生成文字、图片、视频等* | seedance、即梦 |  |
