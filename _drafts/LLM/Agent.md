@@ -31,7 +31,13 @@
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
 
-### 编程 - Coding agent, Agentic coding, Code with agents, AI coding.
+### Codex - Coding agent, Agentic coding, Code with agents, AI coding.
+
+**Codex in ChatGPT (as a standalone app)**
+
+**Codex IDE extension**
+
+**Codex CLI**
 
 #### Agents
 
