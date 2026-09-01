@@ -29,7 +29,7 @@
 
 ## Agent 作为一种工作方式
 
-### 编程，或 Agentic Coding
+### 编程（Agentic Coding）
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
 
