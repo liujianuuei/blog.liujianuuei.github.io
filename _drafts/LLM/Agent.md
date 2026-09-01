@@ -27,9 +27,21 @@
 | 智能数据分析/智能BI | 业务人员无需掌握 SQL 等技能，只需用自然语言提问<br>（如“上个月销售额为什么下降”），<br>系统即可自动查询数据、生成图表并给出归因分析。 |  |
 | 行业垂直应用 | 依赖行业知识。 |  |
 
+
 ## 智能体
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
+
+##### Skills
+
+> With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
+
+**Multi-agent Workflowss**
+
+**Always-on background work**
+
+最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
+
 
 ### Codex - Coding agent, Agentic coding, Code with agents, AI coding.
 
@@ -39,14 +51,6 @@
 
 **Codex CLI**
 
-#### Agents
 
-#### Skills
 
-> With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
 
-#### Multi-agent Workflows
-
-#### Always-on background work
-
-最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
