@@ -16,7 +16,7 @@
 | Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、Trae、剪映、即梦 |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
 
-## 当前有哪些大语言模型应用场景
+## 当前有哪些主要应用场景
 
 | 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
@@ -31,7 +31,7 @@
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
 
-### 编程 - agentic coding, coding with agents
+### 编程 - Agentic coding, Coding with agents.
 
 #### Agents
 
