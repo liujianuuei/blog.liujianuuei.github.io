@@ -52,3 +52,5 @@
 | :--- | :--- | :--- | :--- |
 | Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) |
 | Claude Code |  |  |  |
+| Cursor |  |  |  |
+| github copilot |  |  |  |
