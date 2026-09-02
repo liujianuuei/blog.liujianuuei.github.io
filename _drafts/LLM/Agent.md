@@ -34,29 +34,21 @@
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务的一个工具。
 
-**Skills**
+#### Skills
 
 > With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
 
-**Multi-agent workflows**
+#### Multi-agent workflows
 
-**Always-on background work**
+#### Always-on background work
 
 最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
 
+#### 当前主流编程 Agent
 
-### Codex - Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
+编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
 
-https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
-
-**Codex in ChatGPT (Codex mode) (as a desktop app)**
-
-**Codex IDE extension**
-
-**Codex CLI**
-
-**Codex web**
-
-### Claude Code
-
-
+| 编程 Agent | 产品形式 | 适合场景 | 使用说明 |
+| :--- | :--- | :--- | :--- |
+| Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) |
+| Claude Code |  |  |  |
