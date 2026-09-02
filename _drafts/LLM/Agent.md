@@ -46,6 +46,8 @@
 
 #### Workflows
 
+> Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows
+
 Multi-agent workflows
 
 #### Memory
