@@ -42,6 +42,8 @@
 
 > Skills are more than reusable instruction sets — they deploy agents. A skill gives Perplexity Computer a methodology for a type of task... ——https://www.perplexity.ai/help-center/en/articles/13914413-how-to-use-computer-skills
 
+> Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills
+
 #### Workflows
 
 Multi-agent workflows
