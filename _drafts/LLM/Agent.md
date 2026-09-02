@@ -46,7 +46,7 @@
 
 最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
 
-#### 当前主流编程 Agent
+### 当前主流编程 Agent
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
 
