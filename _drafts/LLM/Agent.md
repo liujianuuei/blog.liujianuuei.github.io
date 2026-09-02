@@ -48,6 +48,8 @@
 
 > Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows
 
+> Create Workflow to manage tasks. ——https://www.genspark.ai/workflows
+
 Multi-agent workflows
 
 #### Memory
