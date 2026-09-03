@@ -5,13 +5,13 @@
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
 | GPT | OpenAI | 美国 | ChatGPT(网页/App)、ChatGPT Work、[Codex](https://openai.com/codex/) |
-| Claude | Anthropic | 美国 | Claude(网页/App)、Claude Code<br>![Anthropic](llm-claude-models-and-agents.png) |
+| Claude | Anthropic | 美国 | Claude(网页/App)、Claude Code|
 | Gemini | Google(DeepMind) | 美国 | Gemini(网页/App)、Gemini Omni |
 | Grok | SpaceX | 美国 | Grok(网页/App)、Cursor |
 | DeepSeek | 深度求索 | 中国 | DeepSeek(网页/App)、DeepSeek Harness |
 | Qwen | 阿里巴巴 | 中国 | 千问(网页/App)、Qoder |
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App)、Kimi Work、Kimi Code |
-| GLM | 智谱 | 中国 | 智谱清言(网页/App)、ZCode |
+| GLM | 智谱 | 中国(清华) | 智谱清言(网页/App)、ZCode |
 | MiniMax | 稀宇 | 中国 | MiniMax(网页/App)、MiniMax Code、MiniMax Design |
 | Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、Trae、剪映、即梦 |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
