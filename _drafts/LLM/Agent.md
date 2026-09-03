@@ -82,11 +82,3 @@
 | [西部世界](https://fast88sj.com/i/sg045) |
 | [北极星](https://beijixing.space/) |
 | [飞鸟加速](https://47.243.132.233:3828/) |
-
-### 当前主流办公 Agent
-
-| 办公 Agent | 产品形态 | 适合场景 | 使用说明 |
-| :--- | :--- | :--- | :--- |
-| ChatGPT Work | ChatGPT(as a desktop app) |  |  |
-| Workbuddy | Desktop App |  |  |
-| 扣子 |  |  |  |
