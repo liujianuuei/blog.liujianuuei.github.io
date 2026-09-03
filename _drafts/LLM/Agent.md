@@ -85,7 +85,7 @@
 | [v2rayN](https://v2rayn.xyz/) |
 | [Surfshark](https://www.surfsharki.com/) |
 | [V2free](https://cdn.maxo.top/) |
-| [更多...](https://v2rayn.xyz/clients/)<br>[...](https://github.com/Kagion-Wang/Something)[...](https://clashvpns.net/download.html) | 
+| [更多...](https://v2rayn.xyz/clients/)[...](https://github.com/Kagion-Wang/Something)[...](https://clashvpns.net/download.html) | 
 
 
 
