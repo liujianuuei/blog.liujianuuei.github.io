@@ -87,5 +87,8 @@
 | [V2free(⌘+↖)](https://cdn.maxo.top/) |
 | [更多...(⌘+↖)](https://v2rayn.xyz/clients/) [...(⌘+↖)](https://github.com/Kagion-Wang/Something) [...(⌘+↖)](https://clashvpns.net/download.html) | 
 
+--------------------------------------------------------
+
+[科学上网完全指南](https://ihmily.github.io/proxy-guide/)
 
 
