@@ -25,7 +25,7 @@
 | 办公 - *Work Agent* | ChatGPT Work<br>Claude Cowork<br>Perplexity.ai Computer<br>Workbuddy<br>扣子<br>openclaw | 全球AI发展趋势周报 |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>Github Copilot<br>Trae<br>Qoder<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
 | 智能数据分析/智能BI | 业务人员无需掌握 SQL 等技能，只需用自然语言提问<br>（如“上个月销售额为什么下降”），<br>系统即可自动查询数据、生成图表并给出归因分析。 |  |
-| 行业垂直应用 | 依赖行业知识。 | NA |
+| 行业垂直应用 | 依赖行业知识 | NA |
 | Invisible AI to Cheat on Conversations | 略 | NA |
 
 
