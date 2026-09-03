@@ -1,6 +1,6 @@
 # 大语言模型应用
 
-## 当前有哪些主要大语言模型
+## 当前有哪些主流大语言模型
 
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
@@ -16,7 +16,7 @@
 | Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子(Agent)、Trae、剪映、即梦 |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
 
-## 当前有哪些主要应用场景
+## 当前有哪些主流应用场景
 
 | 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
@@ -62,7 +62,7 @@ Multi-agent workflows
 
 最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
 
-### 当前主要编程 Agent
+### 当前主流编程 Agent
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
 
@@ -81,13 +81,10 @@ Multi-agent workflows
 | [北极星](https://beijixing.space/) |
 | [飞鸟加速](https://47.243.132.233:3828/) |
 
-
-
-### 当前主要办公 Agent
+### 当前主流办公 Agent
 
 | 办公 Agent | 产品形态 | 适合场景 | 使用说明 |
 | :--- | :--- | :--- | :--- |
 | ChatGPT Work | ChatGPT(as a desktop app) |  |  |
 | Workbuddy | Desktop App |  |  |
 | 扣子 |  |  |  |
-
