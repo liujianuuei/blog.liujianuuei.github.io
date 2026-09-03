@@ -20,7 +20,7 @@
 
 | 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
-| 问答 - *网页或App交互* | DeepSeek<br>千问 | [whats_mlflow](bigdata-tools-python/tools/whats_mlflow) |
+| 问答 - *网页或App交互* | ChatGPT<br>DeepSeek<br>千问 | [whats_mlflow](bigdata-tools-python/tools/whats_mlflow) |
 | 生成 - *生成文字、图片、视频等* | Seedance<br>即梦 |  |
 | 办公 - *Work Agent* | ChatGPT Work<br>Workbuddy<br>扣子<br>openclaw |  |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Qoder<br>Claude Code<br>Cursor<br>Codex<br>Github Copilot, <br>sonnet<br>Invisible AI to Cheat on Conversations,<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
