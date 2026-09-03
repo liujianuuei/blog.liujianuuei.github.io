@@ -77,7 +77,7 @@
 
 #### 科学上网工具
 
-| bing.com搜索:科学上网工具 |
+| bing.com搜索:“科学上网工具” |
 | :--- |
 | [西部世界](https://fast88sj.com/i/sg045) |
 | [北极星](https://beijixing.space/) |
