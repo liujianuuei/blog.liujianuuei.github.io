@@ -60,7 +60,7 @@
 
 ### 当前主流编程 Agent
 
-编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent.
+编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
 
 | 编程 Agent | 产品形态 | 适合场景 | 使用说明 |
 | :--- | :--- | :--- | :--- |
