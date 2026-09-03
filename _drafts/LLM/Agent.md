@@ -89,6 +89,6 @@
 
 --------------------------------------------------------
 
-[科学上网完全指南](https://ihmily.github.io/proxy-guide/)
+⒉ [科学上网完全指南](https://ihmily.github.io/proxy-guide/)
 
 
