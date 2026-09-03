@@ -21,7 +21,7 @@
 | 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
 | 问答 - *网页或App交互* | ChatGPT<br>DeepSeek<br>千问 | [whats_mlflow](bigdata-tools-python/tools/whats_mlflow)<br>ChatGPT注册认证 |
-| 生成 - *生成文字、图片、视频等* | Seedance<br>即梦<br>MiniMax Design |  |
+| 生成 - *生成文字、图片、视频等* | Seedance<br>即梦<br>MiniMax Design | [...](https://docs.feishu.cn/v/wiki/Skn1wEKGwipRIJkDmSzc7BGBngh/a2) |
 | 办公 - *Work Agent* | ChatGPT Work<br>Claude Cowork<br>Perplexity.ai Computer<br>Workbuddy<br>扣子<br>openclaw | 全球AI发展趋势周报 |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>Github Copilot<br>Trae<br>Qoder<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
 | 智能数据分析¹/智能BI | 基于 Agent 技术二次开发 |  |
