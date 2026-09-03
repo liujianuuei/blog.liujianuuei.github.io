@@ -62,7 +62,7 @@
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
 
-| 编程 Agent | 产品形态 | 适合场景 | 使用说明 |
+| 编程 Agent | 产品形态 | 最终选择 | 使用说明 |
 | :--- | :--- | :--- | :--- |
 | Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) |
 | Claude Code |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
