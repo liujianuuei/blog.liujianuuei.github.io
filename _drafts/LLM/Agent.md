@@ -70,7 +70,7 @@
 
 | 编程 Agent | 产品形态 | 最终选择 | 使用说明 |
 | :--- | :--- | :--- | :--- |
-| Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) |
+| Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
 | Claude Code |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
 | Cursor |  |  |  |
 | GitHub Copilot |  |  |  |
