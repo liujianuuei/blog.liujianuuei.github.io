@@ -5,7 +5,7 @@
 | 模型 | 公司 | 国家 | 应用产品 |
 | :--- | :--- | :--- | :--- |
 | GPT | OpenAI | 美国 | ChatGPT(网页/App)、ChatGPT Work、[Codex](https://openai.com/codex/) |
-| Claude | Anthropic | 美国 | Claude(网页/App)、Claude Cowork、Claude Code [→](_drafts/LLM/llm-anthropic-models-and-agents.png)|
+| Claude | Anthropic | 美国 | Claude(网页/App)、Claude Cowork、Claude Code [→](llm-anthropic-models-and-agents.png)|
 | Gemini | Google(DeepMind) | 美国 | Gemini(网页/App)、Gemini Omni |
 | Grok | SpaceX | 美国 | Grok(网页/App)、Cursor |
 | DeepSeek | 深度求索 | 中国 | DeepSeek(网页/App)、DeepSeek Harness |
