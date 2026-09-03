@@ -24,13 +24,13 @@
 | 生成 - *生成文字、图片、视频等* | Seedance<br>即梦 |  |
 | 办公 - *Work Agent* | ChatGPT Work<br>Claude Cowork<br>Perplexity.ai Computer<br>Workbuddy<br>扣子<br>openclaw | 全球AI发展趋势周报 |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>Github Copilot<br>Trae<br>Qoder<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
-| 智能数据分析¹/智能BI | 基于Agent技术二次开发 |  |
+| 智能数据分析¹/智能BI | 基于 Agent 技术二次开发 |  |
 | 行业垂直应用 | 依赖行业知识二次开发 | NA |
 | Invisible AI to Cheat on Conversations | 略 | NA |
 
 --------------------------------------------------------
 
-*⒈ 业务人员无需掌握SQL等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。*
+*⒈ 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。*
 
 
 
