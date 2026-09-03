@@ -34,6 +34,8 @@
 
 智能体（Agent）是**系统化**应用大语言模型解决复杂场景**多步骤**任务（以及 Always-on background work）的一个工具。
 
+最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
+
 #### Skills
 
 > With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
@@ -55,8 +57,6 @@
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
 #### Multi-agent
-
-最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
 
 ### 当前主流编程 Agent
 
