@@ -48,19 +48,19 @@ Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agen
 
 Skills 是在 Agent **全局生效**。
 
-> With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/
+> *With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/*
 
-> Skills are more than reusable instruction sets — they deploy agents. A skill gives Perplexity Computer a methodology for a type of task... ——https://www.perplexity.ai/help-center/en/articles/13914413-how-to-use-computer-skills
+> *Skills are more than reusable instruction sets — they deploy agents. A skill gives Perplexity Computer a methodology for a type of task... ——https://www.perplexity.ai/help-center/en/articles/13914413-how-to-use-computer-skills*
 
-> Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills
+> *Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills*
 
 #### 🎛 Workflows
 
 Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的。每个执行步骤可能用到上面的一个或多个 Skills。
 
-> Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows
+> *Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows*
 
-> Create Workflow to manage tasks. ——https://www.genspark.ai/workflows
+> *Create Workflow to manage tasks. ——https://www.genspark.ai/workflows*
 
 #### 💾 Memory
 
