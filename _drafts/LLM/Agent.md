@@ -56,6 +56,8 @@ Skills 是在 Agent **全局生效**。
 
 #### Workflows
 
+Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而简化整个任务的执行过程。
+
 > Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows
 
 > Create Workflow to manage tasks. ——https://www.genspark.ai/workflows
@@ -67,6 +69,8 @@ Skills 是在 Agent **全局生效**。
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
 #### Multi-agent
+
+
 
 ### 当前主流编程 Agent
 
