@@ -64,7 +64,16 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 #### 💾 Memory
 
-Agent 的记忆是分级的。从上到下依次为：`用户记忆——用户本地记忆——工作空间记忆`。
+Agent 的记忆是分级的，按照生效范围，从上到下依次为：`用户服务端记忆（系统自动捕捉）——用户本地记忆——工作空间记忆——会话记忆`。
+
+`用户服务端记忆`是 Agent 在长期使用过程中记住的关于用户的偏好等信息，用户无法直接操纵修改这部分记忆。
+
+`用户本地记忆`是在Agent 全局生效的记忆。
+
+`工作空间记忆`是在工作空间范围生效的记忆。
+
+`会话记忆`是在一次会话中的全部信息（输入输出等）。
+
 
 > Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
 
