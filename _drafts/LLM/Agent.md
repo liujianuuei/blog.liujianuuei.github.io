@@ -76,7 +76,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 `会话记忆`是在一次会话中的全部信息（输入输出等）。
 
-对模型本身来说，无所谓记忆，模型是**无状态推理**。记忆是一种**应用概念**，因此不同 Agent 厂商针对各自产品，可能在不同层面实现不同的记忆功能。
+对模型本身来说，无所谓记忆，模型是**无状态推理**。记忆是一种**应用概念**，因此不同 Agent 厂商针对各自产品，在不同层面实现不同的记忆功能。
 
 > Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
 
