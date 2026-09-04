@@ -56,7 +56,7 @@ Skills 是在 Agent **全局生效**。
 
 #### 🎛 Workflows
 
-Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而简化整个任务的执行过程。每个执行步骤可能用到上面的一个或多个 Skills。
+Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。每个执行步骤可能用到上面的一个或多个 Skills。
 
 > Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows
 
