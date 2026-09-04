@@ -48,6 +48,8 @@ Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agen
 
 Skills 是在 Agent **全局生效**。
 
+有的 Agent 厂商组合多 Skills，然后抽象出一个实体概念，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的组合应用。
+
 > *With Skills, you can teach Codex your team’s standards, workflows, and ways of working. Codex applies them consistently across tasks, so it can contribute more effectively with less supervision. —— https://openai.com/codex/*
 
 > *Skills are more than reusable instruction sets — they deploy agents. A skill gives Perplexity Computer a methodology for a type of task... ——https://www.perplexity.ai/help-center/en/articles/13914413-how-to-use-computer-skills*
