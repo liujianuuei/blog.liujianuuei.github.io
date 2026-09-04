@@ -64,6 +64,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 #### Memory
 
+Agent 的记忆是分级的。从上到下依次为：`用户记忆——用户本地记忆——工作空间记忆`。
+
 > Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
