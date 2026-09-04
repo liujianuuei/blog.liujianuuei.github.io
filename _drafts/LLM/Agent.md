@@ -46,7 +46,7 @@
 
 Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agent 做特定类型任务的标准、执行步骤或方法，也就是固化下来的可复用的能力。
 
-有的 Agent 厂商组合多个 Skills，然后抽象出一个实体概念，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的应用。
+有的产品组合多个 Skills，然后抽象出一个实体概念，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的应用。
 
 Skills 是在 Agent **全局生效**。
 
@@ -58,7 +58,7 @@ Skills 是在 Agent **全局生效**。
 
 #### 🎛 Workflows
 
-Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的，有的 Agent 可能也不支持 Workflows。Workflows 的每个执行步骤可能用到上面的一个或多个 Skills。
+Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的，有的产品可能也不支持 Workflows。Workflows 的每个执行步骤可能用到上面的一个或多个 Skills。
 
 > *Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows*
 
@@ -76,7 +76,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 `会话记忆`是在一次会话中的全部信息（输入输出等）。
 
-对模型本身来说，无所谓记忆，模型是**无状态推理**。记忆是一种**应用概念**，因此不同 Agent 厂商针对各自产品，在不同层面实现不同的记忆功能。
+对模型本身来说，无所谓记忆，模型是**无状态推理**。记忆是一种**应用概念**，因此不同产品可能在不同层面实现不同的记忆功能。
 
 > Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
 
