@@ -42,7 +42,7 @@
 
 最终的目标，大模型从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。Agent能够自主拆解复杂任务、调用外部工具、执行多步骤操作，例如自动分析财报并生成投资建议。
 
-#### Skills🛠
+#### 🛠 Skills
 
 Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agent 做特定类型任务的标准、执行步骤或方法，也就是固化下来的可复用的能力。
 
@@ -54,7 +54,7 @@ Skills 是在 Agent **全局生效**。
 
 > Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills
 
-#### Workflows🎛
+#### 🎛 Workflows
 
 Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而简化整个任务的执行过程。每个执行步骤可能用到上面的一个或多个 Skills。
 
@@ -62,7 +62,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 > Create Workflow to manage tasks. ——https://www.genspark.ai/workflows
 
-#### Memory💾
+#### 💾 Memory
 
 Agent 的记忆是分级的。从上到下依次为：`用户记忆——用户本地记忆——工作空间记忆`。
 
@@ -70,7 +70,7 @@ Agent 的记忆是分级的。从上到下依次为：`用户记忆——用户�
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
-#### Multi-agent🫂
+#### 🫂 Multi-agent
 
 
 
