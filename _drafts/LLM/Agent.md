@@ -72,9 +72,11 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 `用户本地记忆`是在 Agent 全局生效的记忆，用户可以操纵修改这部分记忆。
 
-`工作空间记忆`是在工作空间范围生效的记忆，Agent 自动记住的执行具体任务的指令集或提示词，在工作空间范围内复用。不同的 Agent 厂商，对这一层记忆的叫法不尽相同。
+`工作空间记忆`是在工作空间范围生效的记忆，Agent 自动记住的执行具体任务的指令集或提示词，在工作空间范围内复用。
 
 `会话记忆`是在一次会话中的全部信息（输入输出等）。
+
+对模型本身来说，无所谓记忆，记忆是一种应用概念，因此不同 Agent 厂商可能在不同层面实现不同的记忆功能。
 
 > Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
 
