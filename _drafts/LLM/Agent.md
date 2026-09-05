@@ -78,7 +78,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
-#### Multi-agent
+#### 🫂 Multi-agent
 
 对于复杂任务，需要建一个工作空间，在工作空间里发起多个 subagent（即所谓 AI 数字员工） 进行工作，每个 subagent 负责处理任务的一小点。这样避免单一会话上下文爆炸。
 
