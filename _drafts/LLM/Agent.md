@@ -38,6 +38,8 @@ Agent 演化的最终目标，是从“你说任务，我具体执行”，过�
 
 > ...agent designed for longer, multi-step work and finished deliverables. —— https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex
 
+### 主要概念
+
 #### 🛠 Skills
 
 Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agent 做特定类型任务的标准、执行步骤或方法，也就是固化下来的可复用的能力。
