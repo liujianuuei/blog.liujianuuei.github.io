@@ -86,7 +86,7 @@ Multi-agent 是一种工程优化手段。对于复杂任务，最佳实践是�
 
 Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
-### 当前主流编程 Agent，或用 Agent 开发
+### 当前主流编程 Agent（用 Agent 开发）
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
 
@@ -109,7 +109,7 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | [V2free(⌘+↖)](https://cdn.maxo.top/) |
 | [更多...(⌘+↖)](https://v2rayn.xyz/clients/) [...(⌘+↖)](https://github.com/Kagion-Wang/Something) [...(⌘+↖)](https://clashvpns.net/download.html) | 
 
-### 搭建定制化 Agent，或开发 Agent
+### 搭建定制化 Agent（开发 Agent）
 
 OpenClaw 是一个开源的大语言模型**执行框架**。可以基于 [OpenClaw](https://openclaw.ai/) 搭建甚至开发定制化的 Agent。不详述。
 
