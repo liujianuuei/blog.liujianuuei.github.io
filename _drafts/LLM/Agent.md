@@ -109,7 +109,7 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | [V2free(⌘+↖)](https://cdn.maxo.top/) |
 | [更多...(⌘+↖)](https://v2rayn.xyz/clients/) [...(⌘+↖)](https://github.com/Kagion-Wang/Something) [...(⌘+↖)](https://clashvpns.net/download.html) | 
 
-### 搭建你的 Agent
+### 搭建定制化 Agent
 
 OpenClaw 是一个开源的大语言模型**执行框架**。可以基于 [OpenClaw](https://openclaw.ai/) 搭建甚至开发定制化的 Agent。不详述。
 
