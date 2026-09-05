@@ -78,6 +78,10 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
+#### Multi-agent
+
+对于复杂任务，需要建一个工作空间，在工作空间里发起多个 subagent（即所谓 AI 数字员工） 进行工作，每个 subagent 负责处理任务的一小点。这样避免单一会话上下文爆炸。
+
 ### 当前主流编程 Agent
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
@@ -109,6 +113,6 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 *⒊ 工作空间适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、技能、决策记录等。*
 
-*⒋ 比如 sub-agent（as part of multi-agent）、专家、专家团、技能包、AI 数字员工等。*
+*⒋ 比如专家、专家团、技能包等。*
 
 *⒉ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
