@@ -113,9 +113,9 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 
 市面上有商业化 Agent 产品（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
 
-OpenClaw 是一个开源的大语言模型**执行框架**。可以基于 [OpenClaw](https://openclaw.ai/) 搭建甚至开发定制化的 Agent。不详述。
+[OpenClaw](https://openclaw.ai/) 是一个开源的大语言模型**执行框架**。可以基于 OpenClaw 搭建甚至开发定制化的 Agent。不详述。
 
-Hermes Agent 也是一个开源的大语言模型执行框架。可以基于 [Hermes Agent](https://hermes-agent.nousresearch.com/) 搭建甚至开发定制化的 Agent。不详述。
+[Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架。可以基于 Hermes Agent 搭建甚至开发定制化的 Agent。不详述。
 
 --------------------------------------------------------
 
