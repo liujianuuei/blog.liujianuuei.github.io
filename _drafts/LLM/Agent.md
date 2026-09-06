@@ -86,7 +86,7 @@ Multi-agent 是一种工程优化手段。对于复杂任务，最佳实践是�
 
 Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
-![](llm-agent-multi-agents.gif)
+![多Agent协作](llm-agent-multi-agents.gif)
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
