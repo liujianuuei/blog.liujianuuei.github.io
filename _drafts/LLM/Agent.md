@@ -14,7 +14,7 @@
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App)、ZCode |
 | MiniMax | 稀宇 | 中国 | MiniMax(网页/App)、MiniMax Code、MiniMax Design |
 | Hy/混元 | 腾讯 | 中国 | 元宝(网页/App)、WorkBuddy、CodeBuddy |
-| Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、扣子、Trae、剪映、即梦 |
+| Doubao<br>Seedance | 字节跳动 | 中国 | 豆包(网页/App)、豆包工作、剪映、即梦 |
 
 ## 当前有哪些主流应用场景
 
