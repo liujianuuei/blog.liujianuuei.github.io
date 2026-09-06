@@ -54,6 +54,10 @@ Skills 是在 Agent **全局生效**。
 
 > *Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills*
 
+**开发新 Skills**
+
+待补充。
+
 #### 🎛 Workflows
 
 Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的，有的产品可能也不支持 Workflows。Workflows 的每个执行步骤可能用到上面的一个或多个 Skills。
