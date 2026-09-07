@@ -106,6 +106,7 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | Kimi Code |  |  |  |
 | MiniMax Code |  |  |  |
 | CodeBuddy |  |  |  |
+| ZCode |  |  |  |
 
 #### 科学上网工具
 
