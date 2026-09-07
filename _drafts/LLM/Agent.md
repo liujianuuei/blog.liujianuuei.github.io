@@ -100,9 +100,9 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | Claude Code |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
 | Cursor |  |  |  |
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |  |
-| DeepSeek Harness |  |  |  |
-| Qoder |  |  |  |
 | Trae |  |  |  |
+| Qoder |  |  |  |
+| DeepSeek Harness |  |  |  |
 | Kimi Code |  |  |  |
 | MiniMax Code |  |  |  |
 | CodeBuddy |  |  |  |
