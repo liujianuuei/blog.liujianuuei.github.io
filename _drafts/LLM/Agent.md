@@ -23,7 +23,7 @@
 | 问答 - *网页或App交互* 🟢 | ChatGPT📍<br>DeepSeek📍<br>千问📍 | [whats_mlflow](bigdata-tools-python/tools/whats_mlflow)<br>ChatGPT注册认证 |
 | 生成 - *生成文字、图片、视频等* | Seedance<br>即梦<br>MiniMax Design | 剧本→分镜→成片<br>[...](https://docs.feishu.cn/v/wiki/Skn1wEKGwipRIJkDmSzc7BGBngh/a2) |
 | 办公 - *Work Agent* 🟢 | ChatGPT Work<br>Claude Cowork<br>Genspark.ai<br>Perplexity.ai Computer<br>WorkBuddy📍<br>豆包工作<br>~~千问办公~~<br>~~百度搭子~~ | 全球AI发展趋势周报<br>自动操作微信发消息<br>视频内容总结<br>图片编辑<br>[一句话网页](https://htah4ugd.qwenwork.host/) |
-| 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>Github Copilot<br>Trae<br>Qoder<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
+| 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>[GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>Trae<br>Qoder<br>https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999 | [Jim](https://github.com/liujianuuei/Jim) |
 | 智能数据分析¹/智能BI | 基于 Agent 技术二次开发 |  |
 | 行业垂直应用 | 基于行业知识二次开发 | NA |
 | Invisible AI to Cheat on Conversations | 略 | NA |
@@ -97,7 +97,7 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
 | Claude Code |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
 | Cursor |  |  |  |
-| GitHub Copilot |  |  |  |
+| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |  |
 
 #### 科学上网工具
 
