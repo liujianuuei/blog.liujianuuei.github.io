@@ -21,7 +21,7 @@
 | 场景 | 主要工具 | 样例 |
 | :--- | :--- | :--- |
 | 问答 - *网页或App交互* 🟢 | ChatGPT📍<br>DeepSeek📍<br>千问📍 | [whats_mlflow](bigdata-tools-python/tools/whats_mlflow)<br>ChatGPT注册认证 |
-| 生成 - *生成文字、图片、视频等* | 即梦<br>MiniMax Design | 剧本→分镜→成片<br>角色设定→故事板规划→动态镜头表达<br>小松鼠的故事<br>簪花仕女图 |
+| 生成 - *生成文字、图片、视频等* | 即梦<br>可灵<br>MiniMax Design | 剧本→分镜→成片<br>角色设定→故事板规划→动态镜头表达<br>小松鼠的故事<br>簪花仕女图 |
 | 办公 - *Work Agent* 🟢 | ChatGPT Work<br>Claude Cowork<br>Genspark.ai<br>Perplexity.ai Computer<br>WorkBuddy📍<br>豆包工作<br>~~千问办公~~<br>~~百度搭子~~ | 全球AI发展趋势周报<br>自动操作微信发消息<br>视频内容总结<br>图片编辑<br>[一句话网页](https://htah4ugd.qwenwork.host/) |
 | 编程 - *Coding Agent* <br><br> *注：也就是 Agentic Coding。* | Codex<br>Claude Code<br>Cursor<br>[GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) | [Jim](https://github.com/liujianuuei/Jim) |
 | 智能数据分析¹/智能BI | 基于 Agent 技术二次开发 |  |
