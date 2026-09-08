@@ -130,11 +130,11 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 [Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架。可以基于 Hermes Agent 搭建甚至开发定制化的 Agent。不详述。
 
-#### 开发 Agent
+#### Agent 开发
 
 Agent 本身的开发待研究。
 
-#### 开发 Skills
+#### Skills 开发
 
 Skills 本身的开发待研究。
 
