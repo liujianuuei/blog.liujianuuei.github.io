@@ -10,4 +10,4 @@
 
 [聪聪](llm-agent-video-gen-life-of-cc-character-cc-design.png)
 
-[露露](llm-agent-video-gen-life-of-cc-character-ll-design.png)
+[路路](llm-agent-video-gen-life-of-cc-character-ll-design.png)
