@@ -706,6 +706,8 @@ Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集
 
 ![数据集成-数据增量同步](dw-batch-data-sync-increment-sync2.png)
 
+**分表同步**
+
 ## OLAP
 
 这里主要介绍 Greenplum 和 StarRocks 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等不详述。
