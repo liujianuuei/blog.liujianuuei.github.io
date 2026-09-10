@@ -124,7 +124,9 @@ dXNlIGNhdGFsb2cgYGp1emktcGFpbW9uLWxha2Vob3VzZS1jYXRhbG9nYDsKCkNSRUFURSBUQUJMRSBv
 
 #### 实时全量表
 
-实时全量表，则直接周期性（比如 H-1）通过 Spark 读取落表即可。
+如果是实时全量表，则直接周期性（比如 H-1）通过 Spark 读取落表（DW*）即可，然后继续后面的加工。
+
+有实时全量表且稳定的话，理论上，就不需要离线同步了。
 
 **任务代码**
 
