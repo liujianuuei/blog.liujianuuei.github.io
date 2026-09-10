@@ -706,9 +706,12 @@ Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集
 
 ![数据集成-数据增量同步](dw-batch-data-sync-increment-sync2.png)
 
-#### 离线 merge
+#### 离线增量 merge
 
-待补充。
+当业务库数据量太大，只能增量同步的时候，就需要额外的 merge 逻辑，加工一份完整的数据出来。
+
+```sql
+```
 
 ### 处理分表同步
 
