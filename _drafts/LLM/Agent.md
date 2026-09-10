@@ -34,7 +34,7 @@
 
 换句话说，Agent 就是具备 Agency（社会行为者独立选择的能力）的终端工具。有一个很形象的比喻，大语言模型是脑，Agent 是手。
 
-Agent 演化的最终目标，是从“你说任务，我具体执行”，过渡到“你说目标，我帮你做完”。
+Agent 演化的最终目标，是从“你说任务，我给你执行”，过渡到“你说目标，我给你结果”。
 
 > ...agent designed for longer, multi-step work and finished deliverables. —— https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex
 
