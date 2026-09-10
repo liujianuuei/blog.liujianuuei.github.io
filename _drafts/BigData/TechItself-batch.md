@@ -700,7 +700,7 @@ Flume 用于采集半结构化或非结构化数据到 HDFS。Sqoop 用于采集
 
 **离线增量同步**
 
-![数据同步策略](dw-batch-data-sync-increment-sync.png)
+![数据增量同步](dw-batch-data-sync-increment-sync.png)
 
 ## OLAP
 
