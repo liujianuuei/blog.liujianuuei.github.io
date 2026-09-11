@@ -142,7 +142,7 @@ Cgoic3BhcmsueWFybi5xdWV1ZSI6ICJyb290X3F1ZXVlIiwKCiJzcGFyay5kcml2ZXIuY29yZXMiOiAi
 
 #### 实时增量表
 
-如果是实时增量表，需要和离线的既有数据（比如离线 T-1 的 RDS 数据，或者上周期 merge 好的自身 DW* 数据）进行 merge，以得到一份完整数据（merge → DW*）。具体 merge 方式可能不一样，但本质就是，实时增量表里有的记录，以实时表为准，实时增量表里没有的记录，通过离线数据补齐（也就是 **N+1** merge）。
+如果是实时增量表，需要和离线的既有数据（比如①离线T-1的 RDS 数据，或者②上周期 merge 好的自身 DW* 数据）进行 merge，以得到一份完整数据（merge → DW*）。具体 merge 方式可能不一样，但本质就是，实时增量表里有的记录，以实时表为准，实时增量表里没有的记录，通过离线数据补齐（也就是 **N+1** merge）。
 
 下面是两个简单的例子：
 
