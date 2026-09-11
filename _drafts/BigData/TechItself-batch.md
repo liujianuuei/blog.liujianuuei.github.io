@@ -738,7 +738,7 @@ LS1FTVIgU3BhcmsgU1FMCi0tKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 ### 离线实时 merge（不推荐）
 
-当业务库数据量太大，没办法每次全量同步，除了和离线增量 merge，还可以和实时增量（同样因为数据量没办法实时全量）merge，合并（T-2和实时增量）一份完整的数据出来。
+当业务库数据量太大，没办法每次全量同步，同时由于比如索引缺失也没办法增量同步，还可以和实时增量（同样因为数据量没办法实时全量）merge，合并（T-2和实时增量）一份完整的数据出来。
 
 这样，除了初始化需要离线同步一次，后续就不再需要离线同步了。
 
