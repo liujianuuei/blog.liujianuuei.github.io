@@ -744,6 +744,8 @@ LS1FTVIgU3BhcmsgU1FMCi0tKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 ![数据开发-分库分表](dw-batch-data-sync-database-sharding.png)
 
+*注：数据开发支持分库分表，数据集成目前不支持分库分表。*
+
 ### 业务库状态检查
 
 对于需要依赖业务库跑批完成，才能进行数据同步的情况，需要和业务库约定一个**通知机制**，比如业务库跑批完成在 MySQL 表里写一个状态标记，大数据侧定时循环查询此标记。其它通知方式也可。
