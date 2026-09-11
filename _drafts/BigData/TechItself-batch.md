@@ -740,6 +740,8 @@ LS1FTVIgU3BhcmsgU1FMCi0tKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 当业务库数据量太大，没办法每次全量同步，除了和离线增量 merge，还可以和实时增量（同样因为数据量没办法实时全量）merge，合并（T-2和实时增量）一份完整的数据出来。
 
+这样，除了初始化需要离线同步一次，后续就不再需要离线同步了。
+
 下面是一个天级（00:15调度）离线实时 merge 的例子：
 
 ```sql
