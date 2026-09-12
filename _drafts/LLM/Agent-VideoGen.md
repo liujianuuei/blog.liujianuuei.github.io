@@ -1,7 +1,7 @@
 # 聪聪的生活（视频生成）
 
 [[故事原稿](Agent-VideoGen.md#故事原稿)]
-[[剧本/拍摄脚本](Agent-VideoGen.md#剧本拍摄脚本)]
+[[剧本](Agent-VideoGen.md#剧本拍摄脚本)]
 [[分镜脚本](Agent-VideoGen.md#分镜脚本)]
 [[角色设定](Agent-VideoGen.md#角色设定)]
 [[参考图片或视频](Agent-VideoGen.md#参考图片或视频)]
