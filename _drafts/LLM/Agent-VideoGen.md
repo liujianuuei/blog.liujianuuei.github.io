@@ -6,6 +6,7 @@
 [[角色设定](Agent-VideoGen.md#角色设定)]
 [[参考图片或视频](Agent-VideoGen.md#参考图片或视频)]
 [[制作](Agent-VideoGen.md#制作)]
+[[总结](Agent-VideoGen.md#总结)]
 
 ## 故事原稿
 
