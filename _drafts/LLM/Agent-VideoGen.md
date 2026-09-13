@@ -180,6 +180,8 @@
 
 ## 制作
 
-Agent：豆包工作
-生图模型：Seedream 5.0 Pro
-生视频模型：Seedance 2.5
+| 任务 | 工具 |
+| :--- | :--- |
+| Agent | 豆包工作 |
+| 生图模型 | Seedream 5.0 Pro |
+| 生视频模型 | Seedance 2.5 |
