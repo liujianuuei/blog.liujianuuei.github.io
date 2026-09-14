@@ -90,6 +90,20 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
+| 分类 | 产品 |
+| :--- | :--- |
+| CLI-Native Coding Agents | Claude Code / Hermes Agent(开源) | 
+| IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) /  | 
+|  |  | 
+|  |  | 
+|  |  | 
+|  |  | 
+
+
+
+
+
+
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
 
 > Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
