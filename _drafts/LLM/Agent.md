@@ -149,7 +149,7 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 Agent 本身的开发待研究。
 
-Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen、CrewAI、LlamaIndex、Dify、Coze。
+Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen、[CrewAI](https://crewai.com.cn/open-source)、LlamaIndex、Dify、Coze。
 
 #### 开发新 Skills
 
