@@ -3,8 +3,8 @@
 [[故事原稿](Agent-VideoGen.md#故事原稿)]
 [[剧本](Agent-VideoGen.md#剧本分场)]
 [[分镜](Agent-VideoGen.md#分镜)]
-[[角色 / 场景 / 道具](Agent-VideoGen.md#角色--场景--道具)]
 [[参考图片或视频(风格)](Agent-VideoGen.md#参考图片或视频风格)]
+[[角色 / 场景 / 道具](Agent-VideoGen.md#角色--场景--道具)]
 [[制作](Agent-VideoGen.md#制作)]
 [[剪辑](Agent-VideoGen.md#剪辑)]
 [[总结](Agent-VideoGen.md#总结)]
@@ -170,6 +170,10 @@
 
 [聪聪的生活分镜](聪聪的生活分镜.csv)
 
+## 参考图片或视频（风格）
+
+无。
+
 ## 角色 / 场景 / 道具
 
 生成角色、场景和道具设定。
@@ -179,10 +183,6 @@
 *注：原本对聪聪的设定是“耳朵有伤疤”，但当前AI工具生成的伤口愈合后留下伤疤的效果欠佳。*
 
 ![路路设定图](llm-agent-video-gen-life-of-cc-character-ll-design.png)
-
-## 参考图片或视频（风格）
-
-无。
 
 ## 制作
 
