@@ -169,7 +169,7 @@
 
 [聪聪的生活分镜](聪聪的生活分镜.csv)
 
-## 角色设定
+## 角色 / 场景 / 道具
 
 ![聪聪](llm-agent-video-gen-life-of-cc-character-cc-design.png)
 
