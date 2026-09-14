@@ -3,7 +3,7 @@
 [[故事原稿](Agent-VideoGen.md#故事原稿)]
 [[剧本](Agent-VideoGen.md#剧本分场)]
 [[分镜](Agent-VideoGen.md#分镜)]
-[[角色 / 场景 / 道具 设定](Agent-VideoGen.md#角色场景道具设定)]
+[[角色 / 场景 / 道具](Agent-VideoGen.md#角色场景道具设定)]
 [[参考图片或视频(风格)](Agent-VideoGen.md#参考图片或视频风格)]
 [[制作](Agent-VideoGen.md#制作)]
 [[总结](Agent-VideoGen.md#总结)]
@@ -169,7 +169,9 @@
 
 [聪聪的生活分镜](聪聪的生活分镜.csv)
 
-## 角色 / 场景 / 道具 设定
+## 角色 / 场景 / 道具
+
+生成角色、场景和道具设定。
 
 ![聪聪设定图](llm-agent-video-gen-life-of-cc-character-cc-design.png)
 
