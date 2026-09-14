@@ -90,7 +90,7 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
-| 定位 | 分类 | 产品 |
+| 架构归属 | 形态 | 工具 |
 | :--- | :--- | :--- |
 | Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
 | Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
