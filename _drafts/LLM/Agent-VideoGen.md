@@ -186,14 +186,15 @@
 
 ## 制作
 
-| 任务 | 工具 |
-| :--- | :--- |
-| 文字（故事） | 人类 |
-| 文字（剧本） | ~~人类~~ |
-| 文字（分镜） | DeepSeek |
-| Agent | 豆包工作 |
-| 生图模型 | Seedream 5.0 Pro |
-| 生视频模型 | Seedance 2.5 |
+| 任务 | 工具 | 下次 |
+| :--- | :--- | :--- |
+| 文字（故事） | 人类 | 人类 |
+| 文字（剧本） | 人类 | DeepSeek / ChatGPT |
+| 文字（分镜） | DeepSeek | DeepSeek / ChatGPT |
+| Agent  / 工作台 | 豆包工作 | Astorie |
+| 生图 | Seedream 5.0 Pro | Seedream 5.0 Pro / GPT Image 2 |
+| 生视频 | Seedance 2.5 | Seedance 2.5 / Seedance 2 Omni Pro |
+| 剪辑 | 豆包工作 | 剪映 |
 
 ## 剪辑
 
