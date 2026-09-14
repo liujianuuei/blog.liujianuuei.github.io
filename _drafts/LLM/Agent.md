@@ -92,10 +92,10 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 
 | 定位 | 分类 | 产品 |
 | :--- | :--- | :--- |
-| Harness |  |  | 
-| Harness |  |  | 
-| Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) | 
-| Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) | 
+| Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
+| Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
+| Agent Harness |  |  |
+| Agent Harness |  |  |
 
 
 
