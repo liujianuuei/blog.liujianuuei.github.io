@@ -80,11 +80,11 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
-#### 👤 ~~Multi-agent~~Sub-agents
+#### 👤 ~~Multi-agent~~ Sub-agents
 
-~~Multi-agent~~Sub-agents 是一种工程优化手段。对于复杂任务，最佳实践是建立一个**工作空间**（别忘了，记忆可以在工作空间共享），在工作空间里发起多个 subagent（即所谓AI员工） 进行协作工作，每个 subagent 负责处理任务的一小点。这样避免单一会话上下文爆炸。
+~~Multi-agent~~ Sub-agents 是一种工程优化手段。对于复杂任务，最佳实践是建立一个**工作空间**（别忘了，记忆可以在工作空间共享），在工作空间里发起多个 subagent（即所谓AI员工） 进行协作工作，每个 subagent 负责处理任务的一小点。这样避免单一会话上下文爆炸。
 
-~~Multi-agent~~Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
+~~Multi-agent~~ Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
 ![多Agent协作](llm-agent-multi-agents.gif)
 
