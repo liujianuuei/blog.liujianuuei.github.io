@@ -88,6 +88,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 ~~Multi-agent~~ Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
+![Sub-agents](llm-agent-or-harness-subagents-arch.png)
+
 ![多Agent协作](llm-agent-multi-agents.gif)
 
 ### 当前主流编程 Agent（用 Agent 开发）
