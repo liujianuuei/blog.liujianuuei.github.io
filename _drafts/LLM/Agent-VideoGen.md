@@ -186,15 +186,11 @@
 
 ## 制作
 
-| 任务 | 工具 | 下次 |
-| :--- | :--- | :--- |
-| 文字（故事） | 人类 | 人类 |
-| 文字（剧本） | 人类 | DeepSeek / ChatGPT |
-| 文字（分镜） | DeepSeek | DeepSeek / ChatGPT |
-| Agent  / 工作台 | 豆包工作 | Astorie |
-| 生图 | Seedream 5.0 Pro | Seedream 5.0 Pro / GPT Image 2 |
-| 生视频 | Seedance 2.5 | Seedance 2.5 / Seedance 2 Omni Pro |
-| 剪辑 | 豆包工作 | 剪映 |
+| 任务 | 工具 |
+| :--- | :--- |
+| Agent | 豆包工作 |
+| 生图 | Seedream 5.0 Pro |
+| 生视频 | Seedance 2.5 |
 
 ## 剪辑
 
@@ -209,3 +205,17 @@
 | 物理世界**比例**保持困难 |
 
 和 AI 描述视频问题**非常困难**，当前 AI 能力适合**静态场景，固定动作**（站在原地说），生成秒级片段（最终尝试拼接）。
+
+**工具选择**
+
+后续工具选择建议如下：
+
+| 任务 | 本次 | 下次 |
+| :--- | :--- | :--- |
+| 文字（故事） | 人类 | 人类 |
+| 文字（剧本） | 人类 | DeepSeek / ChatGPT |
+| 文字（分镜） | DeepSeek | DeepSeek / ChatGPT |
+| Agent  / 工作台 | 豆包工作 | Astorie |
+| 生图 | Seedream 5.0 Pro | Seedream 5.0 Pro / GPT Image 2 |
+| 生视频 | Seedance 2.5 | Seedance 2.5 / Seedance 2 Omni Pro |
+| 剪辑 | 豆包工作 | 剪映 |
