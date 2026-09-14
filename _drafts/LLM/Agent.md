@@ -94,8 +94,8 @@ Multi-agent 本质上解决的问题就是拆解任务，简化处理，缩小�
 | :--- | :--- | :--- |
 | Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
 | Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
-| Agent Harness |  |  |
-| Agent Harness |  |  |
+| Agent Platform |  |  |
+| Agent Platform |  |  |
 
 
 
@@ -137,11 +137,13 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 ### 搭建定制化 Agent（以及开发 Agent）
 
-市面上有商业化 Agent 产品（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
+市面上有商业化成品 Agent（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
 
 [OpenClaw](https://openclaw.ai/) 是一个开源的大语言模型**执行框架**。可以基于 OpenClaw 搭建甚至开发定制化的 Agent。不详述。
 
 [Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架。可以基于 Hermes Agent 搭建甚至开发定制化的 Agent。不详述。
+
+[DeepSeek Harness](https://www.deepseek.com/harness/)（dsh）是由 DeepSeek AI 开发的开源 agent harness（智能体框架）。
 
 #### 开发 Agent
 
