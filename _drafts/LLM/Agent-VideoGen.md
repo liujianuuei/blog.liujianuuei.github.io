@@ -6,6 +6,7 @@
 [[角色 / 场景 / 道具](Agent-VideoGen.md#角色场景道具设定)]
 [[参考图片或视频(风格)](Agent-VideoGen.md#参考图片或视频风格)]
 [[制作](Agent-VideoGen.md#制作)]
+[[剪辑](Agent-VideoGen.md#剪辑)]
 [[总结](Agent-VideoGen.md#总结)]
 
 ## 故事原稿
@@ -190,6 +191,10 @@
 | Agent | 豆包工作 |
 | 生图模型 | Seedream 5.0 Pro |
 | 生视频模型 | Seedance 2.5 |
+
+## 剪辑
+
+略。
 
 ## 总结
 
