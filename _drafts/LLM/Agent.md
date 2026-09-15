@@ -38,7 +38,7 @@ Agent 演化的最终目标，是从“你说任务，我给你执行”，过�
 
 > ...agent designed for longer, multi-step work and finished deliverables. —— https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex
 
-> [What exactly is a harness?](https://www.bilibili.com/video/BV1k1RZBuEBm) —— 哔哩哔哩
+> [What exactly is a harness?](https://www.bilibili.com/video/BV1k1RZBuEBm) —— bilibili
 
 ### 主要（使用）概念
 
