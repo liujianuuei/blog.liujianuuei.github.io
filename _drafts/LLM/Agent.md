@@ -118,14 +118,6 @@ Agent 具备自动 compact 上下文的能力。
 | :--- | :--- | :--- |
 | Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
 | Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
-| Agent Runtime Framework |  |  |
-| Agent Runtime Framework |  |  |
-
-
-
-
-
-
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
 
