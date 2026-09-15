@@ -100,7 +100,7 @@ Agent 的运行核心就是一个 while loop，执行指导成功或终止。
 
 Agent 具备自动 compact 上下文的能力。
 
-#### 🔘 Extensibility
+#### 🔘 Extensibility / Lifecycle Hooks
 
 允许通过插件系统或其它方式扩展 Agent 能力。
 
