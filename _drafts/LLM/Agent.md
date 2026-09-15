@@ -119,7 +119,6 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |  |
 | Trae |  |  |  |
 | Qoder |  |  |  |
-| DeepSeek Harness |  |  |  |
 | Kimi Code |  |  |  |
 | MiniMax Code |  |  |  |
 | CodeBuddy |  |  |  |
