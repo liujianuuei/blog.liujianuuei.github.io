@@ -92,7 +92,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 ![多Agent协作](llm-agent-multi-agents.gif)
 
-#### 其它
+#### 其它概念
 
 - while loop
 - context management
