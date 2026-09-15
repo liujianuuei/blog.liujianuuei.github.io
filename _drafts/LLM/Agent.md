@@ -92,11 +92,17 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 ![多Agent协作](llm-agent-multi-agents.gif)
 
-#### 其它概念
+#### While loop
 
-- while loop
-- context management
-- permissions & safty
+Agent 的运行核心就是一个 while loop，执行指导成功或终止。
+
+#### Context Management
+
+Agent 具备自动 compact 上下文的能力。
+
+#### permissions & safty
+
+操作安全性管控。
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
