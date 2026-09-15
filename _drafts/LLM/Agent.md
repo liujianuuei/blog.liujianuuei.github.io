@@ -92,6 +92,11 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 ![多Agent协作](llm-agent-multi-agents.gif)
 
+#### 其它
+
+- while loop
+- 
+
 ### 当前主流编程 Agent（用 Agent 开发）
 
 | 架构归属 | 形态 | 工具 |
