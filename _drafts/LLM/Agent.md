@@ -166,7 +166,7 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 [Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架（智能体框架，Arch Framework）。可以基于 Hermes Agent 搭建定制化的 Agent。
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）是由 DeepSeek AI 开发的开源 Agent Harness（智能体框架，Runtime Framework）。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）是由 DeepSeek AI 开发的开源 Agent Harness（智能体框架，Arch Framework）。
 
 #### 开发 Agent（Programming Framework，0 → 1）
 
