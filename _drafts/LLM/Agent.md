@@ -9,7 +9,7 @@
 | Grok | SpaceXAI | 美国 | Grok(网页/App)、Cursor |
 | Gemini | Google(DeepMind) | 美国 | Gemini(网页/App)、Gemini Omni |
 | DeepSeek📍 | 深度求索 | 中国 | DeepSeek(网页/App)、DeepSeek Harness |
-| Qwen📍 | 阿里巴巴 | 中国 | 千问(网页/App)、Qoder |
+| Qwen📍 <br>Wan | 阿里巴巴 | 中国 | 千问(网页/App)、Qoder |
 | GLM | 智谱 | 中国(清华) | 智谱清言(网页/App)、ZCode |
 | Kimi | 月之暗面 | 中国 | Kimi(网页/App)~~、Kimi Work~~、Kimi Code |
 | MiniMax | 稀宇 | 中国 | MiniMax(网页/App)、MiniMax Code、MiniMax Design |
