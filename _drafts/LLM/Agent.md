@@ -42,7 +42,7 @@ Agent 演化的最终目标，是从“你说任务，我给你执行”，过�
 
 ### 主要概念
 
-#### 🛠 Skills (and Tools)
+#### 🛠 Skills (and tools, and registry)
 
 Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agent 做特定类型任务的标准、执行步骤或方法，也就是固化下来的可复用的能力。
 
