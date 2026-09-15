@@ -95,7 +95,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 #### 其它
 
 - while loop
-- 
+- context management
+- permissions & safty
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
