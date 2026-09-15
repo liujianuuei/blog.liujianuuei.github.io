@@ -98,8 +98,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 | :--- | :--- | :--- |
 | Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
 | Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
-| Agent Platform |  |  |
-| Agent Platform |  |  |
+| Agent Runtime Framework |  |  |
+| Agent Runtime Framework |  |  |
 
 
 
