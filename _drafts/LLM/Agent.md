@@ -116,7 +116,7 @@ Agent 具备自动 compact 上下文的能力。
 
 | 架构归属 | 形态 | 工具 |
 | :--- | :--- | :--- |
-| Agent | CLI-Native Coding Agents | Codex / Claude Code / Hermes Agent(开源) |
+| Agent | CLI-Native Coding Agents | Codex / Claude Code |
 | Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
 
 编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
