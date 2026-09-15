@@ -114,12 +114,7 @@ Agent 具备自动 compact 上下文的能力。
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
-| 架构归属 | 形态 | 工具 |
-| :--- | :--- | :--- |
-| Agent | CLI-Native Coding Agents | Codex / Claude Code |
-| Agent | IDE-Integrated AI Editor/Extension | Cursor(AI-Native IDE) / GitHub Copilot(Extension) |
-
-编程 Agent 也称作 Coding agent, Agentic coding, Code with agents, AI coding, AI agent。
+编程 Agent 即 Coding Agent，也称作 Agentic Coding，Code with Agents，AI Coding，AI agent。
 
 > Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
 
