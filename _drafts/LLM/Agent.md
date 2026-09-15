@@ -174,6 +174,8 @@ Agent 本身的开发待研究。
 
 Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen、[CrewAI](https://crewai.com.cn/open-source)、LlamaIndex、Dify、Coze。
 
+![项目结构](llm-agent-dev-project-structure.png)
+
 #### 开发新 Skills
 
 Skills 本身的开发待研究。
