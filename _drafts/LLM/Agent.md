@@ -40,7 +40,7 @@ Agent 演化的最终目标，是从“你说任务，我给你执行”，过�
 
 > [What exactly is a harness?](https://www.bilibili.com/video/BV1k1RZBuEBm) —— bilibili
 
-### 主要（使用）概念
+### 主要概念
 
 #### 🛠 Skills (and Tools)
 
