@@ -147,7 +147,7 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 ### 搭建定制化 Agent（以及开发 Agent）
 
-#### Agent Arch Framework
+#### Agent Arch Framework⁷
 
 市面上有商业化成品 Agent（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
 
@@ -182,3 +182,5 @@ Skills 本身的开发待研究。
 *⒉ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
 
 *⒍ 关于 OpenClaw 的定位，部分参考了[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
+
+*⒎ 架构框架，也称作运行时框架，本质是一个可重组的底层运行时。*
