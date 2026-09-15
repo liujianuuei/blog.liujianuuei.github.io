@@ -163,7 +163,7 @@ Skills 本身的开发待研究。
 
 注释
 
-*5. 本文不区分 Agent 和 Agent Harness，一般认为 Agent = Model + Harness，单独的 Harness 概念必要性不是很大。*
+*⒌ 本文不区分 Agent 和 Agent Harness，一般认为 Agent = Model + Harness，单独的 Harness 概念必要性不是很大。*
 
 *⒈ 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。*
 
