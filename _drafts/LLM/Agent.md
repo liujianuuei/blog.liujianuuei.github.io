@@ -131,9 +131,9 @@ Agent 具备自动 compact 上下文的能力。
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |
 | Trae |  |  |
 | Qoder |  |  |
+| CodeBuddy |  |  |
 | Kimi Code |  |  |
 | MiniMax Code |  |  |
-| CodeBuddy |  |  |
 | ZCode |  |  |
 
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
