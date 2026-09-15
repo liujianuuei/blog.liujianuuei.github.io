@@ -192,4 +192,4 @@ Skills 本身的开发待研究。
 
 *⒉ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
 
-*⒍ 关于 OpenClaw 的定位介绍，可以参考[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
+*⒍ 关于 OpenClaw 的定位，部分参考了[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
