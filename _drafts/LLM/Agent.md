@@ -123,18 +123,18 @@ Agent 具备自动 compact 上下文的能力。
 
 > Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
 
-| 编程 Agent | 产品形态 | 最终选择 | 使用说明 |
-| :--- | :--- | :--- | :--- |
-| Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
-| Claude Code |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
-| Cursor |  |  |  |
-| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |  |
-| Trae |  |  |  |
-| Qoder |  |  |  |
-| Kimi Code |  |  |  |
-| MiniMax Code |  |  |  |
-| CodeBuddy |  |  |  |
-| ZCode |  |  |  |
+| 编程 Agent | 产品形态 | 使用说明 |
+| :--- | :--- | :--- |
+| Codex | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
+| Claude Code |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
+| Cursor |  |  |
+| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent) |  |  |
+| Trae |  |  |
+| Qoder |  |  |
+| Kimi Code |  |  |
+| MiniMax Code |  |  |
+| CodeBuddy |  |  |
+| ZCode |  |  |
 
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
 
