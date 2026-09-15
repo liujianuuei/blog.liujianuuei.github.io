@@ -158,8 +158,6 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 ### 搭建定制化 Agent（以及开发 Agent）
 
-> [Harness Agent 深度解析](https://www.cnblogs.com/ycfenxi/p/20061396) —— https://www.cnblogs.com/
-
 #### Agent Arch Framework
 
 市面上有商业化成品 Agent（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
@@ -193,3 +191,5 @@ Skills 本身的开发待研究。
 *⒋ 比如专家、专家团、技能包、技能套件等；有的产品也称其为AI员工或 [Agent](https://docs.coze.cn/cozespace_agent_overview#bfae8b36)（其实是 subagent），注意和运行时 [subagent](#-multi-agent) 概念的区别。*
 
 *⒉ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
+
+*[Harness Agent 深度解析](https://www.cnblogs.com/ycfenxi/p/20061396) —— https://www.cnblogs.com/*
