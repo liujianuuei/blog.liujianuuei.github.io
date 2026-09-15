@@ -114,7 +114,7 @@ Agent 具备自动 compact 上下文的能力。
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
-编程 Agent 即 Coding Agent，也称作 Agentic Coding，Code with Agents，AI Coding，AI agent。
+编程 Agent 即 Coding Agent，也称作 Agentic Coding、Coding with Agents、AI Coding。
 
 > Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
 
