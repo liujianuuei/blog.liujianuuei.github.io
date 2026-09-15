@@ -104,6 +104,8 @@ Agent 具备自动 compact 上下文的能力。
 
 允许通过插件系统或其它方式扩展 Agent 能力。
 
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）is HERE.
+
 #### 🔘 Permissions & Safety
 
 操作安全性管控。
