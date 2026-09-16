@@ -132,6 +132,7 @@ Agent 具备自动 compact 上下文的能力。
 | Kimi Code |  |  |
 | MiniMax Code |  |  |
 | ZCode |  |  |
+| [Aider](https://aider.chat/) |  |  |
 
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
 
@@ -153,11 +154,13 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 市面上有商业化成品 Agent（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
 
-[OpenClaw](https://openclaw.ai/) ⁶是一个开源的大语言模型**执行框架**（智能体框架，Arch Framework）。可以基于 OpenClaw 搭建定制化的 Agent。
+[OpenClaw](https://openclaw.ai/) ⁶是一个开源的大语言模型**执行框架**（Agent Arch Framework）。可以基于 OpenClaw 搭建定制化的 Agent。
 
-[Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架（智能体框架，Arch Framework）。可以基于 Hermes Agent 搭建定制化的 Agent。
+[Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架（Agent Arch Framework）。可以基于 Hermes Agent 搭建定制化的 Agent。
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）是由 DeepSeek AI 开发的开源 Agent Harness（智能体框架，Arch Framework）。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）是由 DeepSeek AI 开发的开源 Agent Harness（Agent Arch Framework）。
+
+其它 Agent Arch Framework 项目：[Pi](https://pi.dev/)。
 
 ![项目结构](llm-agent-dev-project-structure.png)
 
