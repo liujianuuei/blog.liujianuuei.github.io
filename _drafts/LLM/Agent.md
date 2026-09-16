@@ -90,7 +90,9 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 另一种场景是交叉验证和发散探索。比如，一个 Agent 完成任务后，另一个 Agent 负责检查，两个 Agent 相互对话，从中产生新的想法等。
 
-~~Multi-agent~~ Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。Sub-agents 场景，可能还涉及 Agents（subagents）编排，一个例子：[Gas Town](https://yegge.ai/gastown)。
+~~Multi-agent~~ Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
+
+Sub-agents 场景下，可能还涉及复杂度管理，比如 Agents（subagents）编排，一个例子：[Gas Town](https://yegge.ai/gastown)。
 
 ![Sub-agents](llm-agent-or-harness-subagents-arch.png)
 
