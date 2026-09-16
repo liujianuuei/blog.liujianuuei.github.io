@@ -122,22 +122,22 @@ Agent 具备自动 compact 上下文的能力。
 
 > Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
 
-| 编程 Agent | 产品形态 | 使用说明 |
-| :--- | :--- | :--- |
-| Codex<br>*CLI-Native Coding Agents* | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
-| Claude Code<br>*CLI-Native Coding Agents* |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
+| 编程 Agent | 产品形态 | 评级 | 使用说明 |
+| :--- | :--- | :--- | :--- |
+| Codex<br>*CLI-Native Coding Agents* | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension<br>Codex CLI<br>Codex web |  | [...](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan) [...](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) |
+| Claude Code<br>*CLI-Native Coding Agents* |  |  | [...](https://zhuanlan.zhihu.com/p/2028268722809316061) |
 | Cursor<br>*AI-Native IDE* |  |  |
-| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |
-| Trae |  |  |
-| Qoder |  |  |
-| CodeBuddy |  |  |
-| Kimi Code |  |  |
-| MiniMax Code |  |  |
-| ZCode |  |  |
-| [Aider](https://aider.chat/) |  |  |
-| [OpenCode](https://opencode.ai/) |  |  |
-| [Cline](https://cline.bot/) |  |  |
-| [Devin](https://devin.ai/) |  |  |
+| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |  |
+| Trae |  |  |  |
+| Qoder |  |  |  |
+| CodeBuddy |  |  |  |
+| Kimi Code |  |  |  |
+| MiniMax Code |  |  |  |
+| ZCode |  |  |  |
+| [Aider](https://aider.chat/) |  |  |  |
+| [OpenCode](https://opencode.ai/) |  |  |  |
+| [Cline](https://cline.bot/) |  |  |  |
+| [Devin](https://devin.ai/) |  |  |  |
 
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
 
