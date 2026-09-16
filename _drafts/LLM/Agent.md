@@ -126,7 +126,7 @@ Agent 具备自动 compact 上下文的能力。
 | :--- | :--- | :--- |
 | Codex<br>*CLI-Native Coding Agents* | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension: [JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/)<br>Codex CLI<br>Codex web |  |
 | Claude Code<br>*CLI-Native Coding Agents* |  |  |
-| Cursor<br>*AI-Native IDE* | Desktop<br>Terminal<Web> |  |
+| Cursor<br>*AI-Native IDE* | Desktop<br>Terminal<br>Web |  |
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |
 | Trae |  |  |
 | Qoder |  |  |
