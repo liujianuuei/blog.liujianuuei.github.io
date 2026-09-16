@@ -160,7 +160,7 @@ https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.
 
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.zh.md)（dsh）是由 DeepSeek AI 开发的开源 Agent Harness（Agent Arch Framework）。
 
-其它 Agent Arch Framework 项目：[Pi](https://pi.dev/)。
+其它 Agent Arch Framework 项目：[Pi](https://pi.dev/)、[goose](https://goose-docs.ai/)。
 
 ![项目结构](llm-agent-dev-project-structure.png)
 
