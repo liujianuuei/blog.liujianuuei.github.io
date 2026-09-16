@@ -128,7 +128,7 @@ Agent 具备自动 compact 上下文的能力。
 | Claude Code<br>*CLI-Native Coding Agents* |  |  |
 | Cursor<br>*AI-Native IDE* | Desktop<br>CLI<br>Web |  |
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |
-| Trae |  |  |
+| [Trae](https://www.trae.cn/) |  |  |
 | Qoder |  |  |
 | CodeBuddy |  |  |
 | Kimi Code |  |  |
