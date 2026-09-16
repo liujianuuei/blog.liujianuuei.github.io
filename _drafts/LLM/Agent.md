@@ -133,6 +133,9 @@ Agent 具备自动 compact 上下文的能力。
 | MiniMax Code |  |  |
 | ZCode |  |  |
 | [Aider](https://aider.chat/) |  |  |
+| [OpenCode](https://opencode.ai/) |  |  |
+| [Cline](https://cline.bot/) |  |  |
+| [Devin](https://devin.ai/) |  |  |
 
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
 
