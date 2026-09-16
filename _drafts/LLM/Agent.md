@@ -58,7 +58,7 @@ Skills 是在 Agent **全局生效**。
 
 > *Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills*
 
-#### 🎛 Workflows (or Multi-agents)（附加能力）
+#### 🎛 Workflows (or Multi-agents?)（附加能力）
 
 Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的，有的产品可能也不支持 Workflows。Workflows 的每个执行步骤可能用到上面的一个或多个 Skills。
 
@@ -88,7 +88,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 ~~Multi-agent~~ Sub-agents 是一种工程优化手段。对于复杂任务，最佳实践是建立一个**工作空间**（别忘了，记忆可以在工作空间共享），在工作空间里发起多个 subagent（即所谓AI员工） 进行协作工作，每个 subagent 负责处理任务的一小点。这样避免单一会话上下文爆炸。
 
-另一个是交叉验证和发散探索。比如，一个 Agent 完成任务后，另一个 Agent 负责检查，两个 Agent 相互对话，从中产生新的想法等。
+另一种应用场景是交叉验证和发散探索。比如，一个 Agent 完成任务后，另一个 Agent 负责检查，两个 Agent 相互对话，从中产生新的想法等。
 
 ~~Multi-agent~~ Sub-agents 本质上解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
