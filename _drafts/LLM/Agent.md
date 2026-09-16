@@ -98,7 +98,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 #### 🔘 While Loop
 
-Agent 的运行核心就是一个 while loop，执行指导成功或终止。
+Agent 的运行核心就是一个 while loop，执行直到成功或达到最大次数限制。
 
 #### 🔘 Context Management
 
