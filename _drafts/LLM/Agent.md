@@ -130,7 +130,7 @@ Agent 具备自动 compact 上下文的能力。
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |
 | [TraeCode](https://www.trae.cn/)<br>*AI-Native IDE* | Desktop<br>*CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ⭐️⭐️⭐️ |
 | Qoder |  |  |
-| CodeBuddy<br>*AI-Native IDE* | Desktop<br>Ext<br>CLI<br>*可选模型*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents |  |
+| CodeBuddy<br>*AI-Native IDE* | Desktop<br>Ext<br>CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents<br>*可选模型* |  |
 | Kimi Code |  |  |
 | MiniMax Code |  |  |
 | ZCode |  |  |
