@@ -84,17 +84,17 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 > Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
 
-#### 👤 ~~Multi-agent~~ Sub-agents(-spawning)
+#### 👤 ~~Multi-agent~~ Subagents(-spawning)
 
-~~Multi-agent~~ Sub-agents 是一种工程优化手段。对于复杂任务，最佳实践是建立一个**工作空间**（别忘了，记忆可以在工作空间共享），在工作空间里（创建并）发起多个 subagent（即所谓AI员工） 进行协作工作，每个 subagent 负责处理任务的一小点。每个 subagent 拥有独立的上下文，这样避免单一会话上下文爆炸。
+~~Multi-agent~~ Subagents 是一种工程优化手段。对于复杂任务，最佳实践是建立一个**工作空间**（别忘了，记忆可以在工作空间共享），在工作空间里（创建并）发起多个 subagent（即所谓AI员工） 进行协作工作，每个 subagent 负责处理任务的一小点。每个 subagent 拥有独立的上下文，这样避免单一会话上下文爆炸。
 
 另一种场景是交叉验证和发散探索。比如，一个 Agent 完成任务后，另一个 Agent 负责检查，两个 Agent 相互对话，从中产生新的想法等。
 
-~~Multi-agent~~ Sub-agents 本质上就是**一套提示词和工具集**，解决的问题就是拆解任务，简化处理，缩小会话上下文。
+~~Multi-agent~~ Subagents 本质上就是**一套提示词和工具集**，解决的问题就是拆解任务，简化处理，缩小会话上下文。
 
-Sub-agents 场景下，可能还涉及复杂度管理，比如 Agents（subagents）编排，一个例子：[Gas Town](https://yegge.ai/gastown)。
+Subagents 场景下，可能还涉及复杂度管理，比如 Agents（subagents）编排，一个例子：[Gas Town](https://yegge.ai/gastown)。
 
-![Sub-agents](llm-agent-or-harness-subagents-arch.png)
+![Subagents](llm-agent-or-harness-subagents-arch.png)
 
 ![多Agent协作](llm-agent-multi-agents.gif)
 
@@ -128,7 +128,7 @@ Agent 具备自动 compact 上下文的能力。
 | Claude Code<br>*CLI-Native Coding Agents* |  |  |
 | Cursor<br>*AI-Native IDE* | Desktop<br>CLI<br>Web |  |
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* |  |  |
-| [TraeCode](https://www.trae.cn/) | Desktop<br>*[Agent / Sub-agents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 控制 Subagents<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ⭐️⭐️⭐️⭐️ |
+| [TraeCode](https://www.trae.cn/) | Desktop<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 控制 Subagents<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ⭐️⭐️⭐️⭐️ |
 | Qoder |  |  |
 | CodeBuddy |  |  |
 | Kimi Code |  |  |
