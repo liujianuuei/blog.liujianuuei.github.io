@@ -134,7 +134,7 @@ Agent 具备自动 compact 上下文的能力。
 | CodeBuddy<br>*AI-Native IDE* | 🇨🇳 | Ext / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents*<br>*可选模型* | ⭐️⭐️⭐️ |
 | Qoder | 🇨🇳 | Desktop / Ext / CLI<br>*可选模型*<br>*无自动发现错误*<br>*阿里的产品更适合企业生态集成使用* | ⭐️⭐️ |
 | Kimi Code | 🇨🇳 |  |  |
-| MiniMax Code | 🇨🇳 |  |  |
+| MiniMax Code | 🇨🇳 | Desktop | ⭐️⭐️ |
 | ZCode<br>*AI-Native IDE* | 🇨🇳 | Desktop<br>*乏善可陈* | ⭐️ |
 | [Aider](https://aider.chat/) | 🇨🇳 |  |  |
 | [OpenCode](https://opencode.ai/) | 🇨🇳 |  |  |
