@@ -135,7 +135,7 @@ Agent 具备自动 compact 上下文的能力。
 | Qoder | 🇨🇳 | Desktop / Ext / CLI<br>*可选模型*<br>*可@项目文件*<br>*无自动发现错误*<br>*阿里的产品更适合企业生态集成使用* | ⭐️⭐️ |
 | Kimi Code | 🇨🇳 |  |  |
 | MiniMax Code | 🇨🇳 |  |  |
-| ZCode | 🇨🇳 |  |  |
+| ZCode<br>*AI-Native IDE* | 🇨🇳 |  |  |
 | [Aider](https://aider.chat/) | 🇨🇳 |  |  |
 | [OpenCode](https://opencode.ai/) | 🇨🇳 |  |  |
 | [Cline](https://cline.bot/) | 🇨🇳 |  |  |
