@@ -96,6 +96,8 @@ Subagents 场景下，可能还涉及复杂度管理，比如 Subagents 编排�
 
 ![Subagents](llm-agent-or-harness-subagents-arch.png)
 
+![QoderWake](llm-agent-multi-agents-qoderwake.png)
+
 ![多Agent协作](llm-agent-multi-agents.gif)
 
 #### 🔘 While Loop
