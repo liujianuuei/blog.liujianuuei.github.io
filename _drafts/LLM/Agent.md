@@ -131,8 +131,8 @@ Agent 具备自动 compact 上下文的能力。
 | [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 |  |  |
 | Cursor<br>*AI-Native IDE* | 🇺🇸 | Desktop / CLI / ~~Web~~ | ⭐️⭐️⭐️ |
 | [TraeCode](https://www.trae.cn/)📍<br>*AI-Native IDE* | 🇨🇳 | Desktop / *CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ⭐️⭐️⭐️ |
-| CodeBuddy<br>*AI-Native IDE* | 🇨🇳 | Ext / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents*<br>*可选模型*<br>*可@项目文件* | ⭐️⭐️⭐️ |
-| Qoder | 🇨🇳 | Desktop / Ext / CLI<br>*可选模型*<br>*可@项目文件*<br>*无自动发现错误*<br>*阿里的产品更适合企业生态集成使用* | ⭐️⭐️ |
+| CodeBuddy<br>*AI-Native IDE* | 🇨🇳 | Ext / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents*<br>*可选模型* | ⭐️⭐️⭐️ |
+| Qoder | 🇨🇳 | Desktop / Ext / CLI<br>*可选模型*<br>*无自动发现错误*<br>*阿里的产品更适合企业生态集成使用* | ⭐️⭐️ |
 | Kimi Code | 🇨🇳 |  |  |
 | MiniMax Code | 🇨🇳 |  |  |
 | ZCode<br>*AI-Native IDE* | 🇨🇳 | Desktop<br>*乏善可陈* | ⭐️ |
