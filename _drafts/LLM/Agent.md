@@ -130,7 +130,7 @@ Agent 具备自动 compact 上下文的能力。
 | :--- | :--- | :--- | :--- |
 | Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension: [JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/)<br>Codex CLI<br>Codex web |  |
 | Claude Code<br>*CLI-Native Coding Agents* | 🇺🇸 |  |  |
-| [GitHub Copilot](https://github.com/features/copilot)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | Ext / CLI / ~~Desktop~~<br>*高度 GitHub 定制化* |  |
+| [GitHub Copilot](https://github.com/features/copilot)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | Ext / CLI / ~~Desktop~~<br>*高度 GitHub 定制化* | ⭐️⭐️ |
 | [Cursor](https://cursor.com/download)<br>*AI-Native IDE* | 🇺🇸 | Desktop / CLI<br>*[Agent / Subagents](https://cursor.com/cn/docs/subagents) 架构，可自动委派，也可显式调用<br>免费不友好* | ⭐️⭐️⭐️ |
 | [TraeCode](https://www.trae.cn/)📍<br>*AI-Native IDE* | 🇨🇳 | Desktop / *CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ⭐️⭐️⭐️ |
 | [CodeBuddy](https://www.codebuddy.cn/home/)<br>*AI-Native IDE* | 🇨🇳 | Ext / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派 Subagents*<br>*可选模型* | ⭐️⭐️⭐️ |
