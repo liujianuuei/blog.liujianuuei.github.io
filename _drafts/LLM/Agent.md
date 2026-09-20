@@ -199,7 +199,7 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒈ 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。*
 
-*⒊ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、技能、决策记录等。*
+*⒊ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、决策记录等。*
 
 *⒋ 比如专家、专家团、技能包、技能套件等；有的产品也称其为AI员工或 [Agent](https://docs.coze.cn/cozespace_agent_overview#bfae8b36)（其实是 subagent），注意和运行时 [subagent](#-multi-agent) 概念的区别。*
 
