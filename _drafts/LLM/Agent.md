@@ -124,6 +124,8 @@ Agent 具备自动 compact 上下文的能力。
 
 编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding、Vibe Coding 等。
 
+> Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
+
 | 编程 Agent | 国家 | 产品形态 | 评级 |
 | :--- | :--- | :--- | :--- |
 | Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | Codex in ChatGPT (Codex mode) (as a desktop app)<br>Codex IDE extension: [JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/)<br>Codex CLI<br>Codex web |  |
@@ -140,8 +142,6 @@ Agent 具备自动 compact 上下文的能力。
 | [OpenCode](https://opencode.ai/) | 🇨🇳 |  |  |
 | [Cline](https://cline.bot/) | 🇨🇳 |  |  |
 | [Devin](https://devin.ai/) | 🇨🇳 |  |  |
-
-> Copilot can research a repository, create an implementation plan, and make code changes on a branch. You can review the diff, iterate, and create a pull request when you're ready. —— GitHub Copilot
 
 https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
