@@ -120,7 +120,7 @@ Agent 具备自动 compact 上下文的能力。
 
 操作安全性管控。
 
-### 当前主流编程 Agent（用 Agent 开发）
+### 当前主流编程 Agent（用 Agent 开发⁸）
 
 编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding、Vibe Coding 等。
 
@@ -142,8 +142,6 @@ Agent 具备自动 compact 上下文的能力。
 | [OpenCode](https://opencode.ai/) | 🇨🇳 |  |  |
 | [Cline](https://cline.bot/) | 🇨🇳 |  |  |
 | [Devin](https://devin.ai/) | 🇨🇳 |  |  |
-
-*注：关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
 
 https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
@@ -210,3 +208,5 @@ Skills 本身的开发待研究。
 *⒍ 关于 OpenClaw 的定位，部分参考了[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
 
 *⒎ 架构框架，也称作运行时框架（Runtime Framework），本质是一个可重组的底层运行时。*
+
+*⒏ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
