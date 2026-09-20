@@ -122,7 +122,7 @@ Agent 具备自动 compact 上下文的能力。
 
 ### 当前主流编程 Agent（用 Agent 开发）
 
-编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding 等。
+编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding、Vibe Coding 等。
 
 | 编程 Agent | 国家 | 产品形态 | 评级 |
 | :--- | :--- | :--- | :--- |
