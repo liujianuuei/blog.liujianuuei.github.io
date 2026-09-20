@@ -143,9 +143,11 @@ Agent 具备自动 compact 上下文的能力。
 | [Cline](https://cline.bot/) | 🇨🇳 |  |  |
 | [Devin](https://devin.ai/) | 🇨🇳 |  |  |
 
+*注：关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
+
 https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
-https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
+https://bbs.huaweicloud.com/blogs/484999
 
 #### 产品形态选择
 
