@@ -145,7 +145,6 @@ Agent 具备自动 compact 上下文的能力。
 
 https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
-https://bbs.huaweicloud.com/blogs/484999
 
 #### 产品形态选择
 
