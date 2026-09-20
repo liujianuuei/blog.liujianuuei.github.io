@@ -147,6 +147,14 @@ https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
 https://cloud.tencent.com/developer/article/2649106,<br>https://bbs.huaweicloud.com/blogs/484999
 
+#### 编程 Agent 产品形态选择
+
+按如下顺序选择，新手适合 GUI，后续熟悉后，可直接 CLI：
+
+ - AI-Native IDE / AI-Native Ext + IDE(JB,VC)
+ - AI-Native CLI
+ - ~~AI-Native Desktop + IDE(JB,VC)~~
+
 #### 科学上网工具
 
 | bing.com 搜索: "科学上网工具²" |
