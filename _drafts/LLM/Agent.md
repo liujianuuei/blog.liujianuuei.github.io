@@ -188,7 +188,7 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 #### 开发新 Skills
 
-Skills 本身的开发待研究。
+略。
 
 --------------------------------------------------------
 
