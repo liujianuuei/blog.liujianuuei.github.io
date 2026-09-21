@@ -56,15 +56,15 @@ Skills 是在 Agent **全局生效**。
 
 > *Skills are more than reusable instruction sets — they deploy agents. A skill gives Perplexity Computer a methodology for a type of task... ——https://www.perplexity.ai/help-center/en/articles/13914413-how-to-use-computer-skills*
 
-> *Skills are reusable AI tools for specific jobs. ——https://www.genspark.ai/skills*
+> *Skills are reusable AI tools for specific jobs. —— https://www.genspark.ai/skills*
 
 #### 🎛 Workflows (or Multi-agents?)（附加能力）
 
 Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤组成的执行流程，从而管控整个任务的执行过程。Workflows 并不是必须的，有的产品可能也不支持 Workflows。Workflows 的每个执行步骤可能用到上面的一个或多个 Skills。
 
-> *Guided flows that turn complex tasks into simple steps. ——https://www.perplexity.ai/computer/workflows*
+> *Guided flows that turn complex tasks into simple steps. —— https://www.perplexity.ai/computer/workflows*
 
-> *Create Workflow to manage tasks. ——https://www.genspark.ai/workflows*
+> *Create Workflow to manage tasks. —— https://www.genspark.ai/workflows*
 
 #### 💾 Memory
 
@@ -80,9 +80,9 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 对模型本身来说，无所谓记忆，模型是**无状态推理**。记忆是一种**应用概念**，因此不同产品可能在不同层面实现不同的记忆功能。
 
-> Perplexity automatically remembers useful details across conversations. ——https://www.perplexity.ai/computer/memory
+> Perplexity automatically remembers useful details across conversations. —— https://www.perplexity.ai/computer/memory
 
-> Remembers everything. Thinks with you. ——https://www.genspark.ai/second-brain/home
+> Remembers everything. Thinks with you. —— https://www.genspark.ai/second-brain/home
 
 #### 👤 ~~Multi-agent~~ Subagents(-spawning)
 
@@ -94,7 +94,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 Subagents 场景下，可能还涉及复杂度管理，比如 Subagents 编排，一个例子：[Gas Town](https://yegge.ai/gastown)。
 
-> As a starting point, use parallel agents for read-heavy tasks such as exploration, tests, triage, and summarization. Be more careful with parallel write-heavy workflows, because agents editing code at once can create conflicts and increase coordination overhead. —— https://learn.chatgpt.com/docs/agent-configuration/subagents
+> As a starting point, use parallel agents for read-heavy tasks such as exploration, tests, triage, and summarization. Be more careful with parallel write-heavy workflows, because agents editing code at once can create conflicts and increase coordination overhead.
+> —— https://learn.chatgpt.com/docs/agent-configuration/subagents
 
 ![Subagents](llm-agent-or-harness-subagents-arch.png)
 
