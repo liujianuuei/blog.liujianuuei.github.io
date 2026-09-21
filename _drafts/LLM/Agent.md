@@ -124,7 +124,7 @@ Agent 具备自动 compact 上下文的能力。
 
 #### 🔘 Permissions & Safety
 
-操作安全性管控。
+操作安全性管控。比如 Codex 的 [Rules](https://learn.chatgpt.com/docs/agent-configuration/rules)。
 
 ### 当前主流编程 Agent（用 Agent 开发⁸）
 
