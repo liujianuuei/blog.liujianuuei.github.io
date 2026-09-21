@@ -94,6 +94,8 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 Subagents 场景下，可能还涉及复杂度管理，比如 Subagents 编排（主 Agent 负责），一个例子：[Gas Town](https://yegge.ai/gastown)。
 
+但是，多 Subagents 并行处理，也会带来额外的问题，比如写冲突等。
+
 > As a starting point, use parallel agents for read-heavy tasks such as exploration, tests, triage, and summarization. Be more careful with parallel write-heavy workflows, because agents editing code at once can create conflicts and increase coordination overhead.
 > 
 > —— https://learn.chatgpt.com/docs/agent-configuration/subagents
