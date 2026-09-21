@@ -94,7 +94,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 Subagents 场景下，可能还涉及复杂度管理，比如 Subagents 编排（主 Agent 负责），一个例子：[Gas Town](https://yegge.ai/gastown)。
 
-但是，多 Subagents 并行处理，也会带来额外的问题，比如写冲突（可以尝试通过 Worktree 解决）等。
+但是，多 Subagents 并行处理，也会带来额外的问题，比如写冲突（可以尝试通过 Worktrees 解决）等。
 
 > As a starting point, use parallel agents for read-heavy tasks such as exploration, tests, triage, and summarization. Be more careful with parallel write-heavy workflows, because agents editing code at once can create conflicts and increase coordination overhead.
 > 
@@ -134,7 +134,7 @@ Agent 具备自动 compact 上下文的能力。
 
 | 编程 Agent | 国家 | 产品形态 | 评级 |
 | :--- | :--- | :--- | :--- |
-| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / ~~Desktop~~<br>*[Agent / Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) 架构，可自动委派，也可通过 Agent（提示词）委派*<br>*~/.codex/AGENTS.md*<br>*{PROJECT_HOME}/AGENTS.md*<br>*{CURRENT_DIR}/AGENTS.md / Session Prompts*<br>并行修改（Worktree）支持完善 | ★★★☆☆ |
+| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / ~~Desktop~~<br>*[Agent / Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) 架构，可自动委派，也可通过 Agent（提示词）委派*<br>*~/.codex/AGENTS.md*<br>*{PROJECT_HOME}/AGENTS.md*<br>*{CURRENT_DIR}/AGENTS.md / Session Prompts*<br>并行修改（Worktrees）支持完善 | ★★★☆☆ |
 | Claude Code<br>*CLI-Native Coding Agents* | 🇺🇸 |  |  |
 | [GitHub Copilot](https://github.com/features/copilot)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | **Ext** / **CLI**[🍭](https://docs.github.com/en/copilot/get-started/cli-quickstart#installation) / ~~Desktop~~<br>*[Agent / Subagents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents) 架构，可显式调用<br>高度 GitHub 定制化* | ★★★☆☆ |
 | [Cursor](https://cursor.com/download)<br>*AI-Native IDE* | 🇺🇸 | **Desktop** / **CLI**<br>*[Agent / Subagents](https://cursor.com/cn/docs/subagents) 架构，可自动委派，也可显式调用<br>免费不友好* | ★★★☆☆ |
