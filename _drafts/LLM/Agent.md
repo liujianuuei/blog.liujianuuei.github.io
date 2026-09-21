@@ -132,12 +132,12 @@ Agent 具备自动 compact 上下文的能力。
 
 | 编程 Agent | 国家 | 产品形态 | 评级 |
 | :--- | :--- | :--- | :--- |
-| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / ~~Desktop~~<br>*[Agent / Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) 架构，可自动委派，也可通过 Agent（提示词） 委派*<br>*~/.codex/AGENTS.md*<br>*{PROJECT_HOME}/AGENTS.md*<br>*{CURRENT_DIR}/AGENTS.md / Session Prompts* |  |
+| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / ~~Desktop~~<br>*[Agent / Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) 架构，可自动委派，也可通过 Agent（提示词）委派*<br>*~/.codex/AGENTS.md*<br>*{PROJECT_HOME}/AGENTS.md*<br>*{CURRENT_DIR}/AGENTS.md / Session Prompts* |  |
 | Claude Code<br>*CLI-Native Coding Agents* | 🇺🇸 |  |  |
 | [GitHub Copilot](https://github.com/features/copilot)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | **Ext** / **CLI**[🍭](https://docs.github.com/en/copilot/get-started/cli-quickstart#installation) / ~~Desktop~~<br>*[Agent / Subagents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents) 架构，可显式调用<br>高度 GitHub 定制化* | ★★★☆☆ |
 | [Cursor](https://cursor.com/download)<br>*AI-Native IDE* | 🇺🇸 | **Desktop** / **CLI**<br>*[Agent / Subagents](https://cursor.com/cn/docs/subagents) 架构，可自动委派，也可显式调用<br>免费不友好* | ★★★☆☆ |
-| [TraeCode](https://www.trae.cn/)📍<br>*AI-Native IDE* | 🇨🇳 | **Desktop** / *CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ★★★☆☆ |
-| [CodeBuddy](https://www.codebuddy.cn/home/)<br>*AI-Native IDE* | 🇨🇳 | **Ext** / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent 委派*<br>*可选模型* | ★★★☆☆ |
+| [TraeCode](https://www.trae.cn/)📍<br>*AI-Native IDE* | 🇨🇳 | **Desktop** / *CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent（提示词）委派<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ★★★☆☆ |
+| [CodeBuddy](https://www.codebuddy.cn/home/)<br>*AI-Native IDE* | 🇨🇳 | **Ext** / Desktop / CLI<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent（提示词）委派*<br>*可选模型* | ★★★☆☆ |
 | [Qoder](https://qoder.cn/) | 🇨🇳 | Desktop / Ext / CLI<br>*可选模型*<br>*无自动发现错误*<br>*阿里的产品更适合企业生态集成使用* | ★★☆☆☆ |
 | [MiniMax Code](https://minimax.cn/) | 🇨🇳 | ~~Desktop~~<br>*体验一般* | ★★☆☆☆ |
 | [Kimi Code](https://www.kimi.com/code) | 🇨🇳 | ~~Desktop~~ / CLI / Ext<br>*乏善可陈* | ★☆☆☆☆ |
