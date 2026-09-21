@@ -128,7 +128,7 @@ Agent 具备自动 compact 上下文的能力。
 
 | 编程 Agent | 国家 | 产品形态 | 评级 |
 | :--- | :--- | :--- | :--- |
-| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / Desktop<br>*AGENTS.md* |  |
+| Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Ext:[JetBrains](https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/) / Desktop*<br>~/.codex/AGENTS.md<br>{PROJECT_HOME}/AGENTS.md<br>Session Prompts* |  |
 | Claude Code<br>*CLI-Native Coding Agents* | 🇺🇸 |  |  |
 | [GitHub Copilot](https://github.com/features/copilot)<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | **Ext** / **CLI**[🍭](https://docs.github.com/en/copilot/get-started/cli-quickstart#installation) / ~~Desktop~~<br>*[Agent / Subagents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents) 架构，可显式调用<br>高度 GitHub 定制化* | ★★★☆☆ |
 | [Cursor](https://cursor.com/download)<br>*AI-Native IDE* | 🇺🇸 | **Desktop** / **CLI**<br>*[Agent / Subagents](https://cursor.com/cn/docs/subagents) 架构，可自动委派，也可显式调用<br>免费不友好* | ★★★☆☆ |
