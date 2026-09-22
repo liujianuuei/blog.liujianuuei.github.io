@@ -166,7 +166,7 @@ https://bbs.huaweicloud.com/blogs/484999
 
 | bing.com 搜索: "科学上网工具²" |
 | :--- |
-| [西部世界(⌘+↖)](https://fast88sj.com/i/sg045)🙅🏻‍♀️ |
+| [西部世界(⌘+↖)](https://fast88sj.com/i/sg045)🙅 |
 | [北极星(⌘+↖)](https://beijixing.space/) |
 | [飞鸟加速(⌘+↖)](https://47.243.132.233:3828/) |
 | [v2rayN(⌘+↖)](https://v2rayn.xyz/)📍 |
