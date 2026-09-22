@@ -159,9 +159,9 @@ https://bbs.huaweicloud.com/blogs/484999
 
 按如下顺序选择，新手适合 GUI，后续熟悉后，可直接 CLI：
 
- - AI-Native IDE(Desktop)
- - AI-Native Ext + IDE(JB,VC)
- - AI-Native CLI + IDE(JB,VC)
+ - AI-Native IDE(Desktop)（国内优选）
+ - AI-Native Ext + IDE(JB,VC)（国外优选）
+ - AI-Native CLI + IDE(JB,VC)（国外优选）
  - ~~AI-Native Desktop + IDE(JB,VC)~~
 
 #### 科学上网工具
