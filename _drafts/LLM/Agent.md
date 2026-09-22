@@ -50,7 +50,7 @@ Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agen
 
 有的产品组合多个 Skills 抽象出一些实体概念⁴，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的组合应用。
 
-Skills 是在 Agent **全局生效**。
+Skills 一般在 Agent **全局生效**，比如`~/.agents/skills`，也可以在工作空间生效，比如`{PROJECT_HOME}/.agents/skills`。
 
 > A skill is typically a SKILL.md file plus optional scripts, references, and assets. —— https://learn.chatgpt.com/docs/customization/overview#skills
 
