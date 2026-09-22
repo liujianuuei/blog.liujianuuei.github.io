@@ -128,7 +128,7 @@ Agent 具备自动 compact 上下文的能力。
 
 操作安全性管控。比如 Codex 的 [Rules](https://learn.chatgpt.com/docs/agent-configuration/rules)和[本地受限环境](https://learn.chatgpt.com/docs/sandboxing)。
 
-### 当前主流编程 Agent（用 Agent 开发⁸）
+### 当前主流编程 Agent（用 Agent 开发⁶）
 
 编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding、Vibe Coding 等。
 
@@ -189,7 +189,7 @@ https://bbs.huaweicloud.com/blogs/484999
 
 市面上有商业化成品 Agent（办公的、编程的）可以使用，同时我们也可以基于开源项目**自己搭建** Agent（只需要付模型的费用）。
 
-[OpenClaw](https://openclaw.ai/) ⁶是一个开源的大语言模型**执行框架**（Agent Arch Framework）。可以基于 OpenClaw 搭建定制化的 Agent。
+[OpenClaw](https://openclaw.ai/)⁸ 是一个开源的大语言模型**执行框架**（Agent Arch Framework）。可以基于 OpenClaw 搭建定制化的 Agent。
 
 [Hermes Agent](https://hermes-agent.nousresearch.com/) 也是一个开源的大语言模型执行框架（Agent Arch Framework）。可以基于 Hermes Agent 搭建定制化的 Agent。
 
@@ -219,10 +219,10 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒋ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、决策记录等。*
 
-*⒏ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
+*⒍ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
 
 *⒌ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
 
 *⒎ 架构框架，也称作运行时框架（Runtime Framework），本质是一个可重组的底层运行时。*
 
-*⒍ 关于 OpenClaw 的定位，部分参考了[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
+*⒏ 关于 OpenClaw 的定位，部分参考了[这里](https://www.cnblogs.com/ycfenxi/p/20061396)。*
