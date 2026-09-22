@@ -48,7 +48,7 @@ Agent 演化的最终目标，是从“你说任务，我给你执行”，过�
 
 Skills 是**可复用**的**指令集**（下一次还会用到），告诉 Agent 做特定类型任务的标准、执行步骤或方法，也就是固化下来的可复用的能力。
 
-有的产品组合多个 Skills 抽象出一些实体概念⁴，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的组合应用。
+有的产品组合多个 Skills 抽象出一些实体概念³，并附带领域知识或偏好指令，本质相同，都是 Skills 在不同维度上的组合应用。
 
 Skills 一般在 Agent **全局生效**，比如`~/.agents/skills`，也可以在工作空间生效，比如`{PROJECT_HOME}/.agents/skills`。
 
@@ -76,7 +76,7 @@ Workflows 是一种执行复杂任务的方式，将其拆解为由简单步骤�
 
 `用户（本地）记忆`是在 Agent 全局生效的记忆。Agent 会自动记住（动态记忆）执行特定任务的指令集或决策记录，以及背景信息等，在 Agent 全局范围内复用。用户也可以显式指定用户记忆（静态记忆），称作（系统级）规则或指令（persistent instructions）。用户记忆主要用于标准或规范的约束（提示，durable project guidance），比如`~/.codex/memories/`、`~/.codex/AGENTS.md`。
 
-`工作空间记忆`是在工作空间³范围生效的记忆。Agent 会自动记住（动态记忆）执行特定任务的指令集或决策记录，以及背景信息等，在工作空间范围内复用。用户也可以显式指定工作空间记忆（静态记忆），称作（项目级）规则或指令，比如`{PROJECT_HOME}/AGENTS.md`。
+`工作空间记忆`是在工作空间⁴范围生效的记忆。Agent 会自动记住（动态记忆）执行特定任务的指令集或决策记录，以及背景信息等，在工作空间范围内复用。用户也可以显式指定工作空间记忆（静态记忆），称作（项目级）规则或指令，比如`{PROJECT_HOME}/AGENTS.md`。
 
 `会话记忆`是在一次会话中的全部信息（输入输出等）。
 
@@ -215,9 +215,9 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒌ 本文不区分 Agent 和 Agent Harness，一般认为 Agent = Model + Harness，单独的 Harness 概念必要性不是很大。*
 
-*⒋ 比如专家、专家团、技能包、技能套件等；有的产品也称其为AI员工或 [Agent](https://docs.coze.cn/cozespace_agent_overview#bfae8b36)（其实是 subagent），注意和运行时 [subagent](#-multi-agent) 概念的区别。*
+*⒊ 比如专家、专家团、技能包、技能套件等；有的产品也称其为AI员工或 [Agent](https://docs.coze.cn/cozespace_agent_overview#bfae8b36)（其实是 subagent），注意和运行时 [subagent](#-multi-agent) 概念的区别。*
 
-*⒊ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、决策记录等。*
+*⒋ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、决策记录等。*
 
 *⒏ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
 
