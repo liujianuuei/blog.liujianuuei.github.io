@@ -128,7 +128,7 @@ Agent 具备自动 compact 上下文的能力。
 
 操作安全性管控。比如 Codex 的 [Rules](https://learn.chatgpt.com/docs/agent-configuration/rules)和[本地受限环境](https://learn.chatgpt.com/docs/sandboxing)。
 
-### 当前主流编程 Agent（用 Agent 开发⁶）
+### 当前主流编程 Agent（用 Agent 开发⁵）
 
 编程 Agent（Coding Agent），也称作 Agentic Coding、Codes with Agents、AI Coding、Vibe Coding 等。
 
@@ -166,7 +166,7 @@ https://bbs.huaweicloud.com/blogs/484999
 
 #### 科学上网工具
 
-| bing.com 搜索: "科学上网工具⁵" |
+| bing.com 搜索: "科学上网工具⁶" |
 | :--- |
 | [西部世界(⌘+↖)](https://fast88sj.com/i/sg045)🙅 |
 | [北极星(⌘+↖)](https://beijixing.space/) |
@@ -219,9 +219,9 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒋ 工作空间（也有产品称作项目、团队、Hub 等）适合需要持续跟踪、分阶段完成的任务，可以跨会话共享背景信息、文件、决策记录等。*
 
-*⒍ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
+*⒌ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
 
-*⒌ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
+*⒍ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
 
 *⒎ 架构框架，也称作运行时框架（Runtime Framework），本质是一个可重组的底层运行时。*
 
