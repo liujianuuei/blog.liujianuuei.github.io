@@ -180,9 +180,8 @@ https://bbs.huaweicloud.com/blogs/484999
 
 | 接验证码工具 |
 | :--- |
-| [SMS-Man(⌘+↖)](https://sms-man.com/) |
 | [SMS·Act(⌘+↖)](https://sms-act.net/activate/services) |
-
+| [SMS-Man(⌘+↖)](https://sms-man.com/) |
 
 ### 搭建定制化 Agent（以及开发 Agent）
 
