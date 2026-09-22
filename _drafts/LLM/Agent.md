@@ -32,7 +32,7 @@
 
 ![LLM-AgentEngineering](LLM-AgentEngineering.png)
 
-智能体（Agent）⁵是**系统化**应用大语言模型决策执行的自主系统，持续进行`执行-感知-规划`循环直至达成目标，其主要目标在于解决复杂场景**多步骤**任务。Agent 是基于大语言模型的**控制流**，能够自主拆解复杂任务，调用（外部）工具，执行多步骤操作，持续推进工作流程。
+智能体（Agent）²是**系统化**应用大语言模型决策执行的自主系统，持续进行`执行-感知-规划`循环直至达成目标，其主要目标在于解决复杂场景**多步骤**任务。Agent 是基于大语言模型的**控制流**，能够自主拆解复杂任务，调用（外部）工具，执行多步骤操作，持续推进工作流程。
 
 换句话说，Agent 就是具备 Agency（社会行为者独立选择的能力）的终端工具。有一个很形象的比喻，大语言模型是脑，Agent 是手。
 
@@ -166,7 +166,7 @@ https://bbs.huaweicloud.com/blogs/484999
 
 #### 科学上网工具
 
-| bing.com 搜索: "科学上网工具²" |
+| bing.com 搜索: "科学上网工具⁵" |
 | :--- |
 | [西部世界(⌘+↖)](https://fast88sj.com/i/sg045)🙅 |
 | [北极星(⌘+↖)](https://beijixing.space/) |
@@ -213,7 +213,7 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒈ 业务人员无需掌握 SQL 等技能，只需用自然语言提问（如“上个月销售额为什么下降”），系统即可自动查询数据、生成图表并给出归因分析。*
 
-*⒌ 本文不区分 Agent 和 Agent Harness，一般认为 Agent = Model + Harness，单独的 Harness 概念必要性不是很大。*
+*⒉ 本文不区分 Agent 和 Agent Harness，一般认为 Agent = Model + Harness，单独的 Harness 概念必要性不是很大。*
 
 *⒊ 比如专家、专家团、技能包、技能套件等；有的产品也称其为AI员工或 [Agent](https://docs.coze.cn/cozespace_agent_overview#bfae8b36)（其实是 subagent），注意和运行时 [subagent](#-multi-agent) 概念的区别。*
 
@@ -221,7 +221,7 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 *⒏ 关于 Agentic Coding 的[规范和流程](https://cloud.tencent.com/developer/article/2649106)，各公司可能差异很大，而且随着模型能力的提升，（预测）规范和流程将变得越来越不重要。*
 
-*⒉ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
+*⒌ 学习科学上网原理，查看[《科学上网完全指南》](https://ihmily.github.io/proxy-guide/)。*
 
 *⒎ 架构框架，也称作运行时框架（Runtime Framework），本质是一个可重组的底层运行时。*
 
