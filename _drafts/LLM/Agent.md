@@ -161,7 +161,7 @@ https://bbs.huaweicloud.com/blogs/484999
 
  - AI-Native IDE(Desktop)（国内优选）
  - AI-Native Ext + IDE(JB,VC)（国外优选）
- - AI-Native CLI + IDE(JB,VC)（国外优选）
+ - AI-Native CLI + IDE(JB,VC)
  - ~~AI-Native Desktop + IDE(JB,VC)~~
 
 #### 科学上网工具
