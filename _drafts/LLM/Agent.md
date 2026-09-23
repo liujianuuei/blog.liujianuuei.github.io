@@ -201,7 +201,7 @@ Agent Programming Framework（开发框架）：LangChain、LangGraph、AutoGen�
 
 #### 开发新 Skills
 
-略。
+一个例子：[video-content-analyzer.zip](video-content-analyzer.zip)。
 
 ## 最佳实践
 
