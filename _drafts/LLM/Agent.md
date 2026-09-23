@@ -146,10 +146,10 @@ Agent 具备自动 compact 上下文的能力。
 | [MiniMax Code](https://minimax.cn/) | 🇨🇳 | ~~Desktop~~<br>*体验一般* | ★★☆☆☆ |
 | [Kimi Code](https://www.kimi.com/code) | 🇨🇳 | ~~Desktop~~ / CLI / Ext<br>*乏善可陈* | ★☆☆☆☆ |
 | [ZCode](https://zcode.z.ai/en)<br>*AI-Native IDE* | 🇨🇳 | ~~Desktop~~<br>*乏善可陈* | ★☆☆☆☆ |
-| [Cline](https://cline.bot/) | 🇺🇳 | 开源项目 | NA |
-| [OpenCode](https://opencode.ai/) | 🇺🇳 | 开源项目 | NA |
-| [Aider](https://aider.chat/) | 🇺🇳 | 开源项目 | NA |
-| [Devin](https://devin.ai/) | 🇺🇳 | 开源项目 | NA |
+| [Cline](https://cline.bot/) | 🇺🇳 | *开源项目* | NA |
+| [OpenCode](https://opencode.ai/) | 🇺🇳 | *开源项目* | NA |
+| [Aider](https://aider.chat/) | 🇺🇳 | *开源项目* | NA |
+| [Devin](https://devin.ai/) | 🇺🇳 | *开源项目* | NA |
 
 https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
 https://zhuanlan.zhihu.com/p/2028268722809316061<br>
