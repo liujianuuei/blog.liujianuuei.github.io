@@ -138,7 +138,7 @@ Agent 具备自动 compact 上下文的能力。
 | :--- | :--- | :--- | :--- |
 | Codex<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Desktop / Ext<br>*[Agent / Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) 架构，可自动委派，也可通过 Agent（提示词）委派*<br>*~/.codex/AGENTS.md*<br>*{PROJECT_HOME}/AGENTS.md*<br>*{CURRENT_DIR}/AGENTS.md / Session Prompts*<br>*并行修改（Worktrees）支持完善*<br>*各形态各有短长，整体 Computer/Visual 支持弱一些* | ★★★☆☆ |
 | Claude Code ⛔<br>*CLI-Native Coding Agents* | 🇺🇸 | CLI / Desktop / Ext<br>*区域限制，没有测评* | ~~☆☆☆☆☆~~ |
-| [GitHub Copilot](https://github.com/features/copilot)📍<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | **Ext** / **CLI**[🍭](https://docs.github.com/en/copilot/get-started/cli-quickstart#installation) / ~~Desktop~~<br>*[Agent / Subagents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents) 架构，可显式调用<br>高度 GitHub 定制化* | ★★★☆☆ |
+| [GitHub Copilot](https://github.com/features/copilot)📍<br>*IDE-Integrated AI Editor/Extension* | 🇺🇸 | **Ext** / **CLI**[🍭](https://docs.github.com/en/copilot/get-started/cli-quickstart#installation) / ~~Desktop~~<br>*[Agent / Subagents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents) 架构，可显式调用<br>高度 GitHub 支持* | ★★★☆☆ |
 | [Cursor](https://cursor.com/download)<br>*AI-Native IDE* | 🇺🇸 | **Desktop** / **CLI**<br>*[Agent / Subagents](https://cursor.com/cn/docs/subagents) 架构，可自动委派，也可显式调用<br>免费不友好* | ★★★☆☆ |
 | [Devin](https://devin.ai/) | 🇺🇸 | Desktop / CLI / Ext<br>*可使用经济的组合模型模式* | ★★☆☆☆ |
 | [TraeCode](https://www.trae.cn/)📍<br>*AI-Native IDE* | 🇨🇳 | **Desktop** / *CLI*<br>*[Agent / Subagents](https://docs.trae.cn/ide_agent-overview) 架构，通过 Agent（提示词）委派<br>可一键安装：[智能体列表](https://docs.trae.cn/ide_custom-agents-ready-for-one-click-import)* | ★★★☆☆ |
