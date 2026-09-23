@@ -151,10 +151,6 @@ Agent 具备自动 compact 上下文的能力。
 | [OpenCode](https://opencode.ai/) | 🇺🇳 | *开源项目* | NA |
 | [Aider](https://aider.chat/) | 🇺🇳 | *开源项目* | NA |
 
-https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan<br>
-https://zhuanlan.zhihu.com/p/2028268722809316061<br>
-https://bbs.huaweicloud.com/blogs/484999
-
 #### 产品形态选择
 
 按如下顺序选择，新手适合 GUI，后续熟悉后，可直接 CLI：
