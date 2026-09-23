@@ -146,8 +146,8 @@ Agent 具备自动 compact 上下文的能力。
 | [MiniMax Code](https://minimax.cn/) | 🇨🇳 | ~~Desktop~~<br>*体验一般* | ★★☆☆☆ |
 | [Kimi Code](https://www.kimi.com/code) | 🇨🇳 | ~~Desktop~~ / CLI / Ext<br>*乏善可陈* | ★☆☆☆☆ |
 | [ZCode](https://zcode.z.ai/en)<br>*AI-Native IDE* | 🇨🇳 | ~~Desktop~~<br>*乏善可陈* | ★☆☆☆☆ |
-| [Aider](https://aider.chat/) | 🇨🇳 |  |  |
-| [OpenCode](https://opencode.ai/) | 🇨🇳 |  |  |
+| [Aider](https://aider.chat/) | 🇺🇳 |  |  |
+| [OpenCode](https://opencode.ai/) | 🇺🇳 |  |  |
 | [Cline](https://cline.bot/) | 🇨🇳 |  |  |
 | [Devin](https://devin.ai/) | 🇨🇳 |  |  |
 
