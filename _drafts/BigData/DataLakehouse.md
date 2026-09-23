@@ -132,6 +132,8 @@ LS0qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 ```sql
 CREATE external TABLE rds.ods_afterloan_law_rms_law_urge_legal_order_info_rt_fd USING PAIMON LOCATION 'oss://jzsk-bigdata-lakehouse-oss/paimon/raw_data/ods/afterloan_law_rms_law_urge/afterloan_law_rms_law_urge_legal_order_info_fd/';
+
+CREATE external TABLE rds.ods_afterloan_law_rms_law_urge_legal_order_info_rt_fd USING PAIMON LOCATION 'oss://jzsk-bigdata-lakehouse-oss/paimon/raw_data/ods/afterloan_law_rms_law_urge/afterloan_law_rms_law_urge_legal_order_info_v1_fd/';
 ```
 
 注：阿里通过`阿里云实时计算（powered by ververica）`支持 Flink SQL 任务。
