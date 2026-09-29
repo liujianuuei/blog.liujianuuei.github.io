@@ -139,3 +139,7 @@ Q1JFQVRFIFRBQkxFIGByZHMucmRzX21vZGVsX3ByZWRfcmVzdWx0c19mZGAoCiAgYGVudGl0eV9pZGAg
 预测方式有`predict`和`predict_proba`两种，主要区别在于输出结果的不同。
 
 ![预测方式](dw-batch-model-predict-platform-predict-methods.png)
+
+**UDFs supported in PySpark**
+
+![UDFs supported in PySpark](dw-batch-model-predict-udfs-supported-in-pyspark.png)
