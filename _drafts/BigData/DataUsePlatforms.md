@@ -140,6 +140,6 @@ Q1JFQVRFIFRBQkxFIGByZHMucmRzX21vZGVsX3ByZWRfcmVzdWx0c19mZGAoCiAgYGVudGl0eV9pZGAg
 
 ![预测方式](dw-batch-model-predict-platform-predict-methods.png)
 
-**UDFs supported in PySpark**
+**UDFs supported in PySpark**[🔗](https://spark.apache.org/docs/latest/api/python/user_guide/udfandudtf.html#Python-UDFs)
 
 ![UDFs supported in PySpark](dw-batch-model-predict-udfs-supported-in-pyspark.png)
