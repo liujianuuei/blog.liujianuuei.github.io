@@ -216,6 +216,6 @@
 | 文字（剧本） | 人类 | DeepSeek / ChatGPT |
 | 文字（分镜） | DeepSeek | DeepSeek / ChatGPT |
 | Agent  / 工作台 | 豆包工作 | [Astorie](https://astorie.ai/) / [LibTV](https://www.liblib.tv/) / [RunningHub](https://www.runninghub.cn/) / [ComfyUI](https://comfy.org/) / Anishort / Laper / [小云雀](https://xyq.jianying.com/) |
-| 生图 | Seedream 5.0 Pro | Seedream 5.0 Pro / GPT Image 2 |
+| 生图 | Seedream 5.0 Pro | Seedream 5.0 Pro / GPT Image 2 / MJ |
 | 生视频 | Seedance 2.5 | Seedance 2.5 / Seedance 2 Omni Pro |
 | 剪辑 | 豆包工作 | 剪映 |
