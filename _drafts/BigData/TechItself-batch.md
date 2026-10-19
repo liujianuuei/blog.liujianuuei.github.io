@@ -160,11 +160,11 @@ Application Workflow in YARN:
 
 Hive 是建构于 MapReduce 之上的一个通用数据处理框架，其使用 SQL 进行数据分析，底层把 SQL 转化为 MapReduce 任务执行。
 
+Hive 的底层处理引擎可以由 MapReduce 替换为 Tez，支持高效的基于 DAG 的计算。
+
 Hive 通过 [Hive on Spark](https://issues.apache.org/jira/browse/HIVE-7292) 支持 Spark 作为其底层数据处理引擎，更多内容参考 [Spark](TechItself-batch.md#spark)。
 
-Hive 通过 Hive on Tez 替换掉 MapReduce，支持高效的基于 DAG 的计算。
-
-注：除了 Hive，其它 SQL-on-Hadoop 框架还有：Apache Drill、Apache Impala 等。
+注：除了 Hive，其它 SQL on Hadoop 框架还有：Apache Drill、Apache Impala 等。
 
 ### 读时模式和写时模式
 
