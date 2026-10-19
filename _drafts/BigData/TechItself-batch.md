@@ -197,7 +197,7 @@ SQL 在底层会被解析并转化为 MapReduce（或其它处理引擎） 任�
 
 看三个直接通过 SQL 写 HDFS 文件的例子：
 
-```sql
+```bash
 --写到 HDFS 上，登录 Hive 命令行执行
 hive> INSERT OVERWRITE DIRECTORY 'hdfs://hdfs-cluster/user/liujianwei/bigfile'
     > ROW FORMAT DELIMITED
