@@ -6,7 +6,6 @@
 [[YARN](TechItself-batch.md#yarn)]
 [[Hive](TechItself-batch.md#hive)]
 [[Spark](TechItself-batch.md#spark)]
-[[Presto](TechItself-batch.md#presto)]
 [[HBase](TechItself-batch.md#hbase)]
 [[ZooKeeper](TechItself-batch.md#zookeeper)]
 [[Flume/Sqoop/Datax](TechItself-batch.md#数据采集数据同步)]
