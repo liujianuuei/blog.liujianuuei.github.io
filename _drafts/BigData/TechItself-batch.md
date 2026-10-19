@@ -329,6 +329,21 @@ public class JudgeNum extends UDF
 
 除了 UDF，还有 UDAF（用户自定义聚集函数）和 UDTF（用户自定义表生成函数）。
 
+### Hive CLI
+
+通过`-e`参数执行指定文件里的SQL，我们来看一个例子：
+
+```bash
+```
+
+### Hive File
+
+通过`-f`参数执行指定文件里的SQL，我们来看`bigdata-tools-python/tools/whats_hdfs_migration`的一个例子：
+
+```bash
+hive -f refresh_metadata.sql
+```
+
 ## Spark
 
 Apache Spark™ 是一个 DAG 计算引擎。
