@@ -334,11 +334,11 @@ public class JudgeNum extends UDF
 Hive 通过`-e`参数执行指定 SQL，我们来看两个例子：
 
 ```bash
-hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > /mnt/disk1/users-homt/liujianwei/temp/orders.csv  # 查询结果输出到文件
+hive -e "set hive.cli.print.header=true; select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > /mnt/disk1/users-homt/liujianwei/temp/orders.csv  # 查询结果输出到文件
 ```
 
 ```bash
-hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"  # 查询结果输出到屏幕
+hive -e "set hive.cli.print.header=true; select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"  # 查询结果输出到屏幕
 ```
 
 ### Hive File
