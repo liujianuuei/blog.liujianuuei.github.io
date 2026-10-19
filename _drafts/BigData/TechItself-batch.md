@@ -331,22 +331,22 @@ public class JudgeNum extends UDF
 
 ### Hive CLI
 
-通过`-e`参数执行指定SQL，我们来看两个例子：
+Hive 通过`-e`参数执行指定 SQL，我们来看两个例子：
 
 ```bash
-hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > /mnt/disk1/users-homt/liujianwei/temp/orders.csv
+hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > /mnt/disk1/users-homt/liujianwei/temp/orders.csv  # 查询结果输出到文件
 ```
 
 ```bash
-hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"
+hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"  # 查询结果输出到屏幕
 ```
 
 ### Hive File
 
-通过`-f`参数执行指定文件里的SQL，我们来看`bigdata-tools-python/tools/whats_hdfs_migration`的一个例子：
+Hive 通过`-f`参数执行指定文件里的 SQL，我们来看`bigdata-tools-python/tools/whats_hdfs_migration`项目中的一个例子：
 
 ```bash
-hive -f refresh_metadata.sql
+hive -f refresh_metadata.sql  # refresh_metadata.sql 包含可执行 Hive SQL
 ```
 
 ## Spark
