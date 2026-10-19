@@ -198,17 +198,17 @@ SQL 在底层会被解析并转化为 MapReduce（或其它处理引擎） 任�
 看三个直接通过 SQL 写 HDFS 文件的例子：
 
 ```sql
---写到 HDFS 上
-INSERT OVERWRITE DIRECTORY 'hdfs://hdfs-cluster/user/liujianwei/bigfile'
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-SELECT order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10;
+--写到 HDFS 上，登录 Hive 命令行执行
+hive> INSERT OVERWRITE DIRECTORY 'hdfs://hdfs-cluster/user/liujianwei/bigfile'
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > SELECT order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10;
 
---写到本地
-INSERT OVERWRITE LOCAL DIRECTORY '/mnt/disk1/users-homt/liujianwei/temp/bigfile'
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-SELECT order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10;
+--写到本地，登录 Hive 命令行执行
+hive> INSERT OVERWRITE LOCAL DIRECTORY '/mnt/disk1/users-homt/liujianwei/temp/bigfile'
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > SELECT order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10;
 ```
 
 ```hiveql
