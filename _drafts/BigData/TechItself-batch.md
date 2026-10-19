@@ -331,9 +331,14 @@ public class JudgeNum extends UDF
 
 ### Hive CLI
 
-通过`-e`参数执行指定文件里的SQL，我们来看一个例子：
+通过`-e`参数执行指定SQL，我们来看两个例子：
 
 ```bash
+hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > /mnt/disk1/users-homt/liujianwei/temp/orders.csv
+```
+
+```bash
+hive -e "select order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"
 ```
 
 ### Hive File
