@@ -550,50 +550,6 @@ https://emr-core-master-1.juzifenqi.com:8443/gateway/cluster-topo/yarn/cluster/a
 
 ![阿里云开发环境](dw-batch-emr-spark-serverless-aliyun2.png)
 
-## Presto
-
-Presto 是作为 Hive SQL 的替代方案出现的，它也是一个用来快速查询分析大规模（large scale）数据的分布式 SQL Query Engine，主要解决 Hive 在交互式分析（Interactive SQL）或 Ad-hoc 分析上的短板。
-
-注：Presto was initially designed at Facebook as they needed to run interactive queries against large data warehouses in Hadoop. It was explicitly designed to fill the gap/need to be able to run fast queries against data warehouses storing petabytes of data. 
-
-Presto 基于 M/S（也就是主/从）架构。主节点（Presto Coordinator）负责解析SQL、分配查询任务给从节点以及跟踪执行情况并返回从节点的结果给客户端。从节点（Presto Worker）负责执行查询。如下图所示：
-
-![](sql-on-hadoop-presto-architecture.png)
-
-来源于：https://www.alluxio.io/learn/presto/architecture/
-
-如果需要了解更多内容，请参考 [Getting Started With PrestoDB](https://dzone.com/refcardz/getting-started-with-prestodb)。
-
-### Catalog
-
-Presto 支持异构数据源，比如 Hive、Greenplum、MySQL 等（可用通过 Presto’s SPI 开发新的 Connector 支持新的数据源）。通过一个称为 Catalog 的概念来标识不同的数据源和相应的元数据。
-
-```sql
-cmd.extend(['--catalog=%s' % 'hivedgs'])
-cmd.extend(['--user=%s' % self.config['auth']['user']])
-cmd.extend(['--rccgroup=%s' % self.config['auth']['rccgroup']])
-# 任务类型（product:非回溯，recall:回溯）
-cmd.extend(['--source-type=%s' % task_type])
-# \t分隔的不带任何修饰的结果数据
-cmd.extend(['--output-format=TSV'])
-if len(sql) < 100000:
-    cmd.extend(['--execute', sql])
-else:
-    with tempfile.NamedTemporaryFile(dir=tempfile.gettempdir(), prefix='presto_sql_', delete=False) as pqlfile:
-        pqlfile.write(string_utils.concat(sql, ';').encode('utf-8'))
-        cmd.extend(['--file', pqlfile.name])
-logging.debug('cmd: %s', cmd)
-```
-
-```sql
-SELECT if(count(1)>1, 0, 1) AS res 
-FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
-```
-
-### 对比 Spark
-
-一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
-
 ## HBase
 
 现在，让我们来回顾一下大数据生态体系的成员。HDFS 提供大规模分布式存储，MapReduce 提供大规模数据集分布式处理，以及 Hive SQL 提供的 SQL 交互方式，但 MapReduce 和 Hive SQL 都比较慢不适合交互式分析，这时候，Spark 基于内存和 DAG 的处理模型解决了效率的问题，Presto 则针对即席查询（Ad-hoc Query）提供了解决方案。缺什么？上述所有操作基本都是大批量读取数据，然后处理，结果可能会保存在另一张表里，或者直接输出。唯独没有对"随机读写"（random real-time read/write access）的支持——就是类似传统 SQL 数据库的随机读取记录并修改记录值的操作。Apache HBase 就是被设计出来以适应这种场景的。
@@ -800,11 +756,55 @@ IyEvYmluL2Jhc2gKIyBFTVIgU2hlbGwKIyAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 ## OLAP
 
-这里主要介绍 Greenplum 和 StarRocks 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等不详述。
+这里主要介绍 Greenplum、Presto、StarRocks 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等，不详述。
 
 ### Greenplum
 
 ![](olap-mpp-greenplum-arch.jpg)
+
+### Presto
+
+Presto 是作为 Hive SQL 的替代方案出现的，它也是一个用来快速查询分析大规模（large scale）数据的分布式 SQL Query Engine，主要解决 Hive 在交互式分析（Interactive SQL）或 Ad-hoc 分析上的短板。
+
+注：Presto was initially designed at Facebook as they needed to run interactive queries against large data warehouses in Hadoop. It was explicitly designed to fill the gap/need to be able to run fast queries against data warehouses storing petabytes of data. 
+
+Presto 基于 M/S（也就是主/从）架构。主节点（Presto Coordinator）负责解析SQL、分配查询任务给从节点以及跟踪执行情况并返回从节点的结果给客户端。从节点（Presto Worker）负责执行查询。如下图所示：
+
+![](sql-on-hadoop-presto-architecture.png)
+
+来源于：https://www.alluxio.io/learn/presto/architecture/
+
+如果需要了解更多内容，请参考 [Getting Started With PrestoDB](https://dzone.com/refcardz/getting-started-with-prestodb)。
+
+#### Catalog
+
+Presto 支持异构数据源，比如 Hive、Greenplum、MySQL 等（可用通过 Presto’s SPI 开发新的 Connector 支持新的数据源）。通过一个称为 Catalog 的概念来标识不同的数据源和相应的元数据。
+
+```sql
+cmd.extend(['--catalog=%s' % 'hivedgs'])
+cmd.extend(['--user=%s' % self.config['auth']['user']])
+cmd.extend(['--rccgroup=%s' % self.config['auth']['rccgroup']])
+# 任务类型（product:非回溯，recall:回溯）
+cmd.extend(['--source-type=%s' % task_type])
+# \t分隔的不带任何修饰的结果数据
+cmd.extend(['--output-format=TSV'])
+if len(sql) < 100000:
+    cmd.extend(['--execute', sql])
+else:
+    with tempfile.NamedTemporaryFile(dir=tempfile.gettempdir(), prefix='presto_sql_', delete=False) as pqlfile:
+        pqlfile.write(string_utils.concat(sql, ';').encode('utf-8'))
+        cmd.extend(['--file', pqlfile.name])
+logging.debug('cmd: %s', cmd)
+```
+
+```sql
+SELECT if(count(1)>1, 0, 1) AS res 
+FROM hivedgs.loan_data_warehouse.dwd_loan_price_snapshot_df;
+```
+
+#### 对比 Spark
+
+一般来说，Spark 更适合复杂的长时间运行的数据处理，Presto 更适合短时间交互式查询。
 
 ### StarRocks
 
