@@ -755,7 +755,7 @@ IyEvYmluL2Jhc2gKIyBFTVIgU2hlbGwKIyAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
 
 ## OLAP
 
-这里主要介绍 Greenplum、Presto、StarRocks 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等，不详述。需要说明的是，Apache Impala 是介于 SQL on Hadoop 和 OLAP 之间的一个引擎。
+这里主要介绍 Greenplum、Presto、StarRocks 的相关知识。其它还有诸如 Doris、Phoenix/HBase、Kudu、Kylin、Durid、ClickHouse 等，不详述。需要说明的是，[Apache Impala](TechItself-batch.md#hive) 是介于 SQL on Hadoop 和 OLAP 之间的一个引擎。
 
 ### Greenplum
 
