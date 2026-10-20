@@ -864,7 +864,7 @@ mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERN
 可以通过标准 MySQL 客户端连接 StarRocks，然后通过`<`参数执行指定文件里的 SQL：
 
 ```bash
-mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERNAME} -p{PASSWORD} < lines.sql > orders.csv
+mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERNAME} -p{PASSWORD} < lines.sql | tr '\t' ',' > orders.csv
 ```
 
 #### StarRocks Serverless @阿里云
