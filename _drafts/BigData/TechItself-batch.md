@@ -856,7 +856,7 @@ CnNob3cgY2F0YWxvZ3M7CgpzaG93IGRhdGFiYXNlcyBmcm9tIGhpdmVfY2F0YWxvZzsgLS1kZWZhdWx0
 可以通过标准 MySQL 客户端连接 StarRocks，然后通过`-e`参数执行指定 SQL：
 
 ```bash
-mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERNAME} -p{PASSWORD} -e "select order_id,order_id from hive_catalog.dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" > orders.csv
+mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERNAME} -p{PASSWORD} -e "select order_id,order_id from hive_catalog.dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10" | tr '\t' ',' > orders.csv
 ```
 
 #### StarRocks File
