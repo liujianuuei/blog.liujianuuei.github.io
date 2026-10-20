@@ -370,6 +370,14 @@ Hive 通过`-f`参数执行指定文件里的 SQL，我们来看`bigdata-tools-p
 hive -f refresh_metadata.sql  # refresh_metadata.sql 包含可执行 Hive SQL
 ```
 
+和另一个例子：
+
+```bash
+beeline -u "jdbc:hive2://master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com:10000/;principal=hive/master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com@EMR.C-731079D3BAA543B6.COM" \
+  --outputformat=csv2 \
+  -f lines.sql
+```
+
 ## Spark
 
 Apache Spark™ 是一个 DAG 计算引擎。
