@@ -853,7 +853,7 @@ CnNob3cgY2F0YWxvZ3M7CgpzaG93IGRhdGFiYXNlcyBmcm9tIGhpdmVfY2F0YWxvZzsgLS1kZWZhdWx0
 
 #### StarRocks CLI
 
-可以通过标准 MySQL 客户端连接 StarRocks 执行指定 SQL。
+可以通过标准 MySQL 客户端连接 StarRocks 执行指定 SQL：
 
 ```bash
 mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u gaoxianglin -p{base64.b64decode(propz['ZHIMAKAIMEN']).decode('utf-8')} -e "select ..."
