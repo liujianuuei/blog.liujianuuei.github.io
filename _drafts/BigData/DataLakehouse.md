@@ -80,7 +80,7 @@ Kappa(κ) 架构的核心是流式处理，不再有独立的批处理。
 
 来源：https://nexocode.com/blog/posts/lambda-vs-kappa-architecture/
 
-## 湖仓（Lakehouse）
+## 湖仓（Lakehouse）——第三代架构✨
 
 **湖仓**这一命名并不能准确体现同时支持离线和实时的数据仓库的核心概念，就像其渊源之一数据湖这一概念也不能传达任何有价值的信息一样。
 
