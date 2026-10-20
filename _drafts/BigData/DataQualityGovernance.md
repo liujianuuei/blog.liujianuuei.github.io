@@ -195,7 +195,7 @@ hive.exec.dynamic.partition=true
 
 ### 元数据（HMS）迁移
 
-元数据存储在 MySQL 里，元数据迁移本质是 MySQL 的 DDL 的导出和导入。具体不详述。
+元数据存储在 MySQL 里，元数据迁移本质是 MySQL 的 DDL 的导出和导入（mysqldump/source）。具体不详述。
 
 ### 任务迁移
 
