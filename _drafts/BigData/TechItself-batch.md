@@ -362,6 +362,13 @@ beeline -u "jdbc:hive2://master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.c
   -e "select order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"
 ```
 
+```bash
+HADOOP_CLIENT_OPTS="-Ddisable.quoting.for.sv=false" beeline -u "jdbc:hive2://master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com:10000/;principal=hive/master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com@EMR.C-731079D3BAA543B6.COM" \
+  --outputformat=csv2 \
+  -e "select * from dm_f_15.bank_card_xishang" \
+  > ./dm_f_15.bank_card_xishang.csv
+```
+
 ### Hive File
 
 Hive 通过`-f`参数执行指定文件里的 SQL，我们来看`bigdata-tools-python/tools/whats_hdfs_migration`项目中的一个例子：
