@@ -895,7 +895,7 @@ impala-shell -q  "select user_id,id_card_no,mobile,name from dim.dim_user_encryp
 #### Impala File
 
 ```bash
--- 不可行，执行不成功（仅作参考）
+# 不可行，执行不成功（仅作参考）
 impala-shell -f query.sql -B --output_delimiter="," -o /home/cdh/liujianwei/output.csv
 ```
 
