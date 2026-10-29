@@ -374,7 +374,7 @@ HADOOP_CLIENT_OPTS="-Ddisable.quoting.for.sv=false" beeline -u "jdbc:hive2://mas
 Hive 通过`-f`参数执行指定文件里的 SQL，我们来看`bigdata-tools-python/tools/whats_hdfs_migration`项目中的一个例子：
 
 ```bash
-hive -f refresh_metadata.sql  # refresh_metadata.sql 包含可执行 Hive SQL
+hive -f refresh_metadata.sql  # refresh_metadata.sql 包含可执行 Hive SQL；如果是单字段 insert，20万行数据大约10+分钟。
 ```
 
 和另一个例子：
