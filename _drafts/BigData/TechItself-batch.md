@@ -884,6 +884,21 @@ mysql -h fe-c-b86635667fbddbf0-internal.starrocks.aliyuncs.com -P 9030 -u {USERN
 
 ![阿里云开发环境](dw-batch-olap-starrocks-aliyun4.png)
 
+### Impala (as OLAP)
+
+#### Impala CLI
+
+```bash
+impala-shell -q  "select user_id,id_card_no,mobile,name from dim.dim_user_encrypt_fd where dt='2024-08-07' and user_id in (select user_id from test.sm3_user2)" -B --output_delimiter="," -o /home/cdh/liujianwei/output.csv
+```
+
+#### Impala File
+
+```bash
+-- 不可行，执行不成功（仅作参考）
+impala-shell -f query.sql -B --output_delimiter="," -o /home/cdh/liujianwei/output.csv
+```
+
 ## 最后
 
 整个大数据技术体系要解决的问题就是"**大**"的问题，解决方案是通过**分布式**的方式实现并行处理，而分布式的**协同**是整个处理过程的难点和这套技术体系的价值所在。
