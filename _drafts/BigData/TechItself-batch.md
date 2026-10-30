@@ -382,7 +382,8 @@ hive -f refresh_metadata.sql  # refresh_metadata.sql 包含可执行 Hive SQL；
 ```bash
 beeline -u "jdbc:hive2://master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com:10000/;principal=hive/master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com@EMR.C-731079D3BAA543B6.COM" \
   --outputformat=csv2 \
-  -f lines.sql
+  -f lines.sql \
+  > ./outputs.csv
 ```
 
 ## Spark
