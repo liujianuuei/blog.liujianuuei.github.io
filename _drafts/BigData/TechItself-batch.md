@@ -359,7 +359,7 @@ hive -e "set hive.cli.print.header=true; select order_id from dm_f_facui.dm_f_fa
 ```bash
 beeline -u "jdbc:hive2://master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com:10000/;principal=hive/master-1-1.c-284d9fe06f6fc5ea.cn-beijing.emr.aliyuncs.com@EMR.C-731079D3BAA543B6.COM" \
   --outputformat=csv2 \
-  -e "select order_id,order_id from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"
+  -e "select order_id,order_id as \`订单号\` from dm_f_facui.dm_f_facui_conn_deduction_orders_fd where dt='2026-10-18' limit 10"
 ```
 
 ```bash
